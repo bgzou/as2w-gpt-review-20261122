@@ -1,0 +1,138 @@
+{
+  "inputs": [
+    {
+      "path": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\P55G2.npz",
+      "sha256": "44227e19a1681ab4f7da4e665142209765e6e31f3ac73b205201b14bf6f2f88b"
+    },
+    {
+      "path": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\tables\\G2_CONTACT_RECHECK.json",
+      "sha256": "bc41a638bc0ea88bf6eb0a294bf0ba2839ebbb19646a5565ef2962ec5c35f9ca"
+    },
+    {
+      "path": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\tables\\I5_GOW_CONTACT_VARIANTS.json",
+      "sha256": "714ac083200ff70b5319325dfc567c4e95845164abfeb5e25bf5042cd671af89"
+    }
+  ],
+  "real_feedback": {
+    "hip_q_rad": [
+      0.2142,
+      -0.2155,
+      0.2779,
+      -0.2755
+    ],
+    "hip_tau_est_Nm": [
+      -11.8052,
+      11.6947,
+      -15.153,
+      15.1879
+    ],
+    "pitch_deg": -6.1349
+  },
+  "model_inversion_not_independent_measurement": {
+    "Fn_N": [
+      48.22,
+      48.38,
+      79.47,
+      79.48
+    ],
+    "source": "G2 P55G2 analytic contact inversion; no four-wheel force sensor"
+  },
+  "simulation_variants": {
+    "W_A": {
+      "pitch_deg": -6.37,
+      "pitch_minus_real_deg": -0.2351,
+      "hip_q_rad": [
+        0.084,
+        -0.084,
+        0.21,
+        -0.211
+      ],
+      "hip_q_minus_real_rad": [
+        -0.1302,
+        0.1315,
+        -0.0679,
+        0.0645
+      ],
+      "hip_tau_Nm": [
+        -4.61,
+        4.64,
+        -11.57,
+        11.6
+      ],
+      "hip_tau_minus_tau_est_Nm": [
+        7.1952,
+        -7.0547,
+        3.583,
+        -3.5879
+      ],
+      "Fn_simulated_N": [
+        49.4,
+        49.6,
+        77.9,
+        78.1
+      ],
+      "Fn_sim_minus_model_inversion_N": [
+        1.18,
+        1.22,
+        -1.57,
+        -1.38
+      ],
+      "Fn_comparison_limit": "Reference Fn is a model inversion, not direct real measurement.",
+      "contact_points_per_wheel_simulated": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "settle_ok": true
+    },
+    "W_D": {
+      "pitch_deg": -0.51,
+      "pitch_minus_real_deg": 5.6249,
+      "hip_q_rad": [
+        0.208,
+        -0.208,
+        0.184,
+        -0.185
+      ],
+      "hip_q_minus_real_rad": [
+        -0.0062,
+        0.0075,
+        -0.0939,
+        0.0905
+      ],
+      "hip_tau_Nm": [
+        -11.47,
+        11.47,
+        -10.1,
+        10.15
+      ],
+      "hip_tau_minus_tau_est_Nm": [
+        0.3352,
+        -0.2247,
+        5.053,
+        -5.0379
+      ],
+      "Fn_simulated_N": [
+        58.1,
+        58.3,
+        69.3,
+        69.4
+      ],
+      "Fn_sim_minus_model_inversion_N": [
+        9.88,
+        9.92,
+        -10.17,
+        -10.08
+      ],
+      "Fn_comparison_limit": "Reference Fn is a model inversion, not direct real measurement.",
+      "contact_points_per_wheel_simulated": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "settle_ok": true
+    }
+  }
+}
