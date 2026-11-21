@@ -1,0 +1,74 @@
+{
+  "source_result": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\physx_abl\\i4_runs\\base_contacts.json",
+  "source_result_sha256": "e83fde02e8f488071004efb6bb524b4327f1812fcd57d8baf3bca172a6b945fb",
+  "source_urdf": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\physx_abl\\urdf_cylwheel\\as2w-load-v0.urdf",
+  "source_urdf_sha256": "69d3c66a63eb6babafc2fe9c811afc1bb4caea3c6eb2a0f80b1d59969e555804",
+  "limitations": [
+    "URDF whole-body COM uses archived settled mean joint angles; per-frame joint angles were not archived.",
+    "contact_pos_w may not be force weighted or paired with the net force; individual PhysX contact wrenches were not archived.",
+    "The four contact force and position time series are rounded in the archived JSON."
+  ],
+  "samples": 2400,
+  "dt_s": 0.005,
+  "mass_kg": 26.0,
+  "model_weight_N": 255.06,
+  "fixed_root_mass_kg": 10.58,
+  "fixed_root_com_in_base_m": [
+    0.045707,
+    -0.0007,
+    0.020441
+  ],
+  "whole_com_in_base_m": [
+    0.017358,
+    -0.000317,
+    -0.05352
+  ],
+  "base_vs_whole_com_world_mean_m": [
+    -0.023076,
+    0.000359,
+    -0.07578
+  ],
+  "root_com_capture_vs_urdf_fixed_root_com_error_m": {
+    "mean": 4.716850373324025e-05,
+    "max": 8.404080217548217e-05
+  },
+  "sum_force_mean_N": [
+    0.002518,
+    -5.2e-05,
+    255.060521
+  ],
+  "moment_original_mean_then_cross_Nm": [
+    0.10752,
+    5.869872,
+    -0.122482
+  ],
+  "moment_original_norm_Nm": 5.872134084476616,
+  "moment_root_com_per_frame_mean_Nm": [
+    0.107589,
+    5.869834,
+    -0.122433
+  ],
+  "moment_root_com_per_frame_norm_Nm": 5.872096047773453,
+  "moment_whole_com_per_frame_mean_Nm": [
+    0.016145,
+    -0.015744,
+    -0.122434
+  ],
+  "moment_whole_com_per_frame_norm_Nm": 0.12449362859221455,
+  "moment_whole_com_about_origin_mean_Nm": [
+    0.01616,
+    -0.015077,
+    -0.122437
+  ],
+  "moment_whole_com_per_frame_norm_p95_Nm": 0.5335350656132876,
+  "whole_com_first_half_mean_Nm": [
+    0.025608,
+    -0.015103,
+    -0.111241
+  ],
+  "whole_com_second_half_mean_Nm": [
+    0.006683,
+    -0.016385,
+    -0.133628
+  ]
+}
