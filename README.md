@@ -16,6 +16,7 @@
 | `04_our_analysis/` | 本项目此前写的 17 份报告（RPT-001…017）——**可作线索，但请独立核验，不要当结论** | `RPT-016_RootCause_TwoPolicies_20261122.md`、`RPT-017_NextTrainingPlan_Advice_20261122.md`、`RPT-013…`、`RPT-008…` |
 | `05_our_experiments/` | 本项目在自有服务器（MuJoCo 4.0.1 隔离环境、CPU 单作业）跑的同合同仿真结果与脚本 | `t3_3/results/*.json`（zero-B 消融：kp85、资产回填、原厂站姿）、`t2_1/results/*.json`（偏航 full/base-only、wz 扫描、residual-only）、`environment/` |
 | `06_deliverables/` | 期望产出的两份文档模板/初稿 | `ROOT_CAUSE_ANALYSIS.md`、`NEXT_TRAINING_PLAN.md` |
+| `07_gpt_qa/` | **问答回路**：对上一轮 Phase H/I/J 任务的执行状态（已做完 6/7）、数据目录、提问模板；含审计正文与复算脚本/结果 | `07_gpt_qa/README.md`、`AVAILABLE_DATA.md`、`ANSWERS_ROUND_0.md`、`phase_hij_audit/` |
 | `MANIFEST.csv` | 全部文件清单（路径、字节、SHA256、原始路径） | — |
 
 ## 未包含（体积原因）
@@ -49,3 +50,14 @@
 1. 直接给它仓库地址 + TASK_BOOK_CHATGPT.md 的 raw 链接：https://raw.githubusercontent.com/bgzou/as2w-gpt-review-20261122/main/TASK_BOOK_CHATGPT.md
 2. 任务书要求它**只在对话里输出两份 md**（ROOT_CAUSE_ANALYSIS.md、NEXT_TRAINING_PLAN.md），不要写仓库。
 3. 若它读不到某些大文件，让它列出缺口，由人补贴内容；*.npz 是二进制，网页版无法解析，跳过即可。
+
+## 答复上一轮 GPT 任务书
+
+`07_gpt_qa/ANSWERS_ROUND_0.md` 是对 2026-11-21 那份《Phase H/I/J 最终证据审计任务》的**逐项执行状态**：
+
+- 7 项要求中 **6 项已完成**（Fn 来源、tau_est 术语、q 通道、H1 源码范围、5.872 Nm 复算、W_A 重评、J3 范围、产物）；
+- 第 3 项（I3 多分支）在 11-22 补做了同进程 240–480 s + 终态 ±0.1° 扰动，**4/4 通过**，升级为"两个观测到的局部稳定终态"；
+- 第 4 项（刚性圆柱 vs 有限接触区域对照）**未做**，因为缺实机接触斑/柔顺数据，做了也只能证明结构敏感性。
+- 审计正文与复算脚本/结果已上传到 `07_gpt_qa/phase_hij_audit/`。
+
+`07_gpt_qa/ANSWERS_ROUND_0.md` §4 列出了希望 GPT 回答的 Q1–Q6（实验排序、接触斑替代观测、Fy 反演、有限接触斑最小设计、I3 跨 dt、RL gate）。
