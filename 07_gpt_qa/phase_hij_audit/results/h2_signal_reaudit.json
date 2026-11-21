@@ -1,0 +1,1049 @@
+{
+  "interpretation_limit": "All windows are nominal static holds. Low correlation or a lag peak does not by itself identify motor bandwidth; tau_est is firmware-estimated, quantized and its filter is unknown.",
+  "lag_convention": "positive lag means tau_est later than tau_PD",
+  "sessions": {
+    "OG": {
+      "source": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\OG.npz",
+      "source_sha256": "cb11beda85a83c720addd577ab192f07ad44dcccd63923ef6f0e963a0556e203",
+      "window_s": [
+        17,
+        120
+      ],
+      "samples": 51500,
+      "sample_dt_s": 0.0019999999999988916,
+      "residual_rms_all_12_Nm": 0.12198801191296964,
+      "hip": {
+        "FL_hip": {
+          "tau_pd_mean_Nm": -4.294418062948348,
+          "tau_est_mean_Nm": -4.349571844660194,
+          "tau_pd_std_Nm": 0.02638048537617321,
+          "tau_est_std_Nm": 0.019327559263462867,
+          "residual_rms_Nm": 0.061920005433483076,
+          "tau_est_unique_levels": 5,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.27196825211694,
+          "corr_peak_plus_minus_20ms": 0.27196825211694,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.12559989142583788,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 49,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.02485948324574029,
+                "est_band_energy_fraction": 0.024763108994831914,
+                "median_coherence": 0.2735463967666384
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.0773433398466776,
+                "est_band_energy_fraction": 0.0804506829395144,
+                "median_coherence": 0.22328900688357917
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3698307944060264,
+                "est_band_energy_fraction": 0.39206379341465564,
+                "median_coherence": 0.1907596062385684
+              }
+            }
+          }
+        },
+        "FR_hip": {
+          "tau_pd_mean_Nm": 5.7434924726306775,
+          "tau_est_mean_Nm": 5.60993203883495,
+          "tau_pd_std_Nm": 0.0369456796640644,
+          "tau_est_std_Nm": 0.028054995275722916,
+          "residual_rms_Nm": 0.13879371961145567,
+          "tau_est_unique_levels": 6,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.3505794777521876,
+          "corr_peak_plus_minus_20ms": 0.3505794777521876,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.17238657396698734,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 49,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.02230514925418901,
+                "est_band_energy_fraction": 0.025596277513232412,
+                "median_coherence": 0.35867471301175
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.0795923703659293,
+                "est_band_energy_fraction": 0.0924184511869351,
+                "median_coherence": 0.34582313726516195
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3748485975655057,
+                "est_band_energy_fraction": 0.41275136290180453,
+                "median_coherence": 0.30500766826812364
+              }
+            }
+          }
+        },
+        "RL_hip": {
+          "tau_pd_mean_Nm": -5.915044109022136,
+          "tau_est_mean_Nm": -5.785967961165048,
+          "tau_pd_std_Nm": 0.029740590126888653,
+          "tau_est_std_Nm": 0.0291105182792049,
+          "residual_rms_Nm": 0.13327864525998204,
+          "tau_est_unique_levels": 6,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.36348222165811767,
+          "corr_peak_plus_minus_20ms": 0.36348222165811767,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.1850017035414153,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 49,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.02297877977258643,
+                "est_band_energy_fraction": 0.026041001926515327,
+                "median_coherence": 0.33461530945110335
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07667300610449941,
+                "est_band_energy_fraction": 0.08907672177801962,
+                "median_coherence": 0.31837231976226404
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3805216300529162,
+                "est_band_energy_fraction": 0.4044250705591459,
+                "median_coherence": 0.25925709054521173
+              }
+            }
+          }
+        },
+        "RR_hip": {
+          "tau_pd_mean_Nm": 4.4130299269281545,
+          "tau_est_mean_Nm": 4.463314563106797,
+          "tau_pd_std_Nm": 0.04063422972559859,
+          "tau_est_std_Nm": 0.03269755612068627,
+          "residual_rms_Nm": 0.06387304390955684,
+          "tau_est_unique_levels": 7,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.4399422315135905,
+          "corr_peak_plus_minus_20ms": 0.4399422315135905,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.26034206143279764,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 49,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.024237250849297627,
+                "est_band_energy_fraction": 0.02486945778466998,
+                "median_coherence": 0.4324008144323826
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.08347071955889163,
+                "est_band_energy_fraction": 0.09105539261697584,
+                "median_coherence": 0.43827291044177497
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3878816091061904,
+                "est_band_energy_fraction": 0.42578766439295823,
+                "median_coherence": 0.3701707898311579
+              }
+            }
+          }
+        }
+      }
+    },
+    "OS": {
+      "source": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\OS.npz",
+      "source_sha256": "d9e883b83ed77c6da7a5fbcbe0b5061a15110d1bb7b3faf6a23db970c9e60cc6",
+      "window_s": [
+        0,
+        60
+      ],
+      "samples": 29991,
+      "sample_dt_s": 0.002000000000000224,
+      "residual_rms_all_12_Nm": 0.11950722750557433,
+      "hip": {
+        "FL_hip": {
+          "tau_pd_mean_Nm": 2.1926555005995136,
+          "tau_est_mean_Nm": 2.07378588576573,
+          "tau_pd_std_Nm": 0.03258227620947634,
+          "tau_est_std_Nm": 0.02730775759014637,
+          "residual_rms_Nm": 0.12403598538173101,
+          "tau_est_unique_levels": 5,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.3104123019540283,
+          "corr_peak_plus_minus_20ms": 0.3104123019540283,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.22045061223613105,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 28,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.01779467651095754,
+                "est_band_energy_fraction": 0.02132155058353627,
+                "median_coherence": 0.2612440659408691
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07306955283582758,
+                "est_band_energy_fraction": 0.07762783825907922,
+                "median_coherence": 0.28109145129606106
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.32235726336486076,
+                "est_band_energy_fraction": 0.331635334949985,
+                "median_coherence": 0.16955147977601534
+              }
+            }
+          }
+        },
+        "FR_hip": {
+          "tau_pd_mean_Nm": -2.4313559504464686,
+          "tau_est_mean_Nm": -2.4956257710646526,
+          "tau_pd_std_Nm": 0.02809906977730132,
+          "tau_est_std_Nm": 0.02479602332128896,
+          "residual_rms_Nm": 0.07133232163597751,
+          "tau_est_unique_levels": 5,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.3205692941577764,
+          "corr_peak_plus_minus_20ms": 0.3205692941577764,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.1508475838873354,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 28,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.024008377508830666,
+                "est_band_energy_fraction": 0.027168912491791316,
+                "median_coherence": 0.40405737191803515
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07194052722044508,
+                "est_band_energy_fraction": 0.07801532259466934,
+                "median_coherence": 0.336095223642966
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.38164528769330097,
+                "est_band_energy_fraction": 0.4149982516463207,
+                "median_coherence": 0.2716963977191909
+              }
+            }
+          }
+        },
+        "RL_hip": {
+          "tau_pd_mean_Nm": 2.016815178537564,
+          "tau_est_mean_Nm": 2.0741630822580106,
+          "tau_pd_std_Nm": 0.024285265912372723,
+          "tau_est_std_Nm": 0.016022176044265264,
+          "residual_rms_Nm": 0.06295643226615241,
+          "tau_est_unique_levels": 4,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.22070512027400238,
+          "corr_peak_plus_minus_20ms": 0.22070512027400238,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.0993364342605458,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 28,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.024156217375201194,
+                "est_band_energy_fraction": 0.021419081425876042,
+                "median_coherence": 0.17234284579709275
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07492852405409801,
+                "est_band_energy_fraction": 0.08209121596717114,
+                "median_coherence": 0.21966212009298455
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.35309512451020897,
+                "est_band_energy_fraction": 0.3835061696412463,
+                "median_coherence": 0.15852128445523256
+              }
+            }
+          }
+        },
+        "RR_hip": {
+          "tau_pd_mean_Nm": -2.01281874670668,
+          "tau_est_mean_Nm": -1.8921855723383685,
+          "tau_pd_std_Nm": 0.031777908420366485,
+          "tau_est_std_Nm": 0.027542550278816216,
+          "residual_rms_Nm": 0.125725241526213,
+          "tau_est_unique_levels": 5,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.29360587717306125,
+          "corr_peak_plus_minus_20ms": 0.29360587717306125,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.16194223589192663,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 28,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.022871535135366716,
+                "est_band_energy_fraction": 0.026466335492191982,
+                "median_coherence": 0.2510670709313227
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07625924438152984,
+                "est_band_energy_fraction": 0.09763287965251843,
+                "median_coherence": 0.3277055559938721
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.33233010977694366,
+                "est_band_energy_fraction": 0.3856799992929363,
+                "median_coherence": 0.21297155073864876
+              }
+            }
+          }
+        }
+      }
+    },
+    "P55G1": {
+      "source": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\P55G1.npz",
+      "source_sha256": "0ec9c9aac3cde912ae0ac60d9829ea9bc48b6ea00de2120257ad3c7e963e8c36",
+      "window_s": [
+        10,
+        30
+      ],
+      "samples": 10000,
+      "sample_dt_s": 0.0019999999999988916,
+      "residual_rms_all_12_Nm": 0.1263941307556059,
+      "hip": {
+        "FL_hip": {
+          "tau_pd_mean_Nm": -11.308999894292,
+          "tau_est_mean_Nm": -11.330786250000001,
+          "tau_pd_std_Nm": 0.02868347914352494,
+          "tau_est_std_Nm": 0.03355132167199236,
+          "residual_rms_Nm": 0.03385443236334373,
+          "tau_est_unique_levels": 11,
+          "tau_est_min_level_step_Nm": 0.03750000000000142,
+          "corr_zero": 0.6634442453298878,
+          "corr_peak_plus_minus_20ms": 0.6701769381121935,
+          "peak_lag_ms": 1.9999999999988916,
+          "difference_corr_peak": 0.13122667067369706,
+          "difference_peak_lag_ms": 1.9999999999988916,
+          "spectrum": {
+            "segments": 8,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.02562678430155447,
+                "est_band_energy_fraction": 0.030516781037852794,
+                "median_coherence": 0.27242186251667333
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.06887335121909445,
+                "est_band_energy_fraction": 0.07768622524531761,
+                "median_coherence": 0.3835162185710429
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3811240070962002,
+                "est_band_energy_fraction": 0.37428984292330836,
+                "median_coherence": 0.2817660372207819
+              }
+            }
+          }
+        },
+        "FR_hip": {
+          "tau_pd_mean_Nm": 11.204320084548,
+          "tau_est_mean_Nm": 11.043724999999998,
+          "tau_pd_std_Nm": 0.01720645629182514,
+          "tau_est_std_Nm": 0.0207123000895605,
+          "residual_rms_Nm": 0.16224272856903146,
+          "tau_est_unique_levels": 8,
+          "tau_est_min_level_step_Nm": 0.049999999999998934,
+          "corr_zero": 0.2709703908372963,
+          "corr_peak_plus_minus_20ms": 0.32076544166651955,
+          "peak_lag_ms": 1.9999999999988916,
+          "difference_corr_peak": 0.1792809476247613,
+          "difference_peak_lag_ms": 1.9999999999988916,
+          "spectrum": {
+            "segments": 8,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.028184389856468168,
+                "est_band_energy_fraction": 0.023409899422899453,
+                "median_coherence": 0.3240115929579372
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07318216291900877,
+                "est_band_energy_fraction": 0.08101139013726623,
+                "median_coherence": 0.24346170168138073
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.37952870384507903,
+                "est_band_energy_fraction": 0.37233747460627126,
+                "median_coherence": 0.24541350467552084
+              }
+            }
+          }
+        },
+        "RL_hip": {
+          "tau_pd_mean_Nm": -13.328046880055998,
+          "tau_est_mean_Nm": -13.212433750000002,
+          "tau_pd_std_Nm": 0.030632243608877986,
+          "tau_est_std_Nm": 0.03175903392638858,
+          "residual_rms_Nm": 0.11690398658894878,
+          "tau_est_unique_levels": 20,
+          "tau_est_min_level_step_Nm": 0.037499999999999645,
+          "corr_zero": 0.8463913038647326,
+          "corr_peak_plus_minus_20ms": 0.8463913038647326,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.06342905079074415,
+          "difference_peak_lag_ms": 1.9999999999988916,
+          "spectrum": {
+            "segments": 8,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.021992355953294403,
+                "est_band_energy_fraction": 0.018012131466155556,
+                "median_coherence": 0.09921713663538838
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.0748183390363112,
+                "est_band_energy_fraction": 0.06588241160498311,
+                "median_coherence": 0.12675869849550883
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.35853631162419947,
+                "est_band_energy_fraction": 0.32918653293269234,
+                "median_coherence": 0.11048005811688393
+              }
+            }
+          }
+        },
+        "RR_hip": {
+          "tau_pd_mean_Nm": 12.9932694136,
+          "tau_est_mean_Nm": 13.032708750000003,
+          "tau_pd_std_Nm": 0.019409241145186558,
+          "tau_est_std_Nm": 0.02320688579791536,
+          "residual_rms_Nm": 0.04738690620857049,
+          "tau_est_unique_levels": 9,
+          "tau_est_min_level_step_Nm": 0.037499999999999645,
+          "corr_zero": 0.2500072648471051,
+          "corr_peak_plus_minus_20ms": 0.2500072648471051,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.1262131849358329,
+          "difference_peak_lag_ms": 1.9999999999988916,
+          "spectrum": {
+            "segments": 8,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.02121469148536643,
+                "est_band_energy_fraction": 0.019328609197179596,
+                "median_coherence": 0.19614023583158002
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.08152458615481721,
+                "est_band_energy_fraction": 0.06517435324449387,
+                "median_coherence": 0.20552081413352524
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3515259808254703,
+                "est_band_energy_fraction": 0.36583526418087964,
+                "median_coherence": 0.21884584291894094
+              }
+            }
+          }
+        }
+      }
+    },
+    "P55G2": {
+      "source": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\P55G2.npz",
+      "source_sha256": "44227e19a1681ab4f7da4e665142209765e6e31f3ac73b205201b14bf6f2f88b",
+      "window_s": [
+        8,
+        19
+      ],
+      "samples": 5500,
+      "sample_dt_s": 0.002000000000000668,
+      "residual_rms_all_12_Nm": 0.13369764276622298,
+      "hip": {
+        "FL_hip": {
+          "tau_pd_mean_Nm": -11.774866681447273,
+          "tau_est_mean_Nm": -11.805218181818182,
+          "tau_pd_std_Nm": 0.016350071590544586,
+          "tau_est_std_Nm": 0.024664524328082915,
+          "residual_rms_Nm": 0.036775864196479456,
+          "tau_est_unique_levels": 4,
+          "tau_est_min_level_step_Nm": 0.049999999999998934,
+          "corr_zero": 0.5510161715233126,
+          "corr_peak_plus_minus_20ms": 0.5523693567156567,
+          "peak_lag_ms": 2.000000000000668,
+          "difference_corr_peak": 0.09296254641091965,
+          "difference_peak_lag_ms": 2.000000000000668,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.023331869948320278,
+                "est_band_energy_fraction": 0.04587652995790823,
+                "median_coherence": 0.2231431654075359
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07963203446907431,
+                "est_band_energy_fraction": 0.07234656890967003,
+                "median_coherence": 0.2566791887710551
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.360393654876383,
+                "est_band_energy_fraction": 0.3698853447895839,
+                "median_coherence": 0.30831010346648735
+              }
+            }
+          }
+        },
+        "FR_hip": {
+          "tau_pd_mean_Nm": 11.853007691018183,
+          "tau_est_mean_Nm": 11.69473636363636,
+          "tau_pd_std_Nm": 0.020171254721430075,
+          "tau_est_std_Nm": 0.02486369287013638,
+          "residual_rms_Nm": 0.16053262100363755,
+          "tau_est_unique_levels": 4,
+          "tau_est_min_level_step_Nm": 0.049999999999998934,
+          "corr_zero": 0.30324433588218114,
+          "corr_peak_plus_minus_20ms": 0.30324433588218114,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.15986065039273478,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.02027936616917967,
+                "est_band_energy_fraction": 0.025118884216866533,
+                "median_coherence": 0.2314849003617726
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.08709961344592922,
+                "est_band_energy_fraction": 0.07447257030862556,
+                "median_coherence": 0.48025376670269854
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.374480570711338,
+                "est_band_energy_fraction": 0.37843900883365544,
+                "median_coherence": 0.4010871277782869
+              }
+            }
+          }
+        },
+        "RL_hip": {
+          "tau_pd_mean_Nm": -15.287955836487273,
+          "tau_est_mean_Nm": -15.153036363636364,
+          "tau_pd_std_Nm": 0.016377786467544828,
+          "tau_est_std_Nm": 0.023676005219219535,
+          "residual_rms_Nm": 0.1370687308102548,
+          "tau_est_unique_levels": 4,
+          "tau_est_min_level_step_Nm": 0.037499999999999645,
+          "corr_zero": 0.31490090493234146,
+          "corr_peak_plus_minus_20ms": 0.31490090493234146,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.16228334822213963,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.029694183010689556,
+                "est_band_energy_fraction": 0.026183151231324937,
+                "median_coherence": 0.5076533262422971
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.06930691618691433,
+                "est_band_energy_fraction": 0.07431991487329034,
+                "median_coherence": 0.4420778867907172
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.37927588021638964,
+                "est_band_energy_fraction": 0.3750497255477203,
+                "median_coherence": 0.40399299392562904
+              }
+            }
+          }
+        },
+        "RR_hip": {
+          "tau_pd_mean_Nm": 15.146302704145455,
+          "tau_est_mean_Nm": 15.18792272727273,
+          "tau_pd_std_Nm": 0.02180643361264641,
+          "tau_est_std_Nm": 0.017408616774934525,
+          "residual_rms_Nm": 0.0480036549905101,
+          "tau_est_unique_levels": 5,
+          "tau_est_min_level_step_Nm": 0.037499999999999645,
+          "corr_zero": 0.27192455790525394,
+          "corr_peak_plus_minus_20ms": 0.28994161572722676,
+          "peak_lag_ms": 2.000000000000668,
+          "difference_corr_peak": 0.17596587034784097,
+          "difference_peak_lag_ms": 2.000000000000668,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.017824738659161444,
+                "est_band_energy_fraction": 0.01928102572707925,
+                "median_coherence": 0.20617447735385847
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.05603643887264975,
+                "est_band_energy_fraction": 0.06996040812553778,
+                "median_coherence": 0.33198692085731346
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.34899074214606485,
+                "est_band_energy_fraction": 0.34582261269329084,
+                "median_coherence": 0.33551502986237525
+              }
+            }
+          }
+        }
+      }
+    },
+    "P55G3": {
+      "source": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\P55G3.npz",
+      "source_sha256": "869f08c29e79ebba8de2614e13bc4a61745c0a39e517a65110771a11b3380de3",
+      "window_s": [
+        7,
+        19
+      ],
+      "samples": 6000,
+      "sample_dt_s": 0.002000000000000668,
+      "residual_rms_all_12_Nm": 0.12627667682666627,
+      "hip": {
+        "FL_hip": {
+          "tau_pd_mean_Nm": -12.137036946306665,
+          "tau_est_mean_Nm": -12.185233333333333,
+          "tau_pd_std_Nm": 0.013230142520363154,
+          "tau_est_std_Nm": 0.013411272207446515,
+          "residual_rms_Nm": 0.05103436056715814,
+          "tau_est_unique_levels": 3,
+          "tau_est_min_level_step_Nm": 0.05000000000000071,
+          "corr_zero": 0.20651355617974265,
+          "corr_peak_plus_minus_20ms": 0.23111561377134662,
+          "peak_lag_ms": 2.000000000000668,
+          "difference_corr_peak": 0.08902023753135704,
+          "difference_peak_lag_ms": 2.000000000000668,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.03384642381178977,
+                "est_band_energy_fraction": 0.02532609584593177,
+                "median_coherence": 0.4157748820107716
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07291986312577936,
+                "est_band_energy_fraction": 0.053716802246193976,
+                "median_coherence": 0.20587973086602424
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3594530316002585,
+                "est_band_energy_fraction": 0.31899084830257945,
+                "median_coherence": 0.22981921871822764
+              }
+            }
+          }
+        },
+        "FR_hip": {
+          "tau_pd_mean_Nm": 12.183628624479999,
+          "tau_est_mean_Nm": 12.035733333333335,
+          "tau_pd_std_Nm": 0.014950042829888294,
+          "tau_est_std_Nm": 0.020590342936002894,
+          "residual_rms_Nm": 0.14961730746708096,
+          "tau_est_unique_levels": 3,
+          "tau_est_min_level_step_Nm": 0.049999999999998934,
+          "corr_zero": 0.21951399350507678,
+          "corr_peak_plus_minus_20ms": 0.21951399350507678,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.09440367000597094,
+          "difference_peak_lag_ms": 2.000000000000668,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.026518159509240954,
+                "est_band_energy_fraction": 0.02442481093061402,
+                "median_coherence": 0.3292204127361251
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07992334541477436,
+                "est_band_energy_fraction": 0.07630860017290532,
+                "median_coherence": 0.3843358441841699
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.36454051788877273,
+                "est_band_energy_fraction": 0.3792030504063942,
+                "median_coherence": 0.2891965377439347
+              }
+            }
+          }
+        },
+        "RL_hip": {
+          "tau_pd_mean_Nm": -15.377131920753333,
+          "tau_est_mean_Nm": -15.228179166666663,
+          "tau_pd_std_Nm": 0.011759598860673307,
+          "tau_est_std_Nm": 0.012855251169809682,
+          "residual_rms_Nm": 0.14979148185437408,
+          "tau_est_unique_levels": 3,
+          "tau_est_min_level_step_Nm": 0.037499999999999645,
+          "corr_zero": 0.17523202923199618,
+          "corr_peak_plus_minus_20ms": 0.17903008708073126,
+          "peak_lag_ms": 2.000000000000668,
+          "difference_corr_peak": 0.0862027998390446,
+          "difference_peak_lag_ms": 2.000000000000668,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.020817138244521756,
+                "est_band_energy_fraction": 0.018636258563087496,
+                "median_coherence": 0.20280470458174987
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07944696261503022,
+                "est_band_energy_fraction": 0.07106932463858283,
+                "median_coherence": 0.24326673899125484
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.37697130734657247,
+                "est_band_energy_fraction": 0.3393105677962233,
+                "median_coherence": 0.24776343429297848
+              }
+            }
+          }
+        },
+        "RR_hip": {
+          "tau_pd_mean_Nm": 15.136609921506667,
+          "tau_est_mean_Nm": 15.177314583333333,
+          "tau_pd_std_Nm": 0.01726617164341364,
+          "tau_est_std_Nm": 0.01691837006510134,
+          "residual_rms_Nm": 0.04542587538812477,
+          "tau_est_unique_levels": 4,
+          "tau_est_min_level_step_Nm": 0.037499999999999645,
+          "corr_zero": 0.30417981893768875,
+          "corr_peak_plus_minus_20ms": 0.30417981893768875,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.1972489454300904,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 4,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.01775888969957995,
+                "est_band_energy_fraction": 0.013075957384931626,
+                "median_coherence": 0.22991757305711613
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.06490873577379411,
+                "est_band_energy_fraction": 0.06511230562888208,
+                "median_coherence": 0.26536867662582764
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.3094388155685999,
+                "est_band_energy_fraction": 0.31979884226276817,
+                "median_coherence": 0.3452317560342114
+              }
+            }
+          }
+        }
+      }
+    },
+    "P55S": {
+      "source": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\P55S.npz",
+      "source_sha256": "a92ffda7d727ffd78d9ed701eb278e6762390cc017d3fb1cc951f61038582910",
+      "window_s": [
+        25,
+        90
+      ],
+      "samples": 32500,
+      "sample_dt_s": 0.0019999999999988916,
+      "residual_rms_all_12_Nm": 0.11926412432768657,
+      "hip": {
+        "FL_hip": {
+          "tau_pd_mean_Nm": 2.8806629015772303,
+          "tau_est_mean_Nm": 2.7710984615384615,
+          "tau_pd_std_Nm": 0.25996699315890653,
+          "tau_est_std_Nm": 0.25985422895409166,
+          "residual_rms_Nm": 0.11167421284840208,
+          "tau_est_unique_levels": 53,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.9965453276095636,
+          "corr_peak_plus_minus_20ms": 0.9965453276095636,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.1478539986376338,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 30,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.6225509105320025,
+                "est_band_energy_fraction": 0.6164781603720367,
+                "median_coherence": 0.9970673236077503
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.32532408798833434,
+                "est_band_energy_fraction": 0.3254125799717413,
+                "median_coherence": 0.9742765187353855
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.02411152051923952,
+                "est_band_energy_fraction": 0.025700345718880226,
+                "median_coherence": 0.17935012583790333
+              }
+            }
+          }
+        },
+        "FR_hip": {
+          "tau_pd_mean_Nm": -3.099003643012923,
+          "tau_est_mean_Nm": -3.1617369230769232,
+          "tau_pd_std_Nm": 0.09160698795240937,
+          "tau_est_std_Nm": 0.09241396426153643,
+          "residual_rms_Nm": 0.06616963381983387,
+          "tau_est_unique_levels": 61,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.9738768554192937,
+          "corr_peak_plus_minus_20ms": 0.9738768554192937,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.15088227090934136,
+          "difference_peak_lag_ms": 1.9999999999988916,
+          "spectrum": {
+            "segments": 30,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.7187649051460716,
+                "est_band_energy_fraction": 0.7135340712819374,
+                "median_coherence": 0.9986497859118778
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.25530291710560904,
+                "est_band_energy_fraction": 0.25043288928696905,
+                "median_coherence": 0.9710210048207579
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.01360644444736878,
+                "est_band_energy_fraction": 0.017458516645838053,
+                "median_coherence": 0.22157496125861112
+              }
+            }
+          }
+        },
+        "RL_hip": {
+          "tau_pd_mean_Nm": 2.8998495334313845,
+          "tau_est_mean_Nm": 2.9597284615384614,
+          "tau_pd_std_Nm": 0.2756895244778105,
+          "tau_est_std_Nm": 0.2753310617684757,
+          "residual_rms_Nm": 0.06356654308509745,
+          "tau_est_unique_levels": 59,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.997002269019813,
+          "corr_peak_plus_minus_20ms": 0.997002269019813,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.15821034304259352,
+          "difference_peak_lag_ms": 1.9999999999988916,
+          "spectrum": {
+            "segments": 30,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.4778294588404938,
+                "est_band_energy_fraction": 0.45716095128114936,
+                "median_coherence": 0.9916848234179024
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.4634125838503489,
+                "est_band_energy_fraction": 0.44219640985817826,
+                "median_coherence": 0.9788692573514924
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.03364377137680686,
+                "est_band_energy_fraction": 0.04705001905314126,
+                "median_coherence": 0.22874681885490739
+              }
+            }
+          }
+        },
+        "RR_hip": {
+          "tau_pd_mean_Nm": -3.1681580864836922,
+          "tau_est_mean_Nm": -3.056668076923077,
+          "tau_pd_std_Nm": 0.16635025909853698,
+          "tau_est_std_Nm": 0.16244615445218077,
+          "residual_rms_Nm": 0.11417523902826401,
+          "tau_est_unique_levels": 62,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.9890700177772905,
+          "corr_peak_plus_minus_20ms": 0.9890700177772905,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.17285942679302135,
+          "difference_peak_lag_ms": 1.9999999999988916,
+          "spectrum": {
+            "segments": 30,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.7191998562211005,
+                "est_band_energy_fraction": 0.7184986826027243,
+                "median_coherence": 0.9981435509225678
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.24213054486766944,
+                "est_band_energy_fraction": 0.2412767844096136,
+                "median_coherence": 0.9610809458205366
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.01807960722075538,
+                "est_band_energy_fraction": 0.018400196347401646,
+                "median_coherence": 0.21531630925325426
+              }
+            }
+          }
+        }
+      }
+    },
+    "P85DS": {
+      "source": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO\\部署参考\\as2w-sim2real-rootcause-bundle-20261121\\runs\\as2w_v2_simreal_rootcause_20261119\\qc\\a1_timelines\\P85DS.npz",
+      "source_sha256": "0827dc7b9cf32790b8b48fa2c8ab728bcf7c5869308f0ade2561bcddfd70fc86",
+      "window_s": [
+        48,
+        100
+      ],
+      "samples": 26000,
+      "sample_dt_s": 0.001999999999995339,
+      "residual_rms_all_12_Nm": 0.11988843440997972,
+      "hip": {
+        "FL_hip": {
+          "tau_pd_mean_Nm": 3.0774767864232304,
+          "tau_est_mean_Nm": 2.9725413461538466,
+          "tau_pd_std_Nm": 0.024031289694261392,
+          "tau_est_std_Nm": 0.021907272284725506,
+          "residual_rms_Nm": 0.10802725735874222,
+          "tau_est_unique_levels": 12,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.3789364342377618,
+          "corr_peak_plus_minus_20ms": 0.3789364342377618,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.11128637715634786,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 24,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.021143770981200002,
+                "est_band_energy_fraction": 0.023826874872410034,
+                "median_coherence": 0.208401459881844
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07470619400722835,
+                "est_band_energy_fraction": 0.08303944679542735,
+                "median_coherence": 0.22762696432461935
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.35180070333841457,
+                "est_band_energy_fraction": 0.3815674815944552,
+                "median_coherence": 0.18730584693117402
+              }
+            }
+          }
+        },
+        "FR_hip": {
+          "tau_pd_mean_Nm": -3.0560624193616923,
+          "tau_est_mean_Nm": -3.1238038461538467,
+          "tau_pd_std_Nm": 0.035948277656850276,
+          "tau_est_std_Nm": 0.031947778672862095,
+          "residual_rms_Nm": 0.07694850577021438,
+          "tau_est_unique_levels": 14,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.42698965848304055,
+          "corr_peak_plus_minus_20ms": 0.42698965848304055,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.1831143787421717,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 24,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.023094169362010284,
+                "est_band_energy_fraction": 0.025748500861756857,
+                "median_coherence": 0.4253996385521584
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.08061628172818448,
+                "est_band_energy_fraction": 0.08738160942392978,
+                "median_coherence": 0.42210084459844227
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.37721622164911445,
+                "est_band_energy_fraction": 0.40297262598766653,
+                "median_coherence": 0.3333459995228628
+              }
+            }
+          }
+        },
+        "RL_hip": {
+          "tau_pd_mean_Nm": 3.1157580516438466,
+          "tau_est_mean_Nm": 3.185527884615385,
+          "tau_pd_std_Nm": 0.034808833058722816,
+          "tau_est_std_Nm": 0.03177509140799886,
+          "residual_rms_Nm": 0.07566726513935959,
+          "tau_est_unique_levels": 23,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.6164283363477698,
+          "corr_peak_plus_minus_20ms": 0.6164283363477698,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.13566773294422152,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 24,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.022264629798720004,
+                "est_band_energy_fraction": 0.023118899399573806,
+                "median_coherence": 0.36832463071874333
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.08196903622069175,
+                "est_band_energy_fraction": 0.08379625980136617,
+                "median_coherence": 0.3060495423581882
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.35800442202789823,
+                "est_band_energy_fraction": 0.38555305976084353,
+                "median_coherence": 0.21033767983564194
+              }
+            }
+          }
+        },
+        "RR_hip": {
+          "tau_pd_mean_Nm": -2.957084236234923,
+          "tau_est_mean_Nm": -2.850479326923077,
+          "tau_pd_std_Nm": 0.022498032564709638,
+          "tau_est_std_Nm": 0.02721252372757598,
+          "residual_rms_Nm": 0.10994835628415725,
+          "tau_est_unique_levels": 13,
+          "tau_est_min_level_step_Nm": 0.04999999999999982,
+          "corr_zero": 0.42684126466044764,
+          "corr_peak_plus_minus_20ms": 0.42684126466044764,
+          "peak_lag_ms": 0.0,
+          "difference_corr_peak": 0.20364449458302103,
+          "difference_peak_lag_ms": 0.0,
+          "spectrum": {
+            "segments": 24,
+            "bands": {
+              "0.5-5Hz": {
+                "pd_band_energy_fraction": 0.029264601775281073,
+                "est_band_energy_fraction": 0.026567448692747984,
+                "median_coherence": 0.31669951271261365
+              },
+              "5-20Hz": {
+                "pd_band_energy_fraction": 0.07267821913619242,
+                "est_band_energy_fraction": 0.08824144498972818,
+                "median_coherence": 0.30981168565674194
+              },
+              "20-100Hz": {
+                "pd_band_energy_fraction": 0.38006216357542455,
+                "est_band_energy_fraction": 0.3899902859861923,
+                "median_coherence": 0.2601084966540812
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
