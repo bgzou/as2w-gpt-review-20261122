@@ -43,3 +43,9 @@
 5. 原始数据：`02_unitreestyle/sessions/.../data/*.csv`、`03_field_logs/INDEX.md`、`05_our_experiments/*/results/*.json`
 
 > 注意：`04_our_analysis/` 与 `06_deliverables/` 都是**人的分析**，可能与原始数据冲突；请以 `01/02/03/05` 的原始数据为准，并在你的报告里明确指出冲突。
+
+## 用网页版 GPT 打开时
+
+1. 直接给它仓库地址 + TASK_BOOK_CHATGPT.md 的 raw 链接：https://raw.githubusercontent.com/bgzou/as2w-gpt-review-20261122/main/TASK_BOOK_CHATGPT.md
+2. 任务书要求它**只在对话里输出两份 md**（ROOT_CAUSE_ANALYSIS.md、NEXT_TRAINING_PLAN.md），不要写仓库。
+3. 若它读不到某些大文件，让它列出缺口，由人补贴内容；*.npz 是二进制，网页版无法解析，跳过即可。
