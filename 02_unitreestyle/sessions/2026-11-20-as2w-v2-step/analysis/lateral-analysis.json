@@ -1,0 +1,30 @@
+{
+ "walk_frames": 877,
+ "duration_s": 17.52,
+ "cmd_max_abs": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "active_fraction": {
+  "vy": 0.0,
+  "wz": 0.0
+ },
+ "yaw_tracking_ratio": NaN,
+ "yaw_cmd_mean_when_active": 0.0,
+ "yaw_meas_mean_when_active": 0.0,
+ "leg_target_p2p_rad_mean": 0.3362,
+ "step_delta_rad_mean": 0.0342,
+ "signflip_fraction": 0.0962,
+ "leg_tracking_error_rad_mean": 0.0933,
+ "pitch_deg_mean": 2.49,
+ "pitch_deg_range": [
+  0.86,
+  3.82
+ ],
+ "roll_deg_mean": -1.91,
+ "roll_deg_range": [
+  -3.6,
+  0.05
+ ]
+}

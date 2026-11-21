@@ -1,0 +1,21 @@
+{
+  "swing_event": 0.08,
+  "loaded_lateral_slip": 0.2,
+  "landing_speed": 0.08,
+  "nonwheel_contact": 0.4,
+  "joint_soft_limit": 0.2,
+  "rolling_missing_wheel": 0.4,
+  "rolling_command_min_m_s": 0.15,
+  "rolling_grace_s": 0.24,
+  "rolling_unload_s": 0.1,
+  "landing_speed_free_m_s": 0.25,
+  "nonwheel_contact_force_n": 8.0,
+  "body_contact_stop_s": 0.08,
+  "soft_joint_limit_margin_fraction": 0.1,
+  "swing_coverage": 0.04,
+  "coverage_window_s": 2.0,
+  "credit_window_s": 2.0,
+  "credit_cap_per_wheel": 2,
+  "step_gate_floor": 0.25,
+  "step_gate_window_s": 1.0
+}

@@ -1,0 +1,11 @@
+{
+  "weight": "/root/gpufree-data/as2w-runs/him-dr10000-consolidate5000-n4Y47n/train/model_18200.pt",
+  "asset": "/root/as2w/unitree-flat-v2-dr/assets/as2w-t2-v2-mu025.usd",
+  "friction": 0.25,
+  "trials": 72,
+  "steps": 350,
+  "handoff_steps": 100,
+  "terminated_trials": 0,
+  "max_abs_pitch_deg": 6.7030205726623535,
+  "nonwheel_frames": 0
+}

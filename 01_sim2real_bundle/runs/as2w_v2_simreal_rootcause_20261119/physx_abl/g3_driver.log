@@ -1,0 +1,37 @@
+RUN S_mesh_real
+  rc 0
+RUN S_mesh_nearflat
+  rc 0
+RUN S_mesh_crouch
+  rc 0
+RUN S_cyl_real
+  rc 0
+RUN S_cyl_nearflat
+  rc 0
+RUN S_cyl_crouch
+  rc 0
+RUN G_mesh_real
+  rc 0
+RUN G_mesh_nearflat
+  rc 0
+RUN G_mesh_crouch
+  rc 0
+RUN G_cyl_real
+  rc 0
+RUN G_cyl_nearflat
+  rc 0
+RUN G_cyl_crouch
+  rc 0
+RUN GO_mesh_real
+  rc 0
+RUN GO_mesh_nearflat
+  rc 0
+RUN GO_mesh_crouch
+  rc 0
+RUN GO_cyl_real
+  rc 0
+RUN GO_cyl_nearflat
+  rc 0
+RUN GO_cyl_crouch
+  rc 0
+wrote combined matrix 36 rows

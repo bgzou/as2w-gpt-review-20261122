@@ -1,0 +1,32 @@
+{
+ "log": "debug_policy.csv",
+ "walk_frames": 1267,
+ "duration_s": 25.32,
+ "cmd_max_abs": [
+  0.01,
+  0.1,
+  0.1
+ ],
+ "cmd_active_fraction": {
+  "vx": 0.0,
+  "vy": 0.07576953433307025,
+  "wz": 0.3796369376479874
+ },
+ "yaw_cmd_mean_active": 0.0538,
+ "yaw_meas_mean_active": 0.0065,
+ "yaw_tracking_ratio": 0.079,
+ "leg_target_p2p_rad_mean": 0.4078,
+ "step_delta_rad_mean": 0.0293,
+ "signflip_fraction": 0.0785,
+ "leg_tracking_error_rad_mean": 0.1006,
+ "pitch_deg_mean": 0.14,
+ "pitch_deg_range": [
+  -2.2,
+  1.98
+ ],
+ "roll_deg_mean": -2.19,
+ "roll_deg_range": [
+  -5.91,
+  1.23
+ ]
+}

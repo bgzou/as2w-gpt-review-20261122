@@ -1,0 +1,4 @@
+RUN base_contacts
+  rc 0
+SUMMARY {"verdict": "SIM_RUN_CONFIRMED", "sum_Fz": 255.06, "weight_model": 255.06, "vertical_residual": 0.0, "horizontal_residual": [0.0, -0.0], "CoP_xy": [0.0163, 0.0009], "moment_about_CoM_Nm": 5.872, "moment_about_origin_Nm": 5.873, "per_contact_point": "UNKNOWN", "baseline_run": {"pitch_deg": 4.038, "hip_q": [0.1362, -0.1397, 0.2003, -0.1994], "hip_tau_Nm": [-7.49, 7.69, -11.02, 10.97], "Fn": [53.2, 52.71, 74.25, 75.43], "settle_ok": true}}
+wrote /home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/tables/I4_PHYSX_CONTACT_BALANCE

@@ -1,0 +1,48 @@
+{
+  "time": "2026-11-19T04:31:41.014830+08:00",
+  "current": "2026-11-19T04:31:22+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/update-500/slope-dr0 seed=319",
+  "base_completed_updates": 1889,
+  "base_process": {
+    "pid": 1965475,
+    "live": true,
+    "state": "S",
+    "command": "bash /root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/launch.sh /root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208 /root/as2w/unified_unitree_20261119-010208 /root/as2w/calibration/candidates/load-v0/as2w-load-v0.urdf "
+  },
+  "manager_process": {
+    "pid": 1967721,
+    "live": true,
+    "state": "S",
+    "command": "bash /root/as2w/unified_dr_20261119-013647/manager.sh /root/gpufree-data/as2w-runs/unified-dr-20261119-013647 "
+  },
+  "pack_process": {
+    "pid": 1969883,
+    "live": true,
+    "state": "S",
+    "command": "bash /root/as2w/unified_dr_20261119-013647/delivery/watch-pack.sh /root/gpufree-data/as2w-runs/unified-dr-20261119-013647 "
+  },
+  "base_train_log_modified_epoch": 1795033898.5651822,
+  "gpu": "15362 MiB, 30094 MiB, 73 %",
+  "base_metrics": {
+    "Mean reward": 55.26,
+    "Mean value loss": 0.0025,
+    "Mean surrogate loss": -0.0036,
+    "Mean action std": 25.13,
+    "Iteration time": 3.81
+  },
+  "stages": {
+    "1": {
+      "completed_updates": 600,
+      "selected": null
+    },
+    "2": {
+      "completed_updates": 0,
+      "selected": null
+    },
+    "3": {
+      "completed_updates": 0,
+      "selected": null
+    }
+  },
+  "final_candidate": null,
+  "archive": null
+}

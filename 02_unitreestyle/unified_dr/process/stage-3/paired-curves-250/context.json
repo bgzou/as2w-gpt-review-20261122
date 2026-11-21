@@ -1,0 +1,15 @@
+{
+  "scope": "Nominal flat, seed 319, first trial per command; figures are illustrative, gate.json covers all six trials.",
+  "old": "stage input",
+  "new": "DR3 update 250",
+  "plots": [
+    "forward-joint-angles.png",
+    "forward-wheel-normal-load.png",
+    "reverse-joint-angles.png",
+    "reverse-wheel-normal-load.png",
+    "left-joint-angles.png",
+    "left-wheel-normal-load.png",
+    "yaw_left-joint-angles.png",
+    "yaw_left-wheel-normal-load.png"
+  ]
+}

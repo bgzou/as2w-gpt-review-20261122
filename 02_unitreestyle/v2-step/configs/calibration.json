@@ -1,0 +1,122 @@
+{
+  "left": {
+    "FL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "FR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    }
+  },
+  "right": {
+    "FL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "FR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    }
+  },
+  "yaw_left": {
+    "FL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "FR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    }
+  },
+  "yaw_right": {
+    "FL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "FR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RL": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    },
+    "RR": {
+      "eligible": true,
+      "min_s": 0.06,
+      "max_s": 0.8,
+      "min_m": 0.015,
+      "max_m": 0.15
+    }
+  }
+}

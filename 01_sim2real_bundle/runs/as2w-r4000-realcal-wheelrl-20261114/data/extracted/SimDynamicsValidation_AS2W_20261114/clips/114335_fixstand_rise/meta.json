@@ -1,0 +1,27 @@
+{
+  "name": "114335_fixstand_rise",
+  "source_session": "20261113-114335_r4000",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 1647632,
+  "tick_end": 1650632,
+  "duration_s": 3.0,
+  "rate_hz": 500.0,
+  "n_cmd": 1491,
+  "n_state": 1501,
+  "test_tags": [
+    "step",
+    "actuator",
+    "fixstand"
+  ],
+  "states": [
+    "FixStand",
+    "FixedStand"
+  ],
+  "notes": "R4000 长会话的 FixStand 起立纯状态段",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

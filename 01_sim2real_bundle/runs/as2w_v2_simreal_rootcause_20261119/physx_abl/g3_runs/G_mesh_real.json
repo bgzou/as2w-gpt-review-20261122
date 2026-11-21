@@ -1,0 +1,93 @@
+{
+ "engine": "physx",
+ "scenario": "G",
+ "init_condition": "real",
+ "wheel_primitive": "mesh",
+ "hip_tau_Nm": [
+  -9.84,
+  10.29,
+  -10.63,
+  10.36
+ ],
+ "hip_q": [
+  0.179,
+  -0.187,
+  0.193,
+  -0.188
+ ],
+ "pitch_deg": 1.91,
+ "Fn": [
+  60.3,
+  52.5,
+  67.3,
+  76.9
+ ],
+ "n_contacts_per_wheel": [
+  -1,
+  -1,
+  -1,
+  -1
+ ],
+ "settle_ok": true,
+ "settle_time_s": 0.43,
+ "quat_xyzw": [
+  0.00024,
+  -0.01668,
+  0.00542,
+  0.99984
+ ],
+ "contact_pos_world": {
+  "FL_foot": null,
+  "FR_foot": null,
+  "RL_foot": null,
+  "RR_foot": null
+ },
+ "thigh_q": [
+  0.787,
+  0.727,
+  0.729,
+  0.747
+ ],
+ "calf_q": [
+  -1.733,
+  -1.729,
+  -1.781,
+  -1.808
+ ],
+ "thigh_tau": [
+  0.71,
+  4.03,
+  3.91,
+  2.92
+ ],
+ "calf_tau": [
+  7.31,
+  7.07,
+  9.95,
+  11.44
+ ],
+ "Fn_vec": [
+  [
+   -5.24,
+   1.32,
+   60.05
+  ],
+  [
+   6.23,
+   -8.58,
+   51.46
+  ],
+  [
+   2.26,
+   -1.31,
+   67.24
+  ],
+  [
+   -3.24,
+   8.57,
+   76.31
+  ]
+ ],
+ "total_mass_kg": 26.0,
+ "notes": "PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider"
+}

@@ -1,0 +1,92 @@
+== SHA after sync ==
+expect: publisher 9b0f464d8d15a54a  controller 00fda709ed7d5664  hpp 43ba5c3f4c382ae6
+        hipdiagCMake 1146895d6a00aa12  deploy.yaml 6d6bf1700a802ff3  deploy-p85d 99c6d18d68007d80  script 6b4cf6880f36035f
+9b0f464d8d15a54a00ac3779003ade7730adf483e3ae8e57f834558bf11f31ac  deploy/robots/as2w/common/as2w_publish.cpp
+00fda709ed7d566400f85619ceb839074470ba44e641b2f7f0f4996cc2d65567  deploy/robots/as2w/hipdiag/hipdiag_controller.cpp
+43ba5c3f4c382ae6fc5fa2c87fd8e8dd36ad2645e2c3299c9fe1db0d66b44115  deploy/robots/as2w/hipdiag/hipdiag_controller.hpp
+1146895d6a00aa1281485aef0771e33485b6afa6a8cdfc5ed2584354155bf805  deploy/robots/as2w/hipdiag/CMakeLists.txt
+6d6bf1700a802ff3cde5b5c81db0c0db8b23fcd344687cdc9ae7bb613f24dfa7  models/hipdiag/deploy.yaml
+99c6d18d68007d806879bda98eba9c15cf142b9d94cb50d18bb825653a1558f5  models/hipdiag/deploy-p85d.yaml
+6b4cf6880f36035fd6c50079910e4366a10a53cba8fedcaa6172b77a4ae8f2c1  tools/run_hipdiag_field_session.sh
+== cache options ==
+AS2W_ARMD:BOOL=OFF
+AS2W_GETUP1199:BOOL=OFF
+AS2W_HIMLOCO:BOOL=OFF
+AS2W_HIPDIAG:BOOL=ON
+AS2W_HIPDIAG_PUBLISH:BOOL=ON
+AS2W_R1199:BOOL=OFF
+AS2W_R152:BOOL=OFF
+AS2W_R2000A:BOOL=OFF
+AS2W_R214:BOOL=OFF
+AS2W_R249:BOOL=OFF
+AS2W_R270:BOOL=OFF
+AS2W_R284:BOOL=OFF
+AS2W_R4000:BOOL=OFF
+AS2W_R41:BOOL=OFF
+AS2W_T15:BOOL=OFF
+AS2W_UNITREE58:BOOL=OFF
+AS2W_WITH_SDK2:BOOL=OFF
+CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_PREFIX_PATH:UNINITIALIZED=/root/unitree_sdk2_install
+CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+CMAKE_GENERATOR_INSTANCE:INTERNAL=
+CMAKE_GENERATOR_PLATFORM:INTERNAL=
+CMAKE_GENERATOR_TOOLSET:INTERNAL=
+== configure ==
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/as2w_deploy/build-hipdiag
+CONFIGURE_RC=0
+== build ==
+Consolidate compiler generated dependencies of target as2w_policy
+Consolidate compiler generated dependencies of target as2w_hipdiag
+[  5%] Building CXX object deploy/robots/as2w/hipdiag/CMakeFiles/as2w_hipdiag_p85d.dir/hipdiag_controller.cpp.o
+[ 16%] Built target as2w_policy
+[ 22%] Building CXX object deploy/robots/as2w/hipdiag/CMakeFiles/as2w_hipdiag.dir/hipdiag_controller.cpp.o
+Consolidate compiler generated dependencies of target as2w_deploy
+Consolidate compiler generated dependencies of target as2w_bench
+[ 33%] Built target as2w_bench
+[ 44%] Built target as2w_deploy
+Consolidate compiler generated dependencies of target as2w_controller_test
+[ 55%] Built target as2w_controller_test
+[ 61%] Linking CXX static library libas2w_hipdiag_p85d.a
+[ 66%] Linking CXX static library libas2w_hipdiag.a
+[ 66%] Built target as2w_hipdiag_p85d
+[ 66%] Built target as2w_hipdiag
+[ 72%] Building CXX object deploy/robots/as2w/hipdiag/CMakeFiles/as2w_hipdiag_publish_p85d.dir/__/common/as2w_publish.cpp.o
+Consolidate compiler generated dependencies of target as2w_hipdiag_plan_audit
+Consolidate compiler generated dependencies of target as2w_hipdiag_publish
+[ 77%] Linking CXX executable as2w_hipdiag_plan_audit
+[ 83%] Building CXX object deploy/robots/as2w/hipdiag/CMakeFiles/as2w_hipdiag_publish.dir/__/common/as2w_publish.cpp.o
+[ 88%] Built target as2w_hipdiag_plan_audit
+[ 94%] Linking CXX executable as2w_hipdiag_publish_p85d
+[100%] Linking CXX executable as2w_hipdiag_publish
+[100%] Built target as2w_hipdiag_publish_p85d
+[100%] Built target as2w_hipdiag_publish
+BUILD_RC=0
+== ctest ==
+Internal ctest changing into directory: /root/as2w_deploy/build-hipdiag
+Test project /root/as2w_deploy/build-hipdiag
+    Start 1: recovery-r09
+1/9 Test #1: recovery-r09 .....................   Passed    0.01 sec
+    Start 2: recovery-r12
+2/9 Test #2: recovery-r12 .....................   Passed    0.01 sec
+    Start 3: recovery-r13
+3/9 Test #3: recovery-r13 .....................   Passed    0.01 sec
+    Start 4: stairs-r14
+4/9 Test #4: stairs-r14 .......................   Passed    0.01 sec
+    Start 5: stairs-r17-2000
+5/9 Test #5: stairs-r17-2000 ..................   Passed    0.02 sec
+    Start 6: stairs-r17-3000
+6/9 Test #6: stairs-r17-3000 ..................   Passed    0.02 sec
+    Start 7: controller
+7/9 Test #7: controller .......................   Passed    0.01 sec
+    Start 8: hipdiag-startup-audit
+8/9 Test #8: hipdiag-startup-audit ............   Passed    0.04 sec
+    Start 9: hipdiag-p85d-startup-audit
+9/9 Test #9: hipdiag-p85d-startup-audit .......   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 9
+
+Total Test time (real) =   0.18 sec
+CTEST_RC=0

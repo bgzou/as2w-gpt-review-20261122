@@ -1,0 +1,60 @@
+{
+  "status": "research_only",
+  "selected_label": "incoming",
+  "isaac_gate_pass": false,
+  "second_sim": "not_run",
+  "cpro_arm64": "not_run",
+  "field": "not_run",
+  "output_checkpoint": "model/policy.pt",
+  "onnx": "model/policy.onnx",
+  "obs_and_action_contract": "runtime/contract.json",
+  "control_reference": "runtime/runtime.py",
+  "cpro_cpp_adapter": "runtime/cpro_ort_adapter.hpp",
+  "cpro_cpp_onnx_version": "1.22.0",
+  "cpro_cpp_math_replay": "runtime/cpro_math_replay.cpp",
+  "evaluation": "simulation",
+  "tape_parity": "replay",
+  "training_and_provenance": "source",
+  "sha256_manifest": "SHA256SUMS.txt",
+  "model/policy.pt_sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+  "model/policy.onnx_sha256": "c909f68033f6efc84eef82187d3e837505889aeb75e7dec8d470ebf460536d69",
+  "simulation/assets/load-v0/as2w-load-v0.urdf_sha256": "7c9740a95042bad7b73cadfda90bdc7c1873ac766afbb7c0e7e492367d45afb0",
+  "stage_initializations": {
+    "1": {
+      "file": "model/stage-1-initialization.pt",
+      "sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+      "run_config": "source/stages/stage-1/run.json",
+      "source": "source/stages/stage-1/source-snapshot",
+      "source_hashes": "source/stages/stage-1/source-sha256.json"
+    },
+    "2": {
+      "file": "model/stage-2-initialization.pt",
+      "sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+      "run_config": "source/stages/stage-2/run.json",
+      "source": "source/stages/stage-2/source-snapshot",
+      "source_hashes": "source/stages/stage-2/source-sha256.json"
+    },
+    "3": {
+      "file": "model/stage-3-initialization.pt",
+      "sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+      "run_config": "source/stages/stage-3/run.json",
+      "source": "source/stages/stage-3/source-snapshot",
+      "source_hashes": "source/stages/stage-3/source-sha256.json"
+    }
+  },
+  "checkpoint_origin": "/root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/train/model_1000.pt",
+  "checkpoint_provenance_chain": [
+    "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/incoming/checkpoint.pt",
+    "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/incoming/checkpoint.pt",
+    "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/incoming/checkpoint.pt",
+    "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1000/checkpoint.pt",
+    "/root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/train/model_1000.pt"
+  ],
+  "training_initialization_sha256": null,
+  "selected_matches_stage_initializations": [
+    1,
+    2,
+    3
+  ],
+  "selected_gate_failure_count": 31
+}

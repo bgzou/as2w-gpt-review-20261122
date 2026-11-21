@@ -1,0 +1,6 @@
+AS2W_PHASE_REWARD 0.02 offset 1220 resume_sha256 d8402f10e85956bc9dd5fcdcaa91e5e14d63cdb4fc55d46b96a2e0186f571a50
+AS2W_RESUME <RUN>/source/best.pt runner_iteration=1220
+AS2W_PHASE_METRICS {"completed_updates": 1221, "short_reversal_cost": 0.011896971613168716, "phase_coverage": 0.079345703125}
+                            Total steps: 393216
+AS2W_TRAIN_SMOKE_OK
+SMOKE_EXIT=0

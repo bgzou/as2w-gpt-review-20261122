@@ -1,0 +1,113 @@
+{
+  "real_walk": {
+    "20261117-184650_lp5w-joystick": {
+      "worst_pitch_deg": -25.688475437447266,
+      "worst_time_from_walk_s": 24.34000671900867,
+      "vx_at_worst": 0.0,
+      "active_pitch_mean_deg": -11.291697247502835,
+      "active_pitch_min_deg": -25.092796265175554,
+      "last5_pitch_mean_deg": -22.98673546562496,
+      "encoder_mean_net_angle_rad": -2.501072828110459,
+      "lowcmd_tick_age_p99_within_capture_overlap": 2.0
+    },
+    "20261117-191852_lp5w-joystick": {
+      "worst_pitch_deg": -18.672358969351045,
+      "worst_time_from_walk_s": 37.44001874999958,
+      "vx_at_worst": 0.0,
+      "active_pitch_mean_deg": -7.295217360167195,
+      "active_pitch_min_deg": -10.020638373899816,
+      "last5_pitch_mean_deg": -17.97802122284995,
+      "encoder_mean_net_angle_rad": 3.392791208712234,
+      "lowcmd_tick_age_p99_within_capture_overlap": 2.0
+    }
+  },
+  "fixedstand_intervals": [
+    {
+      "session": "20261117-184650_lp5w-joystick",
+      "state": "FixedStand",
+      "start_elapsed_s": 28.25,
+      "end_elapsed_s": 30.47,
+      "last_1s_pitch_mean": -7.722539148210984,
+      "last_1s_leg_kp": [
+        55.0
+      ]
+    },
+    {
+      "session": "20261117-191631_lp5w-joystick",
+      "state": "FixedStand",
+      "start_elapsed_s": 22.842,
+      "end_elapsed_s": 50.9,
+      "last_1s_pitch_mean": -2.1165251908431704,
+      "last_1s_leg_kp": [
+        55.0
+      ]
+    },
+    {
+      "session": "20261117-191852_lp5w-joystick",
+      "state": "FixedStand",
+      "start_elapsed_s": 19.38,
+      "end_elapsed_s": 25.338,
+      "last_1s_pitch_mean": -2.315568741134589,
+      "last_1s_leg_kp": [
+        55.0
+      ]
+    },
+    {
+      "session": "20261117-191852_lp5w-joystick",
+      "state": "FixedStand",
+      "start_elapsed_s": 80.38,
+      "end_elapsed_s": 84.536,
+      "last_1s_pitch_mean": -18.109566129747954,
+      "last_1s_leg_kp": [
+        55.0
+      ]
+    }
+  ],
+  "mujoco_legs_only_lp5": {
+    "hold": {
+      "vx_tail_range": [
+        0.002061898974633011,
+        0.00440506003146958
+      ],
+      "max_total_tilt_deg": 6.3440698029464935
+    },
+    "straight_fwd_0.25": {
+      "vx_tail_range": [
+        0.26462885270808406,
+        0.2651968471164646
+      ],
+      "max_total_tilt_deg": 10.855318757597347
+    },
+    "straight_bwd_0.25": {
+      "vx_tail_range": [
+        -0.2774865275221892,
+        -0.2771901784099276
+      ],
+      "max_total_tilt_deg": 2.9272545961842376
+    },
+    "brake_fwd_0.25": {
+      "vx_tail_range": [
+        -0.006469494983233962,
+        -0.005651980502731628
+      ],
+      "max_total_tilt_deg": 10.291096839436662
+    },
+    "brake_bwd_0.25": {
+      "vx_tail_range": [
+        0.01525679465402751,
+        0.015937534138854084
+      ],
+      "max_total_tilt_deg": 5.428425103976389
+    }
+  },
+  "onnx_sha256": {
+    "\u90e8\u7f72\u53c2\u8003/Rob2Nav-deploy-as2w-lp5-1k-20261117/weights/policy.onnx": "f8beec2dc7caa7b609a4f93d99da0a88040a7d3a93ce14ec74e92311cdcfe131",
+    "\u90e8\u7f72\u53c2\u8003/cpp_deploy-as2w/models/armd-lp5/policy.onnx": "f8beec2dc7caa7b609a4f93d99da0a88040a7d3a93ce14ec74e92311cdcfe131"
+  },
+  "notes": [
+    "No body odometry: wheel encoder distance is not measured body travel.",
+    "No per-joint simulation traces in the cited matrix JSON; no paired joint RMSE asserted.",
+    "Simulator tilt derived from upright is total tilt, not signed pitch.",
+    "Real sessions filter legs and wheels; Isaac archived run filters legs only."
+  ]
+}

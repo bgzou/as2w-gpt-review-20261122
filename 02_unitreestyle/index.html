@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AS2-W 训练与部署 · 交互任务书（2026-11-21）</title>
+<style>
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --ink:#132033; --muted:#5b6b85; --line:#e2e8f2;
+  --brand:#2563eb; --brand2:#0ea5e9; --ok:#16a34a; --warn:#d97706; --bad:#dc2626;
+  --purple:#7c3aed; --teal:#0d9488; --pink:#db2777;
+  --shadow:0 1px 2px rgba(19,32,51,.06),0 8px 24px rgba(19,32,51,.08);
+  --radius:14px;
+  --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.7 "Segoe UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand); text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:var(--mono); font-size:.86em; background:#eef3fb; border:1px solid #dde7f6; border-radius:5px; padding:.1em .35em; overflow-wrap:anywhere}
+pre{background:#0f172a; color:#e2e8f0; padding:14px 16px; border-radius:10px; overflow:auto; font-size:13px; line-height:1.6}
+pre code{background:none;border:none;padding:0;color:inherit}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+.topbar{
+  position:sticky; top:0; z-index:50; backdrop-filter:blur(10px);
+  background:rgba(245,247,251,.86); border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex; align-items:center; gap:14px; min-height:58px; flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em}
+.brand .dot{width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 0 0 4px #dbeafe}
+.brand small{font-weight:600;color:var(--muted);font-size:12px}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+.nav a{padding:6px 11px;border-radius:999px;color:var(--muted);font-size:13.5px;font-weight:600}
+.nav a:hover{background:#e8eefa;text-decoration:none;color:var(--brand)}
+.nav a.active{background:var(--brand);color:#fff}
+main{padding:26px 0 70px}
+section{margin:0 0 30px; scroll-margin-top:76px}
+.sec-head{display:flex;align-items:flex-end;gap:12px;margin:0 0 14px;flex-wrap:wrap}
+.sec-head h2{margin:0;font-size:24px;letter-spacing:.01em}
+.sec-head .sub{color:var(--muted);font-size:14px}
+.sec-no{font-family:var(--mono);font-size:13px;color:var(--brand);background:#e8efff;border:1px solid #d5e3ff;border-radius:8px;padding:2px 8px;font-weight:700}
+
+/* ---------- cards / grids ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.card.pad{padding:18px 20px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1000px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;border-radius:20px;padding:30px 30px 26px;color:#fff;
+  background:
+    radial-gradient(1000px 380px at 10% -10%,rgba(56,189,248,.45),transparent 60%),
+    radial-gradient(700px 320px at 95% 0%,rgba(124,58,237,.4),transparent 55%),
+    linear-gradient(135deg,#0f172a,#15305c 60%,#0b3b63);
+  box-shadow:var(--shadow);
+}
+.hero h1{margin:6px 0 10px;font-size:clamp(24px,3.2vw,38px);line-height:1.25;letter-spacing:.01em}
+.hero p{margin:0;color:#c9d8ee;max-width:900px;font-size:15.5px}
+.hero .kicker{font-size:13px;letter-spacing:.14em;color:#7dd3fc;font-weight:700}
+.hero .metas{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.hero .metas span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:4px 11px;border-radius:999px;font-size:12.5px;color:#e2e8f0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.stat .n{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.stat .l{color:var(--muted);font-size:12.5px;margin-top:2px}
+.stat .n small{font-size:13px;font-weight:700;color:var(--muted)}
+
+/* ---------- chips / badges / buttons ---------- */
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;
+  padding:6px 13px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.15s;font-family:inherit
+}
+.chip:hover{border-color:#c3d3ef;color:var(--brand);background:#f3f8ff}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.chip.sm{padding:3px 9px;font-size:12px}
+.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:700;border:1px solid}
+.b-ok{background:#e8f7ee;border-color:#bfe8cd;color:#14803c}
+.b-warn{background:#fdf3e4;border-color:#f3dcb7;color:#a4620b}
+.b-bad{background:#fdeaea;border-color:#f6c7c7;color:#b31b1b}
+.b-info{background:#e8efff;border-color:#cfdcff;color:#1d4ed8}
+.b-mute{background:#f1f5f9;border-color:#e2e8f0;color:#64748b}
+.b-purple{background:#f3ecff;border-color:#e2d4ff;color:#6d28d9}
+.btn{
+  font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:10px;
+  border:1px solid var(--brand);background:var(--brand);color:#fff;padding:8px 15px;transition:.15s
+}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:#fff;color:var(--brand);border-color:#c9d8f5}
+.btn.ghost:hover{background:#f1f6ff}
+.btn.mini{padding:5px 10px;font-size:12.5px;border-radius:8px}
+
+/* ---------- tables ---------- */
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13.8px;min-width:640px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f2f6fd;color:#33415c;font-size:12.5px;letter-spacing:.02em;position:sticky;top:0;z-index:2}
+tbody tr:hover{background:#f8fbff}
+tbody tr:last-child td{border-bottom:none}
+td.center,th.center{text-align:center}
+.mono{font-family:var(--mono);font-size:12.8px}
+.dim{opacity:.38}
+.hl{background:#eef4ff}
+.newv{display:inline-block;font-size:10.5px;font-weight:800;color:#fff;background:var(--purple);border-radius:4px;padding:0 5px;margin-right:6px;vertical-align:1px}
+
+/* ---------- pipeline ---------- */
+.pipe{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+@media(max-width:900px){.pipe{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pstep{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;transition:.16s;position:relative
+}
+.pstep:hover{border-color:#c3d3ef;transform:translateY(-1px)}
+.pstep.on{border-color:var(--brand);box-shadow:0 0 0 3px #dbe7ff}
+.pstep .code{font-family:var(--mono);font-size:11.5px;font-weight:800;color:var(--brand)}
+.pstep h4{margin:3px 0 4px;font-size:14.5px}
+.pstep p{margin:0;color:var(--muted);font-size:12.3px;line-height:1.5}
+.pdetail{margin-top:14px}
+.plist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media(max-width:900px){.plist{grid-template-columns:1fr}}
+.pblock{background:#f8fbff;border:1px solid #e4ecfa;border-radius:12px;padding:12px 14px}
+.pblock h5{margin:0 0 6px;font-size:13px;color:#33415c;letter-spacing:.02em}
+.pblock ul{margin:0;padding-left:18px;font-size:13.3px;color:#334155}
+.pblock li{margin:2px 0}
+.pblock ul.tight{padding-left:0;list-style:none}
+.pblock ul.tight li{display:flex;gap:7px}
+.pblock ul.tight li::before{content:"▸";color:var(--brand2);font-weight:800}
+
+/* ---------- reward ---------- */
+.reward-top{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.reward-layout{display:grid;grid-template-columns:1fr 360px;gap:14px;align-items:start}
+@media(max-width:1080px){.reward-layout{grid-template-columns:1fr}}
+.rdetail{position:sticky;top:80px}
+.rdetail .empty{color:var(--muted);font-size:13.5px}
+.term{cursor:pointer}
+.term.active{background:#eef4ff}
+.term.active td{font-weight:600}
+.weightbar{display:flex;align-items:center;gap:8px}
+.weightbar .bar{height:8px;border-radius:999px;background:linear-gradient(90deg,#93c5fd,#2563eb);min-width:2px;max-width:70px}
+.formula{font-family:var(--mono);font-size:12.3px;background:#0f172a;color:#dbeafe;padding:8px 10px;border-radius:8px;overflow:auto;white-space:pre-wrap;line-height:1.55}
+.kv{display:grid;grid-template-columns:78px 1fr;gap:6px 10px;font-size:13.2px;margin:10px 0}
+.kv dt{color:var(--muted);font-weight:700}
+.kv dd{margin:0}
+
+/* ---------- dr ---------- */
+.dr-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.dr-tab{
+  flex:1 1 180px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer;font-family:inherit;transition:.15s
+}
+.dr-tab:hover{border-color:#c3d3ef}
+.dr-tab.on{border-color:var(--brand);box-shadow:0 0 0 3px #dbe7ff}
+.dr-tab .tag{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--brand)}
+.dr-tab b{display:block;font-size:14.5px;margin:2px 0}
+.dr-tab small{color:var(--muted);font-size:12px}
+.sampler{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}
+@media(max-width:900px){.sampler{grid-template-columns:1fr}}
+.envgrid{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.env{aspect-ratio:1;border-radius:7px;border:1px solid rgba(15,23,42,.12);cursor:pointer;transition:.12s;position:relative}
+.env:hover{transform:scale(1.08);z-index:2;box-shadow:0 4px 14px rgba(15,23,42,.2)}
+.env.sel{outline:3px solid #0f172a;outline-offset:1px}
+.sampler-side{background:#f8fbff;border:1px solid #e4ecfa;border-radius:12px;padding:12px 14px;min-height:180px}
+.sampler-side h5{margin:0 0 8px;font-size:13px}
+.srow{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:3px 0;border-bottom:1px dashed #e2e8f0}
+.srow:last-child{border-bottom:none}
+.srow b{font-family:var(--mono);font-size:12.5px}
+.legend-scale{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--muted);margin-top:8px}
+.legend-scale .g{height:10px;width:120px;border-radius:999px;background:linear-gradient(90deg,#fca5a5,#fcd34d,#86efac,#3b82f6)}
+.principle{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.principle:last-child{border-bottom:none}
+.principle .num{flex:0 0 30px;height:30px;border-radius:9px;background:#e8efff;color:var(--brand);font-weight:800;display:grid;place-items:center;font-size:13px}
+.principle b{display:block;font-size:14px}
+.principle p{margin:2px 0 0;color:var(--muted);font-size:13px}
+
+/* ---------- envelope / config ---------- */
+.env-card{padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.env-card h4{margin:0 0 2px;font-size:14.5px}
+.env-card .cat{font-size:11.5px;color:var(--brand);font-weight:700;letter-spacing:.04em}
+.env-card dl{margin:8px 0 0;display:grid;grid-template-columns:64px 1fr;gap:4px 8px;font-size:12.8px}
+.env-card dt{color:var(--muted);font-weight:700}
+.env-card dd{margin:0}
+.searchrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.input{
+  flex:1 1 260px;min-width:200px;padding:9px 13px;border-radius:10px;border:1px solid var(--line);
+  font:inherit;font-size:14px;background:#fff;color:var(--ink)
+}
+.input:focus{outline:2px solid #bfdbfe;border-color:var(--brand)}
+.count{font-size:12.5px;color:var(--muted)}
+
+/* ---------- deploy / problems ---------- */
+.prob{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.prob-h{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;cursor:pointer}
+.prob-h:hover{background:#f8fbff}
+.prob-h .idx{flex:0 0 30px;height:30px;border-radius:8px;background:#fdeaea;color:#b31b1b;display:grid;place-items:center;font-weight:800;font-size:12.5px}
+.prob-h b{font-size:14px;line-height:1.45}
+.prob-h .tags{margin-top:4px;display:flex;gap:5px;flex-wrap:wrap}
+.prob-h .arrow{margin-left:auto;color:var(--muted);transition:.2s;font-size:12px}
+.prob.open .arrow{transform:rotate(90deg)}
+.prob-b{display:none;padding:0 14px 14px 54px;font-size:13.3px}
+.prob.open .prob-b{display:block}
+.prob-b p{margin:6px 0}
+.prob-b .lab{font-weight:800;color:#33415c;margin-right:6px}
+.prob-b .fix{background:#eefaf1;border:1px solid #cdeedd;border-radius:9px;padding:8px 11px;margin-top:8px}
+.prob-b .prev{background:#fdf8ec;border:1px solid #f3e3bd;border-radius:9px;padding:8px 11px;margin-top:8px}
+.flowline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media(max-width:900px){.flowline{grid-template-columns:1fr}}
+.fstep{background:#f8fbff;border:1px solid #e4ecfa;border-radius:12px;padding:11px 12px}
+.fstep .k{font-family:var(--mono);font-weight:800;color:var(--brand);font-size:12px}
+.fstep b{display:block;margin:2px 0 4px;font-size:13.5px}
+.fstep small{color:var(--muted);font-size:12.3px;display:block;line-height:1.5}
+.state{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12.8px}
+.state .s{background:#eef4ff;border:1px solid #d5e3ff;color:#1e40af;border-radius:8px;padding:3px 9px;font-weight:700}
+.state .a{color:var(--muted);font-weight:800}
+
+/* ---------- checklist ---------- */
+.ck-group{margin-bottom:14px}
+.ck-group h4{margin:0 0 8px;font-size:14px;color:#33415c}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:9px;border:1px solid transparent;cursor:pointer;font-size:13.6px}
+.ck:hover{background:#f4f9ff;border-color:#e2ecfb}
+.ck input{margin:3px 0 0;width:16px;height:16px;accent-color:var(--brand);cursor:pointer}
+.ck.done span{color:var(--muted);text-decoration:line-through}
+.ck small{display:block;color:var(--muted);font-size:12.2px;margin-top:1px}
+.progress{height:10px;border-radius:999px;background:#e6edf8;overflow:hidden;flex:1;min-width:160px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand2),var(--brand));transition:width .25s}
+.ck-bar{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.ck-bar .pct{font-family:var(--mono);font-weight:800;font-size:13px;color:var(--brand)}
+
+/* ---------- misc ---------- */
+.callout{border-left:4px solid var(--brand);background:#f3f8ff;border-radius:0 10px 10px 0;padding:12px 16px;font-size:14px;margin:12px 0}
+.callout.warn{border-left-color:var(--warn);background:#fdf8ee}
+.callout.bad{border-left-color:var(--bad);background:#fdf2f2}
+.callout.ok{border-left-color:var(--ok);background:#f0fbf3}
+.callout b{color:#0f2a55}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.mini-list{margin:0;padding-left:18px;font-size:13.6px}
+.mini-list li{margin:4px 0}
+.gloss{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(max-width:900px){.gloss{grid-template-columns:1fr}}
+.gloss div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:13.4px}
+.gloss b{display:block;font-size:13.6px;margin-bottom:2px}
+.gloss span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13px}
+.src-list{columns:2;column-gap:26px;font-size:12.8px;color:var(--muted)}
+@media(max-width:800px){.src-list{columns:1}}
+.src-list div{break-inside:avoid;margin-bottom:5px}
+.to-top{position:fixed;right:18px;bottom:18px;z-index:40;width:44px;height:44px;border-radius:50%;display:none;place-items:center;font-size:18px}
+@media print{
+  .topbar,.to-top{display:none!important}
+  body{background:#fff}
+  section{break-inside:avoid-page}
+  .card,.stat,.prob{box-shadow:none}
+  .prob-b{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>AS2-W 训练与部署 <small>交互任务书 · 2026-11-21</small></div>
+    <nav class="nav" id="nav">
+      <a href="#overview">总览</a>
+      <a href="#pipeline">训练流程</a>
+      <a href="#reward">任务 × 奖励</a>
+      <a href="#dr">域随机化</a>
+      <a href="#envelope">包络</a>
+      <a href="#config">配置字典</a>
+      <a href="#deploy">部署问题</a>
+      <a href="#checklist">检查清单</a>
+      <a href="#glossary">术语</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ HERO / OVERVIEW ============ -->
+<section id="overview">
+  <div class="hero">
+    <div class="kicker">AS2-W · LEGGED WHEELED ROBOT</div>
+    <h1>从零看懂 AS2-W 怎么训练：<br>合同、包络、奖励、随机化、验收、上机</h1>
+    <p>这份交互页面把仓库里的训练配方、失败教训和实机问题整理成可点开的结构：每个任务该开哪些奖励、域随机化是串行还是并行、每个配置项什么时候改、上机前踩过哪些坑。配套长文档见同目录 Markdown 任务书。</p>
+    <div class="metas">
+      <span>数据源：仓库提交 740b5df</span>
+      <span>v2-step · unified_dr · HIMLoco</span>
+      <span>面向新手 · 可离线打开</span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">58<small> 维</small></div><div class="l">策略观测（12 腿 + 4 轮合同）</div></div>
+    <div class="stat"><div class="n">12<small> → 16</small></div><div class="l">网络动作 → 16 轴执行目标</div></div>
+    <div class="stat"><div class="n">20<small> ms</small></div><div class="l">控制周期（physics 5 ms × decimation 4）</div></div>
+    <div class="stat"><div class="n">3<small> 级</small></div><div class="l">DR1/DR2/DR3 累计域随机化</div></div>
+    <div class="stat"><div class="n">6<small> 阶段</small></div><div class="l">S0 体检 → S5 冻结部署</div></div>
+    <div class="stat"><div class="n">4096<small> env</small></div><div class="l">单次更新 196,608 环境步</div></div>
+    <div class="stat"><div class="n">27.5<small> kg</small></div><div class="l">T2-v2 整机质量（含轮）</div></div>
+    <div class="stat"><div class="n">0.25<small> μ</small></div><div class="l">实机摩擦（历史训练错用 0.5）</div></div>
+  </div>
+
+  <div class="grid g3" style="margin-top:18px">
+    <div class="card pad">
+      <h3 style="margin:0 0 8px;font-size:16px">三条训练线（权重不可互换）</h3>
+      <div class="table-wrap" style="border:none">
+        <table style="min-width:0">
+          <thead><tr><th>线</th><th>目标</th><th>状态</th></tr></thead>
+          <tbody>
+            <tr><td><b>原厂风格</b></td><td>vx 四轮滚动 + vy/wz 踏步</td><td><span class="badge b-ok">1220 基线通过</span></td></tr>
+            <tr><td><b>v2-step</b></td><td>删除 vx，专攻 vy/wz tanh 踏步</td><td><span class="badge b-warn">门禁 FAIL</span></td></tr>
+            <tr><td><b>HIMLoco</b></td><td>16 维腿轮联合（360 obs）</td><td><span class="badge b-info">已实机零速闭环</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card pad">
+      <h3 style="margin:0 0 8px;font-size:16px">两个必须先知道的结论</h3>
+      <ul class="mini-list">
+        <li><b>摩擦是最大缺项</b>：仿真 μ=0.5、实机 μ=0.25，静态前髋负载 1.66 vs 11.91 Nm（实机 11–12）。</li>
+        <li><b>right 方向 RR 轮抬不起</b>：支撑三角形 FR–RL 边过重心投影，属几何约束；部署限 <code>|vy|≤0.10</code>。</li>
+        <li><b>没有任何权重通过全部工况</b>：unified_dr 三阶段均"保留输入权重"，research_only。</li>
+      </ul>
+    </div>
+    <div class="card pad">
+      <h3 style="margin:0 0 8px;font-size:16px">怎么用这个页面</h3>
+      <ul class="mini-list">
+        <li>先点 <a href="#pipeline">训练流程</a> 看 S0–S5 每个阶段做什么。</li>
+        <li>点 <a href="#reward">任务×奖励</a>：先选任务，再看哪些奖励项生效。</li>
+        <li>点 <a href="#dr">域随机化</a>：点"重新采样"直观看到 64 个环境并行采样。</li>
+        <li>上机前必看 <a href="#deploy">部署问题</a> 与 <a href="#checklist">检查清单</a>。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PIPELINE ============ -->
+<section id="pipeline">
+  <div class="sec-head"><span class="sec-no">02</span><h2>训练总流程：S0 → S5</h2><span class="sub">阶段串行；上一个出口条件没过就不进入下一阶段</span></div>
+  <div class="pipe" id="pipe"></div>
+  <div class="pdetail card pad" id="pdetail"></div>
+  <div class="callout warn" style="margin-top:14px">
+    <b>预算换算：</b>1 次更新 = num_envs × rollout_steps = 4096×48 = <b>196,608</b> 环境步；600 更新 ≈ 1.18 亿环境步，4096 env 实测约 <b>44 分钟/级</b>。报告里必须同时写更新数和环境步数。
+  </div>
+</section>
+
+<!-- ============ REWARD ============ -->
+<section id="reward">
+  <div class="sec-head"><span class="sec-no">03</span><h2>每个任务用什么奖励</h2><span class="sub">先选任务 → 看生效项；点任意奖励行看公式、量级与误用</span></div>
+
+  <div class="reward-top">
+    <div class="chips" id="taskTabs"></div>
+    <div class="chips" id="setTabs"></div>
+  </div>
+
+  <div class="reward-layout">
+    <div class="card" style="overflow:hidden">
+      <div class="table-wrap" style="border:none;max-height:640px">
+        <table id="rewardTable" style="min-width:820px">
+          <thead>
+            <tr>
+              <th style="width:34%">奖励项</th>
+              <th class="center" style="width:11%">本任务</th>
+              <th style="width:20%">权重（当前配置）</th>
+              <th style="width:35%">作用 / 生效条件</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <aside class="rdetail card pad" id="rewardDetail">
+      <div class="empty">← 点左侧任意奖励项查看：数学定义、默认权重、什么时候用、用错的后果。</div>
+    </aside>
+  </div>
+
+  <div class="two" style="margin-top:14px">
+    <div class="card pad">
+      <h3 style="margin:0 0 8px;font-size:16px">为什么"调权重"经常没效果？</h3>
+      <p style="margin:0 0 10px;color:var(--muted);font-size:13.6px">训练日志里的真实量级（每步未加权）：</p>
+      <div id="magnitudeBars"></div>
+      <div class="callout bad" style="margin-top:10px;font-size:13.3px">塑形项只有跟踪项的 <b>1%</b> 量级。提权 5 倍仍在同量级 → 先改结构（门控/事件/覆盖），再改权重；一次只改一项。</div>
+    </div>
+    <div class="card pad">
+      <h3 style="margin:0 0 8px;font-size:16px">奖励与门禁必须对齐（反面案例）</h3>
+      <p style="margin:0 0 8px;font-size:13.6px"><code>unified_dr</code> 的 <code>calibration.json</code> 用 <code>eligible</code> 掩码把 <b>7/16</b> 个"方向×轮"组合标成不可得分：</p>
+      <ul class="mini-list">
+        <li>left 缺 RR；right 缺 RL；yaw_left 只 RR；yaw_right 只 FR/RL</li>
+        <li>而验收要求<b>四轮各 ≥2 次抬轮</b> → 结构性不可能通过</li>
+        <li>结果：DR 三阶段全部 <code>qualified=false</code>（失败项 32/33/31），不是训练不够</li>
+      </ul>
+      <div class="callout ok" style="margin-top:10px;font-size:13.3px">新任务规则：门禁的每个判据都要映射到至少一个奖励项/可观测项，映射不到就不许开门禁。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DR ============ -->
+<section id="dr">
+  <div class="sec-head"><span class="sec-no">04</span><h2>域随机化：串行还是并行？</h2><span class="sub">答案：阶段串行 · 环境内并行 · 回合级独立采样</span></div>
+
+  <div class="dr-tabs" id="drTabs"></div>
+
+  <div class="card pad" style="margin-bottom:14px">
+    <div class="table-wrap" style="border:none">
+      <table id="drTable" style="min-width:860px">
+        <thead>
+          <tr><th style="width:18%">参数</th><th>DR0 标称</th><th>DR1 接触/载荷</th><th>DR2 +噪声/延迟/抖动</th><th>DR3 +外部推扰</th><th style="width:24%">采样时机</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid g3" style="margin-bottom:14px">
+    <div class="card pad"><h4 style="margin:0 0 4px;font-size:15px">① 阶段串行（会话级）</h4><p style="margin:0;font-size:13.4px;color:var(--muted)">DR1 → DR2 → DR3 是三次独立训练会话，DR2 含 DR1，DR3 含 DR1+DR2。每级 600 更新，结束后固定回放筛选，再启动下一级。</p></div>
+    <div class="card pad"><h4 style="margin:0 0 4px;font-size:15px">② 环境内并行（更新级）</h4><p style="margin:0;font-size:13.4px;color:var(--muted)">同一级里 4096 个环境同时训练，每个环境各自采样自己的摩擦/质量/延迟/增益。一个更新里就同时覆盖大量域组合。</p></div>
+    <div class="card pad"><h4 style="margin:0 0 4px;font-size:15px">③ 回合级独立（reset 级）</h4><p style="margin:0;font-size:13.4px;color:var(--muted)">每个环境 reset 时重采"每回合"参数（增益/偏置/延迟/抖动）；startup 参数（摩擦/质量/COM）整个训练固定。</p></div>
+  </div>
+
+  <div class="card pad">
+    <div class="sampler">
+      <div>
+        <h4 style="margin:0 0 4px;font-size:15px">并行采样演示：64 个环境</h4>
+        <p style="margin:0 0 10px;color:var(--muted);font-size:13px">当前级别 <b id="samplerLevel">DR0</b>；颜色按所选维度着色，点任一方格看该环境的全部采样值。</p>
+        <div class="searchrow">
+          <select class="input" id="dimSel" style="flex:0 0 150px">
+            <option value="friction">按 摩擦 着色</option>
+            <option value="mass">按 质量 着色</option>
+            <option value="bias">按 观测偏置 着色</option>
+            <option value="delay">按 延迟 着色</option>
+          </select>
+          <button class="btn mini" id="resampleBtn">重新采样</button>
+        </div>
+        <div class="envgrid" id="envgrid"></div>
+        <div class="legend-scale"><span>低</span><span class="g"></span><span>高</span><span id="legendNote" style="margin-left:6px"></span></div>
+      </div>
+      <div class="sampler-side" id="samplerSide">
+        <h5>点一个环境查看它的采样值</h5>
+        <p style="color:var(--muted);font-size:13px;margin:0">同一时刻，64 个环境拿到 64 套不同的摩擦/质量/偏置/延迟组合——这就是"环境内并行"的含义。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card pad">
+      <h3 style="margin:0 0 6px;font-size:16px">怎么保证"抗所有随机化"的能力</h3>
+      <div id="principles"></div>
+    </div>
+    <div class="card pad">
+      <h3 style="margin:0 0 6px;font-size:16px">摩擦 DR 必须修正（历史最大缺口）</h3>
+      <div class="callout bad" style="margin-top:0">历史区间 <code>0.5–1.0</code> 高于标称 0.5，而实机是 <b>0.25</b> → 实机工况从未被训练覆盖。</div>
+      <p style="font-size:13.6px;margin:6px 0">建议改成：</p>
+      <pre><code>"contact": {
+  "static_friction":  [0.25, 0.50],
+  "dynamic_friction": [0.18, 0.35]
+}</code></pre>
+      <p style="font-size:13.4px;color:var(--muted);margin:6px 0 0">并用 <code>as2w-t2-v2-mu025.usd</code>（地面 μ=0.25 + min 合并）作标称资产，先固定 μ=0.25 重训，再扩区间。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENVELOPE ============ -->
+<section id="envelope">
+  <div class="sec-head"><span class="sec-no">05</span><h2>包络：怎么定、怎么采样、什么时候用</h2><span class="sub">标称 = 参考点；训练包络 = 有据可依的范围；压力档 = 只用于验收摸边界</span></div>
+  <div class="searchrow">
+    <div class="chips" id="envTabs"></div>
+    <span class="count" id="envCount"></span>
+  </div>
+  <div class="grid g3" id="envGrid"></div>
+  <div class="callout" style="margin-top:14px">
+    <b>定标 7 步：</b>列清单 → 称重/量几何 → 悬空扫角辨识静摩擦 → 着地刚性保持测真实负载 → 回放拟合动/黏性摩擦 → 定训练包络与压力档 → 写进合同（标称/范围/压力档/测量方法/日期/资产哈希）。没测过的参数不要编范围，标"未覆盖"。
+  </div>
+</section>
+
+<!-- ============ CONFIG ============ -->
+<section id="config">
+  <div class="sec-head"><span class="sec-no">06</span><h2>配置项字典</h2><span class="sub">每项：作用 → 默认 → 什么时候改 → 错配后果</span></div>
+  <div class="searchrow">
+    <input class="input" id="cfgSearch" placeholder="搜索配置项，例如 friction / kp / delay / swing_event …">
+    <div class="chips" id="cfgTabs"></div>
+    <span class="count" id="cfgCount"></span>
+  </div>
+  <div class="table-wrap" style="max-height:680px">
+    <table id="cfgTable" style="min-width:900px">
+      <thead><tr><th style="width:17%">配置项</th><th style="width:14%">位置</th><th style="width:24%">作用</th><th style="width:13%">默认</th><th style="width:16%">什么时候改</th><th style="width:16%">错配后果</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ DEPLOY ============ -->
+<section id="deploy">
+  <div class="sec-head"><span class="sec-no">07</span><h2>部署：流程、合同与实机问题库</h2><span class="sub">点问题卡片展开：现象 → 根因 → 修复 → 防复发</span></div>
+
+  <div class="card pad" style="margin-bottom:14px">
+    <h3 style="margin:0 0 10px;font-size:16px">从训练完成到上机（S0–S4 对拍阶梯）</h3>
+    <div class="flowline" id="flowline"></div>
+    <h4 style="margin:16px 0 6px;font-size:14px">状态机</h4>
+    <div class="state">
+      <span class="s">Passive</span><span class="a">→</span><span class="s">FixStand</span><span class="a">→</span><span class="s">FixedStand</span><span class="a">→</span><span class="s">PolicyHandoff 100 步</span><span class="a">→</span><span class="s">PolicyWalk</span><span class="a">→</span><span class="s">Brake</span><span class="a">→</span><span class="s">ReturnStand</span><span class="a">→</span><span class="s">FixedStand</span><span class="a">→</span><span class="s">Y 蹲下 / X 急停</span>
+    </div>
+    <div class="callout bad" style="margin-top:10px;font-size:13.4px"><b>急停只有 X / 物理急停</b>，Ctrl+C 不是可靠的运动急停。异常先按 X，记录首个错误位与时间，回退上次已验证权重。</div>
+  </div>
+
+  <div class="searchrow">
+    <div class="chips" id="probTabs"></div>
+    <span class="count" id="probCount"></span>
+  </div>
+  <div class="grid g2" id="probGrid"></div>
+</section>
+
+<!-- ============ CHECKLIST ============ -->
+<section id="checklist">
+  <div class="sec-head"><span class="sec-no">08</span><h2>上机检查清单</h2><span class="sub">勾选状态会保存在本地浏览器；换机器/换会话需重新勾</span></div>
+  <div class="card pad">
+    <div class="ck-bar">
+      <span class="pct" id="ckPct">0%</span>
+      <div class="progress"><i id="ckBar"></i></div>
+      <span class="count" id="ckCount">0 / 0</span>
+      <button class="btn ghost mini" id="ckReset">重置</button>
+    </div>
+    <div id="ckBody"></div>
+  </div>
+</section>
+
+<!-- ============ GLOSSARY ============ -->
+<section id="glossary">
+  <div class="sec-head"><span class="sec-no">09</span><h2>术语与数据来源</h2><span class="sub">看不懂的词先查这里</span></div>
+  <div class="gloss" id="glossaryGrid"></div>
+  <div class="card pad" style="margin-top:14px">
+    <h3 style="margin:0 0 8px;font-size:15px">数据来源（仓库 740b5df）</h3>
+    <div class="src-list">
+      <div><code>v2-step/code/task.py</code> — 增量奖励与任务门控</div>
+      <div><code>v2-step/code/environment.py</code> — 观测/动作/地形/执行器</div>
+      <div><code>v2-step/code/domain.py</code> — DR1/2/3 实现</div>
+      <div><code>v2-step/configs/reward_config*.json</code> — 奖励权重族</div>
+      <div><code>v2-step/configs/domain_config.json</code> — DR 参数</div>
+      <div><code>unified_dr/source/stages/</code> — 统一奖励 + 阶段快照</div>
+      <div><code>unified_dr/manifest.json</code> — 交付状态与哈希</div>
+      <div><code>unified_dr/runtime/contract.json</code> — 58 维合同与 DDS</div>
+      <div><code>sessions/2026-11-20-as2w-v2-step/docs/AS2W-training-journal.md</code> — 训练日志</div>
+      <div><code>sessions/.../docs/friction-unmodeled-20261120.md</code> — 摩擦标定</div>
+      <div><code>sessions/.../docs/jitter-compare-20261120.md</code> — 抖动对比</div>
+      <div><code>sessions/2026-11-20-himloco-dr-10000/</code> — HIMLoco 部署与现场</div>
+      <div><code>docs/next-training/任务书.md</code> — 上一版任务书</div>
+      <div><code>docs/session-20261121/README.md</code> — 会话归档结论</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="padding:0">
+    <p style="margin:0 0 6px">AS2-W 训练与部署交互任务书 · 由仓库归档整理（提交 <code>740b5df</code>）· 配套文档：<code>AS2W-训练与部署任务书-20261121.md</code></p>
+    <p style="margin:0">标「待核实」的条目不替代现场实测；安全相关操作以现场规程为准。</p>
+  </div>
+</footer>
+
+</main>
+
+<a class="btn to-top" id="toTop" href="#overview" title="回到顶部">↑</a>
+
+<script>
+/* ============================================================
+   数据层
+   ============================================================ */
+
+/* ---------- 训练流程 ---------- */
+const PIPELINE = [
+  {
+    id:"S0", name:"无策略与零更新", brief:"资产/控制/传感器核对；父权重零更新回放",
+    terrain:"无地形训练（静态/回放）", asset:"URDF/USD/MJCF 各哈希核对",
+    dr:"DR0", cmd:"零命令 + 固定单轴回放", reward:"不训练",
+    budget:"0 更新（半天）", exit:["q/力矩/IMU/轮载/接触全部对得上","悬空与着地四髋反号复现","不摔倒"],
+    artifacts:["资产 SHA 清单","回放记录","合同核对表"], note:"这一步省了，后面所有异常都会归因不清。"
+  },
+  {
+    id:"S1", name:"标称平地", brief:"纯平地 + DR0，用父任务奖励学基础动作",
+    terrain:"plane 100%（--terrain flat）", asset:"标称 USD（如 mu025）", dr:"DR0",
+    cmd:"先单轴后混合；保持 2.5 s", reward:"基础项 + 任务项（不加随机化）",
+    budget:"100~600 更新烟测", exit:["站立/前后/侧移/转向/松杆全部过关","保存基础最佳","动作不贴边"],
+    artifacts:["best.pt","flat-gait-gate.json","stage-report.md"], note:"先分离'会不会'与'随机化难不难'。"
+  },
+  {
+    id:"S2", name:"平地 + 缓坡", brief:"plane 70% / slope 30%，一次只加一个机制",
+    terrain:"plane 70% + slope 30%（0~0.18）", asset:"同 S1", dr:"DR0（地形不是 DR）",
+    cmd:"同 S1，增加坡面命令", reward:"只改一项：摆动奖励 或 俯仰约束",
+    budget:"300~600 更新", exit:["平地指标不下降","坡面 tilt P95、轮载合理","正常俯仰不被误罚"],
+    artifacts:["A/B 对照报告","坡面 replay"], note:"坡面正常俯仰被罚，先修参考角与验收定义。"
+  },
+  {
+    id:"S3", name:"单因素排查", brief:"初态/负载、轮地、执行器/延迟三条对照支线",
+    terrain:"保持 S2", asset:"各因素单独变体", dr:"单因素（不联合）",
+    cmd:"同 S2", reward:"保持不变",
+    budget:"每支线 100~300 更新", exit:["每个因素单独可解释","范围收敛成训练包络","记录测量方法"],
+    artifacts:["三份支线报告","包络表"], note:"目的是找范围，不是找更好的权重。"
+  },
+  {
+    id:"S4", name:"联合随机化", brief:"DR1→DR2→DR3 串行升级，每级 600 更新",
+    terrain:"plane 60% + slope 40%（默认生成器）", asset:"标称资产 + DR", dr:"DR1→DR2→DR3 累计",
+    cmd:"25% 标称 + 50% 已验证组合 + 25% 压力组合", reward:"交付配方（如 reward_config_hard）",
+    budget:"600×3 ≈ 2.2 h + 评测", exit:["留出集按桶验收通过","最弱桶合格","标称能力保留"],
+    artifacts:["三级 selection.json","staged report","DR 对照"], note:"新候选没优于输入就保留输入——历史三阶段都是这个结果。"
+  },
+  {
+    id:"S5", name:"冻结与部署", brief:"第二仿真器、ONNX 对齐、ARM64、实机阶梯",
+    terrain:"—", asset:"部署资产 + 轮胎材质", dr:"—",
+    cmd:"实机分阶段命令（首测 vy/wz ≤0.10）", reward:"—",
+    budget:"0 更新（数天）", exit:["parity/SHA/CTest 全过","实机零告警、dropped=0","每步记录与回退权重"],
+    artifacts:["policy.onnx","contract.json","ARM64 包","实机会话记录"], note:"没有现场定案 hip 符号前，不要闭环。"
+  }
+];
+
+/* ---------- 奖励数据 ---------- */
+const TASKS = [
+  {id:"stand", label:"站立 / 接管"},
+  {id:"vx", label:"纯 vx 滚动"},
+  {id:"vy", label:"纯 vy 侧移"},
+  {id:"wz", label:"纯 wz 转向"},
+  {id:"mixed", label:"混合命令"},
+  {id:"release", label:"松杆 / 停车"}
+];
+const WEIGHTSETS = [
+  {id:"default", label:"默认配置"},
+  {id:"hard", label:"交付 hard"},
+  {id:"vxhold", label:"保 vx"},
+  {id:"unified", label:"unified_dr"}
+];
+/* state: on=生效, off=不生效, cond=按事件/条件生效 */
+const REWARD_TERMS = [
+  {id:"track", group:"基础", name:"线速度跟踪", sign:"+", w:{default:3,hard:3,vxhold:3,unified:3},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"3 · exp( −‖v_xy − cmd_xy‖² / 0.25 )",
+   cond:"恒生效（任务门控可能乘系数）", why:"让机器人跟随 vx/vy 命令，是所有任务的主信号。",
+   misuse:"分母调太小会让策略只顾速度、姿态失控；与塑形项混在同一量级会导致'奖励没感觉'。"},
+  {id:"yaw", group:"基础", name:"偏航跟踪", sign:"+", w:{default:2,hard:2,vxhold:2,unified:2},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"2 · exp( −(wz − cmd_wz)² / 0.25 )",
+   cond:"恒生效", why:"跟随转向角速度。",
+   misuse:"纯 vx 任务里 wz 目标为 0，若权重过高会压制轮速。"},
+  {id:"vz", group:"基础", name:"竖向速度抑制", sign:"−", w:{default:0.5,hard:0.5,vxhold:0.5,unified:0.5},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−0.5 · v_z²", cond:"恒生效", why:"抑制上下颠簸。",
+   misuse:"坡面时 vz 会天然变化，过强会压制正常爬坡动作。"},
+  {id:"angrate", group:"基础", name:"横滚/俯仰角速度", sign:"−", w:{default:0.1,hard:0.1,vxhold:0.1,unified:0.1},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−0.1 · (w_x² + w_y²)", cond:"恒生效", why:"抑制摇晃与振铃。",
+   misuse:"抖动根因常在动作参数化（clamp 贴边），加大这项只是掩盖。"},
+  {id:"gravity", group:"基础", name:"机身水平（重力分量）", sign:"−", w:{default:0.5,hard:0.5,vxhold:0.5,unified:0.5},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−0.5 · (g_x² + g_y²)", cond:"恒生效", why:"保持机身水平；直立时 g_z≈−1。",
+   misuse:"坡面要用'地形相对俯仰'，用世界重力会把正常坡面姿态当错误。"},
+  {id:"posture", group:"基础", name:"腿部姿态", sign:"−", w:{default:"0.2（still +1.0）",hard:"0.2（still +1.0）",vxhold:"0.2（still +1.0）",unified:"0.2（still +1.0）"},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−(0.2 + still) · Σ q_leg²，still = Σ|cmd| < 0.03",
+   cond:"恒生效，零命令时加重", why:"站姿收敛、零命令不抖。",
+   misuse:"still 权重过大 → 压制踏步（踏步本身就是关节角变化）。"},
+  {id:"smooth", group:"基础", name:"腿动作平滑", sign:"−", w:{default:0.06,hard:0.06,vxhold:0.06,unified:0.06},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−0.06 · Σ(ΔT² + jerk²)（12 维）", cond:"恒生效", why:"限制抖动/振铃/毛刺。",
+   misuse:"过大会让策略'变懒'，抬轮高度不够。"},
+  {id:"wheelsmooth", group:"基础", name:"轮动作平滑", sign:"−", w:{default:"5e-4",hard:"5e-4",vxhold:"5e-4",unified:"5e-4"},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−5e-4 · Σ ΔT_wheel²", cond:"恒生效", why:"限制轮加速度冲击。",
+   misuse:"过低 → 轮速突变打滑。"},
+  {id:"idle", group:"基础", name:"零命令轮蠕变", sign:"−", w:{default:0.02,hard:0.02,vxhold:0.02,unified:0.02},
+   tasks:{stand:"on",vx:"off",vy:"off",wz:"off",mixed:"off",release:"on"},
+   formula:"−still · 0.02 · Σ dq_wheel²", cond:"仅零命令", why:"站立/松杆时轮子不许转。",
+   misuse:"停车漂移大时先看这项与制动逻辑。"},
+  {id:"term", group:"基础", name:"终止惩罚", sign:"−", w:{default:0.5,hard:0.5,vxhold:0.5,unified:0.5},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−0.5 · reset_terminated", cond:"摔倒/躯干触地", why:"惩罚摔倒与非轮触地终止。",
+   misuse:"只靠终止惩罚学不会精细动作，它只是底线。"},
+
+  {id:"swing_event", group:"任务", name:"抬落事件", sign:"+", w:{default:0.08,hard:1.0,vxhold:0.08,unified:0.08},
+   tasks:{stand:"off",vx:"off",vy:"on",wz:"on",mixed:"off",release:"off"},
+   formula:"+w · credited.mean；每轮每 2 s 最多 2 次（credit_cap_per_wheel）",
+   cond:"纯侧移 vy≥0.15 或纯转向 wz≥0.35，且四轮射线命中地面",
+   why:"奖励'完整抬轮→净空→落地'事件，是踏步行为的核心驱动。",
+   misuse:"不限速会被单个'英雄轮'刷分；只抬同一侧两轮也能得分。"},
+  {id:"swing_cov", group:"任务", name:"抬轮覆盖缺口", sign:"−", w:{default:0.04,hard:2.0,vxhold:0.04,unified:"—（改 swing_overdue 0.18）"},
+   tasks:{stand:"off",vx:"off",vy:"on",wz:"on",mixed:"off",release:"off"},
+   formula:"+w · dt · overdue；overdue 对超过 2 s 未抬的轮按 (gap−2)/0.5 计，后轮 ×3",
+   cond:"同上", why:"防止'只抬前轮/某轮永不抬'，后轮加权逼后轮参与。",
+   misuse:"权重大会强行抬轮导致倾斜；必须先确认几何上可抬。"},
+  {id:"slip", group:"任务", name:"承重轮横向滑移", sign:"−", w:{default:0.2,hard:0.2,vxhold:0.2,unified:0.2},
+   tasks:{stand:"off",vx:"off",vy:"on",wz:"on",mixed:"off",release:"off"},
+   formula:"−w · dt · Σ(load · min((slip/0.30)²,1)) / Σload",
+   cond:"同上，仅算有载轮", why:"减少承重轮侧滑，提高侧移/转向效率。",
+   misuse:"过强会让策略不敢接触地面（浮空）。"},
+  {id:"landing", group:"任务", name:"落地速度", sign:"−", w:{default:0.08,hard:0.08,vxhold:0.08,unified:0.08},
+   tasks:{stand:"off",vx:"on",vy:"on",wz:"on",mixed:"on",release:"off"},
+   formula:"−w · mean( clamp((v_td − 0.25)/0.5, 0, 1)² )",
+   cond:"落地事件（首次有载）", why:"轻落地减少冲击与振铃。",
+   misuse:"过强 → 抬腿僵硬、抬轮高度不足。"},
+  {id:"nonwheel", group:"任务", name:"非轮触地", sign:"−", w:{default:0.4,hard:0.4,vxhold:0.4,unified:0.4},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−w · dt · 1[非轮刚体法向力 ≥ 8 N]", cond:"恒生效（并触发终止）",
+   why:"禁止膝盖/机身触地，保护设备。",
+   misuse:"阈值过低会把正常擦碰当违规。"},
+  {id:"softlimit", group:"任务", name:"关节软限位", sign:"−", w:{default:0.2,hard:0.2,vxhold:0.2,unified:0.2},
+   tasks:{stand:"on",vx:"on",vy:"on",wz:"on",mixed:"on",release:"on"},
+   formula:"−w · dt · mean( clamp(越界量 / (10%行程), 0, 1)² )", cond:"恒生效",
+   why:"避免关节撞硬限位。",
+   misuse:"margin 取太小会误罚正常姿态。"},
+  {id:"rolling_missing", group:"任务", name:"滚动缺轮支撑", sign:"−", w:{default:0.4,hard:2.0,vxhold:2.0,unified:0.4},
+   tasks:{stand:"off",vx:"on",vy:"off",wz:"off",mixed:"off",release:"off"},
+   formula:"−w · dt · mean( clamp((卸载时长 − 允许)/0.12, 0, 1) )；允许 0.1 s（坡面 ×1.5）",
+   cond:"纯 vx 且 |vx|≥0.15，过 0.24 s 宽限", why:"**保 vx 四轮支撑的关键项**（历史修复）。",
+   misuse:"权重大会让策略不敢踏步（这正是 vx 与踏步需要分任务的原因）。"},
+  {id:"gate", group:"任务", name:"跟踪门控（踏步门）", sign:"×", w:{default:"floor 0.25",hard:"floor 0.25",vxhold:"floor 0.25",unified:"—"},
+   tasks:{stand:"off",vx:"off",vy:"on",wz:"on",mixed:"off",release:"off"},
+   formula:"1.0 s 内无抬轮 → 跟踪奖励 ×0.25", cond:"侧移/转向",
+   why:"强迫'踏步才给跟踪分'，把行为与奖励绑定。",
+   misuse:"floor 太低 → 学习慢；gloor 逻辑必须与验收定义一致。"},
+
+  {id:"stability", group:"可选增强", name:"支撑三角形裕度", sign:"+", w:{default:"—",hard:1.0,vxhold:"—",unified:"—"},
+   tasks:{stand:"off",vx:"off",vy:"on",wz:"on",mixed:"off",release:"off"},
+   formula:"+w·#(抬轮且剩余支撑三角裕度 ≥5 mm) − unstable_penalty·#(裕度<0)",
+   cond:"配置开启", why:"防止抬轮导致翻倒。",
+   misuse:"裕度要求过严会压制合理抬轮。"},
+  {id:"hardest", group:"可选增强", name:"最重轮抬落", sign:"+", w:{default:"—",hard:1.0,vxhold:"—",unified:"—"},
+   tasks:{stand:"off",vx:"off",vy:"on",wz:"on",mixed:"off",release:"off"},
+   formula:"+w · (负载 EMA 最大轮完成有效抬落)", cond:"配置开启",
+   why:"逼'最重/最不愿抬'的轮也参与。",
+   misuse:"若该轮几何上不可能抬（如 right→RR），会白耗训练预算。"},
+  {id:"phase", group:"可选增强", name:"相位抬轮", sign:"+", w:{default:"—",hard:"—",vxhold:"—",unified:"—"},
+   tasks:{stand:"off",vx:"off",vy:"on",wz:"on",mixed:"off",release:"off"},
+   formula:"+w·#(抬起轮属于相位调度左/右对)，周期 1.0 s", cond:"--gait-phase",
+   why:"左右交替节奏，减少同侧连抬。",
+   misuse:"强制相位与最优步态冲突时会掉性能（历史 CPG 实验 left 0.484）。"},
+  {id:"lightload", group:"可选增强", name:"轻载轮惩罚", sign:"−", w:{default:"0（CLI）",hard:"0（CLI）",vxhold:"0（CLI）",unified:"—"},
+   tasks:{stand:"off",vx:"on",vy:"off",wz:"off",mixed:"off",release:"off"},
+   formula:"−dt·w·steady·max((4 − F)/4)", cond:"纯 vx",
+   why:"滚动时防止某轮持续低载。",
+   misuse:"权重过大会让四轮抢载、姿态晃。"},
+  {id:"stop", group:"可选增强", name:"停车质量", sign:"−", w:{default:"—",hard:"—",vxhold:"—",unified:"—"},
+   tasks:{stand:"on",vx:"off",vy:"off",wz:"off",mixed:"off",release:"on"},
+   formula:"−dt·settled·(0.25·drift + 0.25·tilt + 0.30·unloaded)",
+   cond:"--stop-reward，零命令且 age≥0.45 s",
+   why:"停车漂移/回稳/四轮承重。",
+   misuse:"姿态项与停车耦合：压姿态可能让停车漂移变大。"}
+];
+
+/* ---------- DR ---------- */
+const DR_STAGES = [
+  {id:0, tag:"DR0", name:"标称", desc:"无随机化；S1/S2 用", updates:"0（短训）"},
+  {id:1, tag:"DR1", name:"接触 / 载荷", desc:"摩擦、质量、COM；startup 一次", updates:"600 更新"},
+  {id:2, tag:"DR2", name:"+ 噪声 / 延迟 / 抖动", desc:"每回合偏置/延迟/增益，每步噪声", updates:"600 更新"},
+  {id:3, tag:"DR3", name:"+ 外部推扰", desc:"每 6–10 s 水平推 0.05–0.25 m/s", updates:"600 更新"}
+];
+const DR_PARAMS = [
+  {name:"静摩擦", v:["0.50 固定","0.55–1.15","同 DR1","同 DR1"], from:1, when:"startup 一次", note:"v2-step 为 0.65–1.0"},
+  {name:"动摩擦", v:["0.50 固定","0.45–0.85","同 DR1","同 DR1"], from:1, when:"startup 一次", note:"v2-step 为 0.50–0.65"},
+  {name:"回弹", v:["0","0–0.05","同 DR1","同 DR1"], from:1, when:"startup 一次", note:""},
+  {name:"base 质量", v:["固定","×0.92–1.08","同 DR1","同 DR1"], from:1, when:"startup 一次", note:"v2-step 用 +[−0.5,+1.5] kg"},
+  {name:"base COM", v:["固定","全轴 ±8 mm","同 DR1","同 DR1"], from:1, when:"startup 一次", note:"v2-step x±20 y±5 z±10"},
+  {name:"驱动增益 kp/kd", v:["固定","—","×0.90–1.10","同 DR2"], from:2, when:"每回合 reset", note:"level<2 时置空"},
+  {name:"观测偏置", v:["—","—","陀螺 .02 / q .005 / dq .03","同 DR2"], from:2, when:"每回合 reset", note:"加在 actor 观测"},
+  {name:"观测白噪声", v:["—","—","陀螺 .05 / q .01 / dq .15","同 DR2"], from:2, when:"每控制步", note:"dq 在 ×0.05 空间"},
+  {name:"执行延迟", v:["0","0","腿/轮独立 0/1 拍","同 DR2"], from:2, when:"每回合固定，逐步生效", note:"概率 25%（v2）/ 50%（stages）"},
+  {name:"电机目标抖动", v:["0","0","±0.02 rad / ±0.5 rad/s","同 DR2"], from:2, when:"每控制步重绘", note:"再叠加 kp/kd ×0.85–1.15"},
+  {name:"外部推扰", v:["0","0","0","0.05–0.25 m/s"], from:3, when:"计时器 6–10 s", note:"stages 用 0.1–0.25"}
+];
+const PRINCIPLES = [
+  {t:"训练集 / 验收集隔离", d:"训练与验收用不同种子；验收另设留出桶（没训练过的初态/载荷/摩擦组合）。"},
+  {t:"按桶验收，不看总分", d:"把'方向 × 轮 × 场景 × 判据'分桶，逐桶记录通过/失败；失败项计数不是跌倒次数。"},
+  {t:"最弱桶优先", d:"先看最差桶，再看平均。历史最弱桶长期是 right→RR 与 mixed。"},
+  {t:"多种子", d:"关键结论至少 3 个训练种子；候选阶段可固定种子快速筛。"},
+  {t:"压力档单独评估", d:"DR3 之外再加推扰 0.4 m/s、2 拍延迟、μ=0.10，只记录不训练。"},
+  {t:"配额锁定并统计实际样本", d:"每批 25% 标称 + 50% 已验证组合 + 25% 压力组合；按实际样本数锁定，不能名义 25% 实际 3%。"},
+  {t:"同一权重通过全部必测桶", d:"不能把多个 checkpoint 的单项优势拼成一份'全通过'。"},
+  {t:"DR 不能替代任务结构", d:"历史证明宽 DR 会把策略推向'四轮同时承重滚动'，反而压制踏步。"}
+];
+
+/* ---------- 包络 ---------- */
+const ENVELOPE = [
+  {cat:"接触", name:"轮地静/动摩擦", nominal:"实机 μ≈0.25", range:"dynamic 0.18–0.35 / static 0.25–0.50", stress:"μ=0.10",
+   how:"滚动/滑移/换向对照，记录方向、轮载、地面", when:"接触阶段（DR1）必开；摩擦是最大缺项"},
+  {cat:"接触", name:"质量 / 质心 / 惯量", nominal:"base 11.592 kg，COM x −15 mm", range:"质量 ×0.92–1.08，COM 全轴 ±8 mm", stress:"+1.5 kg，COM 后移 30 mm",
+   how:"整机/四轮称重 + 配重实测", when:"载荷阶段（DR1）；不可与摩擦同时改"},
+  {cat:"接触", name:"轮径 / 轮距 / 接地点", nominal:"半径 0.086 m，轮距 0.44 m", range:"装配公差 ±1~2 mm", stress:"外倾 2°",
+   how:"三次着地 + 原厂留出站姿", when:"资产修正后固定，DR 只做小公差"},
+  {cat:"执行器", name:"重力矩 / 前馈", nominal:"悬空残差 0–0.45 Nm；着地 15.06–19.36 Nm", range:"固定合同，不做 DR", stress:"—",
+   how:"三组悬空 q + IMU 求逐轴保持矩", when:"先固定；前馈改 A/B 必须仿真+实机同合同"},
+  {cat:"执行器", name:"电机静摩擦 / 启动力矩", nominal:"未完成辨识", range:"辨识后 ±30%", stress:"—",
+   how:"悬空正反向进入同角度，多次重复，扣重力项", when:"有辨识结果再开；否则标'未覆盖'"},
+  {cat:"执行器", name:"动摩擦 / 黏性阻力", nominal:"未完成辨识", range:"待辨识", stress:"—",
+   how:"悬空同角度匀速片段拟合，固定速度档验证", when:"同上"},
+  {cat:"执行器", name:"armature（反射惯量）", nominal:"未完成辨识", range:"先单轴测试再整机", stress:"—",
+   how:"悬空加减速辨识，与摩擦分开验证", when:"单轴通过后再整机"},
+  {cat:"时序", name:"执行延迟与滤波", nominal:"腿/轮独立 0/1 拍延迟", range:"P(1 拍)=0.25–0.5", stress:"2 拍",
+   how:"对齐命令/状态/电机时间戳；区分通讯延迟与低通", when:"DR2 必开；先固定延迟验收再加训练"},
+  {cat:"执行器", name:"力矩—转速限幅", nominal:"60/90/15 Nm；25/16.67/98.47 rad/s", range:"固定（已核验）", stress:"峰值 1.2×",
+   how:"电机输出侧实测曲线", when:"起步用已核验值，有曲线后按轴细化"},
+  {cat:"初态", name:"初始状态 / 姿态", nominal:"FixedStand 实测分布", range:"腿关节 ±0.03 rad；姿态按实测", stress:"人工前倾",
+   how:"实测 q/IMU 按会话抽样", when:"reset 时成组抽样，与噪声/地形独立"},
+  {cat:"地形", name:"坡度", nominal:"实测 4.29–5.95°", range:"0–0.18（≈0–10.3°）", stress:"15°",
+   how:"射线法测坡 + 断言 ≥2°", when:"S2 起加入，平地保留"},
+  {cat:"观测", name:"观测噪声 / 偏置", nominal:"按传感器规格", range:"位置 .01 rad、速度 .15 rad/s、陀螺 .05 rad/s；偏置为噪声一半", stress:"×2",
+   how:"静置采样统计", when:"DR2 必开；只加在 actor 观测"}
+];
+
+/* ---------- 配置字典 ---------- */
+const CONFIG = [
+  {cat:"控制", key:"policy_dt_s", file:"control.toml", role:"策略周期", def:"0.02 s", when:"极少改", risk:"改后 physics dt 与 decimation 必须联动"},
+  {cat:"控制", key:"leg_target_cutoff_hz", file:"control.toml", role:"腿目标低通截止", def:"5（v2-step）/ 10（基线）", when:"部署端滤波变化时同步", risk:"训练/部署不一致 → 抖动或超调"},
+  {cat:"控制", key:"wheel_target_cutoff_hz", file:"control.toml", role:"轮目标低通截止", def:"5", when:"同上", risk:"轮响应异常"},
+  {cat:"控制", key:"filter", file:"control.toml", role:"滤波类型", def:"matched pole", when:"一般不改", risk:"与 α 计算不匹配"},
+  {cat:"控制", key:"terrain", file:"control.toml", role:"地形声明", def:"plane/slope/uneven/low_steps", when:"与实验设计一致", risk:"误以为在混合地形训练"},
+  {cat:"执行器", key:"decimation", file:"environment.py", role:"物理步/策略步", def:"4", when:"改 physics dt 时", risk:"有效控制频率错"},
+  {cat:"执行器", key:"stiffness / damping", file:"environment.py", role:"PD 增益 kp/kd", def:"腿 55/2、轮 0/2", when:"必须与部署合同一致", risk:"负载/抖动异常"},
+  {cat:"执行器", key:"effort_limit / velocity_limit", file:"environment.py", role:"力矩/速度限幅", def:"60/60/90；25/25/16.67（腿）", when:"有实测曲线后按轴细化", risk:"靠不可实现力矩通过"},
+  {cat:"执行器", key:"RESET_HEIGHT / 高度常数", file:"environment.py", role:"reset 高度 / 观测常量", def:"0.39 / 0.37", when:"一般不改", risk:"两者混淆导致观测错"},
+  {cat:"动作", key:"action squash", file:"environment.py", role:"动作压缩", def:"基线 clamp / v2 tanh", when:"新线一律 tanh", risk:"clamp 贴边 → bang-bang"},
+  {cat:"动作", key:"leg_scale (×0.25)", file:"environment.py", role:"腿动作幅值", def:"0.25 rad", when:"需与部署合同一致", risk:"步幅过大/过小"},
+  {cat:"动作", key:"wheel radius", file:"environment.py", role:"vx→轮速换算", def:"0.086 m", when:"换轮时", risk:"速度比例错"},
+  {cat:"动作", key:"wheel target limit", file:"environment.py", role:"轮速上限", def:"±12 rad/s", when:"有实测后", risk:"打滑/超速"},
+  {cat:"动作", key:"obs scaling", file:"environment.py", role:"dq×0.05、prev÷0.25/12", def:"固定", when:"与部署一致", risk:"观测分布偏移"},
+  {cat:"动作", key:"gait_phase", file:"environment.py", role:"追加 sin/cos 相位", def:"关", when:"需要强制节奏时", risk:"与无相位权重不兼容"},
+  {cat:"奖励", key:"swing_event", file:"reward_config*.json", role:"抬落事件奖励", def:"0.08（hard 1.0）", when:"需要更强抬轮激励", risk:"过高 → 刷事件、牺牲 vx"},
+  {cat:"奖励", key:"swing_coverage", file:"reward_config*.json", role:"覆盖缺口惩罚", def:"0.04（hard 2.0）", when:"某轮长期不抬", risk:"过高 → 强行抬轮导致倾斜"},
+  {cat:"奖励", key:"loaded_lateral_slip", file:"reward_config*.json", role:"承重轮侧滑惩罚", def:"0.20", when:"打滑严重", risk:"过高 → 保守不敢动"},
+  {cat:"奖励", key:"landing_speed", file:"reward_config*.json", role:"落地冲击惩罚", def:"0.08", when:"落地冲击大", risk:"过高 → 抬腿僵硬"},
+  {cat:"奖励", key:"nonwheel_contact", file:"reward_config*.json", role:"非轮触地惩罚", def:"0.40", when:"默认", risk:"与终止阈值联动"},
+  {cat:"奖励", key:"joint_soft_limit", file:"reward_config*.json", role:"关节软限位", def:"0.20", when:"默认", risk:"过低 → 撞限位"},
+  {cat:"奖励", key:"rolling_missing_wheel", file:"reward_config*.json", role:"滚动缺轮支撑惩罚", def:"0.40（保 vx 2.0）", when:"滚动支撑掉", risk:"过高 → 不敢踏步"},
+  {cat:"奖励", key:"rolling_unload_s", file:"reward_config*.json", role:"允许卸载时长", def:"0.10（保 vx 0.06）", when:"同上", risk:"同上"},
+  {cat:"奖励", key:"credit_cap_per_wheel", file:"reward_config*.json", role:"单轮每窗口计分上限", def:"2", when:"刷分严重时", risk:"过严 → 学不到"},
+  {cat:"奖励", key:"credit_window_s", file:"reward_config*.json", role:"计分窗口", def:"2.0 s", when:"同上", risk:"同上"},
+  {cat:"奖励", key:"rear_coverage_scale", file:"reward_config*.json", role:"后轮覆盖加权", def:"3.0", when:"后轮不抬", risk:"过大 → 前轮被忽视"},
+  {cat:"奖励", key:"step_gate_floor", file:"reward_config*.json", role:"无抬轮时跟踪折扣", def:"0.25", when:"跟踪压过踏步", risk:"过低 → 学习慢"},
+  {cat:"奖励", key:"stability_weight / unstable_penalty", file:"reward_config*.json", role:"支撑裕度奖励/惩罚", def:"1.0 / 0.5（可选）", when:"抬轮导致翻倒", risk:"裕度要求过严压制抬轮"},
+  {cat:"奖励", key:"hardest_lift_weight", file:"reward_config*.json", role:"最重轮抬落奖励", def:"1.0（可选）", when:"某轮不参与", risk:"几何不可能时白耗预算"},
+  {cat:"DR", key:"static/dynamic_friction", file:"domain_config.json", role:"摩擦随机范围", def:"0.55–1.15 / 0.45–0.85", when:"必须改成覆盖实机 0.25", risk:"实机工况未覆盖"},
+  {cat:"DR", key:"mass_scale / base_mass_add_kg", file:"domain_config.json", role:"质量随机", def:"0.92–1.08 / −0.5~+1.5 kg", when:"按载荷实测", risk:"与真实载荷不符"},
+  {cat:"DR", key:"com_half_range_m", file:"domain_config.json", role:"质心随机", def:"±8 mm（v2: x±20 y±5 z±10）", when:"按装配公差", risk:"过大 → 站姿漂移"},
+  {cat:"DR", key:"drive_gain_scale", file:"domain_config.json", role:"kp/kd 缩放", def:"0.90–1.10", when:"按电机一致性", risk:"过大 → 训练不稳"},
+  {cat:"DR", key:"sensors.*", file:"domain_config.json", role:"观测噪声/偏置", def:"见 DR 表", when:"按传感器规格", risk:"过大 → 观测失真"},
+  {cat:"DR", key:"delay_probability", file:"domain_config.json", role:"1 拍延迟概率", def:"0.25（v2）/0.5（stages）", when:"按通讯实测", risk:"过大 → 策略保守"},
+  {cat:"DR", key:"jitter.target_noise_rad", file:"domain_config.json", role:"每步目标抖动", def:"0.02 rad", when:"实机抖动大时", risk:"过大 → 动作毛刺"},
+  {cat:"DR", key:"jitter.gain_jitter_fraction", file:"domain_config.json", role:"每关节增益抖动", def:"0.15", when:"电机不一致", risk:"过大 → 不稳"},
+  {cat:"DR", key:"push.*", file:"domain_config.json", role:"外部推扰", def:"0.05–0.12 m/s，6–10 s", when:"按任务", risk:"过强 → 摔倒多"},
+  {cat:"训练", key:"num_envs", file:"run.py", role:"并行环境数", def:"4096", when:"显存允许可 8192", risk:"A/B 必须同环境数"},
+  {cat:"训练", key:"rollout_steps", file:"run.py", role:"每次更新步数", def:"48", when:"一般不改", risk:"预算不可比"},
+  {cat:"训练", key:"seed", file:"run.py", role:"随机种子", def:"42 / 43/44/45", when:"关键结论多种子", risk:"单种子结论不可靠"},
+  {cat:"训练", key:"learning_rate", file:"training.py", role:"学习率", def:"1e-4 fixed", when:"只改一处做对照", risk:"与 optimizer 状态耦合"},
+  {cat:"训练", key:"fixed_policy_std", file:"training.py", role:"固定探索标准差", def:"0.4", when:"探索不足时", risk:"过小 → 早熟"},
+  {cat:"训练", key:"entropy_coef", file:"training.py", role:"熵系数", def:"0", when:"一般不改", risk:"过大 → 动作随机"},
+  {cat:"训练", key:"--resume-update", file:"run.py", role:"续训父 runner_index", def:"续训必填", when:"续训时", risk:"步数错位"},
+  {cat:"评测", key:"evaluate --dr-level", file:"evaluate.py", role:"评测随机化级别", def:"与训练对齐", when:"评测时", risk:"用错级别误判"},
+  {cat:"评测", key:"gate thresholds", file:"gait_gate.py / score.py", role:"门禁阈值", def:"支撑 0.90、抬轮 2 次、跟踪 0.65", when:"禁止为过而放宽", risk:"门槛失守 → 交付劣质权重"}
+];
+
+/* ---------- 部署流程 ---------- */
+const FLOW = [
+  {k:"S0", t:"收包校验", d:"SHA256SUMS、verify_replay、verify_onnx、deployment-check 三项 true"},
+  {k:"S1", t:"移植对齐", d:"逐帧复算 obs→ONNX→tanh→低通→16 轴；obs ≤2e-6，目标 ≤1e-6"},
+  {k:"S2", t:"sim2sim", d:"MuJoCo 同命令矩阵；9 段命令稳定、非轮接触 0 N、z 0.36–0.40 m"},
+  {k:"S3", t:"C++/ARM64", d:"CTest 9/9、startup-audit PASS、ARM64↔x86 ≤1e-6、端到端 ≤2e-5"},
+  {k:"S4", t:"实机阶梯", d:"dry-run → 固定站 → 100 步零命令 → 有界低速 → 扩展；首测 ≤30 s"}
+];
+
+/* ---------- 问题库 ---------- */
+const PROBLEMS = [
+  {id:1, cat:"DDS", title:"LowCmd 启动保护报警（2026-11-09，2 次）",
+   symptom:"一发起低层命令就报警。",
+   cause:"16 轴 DDS 槽位/符号/零位未知（官方只给 As2 的 12 轴表）；35 槽只填 16 槽；mode_machine 必须与 LowState 一致，否则命令被忽略。",
+   fix:"现场逐项手动标定 16 轴，建立槽位/符号表；确认槽 16–34 恒 mode=0 不是报警原因。",
+   prevent:"先只读、再影子、再逐级动作；hardware_contract.md 未填项一律拒绝闭环。"},
+  {id:2, cat:"动作", title:"首次非零 vx：腿目标单帧跳 0.27 rad（R1199）",
+   symptom:"降高姿态 + 关节抖动，硬件保护位全 0。",
+   cause:"stand_blend 在首次非零命令时一步从 ~1 归 0；更深层是实机包装开关与训练合同相反（continuous/straight、odometry/settle 四项）。",
+   fix:"平滑切换 + 独立训练合同候选。",
+   prevent:"运行时开关必须与训练 actual_runtime_flags 逐项一致，差异即新版本。"},
+  {id:3, cat:"动作", title:"可闻抖动 / 转向几乎不动（2026-11-12）",
+   symptom:"滚动有可闻抖动；加 40 ms 腿目标低通后更丝滑，但 wz ±0.09 rad/s 时 gyro_z 仅 ±0.02–0.025。",
+   cause:"抖动来源未分层：raw ONNX / 包装 / 目标→实际 / 硬件。",
+   fix:"加低通只是掩盖；需要按四段定位。",
+   prevent:"抖动诊断同时间轴看 raw/滤波/目标/关节/力矩/落地力。"},
+  {id:4, cat:"接触", title:"四髋承重力矩差：悬空 0–0.45 Nm vs 着地 15.06–19.36 Nm",
+   symptom:"悬空重力回放四髋残差很小，着地残差却很大。",
+   cause:"着地差额主要是轮地接触负载；旧版还有'双重符号错'（取 −qfrc_bias 又套 hip sign=−1，两错相消），PD 一致性校验对整体反号不敏感。",
+   fix:"改用带符号力矩与多姿态交叉校准。",
+   prevent:"静态差额不能直接当减速器摩擦参数；必须分离悬空重力与接触负载。"},
+  {id:5, cat:"资产", title:"MJCF 轮心几何错位（碰撞轮距 0.3308 vs 真实 0.44 m）",
+   symptom:"地面域髋力矩被严重低估。",
+   cause:"轮碰撞体放在髋枢轴正下方，轮距被压小。",
+   fix:"轮碰撞体加 pos=\"0 ±0.0546 0\"；后腿 hip 4.1→11.7 Nm（实测 15.2 的 77%）、pitch −2.4→−6.6°（实测 −6.13）。",
+   prevent:"资产级逐项核对轮径/轮距/接地点。"},
+  {id:6, cat:"接触", title:"训练摩擦 μ=0.5 vs 实机 0.25",
+   symptom:"仿真静态前髋负载只有实机 1/14；0.5 摩擦权重上 μ=0.25 时 right 0/4、yaw_left 1/4。",
+   cause:"历史训练用 μ=0.5 且 DR 区间 0.5–1.0，实机 0.25 从未被覆盖。",
+   fix:"换 mu025 USD（地面 0.25 + min 合并）重训 600 轮：left 4/4、right 2/4；刚性保持前髋 11.91 Nm 与实机 11–12 吻合。",
+   prevent:"0.5 摩擦训出的权重不要再上机；摩擦 DR 区间必须覆盖实机。"},
+  {id:7, cat:"动作", title:"车身抖动 / 振铃：clamp 动作退化为 bang-bang",
+   symptom:"腿目标 p2p 0.46–0.50 rad、符号翻转率 30%、主频 4.5 Hz、跟踪误差 0.161 rad。",
+   cause:"clamp(−1,1) 边界梯度为 0 → 94.5% 维度贴边，只剩符号。",
+   fix:"tanh + actor 末层 ×0.06 热启动 + 5 Hz 腿滤波 + 电机抖动 DR；实机 p2p 0.360 rad、翻转 8.2%、主频 1.2 Hz、跟踪 0.101。",
+   prevent:"动作参数化错误会伪装成'奖励学不会'；先查 executed_abs_mean 是否贴边。"},
+  {id:8, cat:"策略", title:"摩擦对齐后转向仍无改善（否定结论）",
+   symptom:"实机 yaw 跟踪比 0.079，抬包络后 0.164（≈16%）；侧移有效帧 7.6%、无净位移；重训后 0.146 < 旧 0.199。",
+   cause:"'摩擦不匹配导致转向弱'被实机 A/B 否定；候选：单关节命令方向、轮速差速、接触几何、策略转向机制。",
+   fix:"P0 做单关节小命令方向核对；再评审轮速差速方案（偏离训练合同，需单独验证）。",
+   prevent:"不要用一个假设解释所有现象；先做最便宜的排除实验。"},
+  {id:9, cat:"策略", title:"HIMLoco 后腿下沉 / 初始姿态偏差",
+   symptom:"cmd−actual：RL_calf +0.336、RR_calf +0.331、RL/RR_thigh +0.237/+0.239 → 后腿约 0.57 rad，机身下沉 3–4 cm，7 s 内不增长。",
+   cause:"kp=55 的 PD 在重力下撑不住（不是策略下压）。",
+   fix:"静态补偿 leg_offset_rad 试验使后腿改善，但 FR_thigh 过冲到 −0.305、机身前倾+力矩嗡鸣 → 操作员按 X，回退、偏置归零。",
+   prevent:"重力补偿必须单轴验证；FixedStand 后 T2 位姿最大误差 0.2705 rad > B 门限 0.25，B gate 实际放到 0.45。"},
+  {id:10, cat:"流程", title:"LowState 龄期误触发（全包络推杆时）",
+   symptom:"发布端自停 STARTUP FAULT: stale/invalid LowState age_ms=21.45 max=20。",
+   cause:"高负载下 LowState 到达间隔超过 20 ms 看门狗。",
+   fix:"MaxStateAge 20→50 ms（仅摇杆构建），重建 audit PASS。",
+   prevent:"先查 CPRO 负载/网络，不要无脑放宽看门狗；改动单独版本化。"},
+  {id:11, cat:"工具", title:"MuJoCo sim2sim 三缺陷",
+   symptom:"①轮子零速自激 dq ±100 rad/s、机身前冲；②腿指令写错执行器、机器人被自己绊倒；③大腿被命令到 1.6 rad。",
+   cause:"①显式力矩速度环 τ=kd(v*−v)；②ctrl 索引用成关节索引；③绝对角重复叠加（已 default+applied 又加 default）。",
+   fix:"①隐式执行器 <velocity kv=2/> + 轮 armature 0.01/damping 0.05；②用 ctrl 索引；③只加一次。修后前进 92%、后退 85%。",
+   prevent:"转向仍只跟踪约 20%，不能作转向能力证据；sim2sim 适配器问题与引擎保真要分流。"},
+  {id:12, cat:"工具", title:"MuJoCo 回放严重穿地",
+   symptom:"画面严重穿地；转换后仍有毫米级轮胎网格与地面差异。",
+   cause:"PhysX 四元数 xyzw 被当成 MuJoCo wxyz。",
+   fix:"按 wxyz 读取并转换。",
+   prevent:"另一类'穿地/三轮滚动'是验收口径漏洞：视频出现异常时旧汇总仍可能写通过 → 数据与视频必须同存。"},
+  {id:13, cat:"IMU", title:"sim2sim 陀螺坐标映射错误",
+   symptom:"适配器把自由关节 qvel[0:3]（线速度）当陀螺用，且额外把轮 dq 置零（训练不置零）。",
+   cause:"MuJoCo 自由关节速度排列是 [线速度, 角速度]；角速度在 qvel[3:6]。",
+   fix:"改用 qvel[3:6]，保持轮 dq 与训练一致。",
+   prevent:"据此得到的'零接触 0 跌倒'不能作准入证据。"},
+  {id:14, cat:"DDS", title:"关节序错：part-major vs leg-major",
+   symptom:"怎么查都查不出：obs 宽度、增益、默认值、按名查 map 全部正常。",
+   cause:"v1 手册把关节序写成 armd 的 part-major（FL_hip,FR_hip,RL_hip,RR_hip…），训练是 leg-major（FL_hip,FL_thigh,FL_calf,FR…）。",
+   fix:"逐帧观测对比发现；同批还抓到重力符号反号（控制器 +1 vs 训练直立 −1）与 armd 头文件硬编译失败。",
+   prevent:"在合同里硬编码 leg-major + 按名字查 map 的双重校验。"},
+  {id:15, cat:"策略", title:"停车漂移 / 三轮支撑",
+   symptom:"HIMLoco 停车漂移 18200=0.1134 m（阈值 0.13 的 87%）、19600=0.1163、13900=0.1286；接入姿态惩罚后尾部漂移约 0.15 m；历史右移臂曾三轮支撑 86.07%。",
+   cause:"停车质量与姿态/轮载耦合；三轮支撑是步态时序结构性缺口。",
+   fix:"首飞留 0.5 m 前方空间；停车与姿态同时验收。",
+   prevent:"'三轮以上支撑比例 1.00'与'四轮中断 0.04 s'要分开看，不能只看一个汇总数。"},
+  {id:16, cat:"工具", title:"HIMLoco 18200 的三个导出坑",
+   symptom:"①parity 差 6.47；②第一步约 0.1 rad 目标跳变；③文档写 clamp+×12 但实际是 tanh→0.6→×0.25。",
+   cause:"①estimator 输出前漏 F.normalize(z,p=2)；②缺 100 步零命令交接斜坡；③早期文档错误。",
+   fix:"①补 normalize → 2.38e-6；②补 handoff_steps=100，MAX_LEG_STEP 0.1206→0.0582；③以 C++ 实现为准修正文档。",
+   prevent:"导出必须逐层对照；文档与代码冲突时以实测 parity 为准。"}
+];
+
+/* ---------- 检查清单 ---------- */
+const CHECKLIST = [
+  {group:"上机前（离线）", items:[
+    {id:"c1", t:"校验交付包", d:"SHA256SUMS 全对 + REPLAY_CONTRACT_OK + ONNX_CONTRACT_OK + deployment-check 三项 true"},
+    {id:"c2", t:"核对训练合同", d:"obs 维/序、q−默认、轮位 0、dq×0.05 含轮、prev 缩放、重力 R^T(0,0,−1) 直立 −1、tanh 语义"},
+    {id:"c3", t:"滤波频率与 α 一致", d:"v2-step 腿 5 Hz（α=0.4665）/ HIMLoco 腿 10 Hz（α=0.7154）；轮 5 Hz"},
+    {id:"c4", t:"DDS 槽位/符号/零位", d:"模型序→槽 [3,0,9,6,4,1,10,7,5,2,11,8,13,12,15,14]；hip 符号现场定案（map −1 vs 11-19 数据 +1）"},
+    {id:"c5", t:"编译与自检", d:"x86 与 ARM64 各 CTest 全过 + startup-audit PASS；ARM64↔x86 ≤1e-6"},
+    {id:"c6", t:"资产/摩擦", d:"mu025（0.25 + min）作标称；轮心/轮距/接地点核对；0.5 摩擦权重不上机"},
+    {id:"c7", t:"包络写入 deploy.yaml", d:"首测 vx≤0.10、vy ±0.10、wz ±0.10、单次 ≤30 s"},
+    {id:"c8", t:"日志开关", d:"-Debug + 保护流 + 2 ms 关节流；确认 dropped=0 / file_ok=1"},
+    {id:"c9", t:"安全准备", d:"原厂遥控器 + 物理急停在手；场地平整；明确 X 急停与回退权重"}
+  ]},
+  {group:"上机中（每步单独说明并获同意）", items:[
+    {id:"c10", t:"只读确认", d:"上电、eth0 carrier=1、LowState ~1 kHz、mode_machine=2、16 轴 mode=1、无残留发布端"},
+    {id:"c11", t:"ReleaseMode + A 固定站", d:"看站稳、无报警；记录 pitch/roll"},
+    {id:"c12", t:"B 门控", d:"pose_error / wheel_dq / upright / quiet_dq 在阈值内"},
+    {id:"c13", t:"零命令 7–10 s", d:"看单帧步进、pitch/roll、可闻抖动、翻转率"},
+    {id:"c14", t:"有界单轴", d:"先 vy/wz ≤0.10；确认方向正确、无打滑失控"},
+    {id:"c15", t:"全程盯表", d:"倾角 >8°、非轮接触、FIELD_SAFETY_WARN/HARD、age_ms、电池电压"}
+  ]},
+  {group:"异常处置", items:[
+    {id:"c16", t:"立即停", d:"按 X / 物理急停（不是 Ctrl+C）"},
+    {id:"c17", t:"记录", d:"首个错误位、首次异常时间、受影响槽位、是否在 mode 切换前后"},
+    {id:"c18", t:"回退", d:"切回上次已验证权重/阈值；不改看门狗凑合"},
+    {id:"c19", t:"归档", d:"日志 + INDEX 条目（日期/命令/输出/结论/下一步），写明复现步骤"}
+  ]}
+];
+
+/* ---------- 术语 ---------- */
+const GLOSSARY = [
+  {t:"标称 / 训练包络 / 压力档", d:"参考点 / 有据可依的训练范围 / 只用于验收摸边界的外推档。"},
+  {t:"rollout steps", d:"一次 PPO 更新里每个环境采集的控制步数（本项目 48 步 = 0.96 s）。"},
+  {t:"decimation", d:"物理步与策略步之比（4）：physics dt 0.005 × 4 = policy dt 0.02。"},
+  {t:"四轮支撑比例", d:"四轮法向力同时 ≥3 N 的帧占比；vx 方向门禁要求 ≥0.90。"},
+  {t:"抬落事件", d:"力<3 N 且净空>15 mm 起跳，直到落地力≥4 N，记为一次；非 vx 方向每轮要 ≥2 次。"},
+  {t:"bang-bang", d:"动作长期贴在 ±1 边界、只剩符号变化，梯度为 0，策略退化成开关控制。"},
+  {t:"swing_event / coverage", d:"抬落事件奖励 / 覆盖缺口惩罚（谁长时间不抬就罚谁，后轮加权）。"},
+  {t:"tracking gate", d:"一段时间内没抬轮就把跟踪奖励打折（floor 0.25），逼'踏步才给分'。"},
+  {t:"DR（域随机化）", d:"训练时随机化物理/传感器参数，让策略对未见工况鲁棒。"},
+  {t:"startup / reset / step 采样", d:"整个训练固定 / 每回合重采 / 每控制步重采。"},
+  {t:"留出集（holdout）", d:"训练没见过的种子/初态/载荷组合，用来验收泛化。"},
+  {t:"最弱桶", d:"失败最多的'方向×轮×场景×判据'组合；筛选时优先改善。"},
+  {t:"parity（对拍）", d:"逐帧比较两条实现链（Python/C++/ONNX/ARM64）的输出差。"},
+  {t:"policy_dt / physics_dt", d:"策略周期 0.02 s / 物理步长 0.005 s。"},
+  {t:"leg-major / part-major", d:"关节顺序按'腿'分组（FL hip/thigh/calf…）还是按'部位'分组（所有 hip…）。"},
+  {t:"sim2sim", d:"把同一权重放到第二个物理引擎（MuJoCo）里验证，不是上真机。"}
+];
+const MAGNITUDES = [
+  {name:"跟踪项", v:0.1, unit:"≈ 0.1 / 步"},
+  {name:"覆盖项", v:0.003, unit:"最多 ≈ 3e-3 / 步"},
+  {name:"滑移项", v:0.0003, unit:"≈ 3e-4 / 步"},
+  {name:"抬轮事件", v:0.0001, unit:"≈ 1e-4 / 步"}
+];
+
+/* ============================================================
+   渲染与交互
+   ============================================================ */
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => Array.from(el.querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+
+/* ---------- 顶部导航高亮 ---------- */
+const sections = $$("main section");
+const navLinks = $$("#nav a");
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+    }
+  });
+}, {rootMargin:"-45% 0px -50% 0px"});
+sections.forEach(s => io.observe(s));
+window.addEventListener("scroll", () => {
+  $("#toTop").style.display = window.scrollY > 700 ? "grid" : "none";
+});
+
+/* ---------- 训练流程 ---------- */
+const pipeEl = $("#pipe"), pdetailEl = $("#pdetail");
+function renderPipeline(activeId="S0"){
+  pipeEl.innerHTML = PIPELINE.map(p => `
+    <div class="pstep ${p.id===activeId?"on":""}" data-id="${p.id}">
+      <div class="code">${p.id}</div>
+      <h4>${esc(p.name)}</h4>
+      <p>${esc(p.brief)}</p>
+    </div>`).join("");
+  const p = PIPELINE.find(x => x.id===activeId);
+  pdetailEl.innerHTML = `
+    <div class="sec-head" style="margin-bottom:10px"><span class="sec-no">${p.id}</span><h3 style="margin:0;font-size:18px">${esc(p.name)}</h3></div>
+    <div class="plist">
+      <div class="pblock"><h5>地形 / 资产 / 随机化</h5><ul class="tight">
+        <li>地形：${esc(p.terrain)}</li><li>资产：${esc(p.asset)}</li><li>随机化：${esc(p.dr)}</li></ul></div>
+      <div class="pblock"><h5>命令 / 奖励 / 预算</h5><ul class="tight">
+        <li>命令：${esc(p.cmd)}</li><li>奖励：${esc(p.reward)}</li><li>预算：${esc(p.budget)}</li></ul></div>
+      <div class="pblock"><h5>出口条件</h5><ul>${p.exit.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    </div>
+    <div class="two" style="margin-top:12px">
+      <div class="pblock"><h5>必须落盘的产物</h5><ul>${p.artifacts.map(x=>`<li><code>${esc(x)}</code></li>`).join("")}</ul></div>
+      <div class="callout" style="margin:0"><b>经验：</b>${esc(p.note)}</div>
+    </div>`;
+  $$(".pstep", pipeEl).forEach(el => el.onclick = () => renderPipeline(el.dataset.id));
+}
+renderPipeline();
+
+/* ---------- 奖励矩阵 ---------- */
+let curTask = "vy", curSet = "hard", curTerm = null;
+const taskTabsEl = $("#taskTabs"), setTabsEl = $("#setTabs");
+function renderTaskTabs(){
+  taskTabsEl.innerHTML = TASKS.map(t =>
+    `<button class="chip ${t.id===curTask?"on":""}" data-id="${t.id}">${esc(t.label)}</button>`).join("");
+  $$("button", taskTabsEl).forEach(b => b.onclick = () => { curTask = b.dataset.id; renderTaskTabs(); renderRewardTable(); });
+}
+function renderSetTabs(){
+  setTabsEl.innerHTML = `<span class="count" style="align-self:center">权重配置：</span>` + WEIGHTSETS.map(s =>
+    `<button class="chip ${s.id===curSet?"on":""}" data-id="${s.id}">${esc(s.label)}</button>`).join("");
+  $$("button", setTabsEl).forEach(b => b.onclick = () => { curSet = b.dataset.id; renderSetTabs(); renderRewardTable(); });
+}
+function wText(term){
+  const w = term.w[curSet];
+  if (w === "—" || w === undefined) return `<span class="dim">—</span>`;
+  return `<span class="mono">${esc(w)}</span>`;
+}
+function renderRewardTable(){
+  const tb = $("#rewardTable tbody");
+  const taskLabel = TASKS.find(t=>t.id===curTask).label;
+  let rows = "";
+  let lastGroup = "";
+  let onCount = 0;
+  REWARD_TERMS.forEach(term => {
+    const st = term.tasks[curTask] || "off";
+    if (st === "on") onCount++;
+    if (term.group !== lastGroup){
+      rows += `<tr><td colspan="4" style="background:#f2f6fd;font-weight:800;color:#33415c;font-size:12.5px;letter-spacing:.04em">${esc(term.group)}</td></tr>`;
+      lastGroup = term.group;
+    }
+    const badge = st === "on"
+      ? `<span class="badge b-ok">生效</span>`
+      : st === "off" ? `<span class="badge b-mute">不生效</span>` : `<span class="badge b-info">条件</span>`;
+    const dim = st === "on" ? "" : "dim";
+    rows += `<tr class="term ${term.id===curTerm?"active":""} ${dim}" data-id="${term.id}">
+      <td><b>${esc(term.name)}</b><div class="count mono" style="font-size:11.5px">${esc(term.id)} · ${esc(term.sign)}</div></td>
+      <td class="center">${badge}</td>
+      <td>${wText(term)}</td>
+      <td>${esc(term.cond)}</td>
+    </tr>`;
+  });
+  tb.innerHTML = rows;
+  $$("tr.term", tb).forEach(tr => tr.onclick = () => { curTerm = tr.dataset.id; renderRewardTable(); renderRewardDetail(); });
+}
+function renderRewardDetail(){
+  const el = $("#rewardDetail");
+  if (!curTerm){
+    el.innerHTML = `<div class="empty">← 点左侧任意奖励项查看：数学定义、默认权重、什么时候用、用错的后果。</div>`;
+    return;
+  }
+  const t = REWARD_TERMS.find(x => x.id === curTerm);
+  const taskLabel = TASKS.find(x=>x.id===curTask).label;
+  const applies = TASKS.map(x => `${x.label}：${t.tasks[x.id]==="on"?"<b style='color:#16a34a'>生效</b>":t.tasks[x.id]==="off"?"<span class='dim'>不生效</span>":"<b style='color:#2563eb'>条件</b>"}`).join("<br>");
+  el.innerHTML = `
+    <div class="sec-head" style="margin-bottom:8px"><span class="sec-no">${esc(t.group)}</span></div>
+    <h3 style="margin:0 0 4px;font-size:17px">${esc(t.name)}</h3>
+    <div class="count mono" style="margin-bottom:10px">${esc(t.id)} · ${esc(t.sign)}</div>
+    <div class="formula">${esc(t.formula)}</div>
+    <dl class="kv">
+      <dt>生效条件</dt><dd>${esc(t.cond)}</dd>
+      <dt>当前权重</dt><dd class="mono">${esc(String(t.w[curSet]))}</dd>
+      <dt>本任务（${esc(taskLabel)}）</dt><dd>${t.tasks[curTask]==="on"?"<span class='badge b-ok'>生效</span>":t.tasks[curTask]==="off"?"<span class='badge b-mute'>不生效</span>":"<span class='badge b-info'>条件</span>"}</dd>
+    </dl>
+    <p style="font-size:13.4px;margin:8px 0 4px"><b>为什么要有：</b>${esc(t.why)}</p>
+    <div class="callout warn" style="font-size:13.2px;margin:8px 0 0"><b>用错会怎样：</b>${esc(t.misuse)}</div>
+    <details style="margin-top:10px;font-size:13px"><summary style="cursor:pointer;color:var(--muted)">各任务适应情况</summary><div style="margin-top:6px;line-height:1.9">${applies}</div></details>`;
+}
+renderTaskTabs(); renderSetTabs(); renderRewardTable(); renderRewardDetail();
+
+/* 量级条 */
+function renderMagnitudes(){
+  const max = Math.max(...MAGNITUDES.map(m=>m.v));
+  $("#magnitudeBars").innerHTML = MAGNITUDES.map(m => {
+    const w = Math.max(2, Math.round(100*Math.sqrt(m.v/max)));
+    return `<div style="margin:7px 0">
+      <div style="display:flex;justify-content:space-between;font-size:12.8px"><span>${esc(m.name)}</span><span class="mono">${esc(m.unit)}</span></div>
+      <div style="height:9px;background:#eef2f9;border-radius:999px;overflow:hidden;margin-top:3px"><i style="display:block;height:100%;width:${w}%;background:linear-gradient(90deg,#93c5fd,#2563eb)"></i></div>
+    </div>`;
+  }).join("") + `<p class="count" style="margin:6px 0 0">横条按平方根比例显示，便于同屏对比 4 个量级。</p>`;
+}
+renderMagnitudes();
+
+/* ---------- DR ---------- */
+let curDR = 3;
+const drTabsEl = $("#drTabs");
+function renderDRTabs(){
+  drTabsEl.innerHTML = DR_STAGES.map(s => `
+    <button class="dr-tab ${s.id===curDR?"on":""}" data-id="${s.id}">
+      <div class="tag">${s.tag}</div><b>${esc(s.name)}</b><small>${esc(s.desc)} · ${esc(s.updates)}</small>
+    </button>`).join("");
+  $$("button", drTabsEl).forEach(b => b.onclick = () => {
+    curDR = Number(b.dataset.id); renderDRTabs(); renderDRTable(); renderSampler(); renderEnvGrid();
+  });
+}
+function renderDRTable(){
+  const tb = $("#drTable tbody");
+  tb.innerHTML = DR_PARAMS.map(p => {
+    const cells = p.v.map((val,i) => {
+      const isNew = (i === p.from);
+      const isCur = (i === curDR);
+      return `<td class="${isCur?"hl":""}">${isNew?`<span class="newv">NEW</span>`:""}${esc(val)}</td>`;
+    }).join("");
+    return `<tr><td><b>${esc(p.name)}</b>${p.note?`<div class="count" style="font-size:11.5px">${esc(p.note)}</div>`:""}</td>${cells}<td>${esc(p.when)}</td></tr>`;
+  }).join("");
+}
+renderDRTabs(); renderDRTable();
+
+/* 采样器：DR 级别 ranges */
+let envs = [];
+function rand(a,b){ return a + Math.random()*(b-a); }
+function sampleEnv(level){
+  const e = {level};
+  if (level === 0){
+    e.friction = 0.5; e.frictionDyn = 0.5; e.staticF = 0.5; e.dynamicF = 0.5;
+    e.massScale = 1; e.massKg = 11.592; e.comMm = 0;
+    e.bias = 0; e.delay = 0; e.gain = 1; e.jitter = 0; e.push = 0;
+    e.note = "标称：无随机化";
+  } else {
+    e.staticF = rand(0.55,1.15); e.dynamicF = rand(0.45,0.85);
+    e.friction = e.dynamicF; e.frictionDyn = e.dynamicF;
+    e.massScale = rand(0.92,1.08); e.massKg = 11.592*e.massScale;
+    e.comMm = rand(-8,8);
+    e.bias = level>=2 ? rand(0,1) : 0;
+    e.delay = level>=2 ? (Math.random() < 0.5 ? 1 : 0) : 0;
+    e.gain = level>=2 ? rand(0.90,1.10) : 1;
+    e.jitter = level>=2 ? 1 : 0;
+    e.push = level>=3 ? rand(0.05,0.25) : 0;
+    e.note = level===1 ? "接触/载荷随机" : level===2 ? "+噪声/延迟/抖动" : "+外部推扰";
+  }
+  return e;
+}
+function initEnvs(){ envs = Array.from({length:64}, () => sampleEnv(curDR)); }
+/* 统一色标：低=红 → 中=黄/绿 → 高=蓝，与图例渐变一致 */
+function heatColor(t){
+  t = Math.max(0, Math.min(1, t));
+  const h = 210 * t;              // 低=红(0) → 黄(60) → 绿(120) → 高=蓝(210)
+  return `hsl(${h} 82% ${52 + 8*(1-Math.abs(t-.5)*2)}%)`;
+}
+function frictionColor(f){ return heatColor((f-0.10)/(0.60-0.10)); }
+function massColor(m){ return heatColor((m-10.6)/(12.6-10.6)); }
+function biasColor(v){ return v ? heatColor(0.15) : "#cbd5e1"; }
+function delayColor(v){ return v ? "#7c3aed" : "#cbd5e1"; }
+let selEnv = -1;
+function dimValue(e, dim){
+  if (dim === "friction") return e.friction;
+  if (dim === "mass") return e.massKg;
+  if (dim === "bias") return e.bias ? 1 : 0;
+  return e.delay ? 1 : 0;
+}
+function dimLabel(dim){
+  return dim === "friction" ? "μ" : dim === "mass" ? "kg" : dim === "bias" ? "偏置" : "延迟";
+}
+function renderEnvGrid(){
+  const dim = $("#dimSel").value;
+  const grid = $("#envgrid");
+  // 按当前样本 min–max 归一化，保证任何维度都有最大对比度
+  const vals = envs.map(e => dimValue(e, dim));
+  let lo = Math.min(...vals), hi = Math.max(...vals);
+  if (hi - lo < 1e-9){ lo -= 0.5; hi += 0.5; }
+  grid.innerHTML = envs.map((e,i) => {
+    const v = dimValue(e, dim);
+    const color = (dim === "delay") ? delayColor(e.delay) : heatColor((v - lo) / (hi - lo));
+    const title = dim === "friction" ? `μ=${e.friction.toFixed(2)}`
+      : dim === "mass" ? `${e.massKg.toFixed(2)} kg`
+      : dim === "bias" ? (e.bias ? "观测偏置 ON" : "无偏置")
+      : (e.delay ? "1 拍延迟" : "无延迟");
+    return `<div class="env ${i===selEnv?"sel":""}" data-i="${i}" style="background:${color}" title="env ${i} · ${esc(title)}"></div>`;
+  }).join("");
+  $$(".env", grid).forEach(el => el.onclick = () => {
+    selEnv = Number(el.dataset.i);
+    const e = envs[selEnv];
+    $("#samplerSide").innerHTML = `
+      <h5>env #${selEnv} — ${esc(e.note)}</h5>
+      <div class="srow"><span>静摩擦</span><b>${e.staticF.toFixed(2)}</b></div>
+      <div class="srow"><span>动摩擦</span><b>${e.dynamicF.toFixed(2)}</b></div>
+      <div class="srow"><span>base 质量</span><b>${e.massKg.toFixed(2)} kg (×${e.massScale.toFixed(3)})</b></div>
+      <div class="srow"><span>COM 偏移</span><b>${e.comMm.toFixed(1)} mm</b></div>
+      <div class="srow"><span>观测偏置</span><b>${e.bias ? "已采样" : "无"}</b></div>
+      <div class="srow"><span>执行延迟</span><b>${e.delay ? "1 拍" : "0 拍"}</b></div>
+      <div class="srow"><span>增益缩放</span><b>×${e.gain.toFixed(2)}</b></div>
+      <div class="srow"><span>目标抖动</span><b>${e.jitter ? "±0.02 rad" : "无"}</b></div>
+      <div class="srow"><span>下次推扰</span><b>${e.push ? "每 6–10 s，" + e.push.toFixed(2) + " m/s" : "无"}</b></div>
+      <p class="count" style="margin:8px 0 0">以上是该环境在当前回合的采样。reset 时"每回合"项会重采；摩擦/质量/COM 在整个训练内固定。</p>`;
+    renderEnvGrid();
+  });
+  const note = curDR === 0 ? "标称，无随机化"
+    : `${dimLabel(dim)} 样本 ${lo.toFixed(dim==="bias"||dim==="delay"?0:2)}–${hi.toFixed(dim==="bias"||dim==="delay"?0:2)}（按 min–max 着色）`;
+  $("#legendNote").textContent = "当前：DR" + curDR + " · " + note;
+}
+function renderSampler(){
+  $("#samplerLevel").textContent = "DR" + curDR + (DR_STAGES[curDR].name ? "（" + DR_STAGES[curDR].name + "）" : "");
+  selEnv = -1;
+  initEnvs();
+  $("#samplerSide").innerHTML = `<h5>点一个环境查看它的采样值</h5><p style="color:var(--muted);font-size:13px;margin:0">同一时刻，64 个环境拿到 64 套不同的摩擦/质量/偏置/延迟组合——这就是"环境内并行"的含义。点"重新采样"看每回合重新抽样的效果。</p>`;
+  renderEnvGrid();
+}
+$("#dimSel").onchange = renderEnvGrid;
+$("#resampleBtn").onclick = () => { initEnvs(); renderEnvGrid(); };
+renderSampler();
+
+/* 原则 */
+$("#principles").innerHTML = PRINCIPLES.map((p,i) => `
+  <div class="principle"><div class="num">${i+1}</div><div><b>${esc(p.t)}</b><p>${esc(p.d)}</p></div></div>`).join("");
+
+/* ---------- 包络 ---------- */
+const envCats = ["全部", ...Array.from(new Set(ENVELOPE.map(x=>x.cat)))];
+let curEnvCat = "全部";
+function renderEnvTabs(){
+  $("#envTabs").innerHTML = envCats.map(c => `<button class="chip ${c===curEnvCat?"on":""}" data-c="${c}">${esc(c)}</button>`).join("");
+  $$("button", $("#envTabs")).forEach(b => b.onclick = () => { curEnvCat = b.dataset.c; renderEnvTabs(); renderEnvCards(); });
+}
+function renderEnvCards(){
+  const list = ENVELOPE.filter(x => curEnvCat==="全部" || x.cat===curEnvCat);
+  $("#envCount").textContent = `共 ${list.length} 项`;
+  $("#envGrid").innerHTML = list.map(x => `
+    <div class="env-card">
+      <div class="cat">${esc(x.cat)}</div>
+      <h4>${esc(x.name)}</h4>
+      <dl>
+        <dt>标称</dt><dd>${esc(x.nominal)}</dd>
+        <dt>训练范围</dt><dd>${esc(x.range)}</dd>
+        <dt>压力档</dt><dd>${esc(x.stress)}</dd>
+        <dt>怎么测</dt><dd>${esc(x.how)}</dd>
+        <dt>何时用</dt><dd>${esc(x.when)}</dd>
+      </dl>
+    </div>`).join("");
+}
+renderEnvTabs(); renderEnvCards();
+
+/* ---------- 配置字典 ---------- */
+const cfgCats = ["全部", ...Array.from(new Set(CONFIG.map(x=>x.cat)))];
+let curCfgCat = "全部", cfgQuery = "";
+function renderCfgTabs(){
+  $("#cfgTabs").innerHTML = cfgCats.map(c => `<button class="chip ${c===curCfgCat?"on":""}" data-c="${c}">${esc(c)}</button>`).join("");
+  $$("button", $("#cfgTabs")).forEach(b => b.onclick = () => { curCfgCat = b.dataset.c; renderCfgTabs(); renderCfgTable(); });
+}
+function renderCfgTable(){
+  const q = cfgQuery.trim().toLowerCase();
+  const list = CONFIG.filter(x => (curCfgCat==="全部" || x.cat===curCfgCat) &&
+    (!q || (x.key+x.file+x.role+x.def+x.when+x.risk).toLowerCase().includes(q)));
+  $("#cfgCount").textContent = `命中 ${list.length} / ${CONFIG.length} 项`;
+  $("#cfgTable tbody").innerHTML = list.map(x => `
+    <tr>
+      <td><b class="mono">${esc(x.key)}</b></td>
+      <td class="mono count">${esc(x.file)}</td>
+      <td>${esc(x.role)}</td>
+      <td class="mono">${esc(x.def)}</td>
+      <td>${esc(x.when)}</td>
+      <td>${esc(x.risk)}</td>
+    </tr>`).join("") || `<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px">没有匹配的配置项</td></tr>`;
+}
+$("#cfgSearch").addEventListener("input", e => { cfgQuery = e.target.value; renderCfgTable(); });
+renderCfgTabs(); renderCfgTable();
+
+/* ---------- 部署 ---------- */
+$("#flowline").innerHTML = FLOW.map(f => `<div class="fstep"><div class="k">${f.k}</div><b>${esc(f.t)}</b><small>${esc(f.d)}</small></div>`).join("");
+const probCats = ["全部", ...Array.from(new Set(PROBLEMS.map(p=>p.cat)))];
+let curProbCat = "全部";
+function renderProbTabs(){
+  $("#probTabs").innerHTML = probCats.map(c => `<button class="chip ${c===curProbCat?"on":""}" data-c="${c}">${esc(c)}</button>`).join("");
+  $$("button", $("#probTabs")).forEach(b => b.onclick = () => { curProbCat = b.dataset.c; renderProbTabs(); renderProbs(); });
+}
+function renderProbs(){
+  const list = PROBLEMS.filter(p => curProbCat==="全部" || p.cat===curProbCat);
+  $("#probCount").textContent = `共 ${list.length} 条`;
+  $("#probGrid").innerHTML = list.map(p => `
+    <div class="prob" data-id="${p.id}">
+      <div class="prob-h">
+        <div class="idx">${p.id}</div>
+        <div><b>${esc(p.title)}</b><div class="tags"><span class="badge b-purple">${esc(p.cat)}</span></div></div>
+        <div class="arrow">▶</div>
+      </div>
+      <div class="prob-b">
+        <p><span class="lab">现象：</span>${esc(p.symptom)}</p>
+        <p><span class="lab">根因：</span>${esc(p.cause)}</p>
+        <div class="fix"><b>修复：</b>${esc(p.fix)}</div>
+        <div class="prev"><b>防复发：</b>${esc(p.prevent)}</div>
+      </div>
+    </div>`).join("");
+  $$(".prob", $("#probGrid")).forEach(el => {
+    $(".prob-h", el).onclick = () => el.classList.toggle("open");
+  });
+}
+renderProbTabs(); renderProbs();
+
+/* ---------- 检查清单 ---------- */
+const CK_KEY = "as2w-taskbook-checklist-v1";
+let ckState = {};
+try { ckState = JSON.parse(localStorage.getItem(CK_KEY) || "{}"); } catch(e){ ckState = {}; }
+function saveCk(){ try{ localStorage.setItem(CK_KEY, JSON.stringify(ckState)); }catch(e){} }
+function renderChecklist(){
+  const total = CHECKLIST.reduce((n,g)=>n+g.items.length,0);
+  const done = CHECKLIST.reduce((n,g)=>n+g.items.filter(i=>ckState[i.id]).length,0);
+  const pct = total ? Math.round(100*done/total) : 0;
+  $("#ckPct").textContent = pct + "%";
+  $("#ckBar").style.width = pct + "%";
+  $("#ckCount").textContent = `${done} / ${total}`;
+  $("#ckBody").innerHTML = CHECKLIST.map(g => `
+    <div class="ck-group">
+      <h4>${esc(g.group)}</h4>
+      ${g.items.map(i => `
+        <label class="ck ${ckState[i.id]?"done":""}">
+          <input type="checkbox" data-id="${i.id}" ${ckState[i.id]?"checked":""}>
+          <span>${esc(i.t)}<small>${esc(i.d)}</small></span>
+        </label>`).join("")}
+    </div>`).join("");
+  $$("input[type=checkbox]", $("#ckBody")).forEach(cb => {
+    cb.onchange = () => {
+      ckState[cb.dataset.id] = cb.checked;
+      saveCk(); renderChecklist();
+    };
+  });
+}
+$("#ckReset").onclick = () => { ckState = {}; saveCk(); renderChecklist(); };
+renderChecklist();
+
+/* ---------- 术语 ---------- */
+$("#glossaryGrid").innerHTML = GLOSSARY.map(g => `<div><b>${esc(g.t)}</b><span>${esc(g.d)}</span></div>`).join("");
+
+/* ---------- 平滑滚动（修正 sticky 遮挡） ---------- */
+$$('#nav a, a[href^="#"]').forEach(a => {
+  a.addEventListener("click", ev => {
+    const id = a.getAttribute("href");
+    if (!id || id === "#") return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    ev.preventDefault();
+    const y = target.getBoundingClientRect().top + window.scrollY - 70;
+    window.scrollTo({top:y, behavior:"smooth"});
+  });
+});
+</script>
+</body>
+</html>

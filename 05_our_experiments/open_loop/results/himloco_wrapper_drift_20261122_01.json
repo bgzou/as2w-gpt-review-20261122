@@ -1,0 +1,159 @@
+{
+  "task": "HIMLoco 18200 wrapper contract drift: deploy.yaml/C++ vs deploy_ref_controller.py",
+  "generator": "check_himloco_contract_drift_20261122_01.py",
+  "generator_sha256": "408c3eeba9f2c0eae6d5810be346791e5ce766351c583277f734492681c93021",
+  "inputs": {
+    "onnx": {
+      "path": "\u90e8\u7f72\u53c2\u8003\\as2w-unitreestyle\\sessions\\2026-11-20-himloco-dr-10000\\data\\policy-model-18200.onnx",
+      "sha256": "02352011169cbf1dc3acfe3b698de27b98a32b6ad56c6063118c3d6e999678bf"
+    },
+    "field_log": {
+      "path": "\u90e8\u7f72\u53c2\u8003\\as2w-unitreestyle\\sessions\\2026-11-20-himloco-dr-10000\\field\\20261120-180312_low-state_32209.log",
+      "sha256": "d50b3046c40222d524ebc1357b56a82a4ccb28455bc2e93194e497a97c26723f"
+    }
+  },
+  "initial_state_from_field": {
+    "quat_wxyz": [
+      0.999151,
+      -0.00108447,
+      0.000999154,
+      0.0411609
+    ],
+    "gyro": [
+      -0.00106526,
+      -0.00319579,
+      0.00106526
+    ],
+    "q16_policy_order": [
+      0.585166,
+      1.04761,
+      -2.76119,
+      -0.57852,
+      1.05099,
+      -2.76707,
+      0.584507,
+      1.07291,
+      -2.75213,
+      -0.579395,
+      1.08813,
+      -2.74614,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "dq16_policy_order": [
+      -0.009204,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.010226,
+      0.003068,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gravity_body": [
+      0.002086,
+      0.002085,
+      -0.999996
+    ],
+    "lowstate_to_policy_leg_map": [
+      3,
+      4,
+      5,
+      0,
+      1,
+      2,
+      9,
+      10,
+      11,
+      6,
+      7,
+      8
+    ]
+  },
+  "constants": {
+    "alpha_leg": 0.7153904566639707,
+    "alpha_wheel": 0.4665119089088967,
+    "leg_scale": 0.25,
+    "leg_gain_flat": [
+      0.6,
+      0.6,
+      0.6
+    ],
+    "wheel_gain": 2.0,
+    "wheel_clamp": 12.0,
+    "wheel_r": 0.086,
+    "wheel_side": 0.1654,
+    "handoff_steps": 100,
+    "dt": 0.02
+  },
+  "raw_action_stats": {
+    "max_abs": 4.599308967590332,
+    "n_steps": 100,
+    "mean_abs_over_steps": 1.8213293666299433,
+    "frac_elements_abs_gt_1": 0.64
+  },
+  "wrapper_comparison": {
+    "steps": 100,
+    "max_abs_delta_leg_target_rad": 0.1615690116848789,
+    "final_leg_target_cpp_rad": [
+      0.08274,
+      0.14935,
+      0.1325,
+      0.05367,
+      0.10674,
+      -0.08866,
+      -0.14983,
+      0.14903,
+      0.14997,
+      0.14878,
+      0.14943,
+      0.14637
+    ],
+    "final_leg_target_pyref_rad": [
+      0.20951,
+      0.25,
+      0.25,
+      -0.06221,
+      0.25,
+      -0.25,
+      -0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "max_abs_leg_range_cpp": 0.14996958397651905,
+    "max_abs_leg_range_pyref": 0.25,
+    "max_abs_delta_wheel_target_radps": 10.94879701081646,
+    "final_wheel_target_cpp_radps": [
+      1.40811,
+      -1.85976,
+      1.70378,
+      0.49429
+    ],
+    "final_wheel_target_pyref_radps": [
+      12.0,
+      -12.0,
+      12.0,
+      9.03714
+    ]
+  },
+  "verdict": "WRAPPER_MISMATCH_CONFIRMED",
+  "notes": [
+    "both wrappers were fed identical 360-dim histories from the same field LowState",
+    "python reference clips raw to +-1; C++/yaml applies tanh then leg_gain 0.6 and a wheel feed-forward",
+    "zero command was used, so the wheel feed-forward term is 0 and only the 2*tanh term differs there",
+    "the difference is a contract question, not a dynamics result"
+  ]
+}

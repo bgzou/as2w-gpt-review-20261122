@@ -1,0 +1,32 @@
+{
+ "log": "zerob.csv",
+ "phases": {
+  "HANDOFF": 100,
+  "WALK": 501,
+  "BRAKE": 56
+ },
+ "walk_frames": 501,
+ "duration_s": 10.0,
+ "command_abs_max": 0.0,
+ "leg_target_p2p_rad_mean": 0.3694,
+ "step_delta_rad_mean": 0.0444,
+ "signflip_fraction": 0.1285,
+ "leg_tracking_error_rad_mean": 0.1015,
+ "pitch_deg_mean": 0.95,
+ "pitch_deg_range": [
+  -2.92,
+  3.0
+ ],
+ "roll_deg_mean": -0.58,
+ "roll_deg_range": [
+  -2.55,
+  1.17
+ ],
+ "hip_abs_tau_nm": {
+  "FL_hip": 5.32,
+  "FR_hip": 4.9,
+  "RL_hip": 4.38,
+  "RR_hip": 3.92
+ },
+ "all_abs_tau_nm": 5.39
+}

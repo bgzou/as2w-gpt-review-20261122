@@ -1,0 +1,20 @@
+captured_at: 2026-11-21 (CST)
+host_os: Linux 6.8.0-40-generic
+gpu: 2x NVIDIA GeForce RTX 5090 (driver 580.178.04)
+repo: /home/robot/z00945176/Rob2Nav
+git_commit: 97488b10ffbb5898ca6607ffd4c33941ed610607
+git_branch: main
+git_dirty_files: 76 (pre-existing working-tree changes; see docs/as2w_v2_simreal_rootcause_20261119/README.md)
+
+python_used_for_all_runs: /home/robot/z00945176/isaac_env/venv312/bin/python
+python: 3.12.15
+mujoco: 3.12.0
+numpy: 2.3.1
+scipy: 1.17.0
+torch: 2.11.0
+isaacsim: 6.2.0.0 (pip package isaacsim==6.2.0.0)
+
+env_vars_required_for_physx_runs:
+  OMNI_KIT_ACCEPT_EULA=YES
+  CUDA_VISIBLE_DEVICES=1
+  LD_LIBRARY_PATH=/home/robot/miniconda3/lib   # needed by this host's Isaac build

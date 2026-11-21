@@ -1,0 +1,15 @@
+[common]
+policy_dt_s = 0.020
+leg_target_cutoff_hz = 10.0
+wheel_target_cutoff_hz = 5.0
+filter = "first_order_matched_pole"
+terrain = ["plane", "slope", "uneven", "low_steps"]
+
+[unitree_style]
+policy_actions = 12
+wheel_target_source = "independent_vx_mapping"
+
+[himloco]
+policy_actions = 16
+wheel_target_source = "policy"
+reference_task = "w1w"

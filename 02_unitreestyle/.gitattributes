@@ -1,0 +1,9 @@
+* text=auto eol=lf
+assets/as2w/as2w.urdf -text whitespace=cr-at-eol
+*.STL binary
+*.npz binary
+*.pt binary
+*.mp4 binary
+review/u3220/model/as2w_flat.xml -text whitespace=cr-at-eol
+review/u3220/angles/*.csv -text whitespace=cr-at-eol
+unified_dr/** -text whitespace=cr-at-eol

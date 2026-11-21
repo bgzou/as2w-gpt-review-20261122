@@ -1,0 +1,13 @@
+﻿axis,no_offset_mean_rad,no_offset_max_rad,with_offset_last_rad,sign_note
+FL_hip,0.209,0.3,0.176,cmd-actual; positive = leg pushed down by gravity
+FL_thigh,-0.159,-0.037,-0.112,cmd-actual; positive = leg pushed down by gravity
+FL_calf,0.006,0.078,0.142,cmd-actual; positive = leg pushed down by gravity
+FR_hip,-0.193,-0.079,-0.128,cmd-actual; positive = leg pushed down by gravity
+FR_thigh,-0.004,0.023,-0.305,cmd-actual; positive = leg pushed down by gravity
+FR_calf,0.053,0.106,-0.053,cmd-actual; positive = leg pushed down by gravity
+RL_hip,0.144,0.156,0.021,cmd-actual; positive = leg pushed down by gravity
+RL_thigh,0.237,0.278,0.02,cmd-actual; positive = leg pushed down by gravity
+RL_calf,0.336,0.35,0.105,cmd-actual; positive = leg pushed down by gravity
+RR_hip,-0.145,-0.11,-0.076,cmd-actual; positive = leg pushed down by gravity
+RR_thigh,0.239,0.279,0.117,cmd-actual; positive = leg pushed down by gravity
+RR_calf,0.331,0.376,0.199,cmd-actual; positive = leg pushed down by gravity

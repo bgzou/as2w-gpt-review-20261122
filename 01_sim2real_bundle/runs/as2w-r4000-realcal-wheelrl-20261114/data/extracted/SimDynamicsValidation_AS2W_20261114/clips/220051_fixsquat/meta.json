@@ -1,0 +1,27 @@
+{
+  "name": "220051_fixsquat",
+  "source_session": "20261112-220051_training-contract",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 1742697,
+  "tick_end": 1749699,
+  "duration_s": 7.002,
+  "rate_hz": 500.0,
+  "n_cmd": 3470,
+  "n_state": 3501,
+  "test_tags": [
+    "squat",
+    "contact",
+    "large_motion"
+  ],
+  "states": [
+    "FixSquat",
+    "Passive"
+  ],
+  "notes": "FixSquat 7 s；大幅腿运动+落地接触，用于接触模型/关节摩擦",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

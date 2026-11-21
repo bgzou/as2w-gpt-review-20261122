@@ -1,0 +1,36 @@
+experiment: t3_3_zerob_sim_20261122
+purpose: HIMLoco model_18200 zero-B, same-contract (C++/deploy.yaml) MuJoCo run
+date_local: 2026-11-22 (Asia/Shanghai)
+remote_root: /root/gpufree-data/as2w-cpro/systematic_project_audit_20261121/experiments/t3_3_zerob_sim_20261122
+host: gpufree-container
+gpu: NVIDIA GeForce RTX 4090 24564 MiB, driver 580.126.09 (idle during run, CPU-only job)
+isolated_venv: ./venv (created from /usr/bin/python3 3.12.3, NOT the isaaclab venv)
+python: 3.12.3
+mujoco: 4.0.1
+onnxruntime: 1.32.0
+numpy: 2.5.5
+note_versions: >
+  MuJoCo 4.0.1 here vs 3.12.0 previously used for R2000A probes and 3.17.0 in the delivery's
+  MuJoCo evidence. Do not claim bit-level reproduction across these versions.
+assets:
+  scene: code/scene_v2.xml sha256 1bcf70ab4322a5bd50f30caae5d7fcbfb803ee6d7faa7c72ce75c74ae631e10e
+    (only edit vs the session copy: meshdir '/root/as2w/recheck-v2/assets/meshes/' -> 'meshes/')
+  meshes: 18 STL copied from 部署参考/as2w-unitreestyle/assets/as2w/meshes (29.4 MB)
+  policy: code/policy-model-18200.onnx sha256 02352011169cbf1dc3acfe3b698de27b98a32b6ad56c6063118c3d6e999678bf
+  zeroB package: code/himloco_zeroB_input_20261122_01.json sha256 06a183d5956cfa6c8457de093e0422b1c62d2cd600e7667c597139d5e0bb7abe
+  harness: code/zerob_sim.py sha256 513b5212f41246cf2231cd3eed97fa2b0b3c1ddaafb1c920eba92c420b52ce33
+  model mass: base 10.58 kg, total 26.0 kg (MJCF), ground friction 0.62
+protocol:
+  precondition: 0.5 s PD hold at default pose
+  handoff: 2.0 s (100 policy steps), command forced zero, ramp (k+1)/100
+  hold: until 9.7 s total
+  z0: 0.33 m, quat from field low-state (w,x,y,z) = (0.999143, -0.00128641, 0.00070872, 0.0413706)
+results:
+  json: results/t3_3_zerob_20261122_01.json sha256 16ed6bea6436a566696dbb6e07cbcf208df6c5b3d58043a179c0b5e44c02d553
+  log: logs/t3_3_zerob_20261122_01.log sha256 c507ea987fc0d04483362bfcf1528b3a439616674dfcf21fff5afcbd62528dd6
+integrity:
+  local_vs_remote: result and log sha256 identical (pulled 2026-11-22)
+constraints_observed:
+  - no GPU job concurrent (nvidia-smi 85 MiB before/after)
+  - official assets in 部署参考/ not modified; the scene used here is a copy inside the experiment
+  - no CPRO / no robot access

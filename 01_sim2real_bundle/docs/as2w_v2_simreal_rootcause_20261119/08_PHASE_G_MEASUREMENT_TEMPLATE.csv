@@ -1,0 +1,14 @@
+record_id,item,stance,trial,timestamp,operator,instrument,units,value_1,value_2,value_3,value_4,unit_note,joint_q_read,quat_or_tilt,temperature_C,notes
+# item ENUM: stance | wheel_load_N | contact_clearance | wheel_axis_tilt_deg | wheel_centre_pos_m | track_width_m | tire_width_m | tire_diameter_m | contact_patch_mm | compression_mm | imu_attitude | repeatability
+# wheel-specific items: value_1..value_4 = FL,FR,RL,RR
+# wheel_load_N: four platform readings (N) in value_1..4; total weight (kg) in unit_note
+# contact_clearance: gap at lowest point per wheel (mm)
+# wheel_axis_tilt_deg: inclinometer reading per wheel; sign = outward tilt positive
+# wheel_centre_pos_m: value_1=height_above_ground value_2=y_offset_vs_hip_axis (model 0.0546) value_3..4 reserved
+# contact_patch_mm: value_1=length value_2=width per wheel -> one row per wheel (put wheel name in unit_note)
+# compression_mm: value_1=unloaded_height value_2=loaded_height value_3=delta per wheel -> one row per wheel
+# stance ENUM: P55T2 | OG
+# joint_q_read: 12 values comma-separated "hip_FL,hip_FR,hip_RL,hip_RR,thigh_FL,...,calf_RR" from motor encoders at measurement time, or "no_encoder_read"
+# quat_or_tilt: IMU quaternion "w,x,y,z" or external level reading at measurement time
+EXAMPLE_001,wheel_load_N,P55T2,1,,,,N,48.2,48.4,79.5,79.5,expected_from_G2_inversion,total_kg=26.0,"0.2142,-0.2155,0.2779,-0.2755,0.8985,0.891,0.8512,0.8651,-2.3928,-2.3874,-2.4217,-2.4169","0.9985,-0.0006,-0.0535,0.0081",22.5,example row - delete before use
+EXAMPLE_002,wheel_axis_tilt_deg,P55T2,1,,,,deg,12.1,12.4,15.7,15.8,expected_from_G2_FK,no_encoder_read,"0.9985,-0.0006,-0.0535,0.0081",22.5,example row - delete before use

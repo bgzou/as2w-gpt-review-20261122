@@ -1,0 +1,27 @@
+{
+  "name": "220051_fixstand_rise",
+  "source_session": "20261112-220051_training-contract",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 1712258,
+  "tick_end": 1715259,
+  "duration_s": 3.001,
+  "rate_hz": 500.0,
+  "n_cmd": 1492,
+  "n_state": 1501,
+  "test_tags": [
+    "step",
+    "actuator",
+    "fixstand"
+  ],
+  "states": [
+    "FixStand",
+    "FixedStand"
+  ],
+  "notes": "FixStand 两段起立（kp 20/3 → 55/2）纯状态段；用于 PD/执行器阶跃响应",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

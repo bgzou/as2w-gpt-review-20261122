@@ -1,0 +1,43 @@
+{
+ "generated": "2026-11-22",
+ "self_hosted_server": {
+  "endpoint": "root@183.147.142.40:31236",
+  "hostname": "gpufree-container",
+  "private_key": "%USERPROFILE%\\.ssh\\as2w_gpufree_20261121_nopass",
+  "static_root": "/root/gpufree-data/as2w-cpro/phase_hij_20261121",
+  "dynamic_root": "/root/gpufree-data/as2w-cpro/04_诊断实验/systematic_project_audit_20261121",
+  "isaac_lab": "3.0.0",
+  "isaac_sim": "6.2.0-rc.14+release.52805.02189a84",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB",
+  "driver": "580.126.09",
+  "python": "3.12.14",
+  "mujoco": "3.12.0",
+  "torch": "2.11.0+cu130",
+  "numpy": "2.5.1",
+  "cpu_count": 128,
+  "memory_gb": 503,
+  "note": "origin bundle was Isaac Sim 6.2.0.0 + dual RTX 5090 -> only approximate cross-env match"
+ },
+ "colleague_server": {
+  "endpoint": "n1ddtnhc-kw8vvfcc.root@n1ddtnhc-kw8vvfcc.ah02restapi.gpufree.cn:30022",
+  "access": "read-only, credentials provided out of band; never stored here",
+  "used_in_this_phase": false
+ },
+ "workstation": {
+  "role": "authoritative files + only machine allowed to touch CPRO",
+  "path": "D:\\Projects\\Athena\\运动控制\\Collie\\AS2-W_CPRO"
+ },
+ "local_python": {
+  "version": "3.13.6",
+  "numpy": "2.2.6",
+  "onnxruntime": "1.24.4",
+  "onnx": "1.22.0",
+  "mujoco": null,
+  "torch": null
+ },
+ "caveats": [
+  "remote data disk may not survive instance release -> pull-back first",
+  "cache/ (USD intermediates) is not pulled back and is not evidence",
+  "PhysX single job at a time; MuJoCo/Isaac sequential as well"
+ ]
+}

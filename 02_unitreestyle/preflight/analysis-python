@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+unset LD_LIBRARY_PATH PYTHONHOME PYTHONPATH
+exec "${AS2W_PYTHON:-/opt/isaaclab-venv/bin/python}" "$@"

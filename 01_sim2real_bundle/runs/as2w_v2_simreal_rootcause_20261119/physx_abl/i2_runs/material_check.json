@@ -1,0 +1,56 @@
+{
+ "materials": [
+  {
+   "path": "/World/envs/env_0/Robot/material",
+   "friction_attrs": {
+    "physics:dynamicFriction": 0.800000011920929,
+    "physics:staticFriction": 0.800000011920929
+   }
+  }
+ ],
+ "wheel_colliders": [
+  {
+   "path": "/World/envs/env_0/Robot/Geometry/base_link/FL_hip/FL_thigh/FL_calf/FL_foot/cylinder",
+   "bound_material_physics": "/World/envs/env_0/Robot/material",
+   "bound_material_anypurpose": null,
+   "bound_material": "/World/envs/env_0/Robot/material",
+   "friction": {
+    "static": 0.800000011920929,
+    "dynamic": 0.800000011920929
+   }
+  },
+  {
+   "path": "/World/envs/env_0/Robot/Geometry/base_link/FR_hip/FR_thigh/FR_calf/FR_foot/cylinder",
+   "bound_material_physics": "/World/envs/env_0/Robot/material",
+   "bound_material_anypurpose": null,
+   "bound_material": "/World/envs/env_0/Robot/material",
+   "friction": {
+    "static": 0.800000011920929,
+    "dynamic": 0.800000011920929
+   }
+  },
+  {
+   "path": "/World/envs/env_0/Robot/Geometry/base_link/RL_hip/RL_thigh/RL_calf/RL_foot/cylinder",
+   "bound_material_physics": "/World/envs/env_0/Robot/material",
+   "bound_material_anypurpose": null,
+   "bound_material": "/World/envs/env_0/Robot/material",
+   "friction": {
+    "static": 0.800000011920929,
+    "dynamic": 0.800000011920929
+   }
+  },
+  {
+   "path": "/World/envs/env_0/Robot/Geometry/base_link/RR_hip/RR_thigh/RR_calf/RR_foot/cylinder",
+   "bound_material_physics": "/World/envs/env_0/Robot/material",
+   "bound_material_anypurpose": null,
+   "bound_material": "/World/envs/env_0/Robot/material",
+   "friction": {
+    "static": 0.800000011920929,
+    "dynamic": 0.800000011920929
+   }
+  }
+ ],
+ "n_colliders": 4,
+ "requested_friction": 0.8,
+ "stage": "after_reset_runtime"
+}

@@ -1,0 +1,41 @@
+body,parent,mass_kg,com_x,com_y,com_z,inertia_xx,inertia_yy,inertia_zz
+world,world,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+base_link,world,10.080000,0.035002,-0.000756,0.017521,0.156409,0.138215,0.044874
+JT128,base_link,0.500000,0.001136,0.000428,-0.015107,0.000533,0.000541,0.000531
+FL_hip,base_link,0.750000,-0.004655,-0.008851,0.000034,0.000492,0.000619,0.000594
+FL_thigh,FL_hip,1.410000,-0.006019,-0.024080,-0.037399,0.006927,0.006435,0.001368
+FL_calf,FL_thigh,1.100000,0.001511,0.002219,-0.169150,0.006706,0.006767,0.000612
+FL_foot,FL_calf,0.595000,0.000000,0.053412,0.000000,0.001458,0.002577,0.001458
+FR_hip,base_link,0.750000,-0.004655,0.008851,0.000034,0.000492,0.000619,0.000594
+FR_thigh,FR_hip,1.410000,-0.006019,0.024080,-0.037399,0.006927,0.006436,0.001368
+FR_calf,FR_thigh,1.100000,0.001511,-0.002219,-0.169150,0.006706,0.006766,0.000612
+FR_foot,FR_calf,0.595000,0.000000,-0.053412,0.000000,0.001458,0.002577,0.001458
+RL_hip,base_link,0.750000,0.004664,-0.008851,-0.000039,0.000492,0.000619,0.000594
+RL_thigh,RL_hip,1.410000,-0.006877,-0.022228,-0.039019,0.007016,0.006548,0.001341
+RL_calf,RL_thigh,1.100000,0.001054,0.002319,-0.184490,0.004905,0.005060,0.000546
+RL_foot,RL_calf,0.595000,0.000000,0.053412,0.000000,0.001458,0.002577,0.001458
+RR_hip,base_link,0.750000,0.004664,0.008851,-0.000039,0.000492,0.000619,0.000594
+RR_thigh,RR_hip,1.410000,-0.006876,0.022228,-0.039019,0.007016,0.006548,0.001341
+RR_calf,RR_thigh,1.100000,0.001054,-0.002319,-0.184490,0.004905,0.005060,0.000546
+RR_foot,RR_calf,0.595000,0.000000,-0.053412,0.000000,0.001458,0.002577,0.001458
+
+"# actuator readback: name, transmission joint, gain(kp-ish), biasprm[1]=-kp, biasprm[2]=-kd, forcerange, ctrlrange"
+act,FL_hip_act,FL_hip,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,FL_thigh_act,FL_thigh,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,FL_calf_act,FL_calf,90.0,-90.0,-3.0,"[np.float64(-90.0), np.float64(90.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,FR_hip_act,FR_hip,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,FR_thigh_act,FR_thigh,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,FR_calf_act,FR_calf,90.0,-90.0,-3.0,"[np.float64(-90.0), np.float64(90.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RL_hip_act,RL_hip,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RL_thigh_act,RL_thigh,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RL_calf_act,RL_calf,90.0,-90.0,-3.0,"[np.float64(-90.0), np.float64(90.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RR_hip_act,RR_hip,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RR_thigh_act,RR_thigh,60.0,-60.0,-2.0,"[np.float64(-60.0), np.float64(60.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RR_calf_act,RR_calf,90.0,-90.0,-3.0,"[np.float64(-90.0), np.float64(90.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,FL_foot_act,FL_foot,8.0,0.0,-8.0,"[np.float64(-15.0), np.float64(15.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,FR_foot_act,FR_foot,8.0,0.0,-8.0,"[np.float64(-15.0), np.float64(15.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RL_foot_act,RL_foot,8.0,0.0,-8.0,"[np.float64(-15.0), np.float64(15.0)]","[np.float64(0.0), np.float64(0.0)]"
+act,RR_foot_act,RR_foot,8.0,0.0,-8.0,"[np.float64(-15.0), np.float64(15.0)]","[np.float64(0.0), np.float64(0.0)]"
+# total_mass_kg,26.0000
+# gravity,"[np.float64(0.0), np.float64(0.0), np.float64(-9.81)]"
+"# NOTE total 26.00 kg includes JT128 0.5 kg box; delivery actuator gains are 60/2,90/3, wheel kd=8 -- NOT the real 55/2, wheel kd=2 contract"

@@ -1,0 +1,174 @@
+{
+ "summary": {
+  "n_conditions": 7,
+  "cross_condition_pitch_range_deg": 1.76,
+  "cross_condition_hip_q_range_rad": 0.0518,
+  "same_branch_rule": "pitch_range<0.3deg AND hip_q_range<0.02rad",
+  "verdict": "INIT_SENSITIVE_MULTIBRANCH",
+  "max_repeat_dpitch_deg": 0.0,
+  "max_repeat_dhipq_rad": 0.0
+ },
+ "rows": [
+  {
+   "condition": "base",
+   "perturbation": "{}",
+   "n_runs": 2,
+   "pitch_deg": 4.038,
+   "hip_q": [
+    0.1362,
+    -0.1397,
+    0.2003,
+    -0.1994
+   ],
+   "Fn": [
+    53.2,
+    52.71,
+    74.25,
+    75.43
+   ],
+   "settle_time_s": 28.75,
+   "repeat_dpitch": 0.0,
+   "repeat_dhipq": 0.0,
+   "settle_ok": true,
+   "notes": "implicit PD dt0.005; cyl; real init baseline"
+  },
+  {
+   "condition": "pitch_p2",
+   "perturbation": "{\"pitch_deg\": 2.0}",
+   "n_runs": 2,
+   "pitch_deg": 2.973,
+   "hip_q": [
+    0.136,
+    -0.1408,
+    0.1733,
+    -0.1709
+   ],
+   "Fn": [
+    54.66,
+    53.94,
+    72.69,
+    74.22
+   ],
+   "settle_time_s": 36.95,
+   "repeat_dpitch": 0.0,
+   "repeat_dhipq": 0.0,
+   "settle_ok": true,
+   "notes": "implicit PD dt0.005; cyl; real init baseline"
+  },
+  {
+   "condition": "pitch_m2",
+   "perturbation": "{\"pitch_deg\": -2.0}",
+   "n_runs": 2,
+   "pitch_deg": 3.618,
+   "hip_q": [
+    0.1668,
+    -0.1678,
+    0.2206,
+    -0.2227
+   ],
+   "Fn": [
+    54.03,
+    54.2,
+    74.07,
+    74.19
+   ],
+   "settle_time_s": 21.61,
+   "repeat_dpitch": 0.0,
+   "repeat_dhipq": 0.0,
+   "settle_ok": true,
+   "notes": "implicit PD dt0.005; cyl; real init baseline"
+  },
+  {
+   "condition": "hip_p002",
+   "perturbation": "{\"hip_offset\": 0.02}",
+   "n_runs": 2,
+   "pitch_deg": 4.733,
+   "hip_q": [
+    0.1351,
+    -0.1401,
+    0.2187,
+    -0.2161
+   ],
+   "Fn": [
+    52.35,
+    51.81,
+    75.05,
+    76.52
+   ],
+   "settle_time_s": 33.13,
+   "repeat_dpitch": 0.0,
+   "repeat_dhipq": 0.0,
+   "settle_ok": true,
+   "notes": "implicit PD dt0.005; cyl; real init baseline"
+  },
+  {
+   "condition": "hip_m002",
+   "perturbation": "{\"hip_offset\": -0.02}",
+   "n_runs": 2,
+   "pitch_deg": 3.812,
+   "hip_q": [
+    0.1392,
+    -0.1389,
+    0.1914,
+    -0.1947
+   ],
+   "Fn": [
+    52.91,
+    53.26,
+    74.87,
+    74.55
+   ],
+   "settle_time_s": 32.3,
+   "repeat_dpitch": 0.0,
+   "repeat_dhipq": 0.0,
+   "settle_ok": true,
+   "notes": "implicit PD dt0.005; cyl; real init baseline"
+  },
+  {
+   "condition": "gap0",
+   "perturbation": "{\"gap_mm\": 0.0}",
+   "n_runs": 2,
+   "pitch_deg": 3.979,
+   "hip_q": [
+    0.1358,
+    -0.1401,
+    0.201,
+    -0.1992
+   ],
+   "Fn": [
+    53.3,
+    52.88,
+    74.11,
+    75.27
+   ],
+   "settle_time_s": 30.78,
+   "repeat_dpitch": 0.0,
+   "repeat_dhipq": 0.0,
+   "settle_ok": true,
+   "notes": "implicit PD dt0.005; cyl; real init baseline"
+  },
+  {
+   "condition": "gap4",
+   "perturbation": "{\"gap_mm\": 4.0}",
+   "n_runs": 2,
+   "pitch_deg": 4.03,
+   "hip_q": [
+    0.1357,
+    -0.1404,
+    0.2002,
+    -0.1979
+   ],
+   "Fn": [
+    53.22,
+    52.56,
+    74.12,
+    75.69
+   ],
+   "settle_time_s": 23.09,
+   "repeat_dpitch": 0.0,
+   "repeat_dhipq": 0.0,
+   "settle_ok": true,
+   "notes": "implicit PD dt0.005; cyl; real init baseline"
+  }
+ ]
+}

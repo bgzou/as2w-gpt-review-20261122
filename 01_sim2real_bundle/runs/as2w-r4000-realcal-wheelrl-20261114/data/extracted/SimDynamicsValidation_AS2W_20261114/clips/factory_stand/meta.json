@@ -1,0 +1,24 @@
+{
+  "name": "factory_stand",
+  "source_session": "20261109-185025_factory",
+  "source_files": [
+    "low_capture_fast.log"
+  ],
+  "tick_start": 345620,
+  "tick_end": 351920,
+  "duration_s": 6.3,
+  "rate_hz": 100.0,
+  "n_cmd": 0,
+  "n_state": 631,
+  "test_tags": [
+    "factory",
+    "reference",
+    "static"
+  ],
+  "states": [
+    "factory_stand"
+  ],
+  "notes": "原厂高层站立稳定窗 86.66–92.96 s；无 LowCmd，仅作 T1 姿态/力矩参考",
+  "sign_convention": "st_* is model sign (sign*raw); st_*_raw is DDS sign",
+  "state_only": true
+}

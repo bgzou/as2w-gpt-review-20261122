@@ -1,0 +1,30 @@
+RUN base_r1
+  rc 0
+RUN base_r2
+  rc 0
+RUN pitch_p2_r1
+  rc 0
+RUN pitch_p2_r2
+  rc 0
+RUN pitch_m2_r1
+  rc 0
+RUN pitch_m2_r2
+  rc 0
+RUN hip_p002_r1
+  rc 0
+RUN hip_p002_r2
+  rc 0
+RUN hip_m002_r1
+  rc 0
+RUN hip_m002_r2
+  rc 0
+RUN gap0_r1
+  rc 0
+RUN gap0_r2
+  rc 0
+RUN gap4_r1
+  rc 0
+RUN gap4_r2
+  rc 0
+SUMMARY {"n_conditions": 7, "cross_condition_pitch_range_deg": 1.76, "cross_condition_hip_q_range_rad": 0.0518, "same_branch_rule": "pitch_range<0.3deg AND hip_q_range<0.02rad", "verdict": "INIT_SENSITIVE_MULTIBRANCH", "max_repeat_dpitch_deg": 0.0, "max_repeat_dhipq_rad": 0.0}
+wrote /home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/tables/I3_PHYSX_BRANCH_PERTURBATION

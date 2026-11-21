@@ -1,0 +1,8 @@
+{
+  "scope": "Staged Git blob bytes compared to the immutable deployment package SHA256SUMS, including SHA256SUMS itself",
+  "verified_files": 349,
+  "all_match": true,
+  "archive_sha256": "09d4ba1cdbd919b29d6ad5542f3f33192fca84d774c197418e8d9f7706bc2910",
+  "policy_status": "research_only",
+  "physical_gait_qualified": false
+}

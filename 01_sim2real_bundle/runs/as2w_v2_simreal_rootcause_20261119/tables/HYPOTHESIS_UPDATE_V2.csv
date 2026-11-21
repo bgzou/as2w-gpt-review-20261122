@@ -1,0 +1,10 @@
+rank,mechanism,v2_verdict,evidence_level,explains,indistinguishable_from,next_test,h_verdict,i_verdict,final_verdict
+1,"轮地侧向力/轮胎柔顺（外撑，非旧版内夹）","SUPPORTED（机制）/ UNKNOWN（实机是否存在外撑力）","MODEL_CALCULATION + INFERENCE","地面 hip 缺口前 7.3 / 后 3.5 Nm；M1 反演 Fy 前 +24/后 +18.6 N","与 M5 在关节力矩上不可区分","单腿悬空 hip 静态扫角；或轮侧向力测量","H2/H3 未涉及（接触层）","I5：impratio=100 把前腿 hip τ 从 −4.61 拉到 −11.47（实测 −11.81），证明切向摩擦约束阻抗是前腿缺口的一阶解释自由度；后腿反向不匹配","有证据支持（求解器摩擦阻抗层）；实机外撑力仍 UNKNOWN"
+2,"hip 机械零位/传动摩擦/预紧","POSSIBLE（与 M3 并列）","INFERENCE","同为纯 hip 轴力矩；后轮幅值随载荷增大","与 M3 不可区分","单腿悬空 hip 扫角（力矩-角度滞环）","H2：前后腿常数偏置 ±0.1–0.2 Nm（前负后正），量级不足以解释 6–7 Nm 缺口","I5 未涉及","基本排除（作为主因）；仅贡献 ±0.2 Nm"
+3,"轮碰撞体整体错位（H5 轮心）","SUPPORTED（必要但不充分）","SOURCE_CONFIRMED + SIM_RUN_CONFIRMED","MuJoCo 闭环后 hip -4.1→-11.7、pitch -2.4→-6.6；解释后腿缺口约 7.6 Nm","—","已修；PhysX 训练资产已含正确轮心","H3 S-A 悬空闭环 0.0096 rad 复现，确认轮心/重力模型正确","I5 W_A 逐位复现 G3 数值","已证实（必要修正），非残余缺口来源"
+4,"前后支撑高差/后重 Fn 分配","SUPPORTED（由姿态+CoM 解释，无需额外台阶）","SIM_RUN_CONFIRMED","C1 用官方 CoM 复现 Fn 49/78（实测 47/80）与后 calf 12.4（实测 15.1）","与 CoM 前移不可区分","四轮独立称重","H3 静态账本自洽","I5：W_A Fn 49.4/49.6/77.9/78.1 与实测 48.2/48.4/79.5/79.5 差 ≤1.6 N（基线配置）","已证实（W_A 基线）；Go2-W 组合会破坏该匹配"
+5,"质量/CoM/惯量/关节轴","SUPPORTED（质量/轴正确）/ load-v0 CoM −15 mm 不被地面数据支持","SIM_RUN_CONFIRMED + INFERENCE","本 candidate 副本质量 26.000 kg（MJCF/URDF/称重 255.1 N 三源一致；27.512 kg 属另一资产版本）；C1m 的 pitch −18.7° 偏离实测 −6.1°","—","四轮称重 + CoM 辨识；建议改用官方 CoM","H3 悬空重力对账 0.02–0.46 Nm","I5 未涉及","已证实（质量/轴/CoM 非残差来源）"
+6,"PD/轮控制合同及限幅","SUPPORTED（工程事实，非残差来源）","RAW_DATA_CONFIRMED","无直接残差；悬空 e_q×kp=tau 自洽","—","已区分","H1：合同干净、无前馈、全窗口恒定；H2：tau_PD vs tau_est 0.119–0.134 Nm RMS、无饱和","I1：MuJoCo 隐式执行器 ≡ 显式 PD 逐位一致（静态平衡）","已证实非残差来源"
+7,"数据同步/坐标变换/控制模式","CONTRADICTED（作为主因）","RAW_DATA_CONFIRMED","左右镜像模式无法由错排产生","—","已排除","H1 HG IDL/35 槽判定一致","I1 十项核对表无新疑点","已排除"
+8,"摩擦系数范围（0.8-1.2）","CONTRADICTED（静力学）/ 接触模型差异为地面域主因","SIM_RUN_CONFIRMED","同资产 PhysX 与 MuJoCo 定性分叉（G 后 hip +1.5 vs −17.6）","—","接触模型/轮胎柔顺标定","H3 地面闭环原样复现 G3 缺口","I5：μ 数值（轮摩擦 0.8/1.0）为二阶；impratio（摩擦约束阻抗）为一阶——缺口在接触求解保真度而非 μ 数值","有证据支持（接触模型/求解器层为主因）；μ 数值本身排除"
+9,"R4000/12D 策略合同差异","NOT_APPLICABLE","RAW_DATA_CONFIRMED","fixedstand 位置模式台架态，无策略在环","—","—","H1 确认七会话无策略在环","I 未涉及","不适用"

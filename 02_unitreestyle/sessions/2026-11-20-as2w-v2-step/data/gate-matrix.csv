@@ -1,0 +1,5 @@
+checkpoint,left,yaw_left,yaw_right,right
+base 0.5,4,4,4,3
+mu025 @200,4,3,3,2
+mu025 @400,4,3,4,2
+mu025 @600,4,3,3,2

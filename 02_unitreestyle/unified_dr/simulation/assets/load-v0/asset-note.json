@@ -1,0 +1,9 @@
+{
+  "purpose": "provisional longitudinal load candidate",
+  "reference": "official AS2W URDF",
+  "base_mass_scale": 1.15,
+  "base_com_shift_x_m": -0.015,
+  "base_inertia_scale": 1.15,
+  "geometry": "unchanged",
+  "limitations": "no independent field mass/corner weights; hip load unresolved"
+}

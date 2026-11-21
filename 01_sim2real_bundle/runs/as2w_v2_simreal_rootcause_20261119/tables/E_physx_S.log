@@ -1,0 +1,78 @@
+AppLauncher is deprecated; use isaaclab.app.launch_simulation.
+Loading user config located at: '/home/robot/z00945176/isaac_env/venv312/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-20T06:24:44Z [0ms] [Error] [carb] No space left on device for creating change watches. Sysctl value `fs.inotify.max_user_watches` may be insufficient. This message is logged once.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795155884.401539  139346 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1795155884.401569  139346 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+[ISAACLAB] KitLauncher initialization complete
+Warp 1.19.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/robot/.cache/warp/1.19.0
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory ContactSensor.
+[INFO]: Physics scene prim path: /physicsScene
+Module isaaclab_physx.assets.articulation.kernels c7efc33 load on device 'cuda:0' took 2.27 ms  (cached)
+Module isaaclab_physx.assets.kernels b9fc0d2 load on device 'cuda:0' took 3.40 ms  (cached)
+[INFO]: Simulation parameters for joints in /World/envs/env_[^/]+/Robot:
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                               Simulation Joint Information (Prim path: /World/envs/env_[^/]+/Robot)                                               |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+| Index | Name     | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction |   Position Limits   | Velocity Limits | Effort Limits |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+|   0   | FL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   1   | FR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   2   | RL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   3   | RR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   4   | FL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   5   | FR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   6   | RL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   7   | RR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   8   | FL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   9   | FR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   10  | RL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   11  | RR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   12  | FL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   13  | FR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   14  | RL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   15  | RR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+JOINTS ['FL_hip', 'FR_hip', 'RL_hip', 'RR_hip', 'FL_thigh', 'FR_thigh', 'RL_thigh', 'RR_thigh', 'FL_calf', 'FR_calf', 'RL_calf', 'RR_calf', 'FL_foot', 'FR_foot', 'RL_foot', 'RR_foot']
+BODIES ['base_link', 'FL_hip', 'FR_hip', 'RL_hip', 'RR_hip', 'FL_thigh', 'FR_thigh', 'RL_thigh', 'RR_thigh', 'FL_calf', 'FR_calf', 'RL_calf', 'RR_calf', 'FL_foot', 'FR_foot', 'RL_foot', 'RR_foot']
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:146: DeprecationWarning: The `root_physx_view` property will be deprecated in a future release. Please use `root_view` instead.
+  masses = np.asarray(robot.root_physx_view.get_masses()).reshape(-1)
+NMASS 17 total_mass_kg 27.512
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:157: DeprecationWarning: The function 'write_joint_stiffness_to_sim' will be deprecated in a future release. Please use 'write_joint_stiffness_to_sim_index' instead.
+  robot.write_joint_stiffness_to_sim(KP, joint_ids=leg_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:158: DeprecationWarning: The function 'write_joint_damping_to_sim' will be deprecated in a future release. Please use 'write_joint_damping_to_sim_index' instead.
+  robot.write_joint_damping_to_sim(KD, joint_ids=leg_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:159: DeprecationWarning: The function 'write_joint_stiffness_to_sim' will be deprecated in a future release. Please use 'write_joint_stiffness_to_sim_index' instead.
+  robot.write_joint_stiffness_to_sim(0.0, joint_ids=wheel_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:160: DeprecationWarning: The function 'write_joint_damping_to_sim' will be deprecated in a future release. Please use 'write_joint_damping_to_sim_index' instead.
+  robot.write_joint_damping_to_sim(2.0, joint_ids=wheel_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:162: DeprecationWarning: ActuatorBase.effort_limit is deprecated. Use actuator_effort_limit instead; effort_limit will be removed in 3.1.
+  v.effort_limit.flatten()[:4].tolist())
+ACTUATORS {'legs': ([55.0, 55.0, 55.0, 55.0], [2.0, 2.0, 2.0, 2.0], [60.0, 60.0, 60.0, 60.0]), 'wheels': ([0.0, 0.0, 0.0, 0.0], [2.0, 2.0, 2.0, 2.0], [15.0, 15.0, 15.0, 15.0])}
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:166: DeprecationWarning: Implicit use of ProxyArray as a torch.Tensor is deprecated. Use the explicit .torch property instead (e.g., array.torch).
+  print('DBG', step, 'q', [round(float(x), 3) for x in robot.data.joint_pos[0, leg_ids]],
+DBG 0 q [-0.001, 0.001, -0.001, 0.001, 0.078, 0.078, 0.079, 0.079, -0.168, -0.168, -0.168, -0.168] tau [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] z 0.05
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:169: DeprecationWarning: Articulation.set_joint_position_target is deprecated. Use articulation.actuators.target_command.set_position_index instead.
+  robot.set_joint_position_target(tgt_leg, joint_ids=leg_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e1_physx_static.py:170: DeprecationWarning: Articulation.set_joint_velocity_target is deprecated. Use articulation.actuators.target_command.set_velocity_index instead.
+  robot.set_joint_velocity_target(torch.zeros(1, len(WHEELS), device=dev),
+Module isaaclab.actuators.actuator_kernels e2e3873 load on device 'cuda:0' took 0.87 ms  (cached)
+Module isaaclab.sensors.kernels b9f2ec7 load on device 'cuda:0' took 0.39 ms  (cached)
+Module isaaclab_physx.sensors.contact_sensor.kernels b03f115 load on device 'cuda:0' took 0.71 ms  (cached)
+DBG 1 q [-0.003, 0.003, -0.003, 0.003, 0.118, 0.118, 0.12, 0.12, -0.251, -0.251, -0.251, -0.251] tau [0.34, -0.33, 0.38, -0.37, 40.24, 40.37, 40.39, 40.46, -78.78, -79.06, -79.26, -79.42] z 0.05
+DBG 10 q [-0.042, 0.043, -0.041, 0.042, 0.498, 0.498, 0.502, 0.502, -0.915, -0.915, -0.915, -0.915] tau [3.8, -3.9, 3.64, -3.74, 5.25, 5.26, 5.05, 5.03, -19.9, -19.87, -19.94, -19.87] z 0.05
+DBG 100 q [-0.057, 0.058, -0.058, 0.059, 0.799, 0.799, 0.801, 0.801, -1.553, -1.553, -1.55, -1.55] tau [3.01, -3.05, 3.09, -3.12, 0.13, 0.13, -0.04, -0.04, -2.52, -2.53, -2.7, -2.7] z 0.05
+DBG 1000 q [-0.052, 0.053, -0.053, 0.053, 0.786, 0.786, 0.788, 0.788, -1.561, -1.561, -1.559, -1.559] tau [2.88, -2.9, 2.9, -2.92, 0.75, 0.76, 0.68, 0.67, -2.15, -2.15, -2.26, -2.26] z 0.05
+DBG 3000 q [-0.052, 0.053, -0.053, 0.053, 0.786, 0.786, 0.788, 0.788, -1.561, -1.561, -1.559, -1.559] tau [2.88, -2.9, 2.9, -2.92, 0.75, 0.76, 0.68, 0.67, -2.15, -2.15, -2.26, -2.26] z 0.05
+RESULT {"scen": "S", "urdf": "/tmp/as2w-unitreestyle/calibration/candidates/load-v0/as2w-load-v0.urdf", "urdf_sha256": "7c9740a95042bad7b73cadfda90bdc7c1873ac766afbb7c0e7e492367d45afb0", "total_mass_kg": 27.512, "body_masses": {"base_link": 12.092, "FL_hip": 0.75, "FR_hip": 0.75, "RL_hip": 0.75, "RR_hip": 0.75, "FL_thigh": 1.41, "FR_thigh": 1.41, "RL_thigh": 1.41, "RR_thigh": 1.41, "FL_calf": 1.1, "FR_calf": 1.1, "RL_calf": 1.1, "RR_calf": 1.1, "FL_foot": 0.595, "FR_foot": 0.595, "RL_foot": 0.595, "RR_foot": 0.595}, "tau_legs": [2.884, -2.899, 2.902, -2.916, 0.754, 0.757, 0.676, 0.673, -2.151, -2.152, -2.256, -2.255], "q_legs": [-0.0524, 0.0527, -0.0528, 0.053, 0.7863, 0.7863, 0.7877, 0.7877, -1.5609, -1.5609, -1.559, -1.559], "Fn": [0.0, 0.0, 0.0, 0.0], "Fn_vec": [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]], "hip_tau_from_contact": {"FL_foot": 0.0, "FR_foot": 0.0, "RL_foot": 0.0, "RR_foot": 0.0}, "contact_r_from_hip": {"FL_foot": [0.0526, 0.1405, -0.3758], "FR_foot": [0.052, -0.1404, -0.3764], "RL_foot": [0.0527, 0.1404, -0.3755], "RR_foot": [0.0519, -0.1403, -0.3762]}, "pitch_deg": 0.0, "wheel_world": {"FL_foot": [0.21014319360256195, 0.1494625359773636, -0.25639867782592773], "FR_foot": [0.21015393733978271, -0.14937767386436462, -0.25642549991607666], "RL_foot": [-0.21437914669513702, 0.14934851229190826, -0.25671058893203735], "RR_foot": [-0.21439243853092194, -0.1492716372013092, -0.2567307949066162], "FL_hip": [0.21189989149570465, 0.06000000238418579, 0.049999821931123734], "FR_hip": [0.21189987659454346, -0.059999980032444, 0.04999982938170433], "RL_hip": [-0.2119000107049942, 0.06000000983476639, 0.04999908059835434], "RR_hip": [-0.21189996600151062, -0.059999991208314896, 0.049999088048934937]}, "wheel_quat_xyzw": {"FL_foot": [-0.0246951412409544, -0.33567237854003906, 0.00880331452935934, 0.9416139125823975], "FR_foot": [0.02486962266266346, -0.3309199810028076, -0.008724627085030079, 0.943290650844574], "RL_foot": [-0.024796003475785255, -0.3410966694355011, 0.009000822901725769, 0.939657986164093], "RR_foot": [0.024966752156615257, -0.3355466425418854, -0.00889671966433525, 0.9416506290435791]}, "track_width_front_m": 0.2988, "track_width_rear_m": 0.2986, "wheel_center_y_off_m": {"FL_foot": 0.0895, "FR_foot": -0.0894, "RL_foot": 0.0893, "RR_foot": -0.0893}}
+2026-11-20T06:24:44Z [237ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-11-20T06:24:44Z [240ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-11-20T06:24:46Z [2,468ms] [Warning] [usdrt.population.plugin] Last global time was not created. Did you call setEnableUsdNoticeHandling?

@@ -1,0 +1,740 @@
+{
+  "time": "2026-11-19T07:00:47.033527+08:00",
+  "current": "2026-11-19T06:40:54+08:00 DR_FINISHED selection=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/final-selection.json",
+  "base_completed_updates": 3562,
+  "base_process": {
+    "pid": 1965475,
+    "live": true,
+    "state": "S",
+    "command": "bash /root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/launch.sh /root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208 /root/as2w/unified_unitree_20261119-010208 /root/as2w/calibration/candidates/load-v0/as2w-load-v0.urdf "
+  },
+  "manager_process": {
+    "live": false
+  },
+  "pack_process": {
+    "live": false
+  },
+  "base_train_log_modified_epoch": 1795042846.1711023,
+  "gpu": "9137 MiB, 36319 MiB, 61 %",
+  "base_metrics": {
+    "Mean reward": 55.42,
+    "Mean value loss": 0.0125,
+    "Mean surrogate loss": -0.0037,
+    "Mean action std": 64.71,
+    "Iteration time": 3.2
+  },
+  "stages": {
+    "1": {
+      "completed_updates": 600,
+      "selected": {
+        "selected": "incoming",
+        "qualified": false,
+        "selected_sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+        "selection_key": [
+          "gate_failures",
+          "replay_loss",
+          "candidate_order"
+        ],
+        "candidates": [
+          {
+            "label": "endpoint",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/train/endpoint.pt",
+              "runner_index": 1600
+            },
+            "gate_failure_count": 36,
+            "loss": 3.169411,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/FL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right/RL: fewer lifts",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "flat-dr1": [
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "right/FL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr1": [
+                "left: missing repeated stepping on all four wheels",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left/FL: fewer lifts",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ]
+            }
+          },
+          {
+            "label": "update-500",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/train/update-500.pt",
+              "runner_index": 1500
+            },
+            "gate_failure_count": 36,
+            "loss": 3.154934,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/FL: fewer lifts",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "flat-dr1": [
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RL: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr1": [
+                "left: missing repeated stepping on all four wheels",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ]
+            }
+          },
+          {
+            "label": "update-250",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/train/update-250.pt",
+              "runner_index": 1250
+            },
+            "gate_failure_count": 37,
+            "loss": 3.145304,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "flat-dr1": [
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right/RR: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "mixed/FR: fewer lifts"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right/FR: fewer lifts",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr1": [
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ]
+            }
+          },
+          {
+            "label": "incoming",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1000/checkpoint.pt",
+              "runner_index": 1000
+            },
+            "gate_failure_count": 32,
+            "loss": 3.131688,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ],
+              "flat-dr1": [
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ],
+              "slope-dr1": [
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "2": {
+      "completed_updates": 600,
+      "selected": {
+        "selected": "incoming",
+        "qualified": false,
+        "selected_sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+        "selection_key": [
+          "gate_failures",
+          "replay_loss",
+          "candidate_order"
+        ],
+        "candidates": [
+          {
+            "label": "endpoint",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/train/endpoint.pt",
+              "runner_index": 1600
+            },
+            "gate_failure_count": 35,
+            "loss": 3.294707,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/FL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "flat-dr2": [
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "right/RL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right/RL: fewer lifts"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr2": [
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "mixed/RL: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ]
+            }
+          },
+          {
+            "label": "update-500",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/train/update-500.pt",
+              "runner_index": 1500
+            },
+            "gate_failure_count": 38,
+            "loss": 3.262263,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/FL: fewer lifts",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "flat-dr2": [
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "right/RL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RR: fewer lifts",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ],
+              "slope-dr2": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FL: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "mixed/RL: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ]
+            }
+          },
+          {
+            "label": "update-250",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/train/update-250.pt",
+              "runner_index": 1250
+            },
+            "gate_failure_count": 34,
+            "loss": 3.346917,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ],
+              "flat-dr2": [
+                "reverse: rolling support",
+                "right: missing repeated stepping on all four wheels",
+                "right/RL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "mixed/RR: fewer lifts"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr2": [
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "mixed/RL: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ]
+            }
+          },
+          {
+            "label": "incoming",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/incoming/checkpoint.pt",
+              "runner_index": 1000
+            },
+            "gate_failure_count": 33,
+            "loss": 3.285747,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ],
+              "flat-dr2": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ],
+              "slope-dr2": [
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "3": {
+      "completed_updates": 600,
+      "selected": {
+        "selected": "incoming",
+        "qualified": false,
+        "selected_sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+        "selection_key": [
+          "gate_failures",
+          "replay_loss",
+          "candidate_order"
+        ],
+        "candidates": [
+          {
+            "label": "endpoint",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/train/endpoint.pt",
+              "runner_index": 1600
+            },
+            "gate_failure_count": 42,
+            "loss": 3.294161,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ],
+              "flat-dr3": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RR: fewer lifts",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr3": [
+                "left: missing repeated stepping on all four wheels",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/RL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ]
+            }
+          },
+          {
+            "label": "update-500",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/train/update-500.pt",
+              "runner_index": 1500
+            },
+            "gate_failure_count": 38,
+            "loss": 3.26789,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ],
+              "flat-dr3": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr3": [
+                "left: missing repeated stepping on all four wheels",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/FR: fewer lifts",
+                "right/RL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ]
+            }
+          },
+          {
+            "label": "update-250",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/train/update-250.pt",
+              "runner_index": 1250
+            },
+            "gate_failure_count": 45,
+            "loss": 3.297945,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/FL: fewer lifts",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ],
+              "flat-dr3": [
+                "reverse: rolling support",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left/FL: fewer lifts",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right/FR: fewer lifts",
+                "mixed/FL: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed: smaller joint excursion"
+              ],
+              "slope-dr3": [
+                "left: missing repeated stepping on all four wheels",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right/FL: fewer lifts",
+                "right/FR: fewer lifts",
+                "right/RL: fewer lifts",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right/FR: fewer lifts",
+                "yaw_right: smaller joint excursion",
+                "mixed/FR: fewer lifts"
+              ]
+            }
+          },
+          {
+            "label": "incoming",
+            "origin": {
+              "checkpoint": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/incoming/checkpoint.pt",
+              "runner_index": 1000
+            },
+            "gate_failure_count": 31,
+            "loss": 8.308908,
+            "failures": {
+              "flat-dr0": [
+                "forward: rolling support",
+                "reverse: rolling support",
+                "left: smaller joint excursion",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts",
+                "mixed/RR: fewer lifts"
+              ],
+              "flat-dr3": [
+                "reverse: rolling support",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ],
+              "slope-dr0": [
+                "left: missing repeated stepping on all four wheels",
+                "left/FR: fewer lifts",
+                "left/RR: fewer lifts",
+                "right: missing repeated stepping on all four wheels",
+                "right: smaller joint excursion",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_left: smaller joint excursion",
+                "yaw_right: missing repeated stepping on all four wheels",
+                "yaw_right: smaller joint excursion",
+                "mixed/FL: fewer lifts",
+                "mixed/FR: fewer lifts"
+              ],
+              "slope-dr3": [
+                "left: missing repeated stepping on all four wheels",
+                "right: missing repeated stepping on all four wheels",
+                "yaw_left: missing repeated stepping on all four wheels",
+                "yaw_right: missing repeated stepping on all four wheels"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "final_candidate": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/incoming",
+  "archive": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/artifacts/as2w-unified-dr-20261119-013647.tar.gz"
+}

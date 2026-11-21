@@ -1,0 +1,676 @@
+{
+  "snapshot": "/root/gpufree-data/as2w-runs/v2-stephard-eval-600",
+  "checkpoint_sha256": "45b36ee789e1ac50692b8bedf16c4a7754095dfbae1fe9eca438682756a1e53c",
+  "asset_sha256": "ebb087194b2b90d27878532f0f0e3f5824e44932fdafc4c87f8f1c2bcc5b0688",
+  "resume_sha256": "aa41bbe8b31fcd65a37a7540bc47e937ea37f7ef48163adb945e4cb80c069e69",
+  "num_envs": 4096,
+  "gate_qualified": false,
+  "gate_failures": [
+    "forward: four-wheel rolling support below 90%",
+    "reverse: four-wheel rolling support below 90%",
+    "right: survival or tracking",
+    "right: fewer than two events on a wheel in a trial"
+  ],
+  "modes": {
+    "stand": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 1.0,
+      "min_lift_events_per_trial": 0,
+      "lift_events_per_wheel_min": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 67.34512329101562,
+          "unloaded_frac": 0.0,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": -2.761824369430542,
+          "clearance_max_mm": -2.283327341079712
+        },
+        "FR": {
+          "load_mean_n": 74.39031219482422,
+          "unloaded_frac": 0.0,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": -1.4868931770324707,
+          "clearance_max_mm": -1.0299756526947021
+        },
+        "RL": {
+          "load_mean_n": 72.81925201416016,
+          "unloaded_frac": 0.0,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": -3.455784559249878,
+          "clearance_max_mm": -2.7927980422973633
+        },
+        "RR": {
+          "load_mean_n": 55.322837829589844,
+          "unloaded_frac": 0.0,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": -3.610215663909912,
+          "clearance_max_mm": -3.327317476272583
+        }
+      },
+      "wheels_with_2plus_events": 0,
+      "tilt_p95_deg": 3.169445514678955,
+      "tracking_ratio_min": null
+    },
+    "forward": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 0.76,
+      "min_lift_events_per_trial": 0,
+      "lift_events_per_wheel_min": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 48.57876968383789,
+          "unloaded_frac": 0.152,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": 0.04562957584857941,
+          "clearance_max_mm": 7.157519340515137
+        },
+        "FR": {
+          "load_mean_n": 88.75495147705078,
+          "unloaded_frac": 0.004,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": 0.027498573064804077,
+          "clearance_max_mm": 0.059738755226135254
+        },
+        "RL": {
+          "load_mean_n": 79.99336242675781,
+          "unloaded_frac": 0.0,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": -0.033433061093091965,
+          "clearance_max_mm": 0.058084726333618164
+        },
+        "RR": {
+          "load_mean_n": 53.21855545043945,
+          "unloaded_frac": 0.1,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": 0.04670135676860809,
+          "clearance_max_mm": 5.874842643737793
+        }
+      },
+      "wheels_with_2plus_events": 0,
+      "tilt_p95_deg": 5.032718658447266,
+      "tracking_ratio_min": 0.9446179270744324
+    },
+    "reverse": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 0.864,
+      "min_lift_events_per_trial": 0,
+      "lift_events_per_wheel_min": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 90.82371520996094,
+          "unloaded_frac": 0.0,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": 0.02319847047328949,
+          "clearance_max_mm": 0.05179643630981445
+        },
+        "FR": {
+          "load_mean_n": 82.83486938476562,
+          "unloaded_frac": 0.002,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": 0.028015976771712303,
+          "clearance_max_mm": 0.057891011238098145
+        },
+        "RL": {
+          "load_mean_n": 48.81916046142578,
+          "unloaded_frac": 0.048666666666666664,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": -0.2288900464773178,
+          "clearance_max_mm": 8.405074119567871
+        },
+        "RR": {
+          "load_mean_n": 45.783531188964844,
+          "unloaded_frac": 0.017333333333333333,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": 0.03045198880136013,
+          "clearance_max_mm": 0.11980533599853516
+        }
+      },
+      "wheels_with_2plus_events": 0,
+      "tilt_p95_deg": 2.2278199195861816,
+      "tracking_ratio_min": 0.9180541634559631
+    },
+    "left": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 0.08,
+      "min_lift_events_per_trial": 13,
+      "lift_events_per_wheel_min": [
+        13,
+        14,
+        14,
+        13
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 63.37428283691406,
+          "unloaded_frac": 0.378,
+          "clear15mm_frac": 0.13533333333333333,
+          "clear10mm_frac": 0.18666666666666668,
+          "clearance_p95_mm": 19.998748779296875,
+          "clearance_max_mm": 27.947195053100586
+        },
+        "FR": {
+          "load_mean_n": 97.64715576171875,
+          "unloaded_frac": 0.394,
+          "clear15mm_frac": 0.17466666666666666,
+          "clear10mm_frac": 0.22666666666666666,
+          "clearance_p95_mm": 20.755292892456055,
+          "clearance_max_mm": 26.923961639404297
+        },
+        "RL": {
+          "load_mean_n": 63.81853103637695,
+          "unloaded_frac": 0.38066666666666665,
+          "clear15mm_frac": 0.13066666666666665,
+          "clear10mm_frac": 0.18866666666666668,
+          "clearance_p95_mm": 19.623971939086914,
+          "clearance_max_mm": 24.571367263793945
+        },
+        "RR": {
+          "load_mean_n": 48.85248947143555,
+          "unloaded_frac": 0.5006666666666667,
+          "clear15mm_frac": 0.226,
+          "clear10mm_frac": 0.29133333333333333,
+          "clearance_p95_mm": 23.551177978515625,
+          "clearance_max_mm": 31.90574836730957
+        }
+      },
+      "wheels_with_2plus_events": 4,
+      "tilt_p95_deg": 2.8596761226654053,
+      "tracking_ratio_min": 1.196472406387329
+    },
+    "right": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 0.124,
+      "min_lift_events_per_trial": 0,
+      "lift_events_per_wheel_min": [
+        19,
+        17,
+        19,
+        0
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 89.22179412841797,
+          "unloaded_frac": 0.44666666666666666,
+          "clear15mm_frac": 0.198,
+          "clear10mm_frac": 0.24,
+          "clearance_p95_mm": 23.413917541503906,
+          "clearance_max_mm": 29.078624725341797
+        },
+        "FR": {
+          "load_mean_n": 58.48025131225586,
+          "unloaded_frac": 0.4826666666666667,
+          "clear15mm_frac": 0.15,
+          "clear10mm_frac": 0.23266666666666666,
+          "clearance_p95_mm": 19.329439163208008,
+          "clearance_max_mm": 28.50393295288086
+        },
+        "RL": {
+          "load_mean_n": 37.16132736206055,
+          "unloaded_frac": 0.4886666666666667,
+          "clear15mm_frac": 0.15066666666666667,
+          "clear10mm_frac": 0.24133333333333334,
+          "clearance_p95_mm": 19.8424072265625,
+          "clearance_max_mm": 24.237722396850586
+        },
+        "RR": {
+          "load_mean_n": 80.49613189697266,
+          "unloaded_frac": 0.02,
+          "clear15mm_frac": 0.0,
+          "clear10mm_frac": 0.0,
+          "clearance_p95_mm": -3.2764601707458496,
+          "clearance_max_mm": -2.917222738265991
+        }
+      },
+      "wheels_with_2plus_events": 3,
+      "tilt_p95_deg": 5.3281731605529785,
+      "tracking_ratio_min": 0.2332090586423874
+    },
+    "yaw_left": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 0.096,
+      "min_lift_events_per_trial": 14,
+      "lift_events_per_wheel_min": [
+        15,
+        15,
+        15,
+        14
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 61.296878814697266,
+          "unloaded_frac": 0.43066666666666664,
+          "clear15mm_frac": 0.21,
+          "clear10mm_frac": 0.25,
+          "clearance_p95_mm": 25.291324615478516,
+          "clearance_max_mm": 35.61332702636719
+        },
+        "FR": {
+          "load_mean_n": 106.05645751953125,
+          "unloaded_frac": 0.394,
+          "clear15mm_frac": 0.17933333333333334,
+          "clear10mm_frac": 0.236,
+          "clearance_p95_mm": 23.04608726501465,
+          "clearance_max_mm": 28.301156997680664
+        },
+        "RL": {
+          "load_mean_n": 65.27751159667969,
+          "unloaded_frac": 0.4593333333333333,
+          "clear15mm_frac": 0.19866666666666666,
+          "clear10mm_frac": 0.25,
+          "clearance_p95_mm": 24.620346069335938,
+          "clearance_max_mm": 28.763845443725586
+        },
+        "RR": {
+          "load_mean_n": 48.711151123046875,
+          "unloaded_frac": 0.4146666666666667,
+          "clear15mm_frac": 0.13333333333333333,
+          "clear10mm_frac": 0.19733333333333333,
+          "clearance_p95_mm": 20.055938720703125,
+          "clearance_max_mm": 29.768138885498047
+        }
+      },
+      "wheels_with_2plus_events": 4,
+      "tilt_p95_deg": 2.1338393688201904,
+      "tracking_ratio_min": 1.2090154886245728
+    },
+    "yaw_right": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 0.244,
+      "min_lift_events_per_trial": 11,
+      "lift_events_per_wheel_min": [
+        12,
+        13,
+        13,
+        11
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 62.07707214355469,
+          "unloaded_frac": 0.38333333333333336,
+          "clear15mm_frac": 0.21466666666666667,
+          "clear10mm_frac": 0.23933333333333334,
+          "clearance_p95_mm": 33.506065368652344,
+          "clearance_max_mm": 38.034976959228516
+        },
+        "FR": {
+          "load_mean_n": 85.76262664794922,
+          "unloaded_frac": 0.2733333333333333,
+          "clear15mm_frac": 0.11066666666666666,
+          "clear10mm_frac": 0.16466666666666666,
+          "clearance_p95_mm": 22.259946823120117,
+          "clearance_max_mm": 27.258329391479492
+        },
+        "RL": {
+          "load_mean_n": 71.30545043945312,
+          "unloaded_frac": 0.31333333333333335,
+          "clear15mm_frac": 0.14266666666666666,
+          "clear10mm_frac": 0.17333333333333334,
+          "clearance_p95_mm": 24.749244689941406,
+          "clearance_max_mm": 29.201074600219727
+        },
+        "RR": {
+          "load_mean_n": 47.64476013183594,
+          "unloaded_frac": 0.31733333333333336,
+          "clear15mm_frac": 0.09933333333333333,
+          "clear10mm_frac": 0.16866666666666666,
+          "clearance_p95_mm": 19.149930953979492,
+          "clearance_max_mm": 24.686641693115234
+        }
+      },
+      "wheels_with_2plus_events": 4,
+      "tilt_p95_deg": 3.7347002029418945,
+      "tracking_ratio_min": 1.0750046968460083
+    },
+    "mixed": {
+      "trials": 6,
+      "falls": 0,
+      "four_wheel_support_min": 0.024,
+      "min_lift_events_per_trial": 0,
+      "lift_events_per_wheel_min": [
+        11,
+        13,
+        14,
+        0
+      ],
+      "per_wheel": {
+        "FL": {
+          "load_mean_n": 56.42505645751953,
+          "unloaded_frac": 0.476,
+          "clear15mm_frac": 0.17066666666666666,
+          "clear10mm_frac": 0.254,
+          "clearance_p95_mm": 22.570636749267578,
+          "clearance_max_mm": 32.20207977294922
+        },
+        "FR": {
+          "load_mean_n": 105.07955932617188,
+          "unloaded_frac": 0.4493333333333333,
+          "clear15mm_frac": 0.19866666666666666,
+          "clear10mm_frac": 0.2713333333333333,
+          "clearance_p95_mm": 23.22168731689453,
+          "clearance_max_mm": 31.55299186706543
+        },
+        "RL": {
+          "load_mean_n": 57.948123931884766,
+          "unloaded_frac": 0.502,
+          "clear15mm_frac": 0.2826666666666667,
+          "clear10mm_frac": 0.32133333333333336,
+          "clearance_p95_mm": 36.006927490234375,
+          "clearance_max_mm": 41.755958557128906
+        },
+        "RR": {
+          "load_mean_n": 53.0675048828125,
+          "unloaded_frac": 0.384,
+          "clear15mm_frac": 0.004666666666666667,
+          "clear10mm_frac": 0.068,
+          "clearance_p95_mm": 10.91353702545166,
+          "clearance_max_mm": 17.274648666381836
+        }
+      },
+      "wheels_with_2plus_events": 3,
+      "tilt_p95_deg": 2.673868417739868,
+      "tracking_ratio_min": 0.8681937456130981
+    }
+  },
+  "joints": {
+    "FL_hip": {
+      "q_p2p_rad": 0.4083079695701599,
+      "tau_abs_mean_nm": 5.750654220581055,
+      "tau_abs_p95_nm": 11.47587776184082,
+      "tau_abs_max_nm": 19.860137939453125
+    },
+    "FL_thigh": {
+      "q_p2p_rad": 0.3109857439994812,
+      "tau_abs_mean_nm": 5.21271276473999,
+      "tau_abs_p95_nm": 14.906378746032715,
+      "tau_abs_max_nm": 22.696245193481445
+    },
+    "FL_calf": {
+      "q_p2p_rad": 0.4210778474807739,
+      "tau_abs_mean_nm": 6.497988224029541,
+      "tau_abs_p95_nm": 16.33774185180664,
+      "tau_abs_max_nm": 24.051897048950195
+    },
+    "FR_hip": {
+      "q_p2p_rad": 0.38399145007133484,
+      "tau_abs_mean_nm": 5.342283725738525,
+      "tau_abs_p95_nm": 10.281089782714844,
+      "tau_abs_max_nm": 15.89709758758545
+    },
+    "FR_thigh": {
+      "q_p2p_rad": 0.33743816614151,
+      "tau_abs_mean_nm": 5.55122184753418,
+      "tau_abs_p95_nm": 14.840847969055176,
+      "tau_abs_max_nm": 19.150924682617188
+    },
+    "FR_calf": {
+      "q_p2p_rad": 0.38519346714019775,
+      "tau_abs_mean_nm": 9.640186309814453,
+      "tau_abs_p95_nm": 21.775550842285156,
+      "tau_abs_max_nm": 30.742237091064453
+    },
+    "RL_hip": {
+      "q_p2p_rad": 0.3524278700351715,
+      "tau_abs_mean_nm": 6.416656970977783,
+      "tau_abs_p95_nm": 12.832795143127441,
+      "tau_abs_max_nm": 17.506427764892578
+    },
+    "RL_thigh": {
+      "q_p2p_rad": 0.33826977014541626,
+      "tau_abs_mean_nm": 2.7050187587738037,
+      "tau_abs_p95_nm": 6.6985087394714355,
+      "tau_abs_max_nm": 13.744887351989746
+    },
+    "RL_calf": {
+      "q_p2p_rad": 0.30396318435668945,
+      "tau_abs_mean_nm": 8.951983451843262,
+      "tau_abs_p95_nm": 18.70716094970703,
+      "tau_abs_max_nm": 28.12848663330078
+    },
+    "RR_hip": {
+      "q_p2p_rad": 0.3347107470035553,
+      "tau_abs_mean_nm": 4.540557861328125,
+      "tau_abs_p95_nm": 10.409093856811523,
+      "tau_abs_max_nm": 15.817919731140137
+    },
+    "RR_thigh": {
+      "q_p2p_rad": 0.2647436261177063,
+      "tau_abs_mean_nm": 3.0325803756713867,
+      "tau_abs_p95_nm": 6.857608318328857,
+      "tau_abs_max_nm": 13.517267227172852
+    },
+    "RR_calf": {
+      "q_p2p_rad": 0.3049367666244507,
+      "tau_abs_mean_nm": 7.735875606536865,
+      "tau_abs_p95_nm": 17.566110610961914,
+      "tau_abs_max_nm": 23.628219604492188
+    },
+    "FL_foot": {
+      "q_p2p_rad": 12.55422592163086,
+      "tau_abs_mean_nm": 0.7807518243789673,
+      "tau_abs_p95_nm": 2.7530674934387207,
+      "tau_abs_max_nm": 15.0
+    },
+    "FR_foot": {
+      "q_p2p_rad": 12.554154396057129,
+      "tau_abs_mean_nm": 0.9119940996170044,
+      "tau_abs_p95_nm": 3.558319568634033,
+      "tau_abs_max_nm": 15.0
+    },
+    "RL_foot": {
+      "q_p2p_rad": 12.542763710021973,
+      "tau_abs_mean_nm": 0.6967482566833496,
+      "tau_abs_p95_nm": 2.5601258277893066,
+      "tau_abs_max_nm": 15.0
+    },
+    "RR_foot": {
+      "q_p2p_rad": 12.559497833251953,
+      "tau_abs_mean_nm": 0.5908227562904358,
+      "tau_abs_p95_nm": 2.195793390274048,
+      "tau_abs_max_nm": 14.212780952453613
+    }
+  },
+  "flat_report": {
+    "stand": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 0,
+      "mean_dx_m": 0.01097249984741211,
+      "vel_mean": [
+        0.0025172887835651636,
+        0.00074896210571751,
+        -0.001317246351391077
+      ],
+      "mae": [
+        0.005103087518364191,
+        0.0068604424595832825,
+        0.00388764264062047
+      ],
+      "tilt_p95_deg": 3.1694459915161133,
+      "air": 0.0,
+      "nonwheel": 0.0,
+      "leg_dq": 0.0844658836722374,
+      "wheel_target": 0.0
+    },
+    "forward": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 6,
+      "mean_dx_m": 3.275737762451172,
+      "vel_mean": [
+        0.568681538105011,
+        0.003881575306877494,
+        0.04183086007833481
+      ],
+      "mae": [
+        0.034114934504032135,
+        0.025190042331814766,
+        0.09228936582803726
+      ],
+      "tilt_p95_deg": 5.032718658447266,
+      "air": 0.06400000303983688,
+      "nonwheel": 0.0,
+      "leg_dq": 0.6540385484695435,
+      "wheel_target": 6.976744651794434
+    },
+    "reverse": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 0,
+      "mean_dx_m": -3.2172425587972007,
+      "vel_mean": [
+        -0.5527699589729309,
+        0.00286873965524137,
+        -0.02139190211892128
+      ],
+      "mae": [
+        0.04841356351971626,
+        0.022753095254302025,
+        0.046636298298835754
+      ],
+      "tilt_p95_deg": 2.2278213500976562,
+      "air": 0.017000000923871994,
+      "nonwheel": 0.0,
+      "leg_dq": 0.32024693489074707,
+      "wheel_target": 6.976744651794434
+    },
+    "left": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 0,
+      "mean_dx_m": -0.18406200408935547,
+      "vel_mean": [
+        -0.007353830151259899,
+        0.3636246621608734,
+        0.017565522342920303
+      ],
+      "mae": [
+        0.05735332891345024,
+        0.06787992268800735,
+        0.08868218213319778
+      ],
+      "tilt_p95_deg": 2.8596763610839844,
+      "air": 0.41333332657814026,
+      "nonwheel": 0.0,
+      "leg_dq": 1.0905548334121704,
+      "wheel_target": 0.0
+    },
+    "right": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 0,
+      "mean_dx_m": -0.21345074971516928,
+      "vel_mean": [
+        -0.040513698011636734,
+        -0.07289925217628479,
+        0.015209599398076534
+      ],
+      "mae": [
+        0.04179498925805092,
+        0.22710071504116058,
+        0.05089021846652031
+      ],
+      "tilt_p95_deg": 5.3281731605529785,
+      "air": 0.359499990940094,
+      "nonwheel": 0.0,
+      "leg_dq": 0.8686342239379883,
+      "wheel_target": 0.0
+    },
+    "yaw_left": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 0,
+      "mean_dx_m": -0.2723385492960612,
+      "vel_mean": [
+        -0.005310693755745888,
+        0.19806520640850067,
+        0.7385275959968567
+      ],
+      "mae": [
+        0.026349281892180443,
+        0.19806520640850067,
+        0.16648347675800323
+      ],
+      "tilt_p95_deg": 2.1338393688201904,
+      "air": 0.4246666729450226,
+      "nonwheel": 0.0,
+      "leg_dq": 0.9282248616218567,
+      "wheel_target": 0.0
+    },
+    "yaw_right": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 0,
+      "mean_dx_m": 0.41477394104003906,
+      "vel_mean": [
+        -0.01314077340066433,
+        0.10815385729074478,
+        -0.6528283953666687
+      ],
+      "mae": [
+        0.040197018533945084,
+        0.10878145694732666,
+        0.09981812536716461
+      ],
+      "tilt_p95_deg": 3.7347004413604736,
+      "air": 0.3218333423137665,
+      "nonwheel": 0.0,
+      "leg_dq": 1.1702690124511719,
+      "wheel_target": 0.0
+    },
+    "mixed": {
+      "n": 6,
+      "survived": 6,
+      "progress_2_1m": 0,
+      "mean_dx_m": -1.1227784156799316,
+      "vel_mean": [
+        0.3955541253089905,
+        0.30127882957458496,
+        0.6248724460601807
+      ],
+      "mae": [
+        0.06855201721191406,
+        0.10145337134599686,
+        0.23625168204307556
+      ],
+      "tilt_p95_deg": 2.673868417739868,
+      "air": 0.4528333246707916,
+      "nonwheel": 0.0,
+      "leg_dq": 1.0773948431015015,
+      "wheel_target": 5.232557773590088
+    }
+  }
+}

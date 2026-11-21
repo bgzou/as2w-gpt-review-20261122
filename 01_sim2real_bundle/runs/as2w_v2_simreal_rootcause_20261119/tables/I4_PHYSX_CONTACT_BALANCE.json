@@ -1,0 +1,134 @@
+{
+ "summary": {
+  "verdict": "SIM_RUN_CONFIRMED",
+  "sum_Fz": 255.06,
+  "weight_model": 255.06,
+  "vertical_residual": 0.0,
+  "horizontal_residual": [
+   0.0,
+   -0.0
+  ],
+  "CoP_xy": [
+   0.0163,
+   0.0009
+  ],
+  "moment_about_CoM_Nm": 5.872,
+  "moment_about_origin_Nm": 5.873,
+  "per_contact_point": "UNKNOWN",
+  "baseline_run": {
+   "pitch_deg": 4.038,
+   "hip_q": [
+    0.1362,
+    -0.1397,
+    0.2003,
+    -0.1994
+   ],
+   "hip_tau_Nm": [
+    -7.49,
+    7.69,
+    -11.02,
+    10.97
+   ],
+   "Fn": [
+    53.2,
+    52.71,
+    74.25,
+    75.43
+   ],
+   "settle_ok": true
+  }
+ },
+ "rows": [
+  {
+   "item": "sum_Fz",
+   "value": 255.06,
+   "unit": "N",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "sum of per-wheel net normal-ish contact force z"
+  },
+  {
+   "item": "weight_model",
+   "value": 255.06,
+   "unit": "N",
+   "evidence": "MODEL_CALCULATION",
+   "notes": "26.0 kg (delivery model mass) * 9.81; NOT weighed"
+  },
+  {
+   "item": "sum_Fz_minus_weight",
+   "value": 0.0,
+   "unit": "N",
+   "evidence": "MODEL_CALCULATION",
+   "notes": "static vertical residual"
+  },
+  {
+   "item": "sum_Fx",
+   "value": 0.0,
+   "unit": "N",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "horizontal residual x"
+  },
+  {
+   "item": "sum_Fy",
+   "value": -0.0,
+   "unit": "N",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "horizontal residual y"
+  },
+  {
+   "item": "Fn_per_wheel",
+   "value": "53.19/52.71/74.25/75.43",
+   "unit": "N",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "FL/FR/RL/RR net contact force magnitude"
+  },
+  {
+   "item": "Fn_normal_per_wheel",
+   "value": "52.97/52.42/74.25/75.43",
+   "unit": "N",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "net_normal_forces_w magnitude"
+  },
+  {
+   "item": "Fn_friction_per_wheel",
+   "value": "4.82/5.57/0.59/0.28",
+   "unit": "N",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "net_friction_forces_w magnitude"
+  },
+  {
+   "item": "CoP_xy",
+   "value": "0.0163/0.0009",
+   "unit": "m",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "Fz-weighted mean of average contact positions"
+  },
+  {
+   "item": "contact_pos_per_wheel",
+   "value": "[0.252,0.262,0.001]/[0.256,-0.257,0.001]/[-0.153,0.260,0.000]/[-0.148,-0.259,0.000]",
+   "unit": "m",
+   "evidence": "SIM_RUN_CONFIRMED",
+   "notes": "ContactSensor contact_pos_w (average per body)"
+  },
+  {
+   "item": "moment_about_CoM",
+   "value": "5.872",
+   "unit": "Nm",
+   "evidence": "MODEL_CALCULATION",
+   "notes": "|sum (r_i-com) x F_i|; static should be ~0"
+  },
+  {
+   "item": "moment_about_origin",
+   "value": "5.873",
+   "unit": "Nm",
+   "evidence": "MODEL_CALCULATION",
+   "notes": "|sum r_i x F_i + com x (0,0,-W)|"
+  },
+  {
+   "item": "per_contact_point",
+   "value": "UNKNOWN",
+   "unit": "",
+   "evidence": "UNKNOWN",
+   "notes": "PhysX ContactSensor exposes only net force + average contact_pos_w; no per-contact-point position/force arrays. Tried: net_forces_w, net_normal_forces_w, net_friction_forces_w, contact_pos_w, force_matrix_w (needs filter_prim_paths_expr), max_contact_data_count_per_prim. Individual points not exposed."
+  }
+ ]
+}

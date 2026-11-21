@@ -1,0 +1,27 @@
+{
+  "name": "220051_fixedstand_hold",
+  "source_session": "20261112-220051_training-contract",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 1715259,
+  "tick_end": 1718919,
+  "duration_s": 3.66,
+  "rate_hz": 500.0,
+  "n_cmd": 1821,
+  "n_state": 1831,
+  "test_tags": [
+    "static",
+    "gravity",
+    "fixedstand"
+  ],
+  "states": [
+    "FixedStand",
+    "PolicyHandoff"
+  ],
+  "notes": "T2 FixedStand 保持 3.66 s 纯状态段；用于重力/CoM/静态 PD 误差校验",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

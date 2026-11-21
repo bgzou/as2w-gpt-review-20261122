@@ -1,0 +1,6 @@
+RUN material_check
+RUN fix_real
+  rc 0
+RUN fix_nearflat
+  rc 0
+wrote /home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/tables/I2_MATERIAL_BINDING

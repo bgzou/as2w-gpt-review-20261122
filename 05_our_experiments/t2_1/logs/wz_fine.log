@@ -1,0 +1,7 @@
+full           STAND  survived       tilt_max   2.23 z_min 0.381 yaw    -2.03 wz_mean -0.003
+full           WZ0325 survived       tilt_max  27.63 z_min 0.356 yaw  +114.82 wz_mean +0.260
+full           WZ0350 survived       tilt_max  22.91 z_min 0.357 yaw  +127.56 wz_mean +0.283
+full           WZ0375 FELL@7.16s     tilt_max  62.18 z_min 0.271 yaw  +119.47 wz_mean +0.354
+full           WZ0400 survived       tilt_max  32.87 z_min 0.355 yaw  +146.33 wz_mean +0.328
+full           WZ0425 survived       tilt_max  25.74 z_min 0.346 yaw  +137.58 wz_mean +0.302
+{"verdict": "COMPLETE", "issues": []}

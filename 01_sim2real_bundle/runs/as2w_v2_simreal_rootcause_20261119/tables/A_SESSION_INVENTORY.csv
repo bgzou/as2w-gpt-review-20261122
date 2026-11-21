@@ -1,0 +1,8 @@
+session,dir,kind,support,rows,dur_s,approx_hz,low_sha
+OG,recordings/20261119-153922_official-og-trans,official,ground,59992,120.0,500.0,9684306fed3670d3
+OS,recordings/20261119-165542_official-os,official,suspended,29992,60.0,500.0,37486ea41cb0fa7b
+P55G1,recordings/field_sessions/20261119-182802_p55-hold,hipdiag,ground,21529,43.1,500.0,975506f6c93f3b03
+P55G2,recordings/field_sessions/20261119-185930_p55-hold,hipdiag,ground,16301,32.6,500.0,73c132dbe6dc3a39
+P55G3,recordings/field_sessions/20261119-190012_p55-hold,hipdiag,ground,16188,32.4,500.0,765025a5784caa0f
+P55S,recordings/field_sessions/20261119-194344_p55-hold,hipdiag,suspended,61342,122.7,500.0,93b1933dde3d4e89
+P85DS,recordings/field_sessions/20261119-194837_p85d-hold,hipdiag,suspended,67631,135.3,500.0,561e31aa75eaff6d

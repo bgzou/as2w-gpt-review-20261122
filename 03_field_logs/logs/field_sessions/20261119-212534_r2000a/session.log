@@ -1,0 +1,41 @@
+[field-session] mode=r2000a monitor=180s dry_run=0 vx_limit=0.30 vy_limit=0.0 dir=/root/field_sessions/20261119-212534_r2000a
+[field-session] step1 binary: build-r2000a-joystick/deploy/robots/as2w/r2000a/as2w_r2000a_joystick_publish
+e647dffa9d225072103c2895349be3ecff18a4727bc10becc411c56747e41570  deploy/robots/as2w/common/as2w_publish.cpp
+b204c06761a5fbd1b77fb23e3b9a27197781cfe55bc58308d848d8a806db172a  deploy/robots/as2w/r2000a/r2000a_controller.cpp
+4a0c439ac49d3b7cc95f007df2b82222d637f03e8d3387f953884d1c42a75420  deploy/robots/as2w/r2000a/r2000a_controller.hpp
+11a61a501dbb447975c213f843427523c35445cd9a7ed641529e2cd9c5bcb2c3  tools/run_r2000a_trial.sh
+e7bdc55e8acf8449cf914fdffbad75638574267f48d28c51a34a5dd8bfb091a8  models/r2000a/deploy.yaml
+e6e21faa2ab63d24eaa9b5f9efefea308d01aecb91b165b1845d5274834dd2e2  models/r2000a/policy.onnx
+b205038c114ef1848afeddc95289d36cdd42e919a5cca1d92bab4e15267cbe80  build-r2000a-joystick/deploy/robots/as2w/r2000a/as2w_r2000a_joystick_publish
+[field-session] step1 audit: AUDIT PASS: synthetic HG frames and wake timing; command slew and field safety guards; offline fault injection (warn/hard/motorstate/remote-timeout/slew); firmware acceptance unknown
+[field-session] step2 probe: low packets=1036 tick=4941962 mode_pr=0 mode_machine=2 imu_wxyz=0.997287,0.00106502,0.00325156,-0.073539, gyro=0.00639159,-0.00319579,0.00639159, m0=-0.571408,0.00920388 m1=1.00198,0 m2=-2.76782,0.00204531 m3=0.573721,-0.0122718 m4=1.0374,-0.00613592 m5=-2.7616,0.00613592 m6=-0.561503,-0.0122718 m7=1.00114,-0.00306796 m8=-2.75617,-0.00818123 m9=0.568514,0.00613592 m10=0.959787,0 m11=-2.75276,-0.00818123 m12=0.501324,0 m13=-0.145848,0 m14=0.262886,0 m15=-0.468272,0 m16=0,0 m17=0,0 m18=0,0 m19=0,0 m20=0,0 m21=0,0 m22=0,0 m23=0,0 m24=0,0 m25=0,0 m26=0,0 m27=0,0 m28=0,0 m29=0,0 m30=0,0 m31=0,0 m32=0,0 m33=0,0 m34=0,0
+[field-session] step3 motion-mode: MotionSwitcher CheckMode rc=0 form=1 name=ai
+[field-session] step3 factory control (ai): ensure prone before releasing
+[field-session] step3 current fsm: fsm_name=ai_damping
+[field-session] step3 prone confirmed -> ReleaseMode
+[field-session] step3 release: MotionSwitcher ReleaseMode rc=0
+[field-session] step3 recheck: MotionSwitcher CheckMode rc=0 form=1 name=
+[field-session] step4 sample: LOW_SAMPLE,2003,2083,0,4946090,0,2,0.997283,0.000828911,0.00316477,-0.0735902,-0.00213053,-0.00106526,0,-0.571408,0.0030
+[field-session] step4 packets=2083 16-axis modes={0}
+[field-session] step4 prone calf gate=yes
+[field-session] step5 starting 180s monitoring (low-capture 2ms + low-protection)
+[field-session] step6 launching: bash tools/run_r2000a_trial.sh --vx-limit 0.30 --vy-limit 0.0
+[field-session]     >>> Passive ready expected in ~3-5s; then hand the remote to the operator.
+[field-session]     >>> R2000A FWD/REV TIER (lateral LOCKED): A=fixed stand, B=2s zero handoff then LY vx +/-0.30m/s for max 30s.
+[field-session]     >>> RX is ignored (yaw contract-locked off); center sticks to stop, A brakes early, Y squats, X=emergency.
+[field-session] publisher exited rc=1
+[field-session] policy diagnostics archived: policy_diag.log (0 lines)
+[field-session] debug diagnostics archived: debug_policy.csv (1 lines)
+[field-session] debug diagnostics archived: debug_lowcmd.csv (9510 lines)
+[field-session] monitoring done; artifacts:
+total 15042
+drwxr-xr-x.   2 root root     3440 Nov 19 21:26 .
+drwxr-xr-x. 146 root root    20480 Nov 19 21:25 ..
+-rw-r--r--.   1 root root  3907961 Nov 19 21:26 debug_lowcmd.csv
+-rw-r--r--.   1 root root      295 Nov 19 21:26 debug_policy.csv
+-rw-r--r--.   1 root root 10421961 Nov 19 21:26 low_capture_fast.log
+-rw-r--r--.   1 root root  1028096 Nov 19 21:26 low_protection.log
+-rw-r--r--.   1 root root        0 Nov 19 21:26 policy_diag.log
+-rw-r--r--.   1 root root     1593 Nov 19 21:26 publisher.log
+-rw-r--r--.   1 root root     3323 Nov 19 21:26 session.log
+[field-session] session complete (mode=r2000a rc=1). Copy /root/field_sessions/20261119-212534_r2000a back to the workstation logs dir and append INDEX.

@@ -1,0 +1,13 @@
+﻿axis,no_offset_mean_rad,no_offset_max_rad,with_offset_last_rad
+FL_hip,0.209,0.300,0.176
+FL_thigh,-0.159,-0.037,-0.112
+FL_calf,0.006,0.078,0.142
+FR_hip,-0.193,-0.079,-0.128
+FR_thigh,-0.004,0.023,-0.305
+FR_calf,0.053,0.106,-0.053
+RL_hip,0.144,0.156,0.021
+RL_thigh,0.237,0.278,0.020
+RL_calf,0.336,0.350,0.105
+RR_hip,-0.145,-0.110,-0.076
+RR_thigh,0.239,0.279,0.117
+RR_calf,0.331,0.376,0.199

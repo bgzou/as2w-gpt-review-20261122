@@ -1,0 +1,25 @@
+case,joint,real_e_q_rad,real_st_tau_Nm,sim_static_tau_min_Nm,gap_tau_Nm,gap_eq_if_load_absent_rad,mechanism_corrected_tau_Nm,correction_mechanism,layerB_final_e_q_rad,sim_minus_real_e_q_rad,verdict
+fixedstand_cmd_level,FL_hip,0.193,10.63,0.009,-10.621,-0.193,10.63,H3 pitch-4.5 + lateral pinch Fy -22.5N,-0.001,-0.194,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_cmd_level,FR_hip,-0.196,-10.64,0.009,10.649,0.194,-10.64,H3 pitch-4.5 + lateral pinch Fy +22.5N,,,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_cmd_level,RL_hip,0.240,13.06,0.015,-13.045,-0.237,13.06,H3 pitch-4.5 + lateral pinch Fy -32.0N,0.001,-0.239,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_cmd_level,RR_hip,-0.238,-13.14,0.015,13.155,0.239,-13.14,H3 pitch-4.5 + lateral pinch Fy +32.2N,,,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_cmd_level,FL_thigh,0.065,3.48,0.544,-2.936,-0.053,4.23,H3 pitch-4.5 redistribution,,thigh_explained_by_pitch_support_redistribution
+fixedstand_cmd_level,FR_thigh,0.067,3.74,0.529,-3.211,-0.058,4.26,H3 pitch-4.5 redistribution,,thigh_explained_by_pitch_support_redistribution
+fixedstand_cmd_level,RL_thigh,0.094,5.04,0.876,-4.164,-0.076,3.79,H3 pitch-4.5 redistribution,0.467,0.373,thigh_explained_by_pitch_support_redistribution_layerB_diverges
+fixedstand_cmd_level,RR_thigh,0.096,5.32,0.866,-4.454,-0.081,3.78,H3 pitch-4.5 redistribution,,thigh_explained_by_pitch_support_redistribution
+fixedstand_cmd_level,FL_calf,0.126,6.97,7.689,0.719,0.013,7.20,H3 pitch-4.5 min-norm already matches,-0.817,-0.943,front_calf_matched_layerB_diverges_toward_limit
+fixedstand_cmd_level,FR_calf,0.135,7.27,7.720,0.450,0.008,7.23,H3 pitch-4.5 min-norm already matches,,,front_calf_matched_layerB_diverges_toward_limit
+fixedstand_cmd_level,RL_calf,0.302,16.59,7.146,-9.444,-0.172,16.22,H3 rear-heavy Fn split (front~30N rear~98N),-0.811,-1.113,rear_calf_explained_by_rear_heavy_Fn_split
+fixedstand_cmd_level,RR_calf,0.298,16.11,7.170,-8.940,-0.163,16.20,H3 rear-heavy Fn split (front~30N rear~98N),,,rear_calf_explained_by_rear_heavy_Fn_split
+fixedstand_meas_coplanar-4.5,FL_hip,0.193,10.63,0.680,-9.950,-0.181,10.63,H3 lateral pinch Fy -22.5N,-0.001,-0.194,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_meas_coplanar-4.5,FR_hip,-0.196,-10.64,-0.720,9.920,0.180,-10.64,H3 lateral pinch Fy +22.5N,,,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_meas_coplanar-4.5,RL_hip,0.240,13.06,1.654,-11.406,-0.207,13.06,H3 lateral pinch Fy -32.0N,0.001,-0.239,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_meas_coplanar-4.5,RR_hip,-0.238,-13.14,-1.579,11.561,0.210,-13.14,H3 lateral pinch Fy +32.2N,,,hip_gap_explained_by_pinch_or_transmission_indistinguishable
+fixedstand_meas_coplanar-4.5,FL_thigh,0.065,3.48,4.233,0.753,0.014,4.23,min-norm matches at real pitch,,thigh_matched
+fixedstand_meas_coplanar-4.5,FR_thigh,0.067,3.74,4.256,0.516,0.009,4.26,min-norm matches at real pitch,,thigh_matched
+fixedstand_meas_coplanar-4.5,RL_thigh,0.094,5.04,3.788,-1.252,-0.023,3.79,min-norm matches at real pitch,0.467,0.373,thigh_matched_layerB_diverges
+fixedstand_meas_coplanar-4.5,RR_thigh,0.096,5.32,3.776,-1.544,-0.028,3.78,min-norm matches at real pitch,,thigh_matched
+fixedstand_meas_coplanar-4.5,FL_calf,0.126,6.97,7.199,0.229,0.004,7.20,min-norm matches at real pitch,-0.817,-0.943,front_calf_matched_layerB_diverges_toward_limit
+fixedstand_meas_coplanar-4.5,FR_calf,0.135,7.27,7.229,-0.041,-0.001,7.23,min-norm matches at real pitch,,,front_calf_matched_layerB_diverges_toward_limit
+fixedstand_meas_coplanar-4.5,RL_calf,0.302,16.59,11.217,-5.373,-0.098,16.22,H3 rear-heavy Fn split (front~30N rear~98N),-0.811,-1.113,rear_calf_explained_by_rear_heavy_Fn_split_layerB_diverges
+fixedstand_meas_coplanar-4.5,RR_calf,0.298,16.11,11.305,-4.805,-0.087,16.20,H3 rear-heavy Fn split (front~30N rear~98N),,,rear_calf_explained_by_rear_heavy_Fn_split

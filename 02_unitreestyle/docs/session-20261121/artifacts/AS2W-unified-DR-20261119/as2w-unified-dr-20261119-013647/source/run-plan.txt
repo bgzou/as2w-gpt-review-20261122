@@ -1,0 +1,7 @@
+branch=model_1200.pt (1201 updates) after base crosses 1200
+stages=600/600/600
+training_envs=4096
+rollout=48
+nominal_seed=319
+stress_seed=719
+deadline=2026-11-20T09:00:00+08:00

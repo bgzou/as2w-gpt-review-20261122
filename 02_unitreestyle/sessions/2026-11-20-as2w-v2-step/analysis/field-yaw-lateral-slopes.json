@@ -1,0 +1,20 @@
+{
+ "jitter(0.5)": {
+  "walk_frames": 1174,
+  "wz_active_frames": 296,
+  "wz_cmd_abs_mean": 0.279,
+  "yaw_slope": 0.199,
+  "vy_active_frames": 279,
+  "vy_cmd_abs_mean": 0.198,
+  "lateral_slope": 0.709
+ },
+ "mu025": {
+  "walk_frames": 911,
+  "wz_active_frames": 260,
+  "wz_cmd_abs_mean": 0.289,
+  "yaw_slope": 0.146,
+  "vy_active_frames": 142,
+  "vy_cmd_abs_mean": 0.195,
+  "lateral_slope": -1.141
+ }
+}

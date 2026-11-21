@@ -1,0 +1,665 @@
+{
+  "onnx": {
+    "opset": 17,
+    "input": [
+      "observation",
+      [
+        "batch",
+        58
+      ],
+      "float32"
+    ],
+    "output": [
+      "leg_action",
+      [
+        "batch",
+        12
+      ],
+      "float32"
+    ],
+    "hidden_state": false
+  },
+  "policy_dt_s": 0.02,
+  "physics_dt_s": 0.005,
+  "command_limit_si": [
+    0.8,
+    0.45,
+    0.8
+  ],
+  "features": [
+    {
+      "index": 0,
+      "name": "vx",
+      "unit": "m/s",
+      "source": "served command (body +x forward, +y left, +z up)",
+      "transform": "identity"
+    },
+    {
+      "index": 1,
+      "name": "vy",
+      "unit": "m/s",
+      "source": "served command (body +x forward, +y left, +z up)",
+      "transform": "identity"
+    },
+    {
+      "index": 2,
+      "name": "wz",
+      "unit": "rad/s",
+      "source": "served command (body +x forward, +y left, +z up)",
+      "transform": "identity"
+    },
+    {
+      "index": 3,
+      "name": "gyro_x",
+      "unit": "rad/s",
+      "source": "IMU gyro in body frame",
+      "transform": "identity"
+    },
+    {
+      "index": 4,
+      "name": "gyro_y",
+      "unit": "rad/s",
+      "source": "IMU gyro in body frame",
+      "transform": "identity"
+    },
+    {
+      "index": 5,
+      "name": "gyro_z",
+      "unit": "rad/s",
+      "source": "IMU gyro in body frame",
+      "transform": "identity"
+    },
+    {
+      "index": 6,
+      "name": "projected_gravity_x",
+      "unit": "unit",
+      "source": "IMU body-to-world wxyz",
+      "transform": "inverse rotate world [0,0,-1]"
+    },
+    {
+      "index": 7,
+      "name": "projected_gravity_y",
+      "unit": "unit",
+      "source": "IMU body-to-world wxyz",
+      "transform": "inverse rotate world [0,0,-1]"
+    },
+    {
+      "index": 8,
+      "name": "projected_gravity_z",
+      "unit": "unit",
+      "source": "IMU body-to-world wxyz",
+      "transform": "inverse rotate world [0,0,-1]"
+    },
+    {
+      "index": 9,
+      "name": "FL_hip_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 10,
+      "name": "FL_thigh_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 11,
+      "name": "FL_calf_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 12,
+      "name": "FR_hip_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 13,
+      "name": "FR_thigh_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 14,
+      "name": "FR_calf_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 15,
+      "name": "RL_hip_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 16,
+      "name": "RL_thigh_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 17,
+      "name": "RL_calf_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 18,
+      "name": "RR_hip_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 19,
+      "name": "RR_thigh_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 20,
+      "name": "RR_calf_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "q minus the default"
+    },
+    {
+      "index": 21,
+      "name": "FL_foot_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "constant zero"
+    },
+    {
+      "index": 22,
+      "name": "FR_foot_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "constant zero"
+    },
+    {
+      "index": 23,
+      "name": "RL_foot_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "constant zero"
+    },
+    {
+      "index": 24,
+      "name": "RR_foot_q_relative",
+      "unit": "rad",
+      "source": "LowState mapped q",
+      "transform": "constant zero"
+    },
+    {
+      "index": 25,
+      "name": "FL_hip_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 26,
+      "name": "FL_thigh_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 27,
+      "name": "FL_calf_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 28,
+      "name": "FR_hip_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 29,
+      "name": "FR_thigh_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 30,
+      "name": "FR_calf_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 31,
+      "name": "RL_hip_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 32,
+      "name": "RL_thigh_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 33,
+      "name": "RL_calf_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 34,
+      "name": "RR_hip_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 35,
+      "name": "RR_thigh_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 36,
+      "name": "RR_calf_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 37,
+      "name": "FL_foot_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 38,
+      "name": "FR_foot_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 39,
+      "name": "RL_foot_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 40,
+      "name": "RR_foot_dq_scaled",
+      "unit": "scaled rad/s",
+      "source": "LowState mapped dq",
+      "transform": "scale 0.05"
+    },
+    {
+      "index": 41,
+      "name": "FL_hip_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 42,
+      "name": "FL_thigh_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 43,
+      "name": "FL_calf_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 44,
+      "name": "FR_hip_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 45,
+      "name": "FR_thigh_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 46,
+      "name": "FR_calf_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 47,
+      "name": "RL_hip_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 48,
+      "name": "RL_thigh_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 49,
+      "name": "RL_calf_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 50,
+      "name": "RR_hip_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 51,
+      "name": "RR_thigh_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 52,
+      "name": "RR_calf_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide offset by 0.25 rad"
+    },
+    {
+      "index": 53,
+      "name": "FL_foot_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide wheel speed by 12 rad/s"
+    },
+    {
+      "index": 54,
+      "name": "FR_foot_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide wheel speed by 12 rad/s"
+    },
+    {
+      "index": 55,
+      "name": "RL_foot_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide wheel speed by 12 rad/s"
+    },
+    {
+      "index": 56,
+      "name": "RR_foot_previous_filtered_target",
+      "unit": "unitless",
+      "source": "previous software wrapper output",
+      "transform": "divide wheel speed by 12 rad/s"
+    },
+    {
+      "index": 57,
+      "name": "height_constant",
+      "unit": "m",
+      "source": "training constant",
+      "transform": "0.37"
+    }
+  ],
+  "runtime_environment_overrides": {},
+  "training_reset_default_root_height_m": 0.39,
+  "motors": [
+    {
+      "joint": "FL_hip",
+      "dds_state_slot": 3,
+      "dds_state_sign": -1,
+      "default_rad": 0.0,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "FL_thigh",
+      "dds_state_slot": 4,
+      "dds_state_sign": 1,
+      "default_rad": 0.8,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "FL_calf",
+      "dds_state_slot": 5,
+      "dds_state_sign": 1,
+      "default_rad": -1.6,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 90.0,
+      "velocity_limit_sim_rad_s": 16.67
+    },
+    {
+      "joint": "FR_hip",
+      "dds_state_slot": 0,
+      "dds_state_sign": -1,
+      "default_rad": 0.0,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "FR_thigh",
+      "dds_state_slot": 1,
+      "dds_state_sign": 1,
+      "default_rad": 0.8,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "FR_calf",
+      "dds_state_slot": 2,
+      "dds_state_sign": 1,
+      "default_rad": -1.6,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 90.0,
+      "velocity_limit_sim_rad_s": 16.67
+    },
+    {
+      "joint": "RL_hip",
+      "dds_state_slot": 9,
+      "dds_state_sign": -1,
+      "default_rad": 0.0,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "RL_thigh",
+      "dds_state_slot": 10,
+      "dds_state_sign": 1,
+      "default_rad": 0.8,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "RL_calf",
+      "dds_state_slot": 11,
+      "dds_state_sign": 1,
+      "default_rad": -1.6,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 90.0,
+      "velocity_limit_sim_rad_s": 16.67
+    },
+    {
+      "joint": "RR_hip",
+      "dds_state_slot": 6,
+      "dds_state_sign": -1,
+      "default_rad": 0.0,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "RR_thigh",
+      "dds_state_slot": 7,
+      "dds_state_sign": 1,
+      "default_rad": 0.8,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 60.0,
+      "velocity_limit_sim_rad_s": 25.0
+    },
+    {
+      "joint": "RR_calf",
+      "dds_state_slot": 8,
+      "dds_state_sign": 1,
+      "default_rad": -1.6,
+      "kp": 55.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 90.0,
+      "velocity_limit_sim_rad_s": 16.67
+    },
+    {
+      "joint": "FL_foot",
+      "dds_state_slot": 13,
+      "dds_state_sign": 1,
+      "default_rad": 0.0,
+      "kp": 0.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 15.0,
+      "velocity_limit_sim_rad_s": 98.47
+    },
+    {
+      "joint": "FR_foot",
+      "dds_state_slot": 12,
+      "dds_state_sign": 1,
+      "default_rad": 0.0,
+      "kp": 0.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 15.0,
+      "velocity_limit_sim_rad_s": 98.47
+    },
+    {
+      "joint": "RL_foot",
+      "dds_state_slot": 15,
+      "dds_state_sign": 1,
+      "default_rad": 0.0,
+      "kp": 0.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 15.0,
+      "velocity_limit_sim_rad_s": 98.47
+    },
+    {
+      "joint": "RR_foot",
+      "dds_state_slot": 14,
+      "dds_state_sign": 1,
+      "default_rad": 0.0,
+      "kp": 0.0,
+      "kd": 2.0,
+      "tau_ff_Nm": 0.0,
+      "effort_limit_sim_Nm": 15.0,
+      "velocity_limit_sim_rad_s": 98.47
+    }
+  ],
+  "nominal_legs_kp_kd": [
+    55,
+    2
+  ],
+  "nominal_wheels_kp_kd": [
+    0,
+    2
+  ],
+  "leg_scale_rad": 0.25,
+  "clip_policy": [
+    -1,
+    1
+  ],
+  "wheel_target_limit_rad_s": 12.0,
+  "wheel_radius_m": 0.086,
+  "wheel_snap_zero_threshold_rad_s": 0.02,
+  "filter": {
+    "kind": "matched pole",
+    "leg_hz": 10,
+    "wheel_hz": 5,
+    "leg_alpha": 0.7153904438018799,
+    "wheel_alpha": 0.46651190519332886
+  },
+  "policy_axis_order": [
+    "FL_hip",
+    "FL_thigh",
+    "FL_calf",
+    "FR_hip",
+    "FR_thigh",
+    "FR_calf",
+    "RL_hip",
+    "RL_thigh",
+    "RL_calf",
+    "RR_hip",
+    "RR_thigh",
+    "RR_calf",
+    "FL_foot",
+    "FR_foot",
+    "RL_foot",
+    "RR_foot"
+  ],
+  "imu_quat": "body_to_world wxyz",
+  "control_features": "nominal chain",
+  "deployment_sensor_age_limit_s": 0.04,
+  "zero_offset_source": "site calibration provided by deployer",
+  "action_offset_reference": "environment.py init_state.joint_pos (same as observation reference)",
+  "policy_entry": "external stand handoff; initialize prior leg offset as measured q minus its default and wheel prior to zero",
+  "policy_exit": "outer machine owns the final hold or damping transition and motor stream"
+}

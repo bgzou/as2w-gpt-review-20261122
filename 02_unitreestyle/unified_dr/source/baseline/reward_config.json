@@ -1,0 +1,16 @@
+{
+  "swing_event": 0.08,
+  "swing_overdue": 0.18,
+  "loaded_lateral_slip": 0.20,
+  "landing_speed": 0.08,
+  "nonwheel_contact": 0.40,
+  "joint_soft_limit": 0.20,
+  "rolling_missing_wheel": 0.40,
+  "rolling_command_min_m_s": 0.15,
+  "rolling_grace_s": 0.24,
+  "rolling_unload_s": 0.10,
+  "landing_speed_free_m_s": 0.25,
+  "nonwheel_contact_force_n": 8.0,
+  "body_contact_stop_s": 0.08,
+  "soft_joint_limit_margin_fraction": 0.10
+}

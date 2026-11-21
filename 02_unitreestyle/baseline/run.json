@@ -1,0 +1,9 @@
+{
+  "asset": "calibration/candidates/load-v0/as2w-load-v0.urdf",
+  "asset_sha256": "7c9740a95042bad7b73cadfda90bdc7c1873ac766afbb7c0e7e492367d45afb0",
+  "num_envs": 4096,
+  "rollout_steps": 48,
+  "policy_dt_s": 0.02,
+  "seed": 42,
+  "resume": null
+}

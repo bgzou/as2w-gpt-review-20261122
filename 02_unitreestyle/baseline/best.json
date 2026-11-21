@@ -1,0 +1,6 @@
+{
+  "metric": "mean_recent_training_episode_return",
+  "episodes": 256,
+  "score": 54.22834216058254,
+  "completed_updates": 1220
+}

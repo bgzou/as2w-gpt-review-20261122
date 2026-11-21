@@ -1,0 +1,27 @@
+{
+  "name": "114335_walk_90_120",
+  "source_session": "20261113-114335_r4000",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 1744854,
+  "tick_end": 1774869,
+  "duration_s": 30.017,
+  "rate_hz": 500.0,
+  "n_cmd": 14872,
+  "n_state": 15010,
+  "test_tags": [
+    "walk",
+    "contact",
+    "policy"
+  ],
+  "states": [
+    "Brake",
+    "PolicyWalk"
+  ],
+  "notes": "120 s 行走的第 4 个 30 s（含尾段）",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

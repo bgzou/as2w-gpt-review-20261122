@@ -1,0 +1,113 @@
+{
+ "engine": "physx",
+ "scenario": "G",
+ "init_condition": "nearflat",
+ "wheel_primitive": "cyl",
+ "mode": "explicit",
+ "dt": 0.002,
+ "nstep": 20000,
+ "kp": 55.0,
+ "kd": 2.0,
+ "pitch_init_deg": 0.0,
+ "hip_offset_rad": 0.0,
+ "gap_mm": 2.0,
+ "friction": 1.0,
+ "hip_tau_Nm": [
+  0.46,
+  -0.5,
+  0.38,
+  -0.28
+ ],
+ "hip_q": [
+  -0.0085,
+  0.009,
+  -0.0068,
+  0.005
+ ],
+ "pitch_deg": 1.499,
+ "Fn": [
+  59.84,
+  60.47,
+  77.18,
+  77.0
+ ],
+ "n_contacts_per_wheel": [
+  -1,
+  -1,
+  -1,
+  -1
+ ],
+ "settle_ok": true,
+ "settle_time_s": 7.14,
+ "dqmax_last": 0.0041,
+ "dqmax_p99": 0.4548,
+ "dqmax_settled_mean": 0.0051,
+ "dq_leg_settled_max": [
+  0.008,
+  0.011,
+  0.154,
+  0.025,
+  0.003,
+  0.007,
+  0.06,
+  0.016,
+  0.005,
+  0.007,
+  0.158,
+  0.041
+ ],
+ "quat_xyzw": [
+  0.00051,
+  -0.01308,
+  -0.00129,
+  0.99995
+ ],
+ "thigh_q": [
+  0.7602,
+  0.7576,
+  0.7418,
+  0.7402
+ ],
+ "calf_q": [
+  -1.7338,
+  -1.7366,
+  -1.7886,
+  -1.7892
+ ],
+ "thigh_tau": [
+  2.19,
+  2.33,
+  3.2,
+  3.29
+ ],
+ "calf_tau": [
+  7.36,
+  7.51,
+  10.38,
+  10.41
+ ],
+ "Fn_vec": [
+  [
+   -0.13,
+   -21.12,
+   55.99
+  ],
+  [
+   0.26,
+   21.42,
+   56.55
+  ],
+  [
+   -0.25,
+   -29.56,
+   71.29
+  ],
+  [
+   0.12,
+   29.26,
+   71.23
+  ]
+ ],
+ "total_mass_kg": 26.0,
+ "notes": "PhysX n_contacts=UNKNOWN (ContactSensor net force only); mode=explicit; base mass=delivery 10.08kg; friction=1.0; cylinder collider"
+}

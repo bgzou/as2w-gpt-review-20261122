@@ -1,0 +1,60 @@
+{
+  "asset": "/root/as2w/calibration/candidates/load-v0/as2w-load-v0.urdf",
+  "asset_sha256": "7c9740a95042bad7b73cadfda90bdc7c1873ac766afbb7c0e7e492367d45afb0",
+  "num_envs": 4096,
+  "rollout_steps": 48,
+  "policy_dt_s": 0.02,
+  "seed": 45,
+  "resume": "/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/incoming/checkpoint.pt",
+  "dr_level": 3,
+  "domain_config": {
+    "contact": {
+      "static_friction": [
+        0.55,
+        1.15
+      ],
+      "dynamic_friction": [
+        0.45,
+        0.85
+      ],
+      "restitution": [
+        0.0,
+        0.05
+      ],
+      "mass_scale": [
+        0.92,
+        1.08
+      ],
+      "com_half_range_m": 0.008,
+      "drive_gain_scale": [
+        0.9,
+        1.1
+      ]
+    },
+    "sensors": {
+      "position_noise_rad": 0.01,
+      "velocity_noise_rad_s": 0.15,
+      "gyro_noise_rad_s": 0.05,
+      "position_bias_rad": 0.005,
+      "velocity_bias_rad_s": 0.03,
+      "gyro_bias_rad_s": 0.02,
+      "delay_ticks_max": 1
+    },
+    "push": {
+      "interval_s": [
+        6.0,
+        10.0
+      ],
+      "horizontal_delta_v_m_s": [
+        0.1,
+        0.25
+      ]
+    },
+    "optimization": {
+      "learning_rate": 0.0001,
+      "fixed_policy_std": 0.4,
+      "entropy_coef": 0.0
+    }
+  },
+  "base_update": 1000
+}

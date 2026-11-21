@@ -1,0 +1,59 @@
+AppLauncher is deprecated; use isaaclab.app.launch_simulation.
+Loading user config located at: '/home/robot/z00945176/isaac_env/venv312/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-20T06:04:50Z [0ms] [Error] [carb] No space left on device for creating change watches. Sysctl value `fs.inotify.max_user_watches` may be insufficient. This message is logged once.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795154690.933886  106291 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1795154690.933920  106291 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+2026-11-20T06:04:51Z [248ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-11-20T06:04:51Z [269ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+Warp 1.19.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/robot/.cache/warp/1.19.0
+[ISAACLAB] KitLauncher initialization complete
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e0_harness_probe.py:22: DeprecationWarning: CollisionPropertiesCfg is deprecated. Use [UsdPhysicsCollisionCfg(...), PhysxCollisionCfg(...)] (and move mesh_collision_property to the spawner's mesh_collision_props slot) instead; CollisionPropertiesCfg will be removed in 3.2.
+  g = sim_utils.CuboidCfg(size=(6.,6.,.1), collision_props=sim_utils.CollisionPropertiesCfg(contact_offset=.005, rest_offset=0.),
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e0_harness_probe.py:23: DeprecationWarning: RigidBodyPropertiesCfg is deprecated. Use [UsdPhysicsRigidBodyCfg(...), PhysxRigidBodyCfg(...)] instead; RigidBodyPropertiesCfg will be removed in 3.2.
+  rigid_props=sim_utils.RigidBodyPropertiesCfg(kinematic_enabled=True, disable_gravity=True))
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Physics scene prim path: /physicsScene
+2026-11-20T06:04:54Z [4,071ms] [Warning] [usdrt.population.plugin] Last global time was not created. Did you call setEnableUsdNoticeHandling?
+Module isaaclab_physx.assets.articulation.kernels c7efc33 load on device 'cuda:0' took 2.15 ms  (cached)
+Module isaaclab_physx.assets.kernels b9fc0d2 load on device 'cuda:0' took 2.64 ms  (cached)
+[INFO]: Simulation parameters for joints in /World/envs/env_[^/]+/Robot:
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                               Simulation Joint Information (Prim path: /World/envs/env_[^/]+/Robot)                                               |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+| Index | Name     | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction |   Position Limits   | Velocity Limits | Effort Limits |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+|   0   | FL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   1   | FR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   2   | RL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   3   | RR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   4   | FL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   5   | FR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   6   | RL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   7   | RR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   8   | FL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   9   | FR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   10  | RL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   11  | RR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   12  | FL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   13  | FR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   14  | RL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   15  | RR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+2026-11-20T06:04:55Z [4,198ms] [Warning] [isaacsim.asset.transformer.rules.utils] omni.kit.material.library is not available; using hardcoded built-in MDL list (15 basename(s)).
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e0_harness_probe.py:33: DeprecationWarning: Articulation.set_joint_position_target is deprecated. Use articulation.actuators.target_command.set_position_index instead.
+  robot.set_joint_position_target(tgt, joint_ids=ids)
+Module isaaclab.actuators.actuator_kernels e2e3873 load on device 'cuda:0' took 0.53 ms  (cached)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/e0_harness_probe.py:37: DeprecationWarning: Implicit use of ProxyArray as a torch.Tensor is deprecated. Use the explicit .torch property instead (e.g., array.torch).
+  print('P', i, [round(float(x),3) for x in robot.data.joint_pos[0, ids]],
+P 0 [-0.002, 0.139, -0.245, -0.003, 0.139, -0.245, -0.002, 0.137, -0.242, -0.002, 0.138, -0.243] tau [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+P 10 [-0.019, 0.278, -0.813, -0.04, 0.283, -0.813, -0.03, 0.293, -0.813, 0.004, 0.286, -0.813] tau [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+P 100 [-0.129, 0.103, -0.813, 0.183, 0.387, -0.813, 0.009, 0.07, -0.813, 0.123, 0.145, -0.813] tau [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+P 299 [-0.047, 0.05, -0.813, 0.022, 0.062, -0.813, 0.074, -0.336, -0.813, -0.021, -0.382, -0.813] tau [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]

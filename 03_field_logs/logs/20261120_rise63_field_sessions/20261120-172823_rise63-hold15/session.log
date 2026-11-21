@@ -1,0 +1,37 @@
+[field-session] mode=rise63 monitor=180s dry_run=0 rise_exit=x dir=/root/field_sessions/20261120-172823_rise63-hold15
+[field-session] step1 binary: build-rise63/deploy/robots/as2w/rise63/as2w_rise63_publish_hold15
+09585677b8abd188e0dc4eaab7109d6c112d206183fc915c7fbfea7a39c2883e  deploy/robots/as2w/common/as2w_publish.cpp
+83ca1302d3456b41a47bc70ebde20fb99ea747b92ce83b398b56011331a0dfe2  deploy/robots/as2w/rise63/rise63_controller.cpp
+7c32fba4e672e947a024c95193bdae7b26d1aa22cc531ce573d87ec9a6ba2917  deploy/robots/as2w/rise63/rise63_controller.hpp
+fad509324e7df4bb5523592ba2ed1a347996235dffdfc70acd7c9a2f386c31b0  tools/run_rise63_hold15_trial.sh
+3a299c13396f4e4dee96431a1a767d35e3b2cb6cc6b8fa12a28a71f5064db227  models/rise63/deploy-hold15-candidate.yaml
+1f09372919d82d35b32aed032517571f03b48b67c99bfcc30760ea20db4c0031  models/rise63/policy.onnx
+a72f245addf2d16beaefb328d4152c40402344a197d99278dc64cfa131153be5  build-rise63/deploy/robots/as2w/rise63/as2w_rise63_publish_hold15
+[field-session] step1 audit: AUDIT PASS: synthetic HG frames and wake timing; command slew and field safety guards; offline fault injection (warn/hard/motorstate/remote-timeout/slew); firmware acceptance unknown
+[field-session] step2 probe: low packets=1043 tick=4244074 mode_pr=0 mode_machine=2 imu_wxyz=0.92994,-0.000401108,0.012405,0.367501, gyro=-0.00639159,-0.00745685,0.00532632, m0=-0.639167,0.00613592 m1=0.930797,0.00920388 m2=-2.69065,-0.0122718 m3=0.599085,-0.00306796 m4=0.942769,-0.00920388 m5=-2.70828,0.00204531 m6=-0.651492,0.00920388 m7=0.985157,-0.0153398 m8=-2.6281,-0.00204531 m9=0.660253,0.0122718 m10=0.898871,0 m11=-2.68182,0.00204531 m12=-1.51109,0 m13=-8.43627,-0.0122718 m14=3.01679,0 m15=2.38575,0.0122718 m16=0,0 m17=0,0 m18=0,0 m19=0,0 m20=0,0 m21=0,0 m22=0,0 m23=0,0 m24=0,0 m25=0,0 m26=0,0 m27=0,0 m28=0,0 m29=0,0 m30=0,0 m31=0,0 m32=0,0 m33=0,0 m34=0,0
+[field-session] step3 motion-mode: MotionSwitcher CheckMode rc=0 form=1 name=
+[field-session] step3 already released (name empty) -> continue
+[field-session] step4 sample: LOW_SAMPLE,2001,2097,0,4246408,0,2,0.929932,-0.000490804,0.0121116,0.367532,-0.00532632,0,-0.00426106,-0.639167,-0.00920
+[field-session] step4 packets=2097 16-axis modes={0}
+[field-session] step4 prone calf gate=yes
+[field-session] step5 starting 180s monitoring (low-capture 2ms + low-protection)
+[field-session] step6 launching: bash tools/run_rise63_hold15_trial.sh --rise-exit x
+[field-session]     >>> Passive ready expected in ~3-5s; then hand the remote to the operator.
+[field-session]     >>> A = 85/3.2 fixed stand at the delivery reset pose (crouched quadruped, wheels down).
+[field-session]     >>> B once = 0.5 s handoff then RISE onto the two rear wheels; zero command; the binary caps the hold at 15 s.
+[field-session]     >>> cycle end = EmergencyDamping (passive). Harnessed/slung test only: the sling must catch the body.
+[field-session]     >>> X = emergency passive in any state; Ctrl+C is not a motion e-stop.
+[field-session] publisher exited rc=1
+[field-session] debug diagnostics archived: debug_policy.csv (53 lines)
+[field-session] debug diagnostics archived: debug_lowcmd.csv (7818 lines)
+[field-session] monitoring done; artifacts:
+total 13279
+drwxr-xr-x.   2 root root    3440 Nov 20 17:28 .
+drwxr-xr-x. 155 root root   20480 Nov 20 17:28 ..
+-rw-r--r--.   1 root root 3597114 Nov 20 17:28 debug_lowcmd.csv
+-rw-r--r--.   1 root root  118250 Nov 20 17:28 debug_policy.csv
+-rw-r--r--.   1 root root 8939202 Nov 20 17:28 low_capture_fast.log
+-rw-r--r--.   1 root root  897024 Nov 20 17:28 low_protection.log
+-rw-r--r--.   1 root root    3094 Nov 20 17:28 publisher.log
+-rw-r--r--.   1 root root    3199 Nov 20 17:28 session.log
+[field-session] session complete (mode=rise63 rise_exit=x rc=1). Copy /root/field_sessions/20261120-172823_rise63-hold15 back to the workstation logs dir and append INDEX.

@@ -1,0 +1,2 @@
+/root/gpufree-data/as2w-runs/unitree-coverage5hz-20261119-103318
+/root/as2w/coverage5hz_20261119-103318

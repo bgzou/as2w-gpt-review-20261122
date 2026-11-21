@@ -1,0 +1,1007 @@
+[
+  {
+    "completed_updates": 1221,
+    "short_reversal_cost": 0.011896971613168716,
+    "phase_coverage": 0.079345703125
+  },
+  {
+    "completed_updates": 1230,
+    "short_reversal_cost": 0.01305190846323967,
+    "phase_coverage": 0.08447265625
+  },
+  {
+    "completed_updates": 1240,
+    "short_reversal_cost": 0.013404877856373787,
+    "phase_coverage": 0.085693359375
+  },
+  {
+    "completed_updates": 1250,
+    "short_reversal_cost": 0.013459376990795135,
+    "phase_coverage": 0.0858154296875
+  },
+  {
+    "completed_updates": 1260,
+    "short_reversal_cost": 0.012778020463883877,
+    "phase_coverage": 0.0858154296875
+  },
+  {
+    "completed_updates": 1270,
+    "short_reversal_cost": 0.00012638032785616815,
+    "phase_coverage": 0.0009765625
+  },
+  {
+    "completed_updates": 1280,
+    "short_reversal_cost": 0.013390669599175453,
+    "phase_coverage": 0.090087890625
+  },
+  {
+    "completed_updates": 1290,
+    "short_reversal_cost": 0.012330424040555954,
+    "phase_coverage": 0.081787109375
+  },
+  {
+    "completed_updates": 1300,
+    "short_reversal_cost": 0.011851567775011063,
+    "phase_coverage": 0.083740234375
+  },
+  {
+    "completed_updates": 1310,
+    "short_reversal_cost": 0.000742995529435575,
+    "phase_coverage": 0.0050048828125
+  },
+  {
+    "completed_updates": 1320,
+    "short_reversal_cost": 0.0003004685859195888,
+    "phase_coverage": 0.001953125
+  },
+  {
+    "completed_updates": 1330,
+    "short_reversal_cost": 0.01292840950191021,
+    "phase_coverage": 0.0819091796875
+  },
+  {
+    "completed_updates": 1340,
+    "short_reversal_cost": 0.012226305902004242,
+    "phase_coverage": 0.0802001953125
+  },
+  {
+    "completed_updates": 1350,
+    "short_reversal_cost": 0.01285821758210659,
+    "phase_coverage": 0.0830078125
+  },
+  {
+    "completed_updates": 1360,
+    "short_reversal_cost": 0.0011094638612121344,
+    "phase_coverage": 0.0072021484375
+  },
+  {
+    "completed_updates": 1370,
+    "short_reversal_cost": 0.0009417930850759149,
+    "phase_coverage": 0.00634765625
+  },
+  {
+    "completed_updates": 1380,
+    "short_reversal_cost": 0.012109832838177681,
+    "phase_coverage": 0.0775146484375
+  },
+  {
+    "completed_updates": 1390,
+    "short_reversal_cost": 0.012686063535511494,
+    "phase_coverage": 0.0831298828125
+  },
+  {
+    "completed_updates": 1400,
+    "short_reversal_cost": 0.0010259796399623156,
+    "phase_coverage": 0.0072021484375
+  },
+  {
+    "completed_updates": 1410,
+    "short_reversal_cost": 0.0013915846357122064,
+    "phase_coverage": 0.00927734375
+  },
+  {
+    "completed_updates": 1420,
+    "short_reversal_cost": 0.001968508353456855,
+    "phase_coverage": 0.010986328125
+  },
+  {
+    "completed_updates": 1430,
+    "short_reversal_cost": 0.012127207592129707,
+    "phase_coverage": 0.08056640625
+  },
+  {
+    "completed_updates": 1440,
+    "short_reversal_cost": 0.0012124755885452032,
+    "phase_coverage": 0.0072021484375
+  },
+  {
+    "completed_updates": 1450,
+    "short_reversal_cost": 0.0011146871838718653,
+    "phase_coverage": 0.0081787109375
+  },
+  {
+    "completed_updates": 1460,
+    "short_reversal_cost": 0.0037860157899558544,
+    "phase_coverage": 0.0238037109375
+  },
+  {
+    "completed_updates": 1470,
+    "short_reversal_cost": 0.004797406494617462,
+    "phase_coverage": 0.0281982421875
+  },
+  {
+    "completed_updates": 1480,
+    "short_reversal_cost": 0.012616712599992752,
+    "phase_coverage": 0.0831298828125
+  },
+  {
+    "completed_updates": 1490,
+    "short_reversal_cost": 0.0009400706039741635,
+    "phase_coverage": 0.00634765625
+  },
+  {
+    "completed_updates": 1500,
+    "short_reversal_cost": 0.00249500828795135,
+    "phase_coverage": 0.01513671875
+  },
+  {
+    "completed_updates": 1510,
+    "short_reversal_cost": 0.0057332986034452915,
+    "phase_coverage": 0.0367431640625
+  },
+  {
+    "completed_updates": 1520,
+    "short_reversal_cost": 0.0063942731358110905,
+    "phase_coverage": 0.041259765625
+  },
+  {
+    "completed_updates": 1530,
+    "short_reversal_cost": 0.0013443774078041315,
+    "phase_coverage": 0.008544921875
+  },
+  {
+    "completed_updates": 1540,
+    "short_reversal_cost": 0.0019801445305347443,
+    "phase_coverage": 0.0118408203125
+  },
+  {
+    "completed_updates": 1550,
+    "short_reversal_cost": 0.004633917938917875,
+    "phase_coverage": 0.031005859375
+  },
+  {
+    "completed_updates": 1560,
+    "short_reversal_cost": 0.008813031017780304,
+    "phase_coverage": 0.053466796875
+  },
+  {
+    "completed_updates": 1570,
+    "short_reversal_cost": 0.00929440837353468,
+    "phase_coverage": 0.061767578125
+  },
+  {
+    "completed_updates": 1580,
+    "short_reversal_cost": 0.001504145679064095,
+    "phase_coverage": 0.0098876953125
+  },
+  {
+    "completed_updates": 1590,
+    "short_reversal_cost": 0.0038922675885260105,
+    "phase_coverage": 0.025634765625
+  },
+  {
+    "completed_updates": 1600,
+    "short_reversal_cost": 0.007740427739918232,
+    "phase_coverage": 0.046630859375
+  },
+  {
+    "completed_updates": 1610,
+    "short_reversal_cost": 0.011008961126208305,
+    "phase_coverage": 0.0654296875
+  },
+  {
+    "completed_updates": 1620,
+    "short_reversal_cost": 0.009003166109323502,
+    "phase_coverage": 0.064453125
+  },
+  {
+    "completed_updates": 1630,
+    "short_reversal_cost": 0.002694379072636366,
+    "phase_coverage": 0.0208740234375
+  },
+  {
+    "completed_updates": 1640,
+    "short_reversal_cost": 0.006732308305799961,
+    "phase_coverage": 0.04248046875
+  },
+  {
+    "completed_updates": 1650,
+    "short_reversal_cost": 0.009391099214553833,
+    "phase_coverage": 0.05908203125
+  },
+  {
+    "completed_updates": 1660,
+    "short_reversal_cost": 0.010308712720870972,
+    "phase_coverage": 0.07080078125
+  },
+  {
+    "completed_updates": 1670,
+    "short_reversal_cost": 0.010675055906176567,
+    "phase_coverage": 0.079345703125
+  },
+  {
+    "completed_updates": 1680,
+    "short_reversal_cost": 0.004445525351911783,
+    "phase_coverage": 0.030517578125
+  },
+  {
+    "completed_updates": 1690,
+    "short_reversal_cost": 0.008814560249447823,
+    "phase_coverage": 0.056640625
+  },
+  {
+    "completed_updates": 1700,
+    "short_reversal_cost": 0.010560845956206322,
+    "phase_coverage": 0.0677490234375
+  },
+  {
+    "completed_updates": 1710,
+    "short_reversal_cost": 0.011317037977278233,
+    "phase_coverage": 0.073974609375
+  },
+  {
+    "completed_updates": 1720,
+    "short_reversal_cost": 0.0099208764731884,
+    "phase_coverage": 0.07958984375
+  },
+  {
+    "completed_updates": 1730,
+    "short_reversal_cost": 0.006081501487642527,
+    "phase_coverage": 0.048095703125
+  },
+  {
+    "completed_updates": 1740,
+    "short_reversal_cost": 0.009248506277799606,
+    "phase_coverage": 0.0604248046875
+  },
+  {
+    "completed_updates": 1750,
+    "short_reversal_cost": 0.010688729584217072,
+    "phase_coverage": 0.0709228515625
+  },
+  {
+    "completed_updates": 1760,
+    "short_reversal_cost": 0.01069294847548008,
+    "phase_coverage": 0.0748291015625
+  },
+  {
+    "completed_updates": 1770,
+    "short_reversal_cost": 0.011526050046086311,
+    "phase_coverage": 0.08544921875
+  },
+  {
+    "completed_updates": 1780,
+    "short_reversal_cost": 0.009086682461202145,
+    "phase_coverage": 0.0592041015625
+  },
+  {
+    "completed_updates": 1790,
+    "short_reversal_cost": 0.009931040927767754,
+    "phase_coverage": 0.0660400390625
+  },
+  {
+    "completed_updates": 1800,
+    "short_reversal_cost": 0.010633512400090694,
+    "phase_coverage": 0.07470703125
+  },
+  {
+    "completed_updates": 1810,
+    "short_reversal_cost": 0.010950207710266113,
+    "phase_coverage": 0.082275390625
+  },
+  {
+    "completed_updates": 1820,
+    "short_reversal_cost": 0.01123659685254097,
+    "phase_coverage": 0.0841064453125
+  },
+  {
+    "completed_updates": 1830,
+    "short_reversal_cost": 0.011065151542425156,
+    "phase_coverage": 0.0706787109375
+  },
+  {
+    "completed_updates": 1840,
+    "short_reversal_cost": 0.011179816909134388,
+    "phase_coverage": 0.0753173828125
+  },
+  {
+    "completed_updates": 1850,
+    "short_reversal_cost": 0.009970062412321568,
+    "phase_coverage": 0.0765380859375
+  },
+  {
+    "completed_updates": 1860,
+    "short_reversal_cost": 0.011063539423048496,
+    "phase_coverage": 0.07763671875
+  },
+  {
+    "completed_updates": 1870,
+    "short_reversal_cost": 0.012061498127877712,
+    "phase_coverage": 0.0882568359375
+  },
+  {
+    "completed_updates": 1880,
+    "short_reversal_cost": 0.010924335569143295,
+    "phase_coverage": 0.0755615234375
+  },
+  {
+    "completed_updates": 1890,
+    "short_reversal_cost": 0.010814615525305271,
+    "phase_coverage": 0.0760498046875
+  },
+  {
+    "completed_updates": 1900,
+    "short_reversal_cost": 0.010929030366241932,
+    "phase_coverage": 0.0804443359375
+  },
+  {
+    "completed_updates": 1910,
+    "short_reversal_cost": 0.012062489055097103,
+    "phase_coverage": 0.0865478515625
+  },
+  {
+    "completed_updates": 1920,
+    "short_reversal_cost": 0.011991383507847786,
+    "phase_coverage": 0.0869140625
+  },
+  {
+    "completed_updates": 1930,
+    "short_reversal_cost": 0.012533925473690033,
+    "phase_coverage": 0.0802001953125
+  },
+  {
+    "completed_updates": 1940,
+    "short_reversal_cost": 0.010118321515619755,
+    "phase_coverage": 0.076904296875
+  },
+  {
+    "completed_updates": 1950,
+    "short_reversal_cost": 0.010605520568788052,
+    "phase_coverage": 0.0792236328125
+  },
+  {
+    "completed_updates": 1960,
+    "short_reversal_cost": 0.01102386973798275,
+    "phase_coverage": 0.080078125
+  },
+  {
+    "completed_updates": 1970,
+    "short_reversal_cost": 0.012277461588382721,
+    "phase_coverage": 0.0877685546875
+  },
+  {
+    "completed_updates": 1980,
+    "short_reversal_cost": 0.010922472923994064,
+    "phase_coverage": 0.075927734375
+  },
+  {
+    "completed_updates": 1990,
+    "short_reversal_cost": 0.010509610176086426,
+    "phase_coverage": 0.0836181640625
+  },
+  {
+    "completed_updates": 2000,
+    "short_reversal_cost": 0.010741669684648514,
+    "phase_coverage": 0.08154296875
+  },
+  {
+    "completed_updates": 2010,
+    "short_reversal_cost": 0.011828778311610222,
+    "phase_coverage": 0.0863037109375
+  },
+  {
+    "completed_updates": 2020,
+    "short_reversal_cost": 0.01035580039024353,
+    "phase_coverage": 0.0810546875
+  },
+  {
+    "completed_updates": 2030,
+    "short_reversal_cost": 0.01068362221121788,
+    "phase_coverage": 0.08203125
+  },
+  {
+    "completed_updates": 2040,
+    "short_reversal_cost": 0.011270519345998764,
+    "phase_coverage": 0.0802001953125
+  },
+  {
+    "completed_updates": 2050,
+    "short_reversal_cost": 0.010714627802371979,
+    "phase_coverage": 0.079345703125
+  },
+  {
+    "completed_updates": 2060,
+    "short_reversal_cost": 0.011662877164781094,
+    "phase_coverage": 0.0848388671875
+  },
+  {
+    "completed_updates": 2070,
+    "short_reversal_cost": 0.011868889443576336,
+    "phase_coverage": 0.0826416015625
+  },
+  {
+    "completed_updates": 2080,
+    "short_reversal_cost": 0.011085105128586292,
+    "phase_coverage": 0.081787109375
+  },
+  {
+    "completed_updates": 2090,
+    "short_reversal_cost": 0.012019531801342964,
+    "phase_coverage": 0.086181640625
+  },
+  {
+    "completed_updates": 2100,
+    "short_reversal_cost": 0.011229417286813259,
+    "phase_coverage": 0.0838623046875
+  },
+  {
+    "completed_updates": 2110,
+    "short_reversal_cost": 0.011469489894807339,
+    "phase_coverage": 0.083740234375
+  },
+  {
+    "completed_updates": 2120,
+    "short_reversal_cost": 0.01115580927580595,
+    "phase_coverage": 0.08154296875
+  },
+  {
+    "completed_updates": 2130,
+    "short_reversal_cost": 0.011853802017867565,
+    "phase_coverage": 0.0880126953125
+  },
+  {
+    "completed_updates": 2140,
+    "short_reversal_cost": 0.01184520311653614,
+    "phase_coverage": 0.0904541015625
+  },
+  {
+    "completed_updates": 2150,
+    "short_reversal_cost": 0.01197558268904686,
+    "phase_coverage": 0.08837890625
+  },
+  {
+    "completed_updates": 2160,
+    "short_reversal_cost": 0.010640514083206654,
+    "phase_coverage": 0.082275390625
+  },
+  {
+    "completed_updates": 2170,
+    "short_reversal_cost": 0.010523837991058826,
+    "phase_coverage": 0.08251953125
+  },
+  {
+    "completed_updates": 2180,
+    "short_reversal_cost": 0.010817958042025566,
+    "phase_coverage": 0.0791015625
+  },
+  {
+    "completed_updates": 2190,
+    "short_reversal_cost": 0.011419481597840786,
+    "phase_coverage": 0.0831298828125
+  },
+  {
+    "completed_updates": 2200,
+    "short_reversal_cost": 0.011341698467731476,
+    "phase_coverage": 0.0830078125
+  },
+  {
+    "completed_updates": 2210,
+    "short_reversal_cost": 0.011306886561214924,
+    "phase_coverage": 0.0821533203125
+  },
+  {
+    "completed_updates": 2220,
+    "short_reversal_cost": 0.011387224309146404,
+    "phase_coverage": 0.0858154296875
+  },
+  {
+    "completed_updates": 2230,
+    "short_reversal_cost": 0.011282574385404587,
+    "phase_coverage": 0.0865478515625
+  },
+  {
+    "completed_updates": 2240,
+    "short_reversal_cost": 0.01109057292342186,
+    "phase_coverage": 0.0816650390625
+  },
+  {
+    "completed_updates": 2250,
+    "short_reversal_cost": 0.011175442487001419,
+    "phase_coverage": 0.0838623046875
+  },
+  {
+    "completed_updates": 2260,
+    "short_reversal_cost": 0.011768423952162266,
+    "phase_coverage": 0.084716796875
+  },
+  {
+    "completed_updates": 2270,
+    "short_reversal_cost": 0.010847240686416626,
+    "phase_coverage": 0.085693359375
+  },
+  {
+    "completed_updates": 2280,
+    "short_reversal_cost": 0.01084226369857788,
+    "phase_coverage": 0.0810546875
+  },
+  {
+    "completed_updates": 2290,
+    "short_reversal_cost": 0.01096375472843647,
+    "phase_coverage": 0.0859375
+  },
+  {
+    "completed_updates": 2300,
+    "short_reversal_cost": 0.010554714128375053,
+    "phase_coverage": 0.0843505859375
+  },
+  {
+    "completed_updates": 2310,
+    "short_reversal_cost": 0.010805110447108746,
+    "phase_coverage": 0.0853271484375
+  },
+  {
+    "completed_updates": 2320,
+    "short_reversal_cost": 0.011760146357119083,
+    "phase_coverage": 0.0892333984375
+  },
+  {
+    "completed_updates": 2330,
+    "short_reversal_cost": 0.010823230259120464,
+    "phase_coverage": 0.084228515625
+  },
+  {
+    "completed_updates": 2340,
+    "short_reversal_cost": 0.010834895074367523,
+    "phase_coverage": 0.0814208984375
+  },
+  {
+    "completed_updates": 2350,
+    "short_reversal_cost": 0.010475516319274902,
+    "phase_coverage": 0.080322265625
+  },
+  {
+    "completed_updates": 2360,
+    "short_reversal_cost": 0.01122159231454134,
+    "phase_coverage": 0.0849609375
+  },
+  {
+    "completed_updates": 2370,
+    "short_reversal_cost": 0.011173355393111706,
+    "phase_coverage": 0.08642578125
+  },
+  {
+    "completed_updates": 2380,
+    "short_reversal_cost": 0.010542637668550014,
+    "phase_coverage": 0.0816650390625
+  },
+  {
+    "completed_updates": 2390,
+    "short_reversal_cost": 0.01121646910905838,
+    "phase_coverage": 0.0865478515625
+  },
+  {
+    "completed_updates": 2400,
+    "short_reversal_cost": 0.010319382883608341,
+    "phase_coverage": 0.0806884765625
+  },
+  {
+    "completed_updates": 2410,
+    "short_reversal_cost": 0.011166091077029705,
+    "phase_coverage": 0.083984375
+  },
+  {
+    "completed_updates": 2420,
+    "short_reversal_cost": 0.01023097150027752,
+    "phase_coverage": 0.082275390625
+  },
+  {
+    "completed_updates": 2430,
+    "short_reversal_cost": 0.011271318420767784,
+    "phase_coverage": 0.0826416015625
+  },
+  {
+    "completed_updates": 2440,
+    "short_reversal_cost": 0.010721154510974884,
+    "phase_coverage": 0.0816650390625
+  },
+  {
+    "completed_updates": 2450,
+    "short_reversal_cost": 0.010479546152055264,
+    "phase_coverage": 0.0859375
+  },
+  {
+    "completed_updates": 2460,
+    "short_reversal_cost": 0.010220390744507313,
+    "phase_coverage": 0.0792236328125
+  },
+  {
+    "completed_updates": 2470,
+    "short_reversal_cost": 0.010165226645767689,
+    "phase_coverage": 0.0804443359375
+  },
+  {
+    "completed_updates": 2480,
+    "short_reversal_cost": 0.010249926708638668,
+    "phase_coverage": 0.0811767578125
+  },
+  {
+    "completed_updates": 2490,
+    "short_reversal_cost": 0.009818438440561295,
+    "phase_coverage": 0.083251953125
+  },
+  {
+    "completed_updates": 2500,
+    "short_reversal_cost": 0.011458482593297958,
+    "phase_coverage": 0.0897216796875
+  },
+  {
+    "completed_updates": 2510,
+    "short_reversal_cost": 0.011155283078551292,
+    "phase_coverage": 0.0845947265625
+  },
+  {
+    "completed_updates": 2520,
+    "short_reversal_cost": 0.010212454944849014,
+    "phase_coverage": 0.082763671875
+  },
+  {
+    "completed_updates": 2530,
+    "short_reversal_cost": 0.009444653987884521,
+    "phase_coverage": 0.081787109375
+  },
+  {
+    "completed_updates": 2540,
+    "short_reversal_cost": 0.010615280829370022,
+    "phase_coverage": 0.0841064453125
+  },
+  {
+    "completed_updates": 2550,
+    "short_reversal_cost": 0.010439593344926834,
+    "phase_coverage": 0.0848388671875
+  },
+  {
+    "completed_updates": 2560,
+    "short_reversal_cost": 0.010028405115008354,
+    "phase_coverage": 0.087158203125
+  },
+  {
+    "completed_updates": 2570,
+    "short_reversal_cost": 0.00957636907696724,
+    "phase_coverage": 0.08203125
+  },
+  {
+    "completed_updates": 2580,
+    "short_reversal_cost": 0.010437780991196632,
+    "phase_coverage": 0.0823974609375
+  },
+  {
+    "completed_updates": 2590,
+    "short_reversal_cost": 0.010078689083456993,
+    "phase_coverage": 0.0853271484375
+  },
+  {
+    "completed_updates": 2600,
+    "short_reversal_cost": 0.009845562279224396,
+    "phase_coverage": 0.0771484375
+  },
+  {
+    "completed_updates": 2610,
+    "short_reversal_cost": 0.011041419580578804,
+    "phase_coverage": 0.0821533203125
+  },
+  {
+    "completed_updates": 2620,
+    "short_reversal_cost": 0.009301700629293919,
+    "phase_coverage": 0.083740234375
+  },
+  {
+    "completed_updates": 2630,
+    "short_reversal_cost": 0.010845709592103958,
+    "phase_coverage": 0.083251953125
+  },
+  {
+    "completed_updates": 2640,
+    "short_reversal_cost": 0.01021558791399002,
+    "phase_coverage": 0.0810546875
+  },
+  {
+    "completed_updates": 2650,
+    "short_reversal_cost": 0.010959435254335403,
+    "phase_coverage": 0.08544921875
+  },
+  {
+    "completed_updates": 2660,
+    "short_reversal_cost": 0.01068054884672165,
+    "phase_coverage": 0.0838623046875
+  },
+  {
+    "completed_updates": 2670,
+    "short_reversal_cost": 0.010599832981824875,
+    "phase_coverage": 0.08447265625
+  },
+  {
+    "completed_updates": 2680,
+    "short_reversal_cost": 0.010252157226204872,
+    "phase_coverage": 0.0772705078125
+  },
+  {
+    "completed_updates": 2690,
+    "short_reversal_cost": 0.010558811947703362,
+    "phase_coverage": 0.083251953125
+  },
+  {
+    "completed_updates": 2700,
+    "short_reversal_cost": 0.010538745671510696,
+    "phase_coverage": 0.0831298828125
+  },
+  {
+    "completed_updates": 2710,
+    "short_reversal_cost": 0.010995719581842422,
+    "phase_coverage": 0.083251953125
+  },
+  {
+    "completed_updates": 2720,
+    "short_reversal_cost": 0.011198531836271286,
+    "phase_coverage": 0.0859375
+  },
+  {
+    "completed_updates": 2730,
+    "short_reversal_cost": 0.0015378431417047977,
+    "phase_coverage": 0.0111083984375
+  },
+  {
+    "completed_updates": 2740,
+    "short_reversal_cost": 0.010535410605370998,
+    "phase_coverage": 0.08203125
+  },
+  {
+    "completed_updates": 2750,
+    "short_reversal_cost": 0.010665969923138618,
+    "phase_coverage": 0.083251953125
+  },
+  {
+    "completed_updates": 2760,
+    "short_reversal_cost": 0.011837898753583431,
+    "phase_coverage": 0.086669921875
+  },
+  {
+    "completed_updates": 2770,
+    "short_reversal_cost": 0.009868355467915535,
+    "phase_coverage": 0.079345703125
+  },
+  {
+    "completed_updates": 2780,
+    "short_reversal_cost": 0.0014742208877578378,
+    "phase_coverage": 0.0118408203125
+  },
+  {
+    "completed_updates": 2790,
+    "short_reversal_cost": 0.010407086461782455,
+    "phase_coverage": 0.087646484375
+  },
+  {
+    "completed_updates": 2800,
+    "short_reversal_cost": 0.009901813231408596,
+    "phase_coverage": 0.0797119140625
+  },
+  {
+    "completed_updates": 2810,
+    "short_reversal_cost": 0.010265257209539413,
+    "phase_coverage": 0.0809326171875
+  },
+  {
+    "completed_updates": 2820,
+    "short_reversal_cost": 0.002132479567080736,
+    "phase_coverage": 0.01708984375
+  },
+  {
+    "completed_updates": 2830,
+    "short_reversal_cost": 0.0016690663760527968,
+    "phase_coverage": 0.012939453125
+  },
+  {
+    "completed_updates": 2840,
+    "short_reversal_cost": 0.010651195421814919,
+    "phase_coverage": 0.0816650390625
+  },
+  {
+    "completed_updates": 2850,
+    "short_reversal_cost": 0.01149720698595047,
+    "phase_coverage": 0.0870361328125
+  },
+  {
+    "completed_updates": 2860,
+    "short_reversal_cost": 0.002063102088868618,
+    "phase_coverage": 0.0181884765625
+  },
+  {
+    "completed_updates": 2870,
+    "short_reversal_cost": 0.001862135948613286,
+    "phase_coverage": 0.014892578125
+  },
+  {
+    "completed_updates": 2880,
+    "short_reversal_cost": 0.0022055834997445345,
+    "phase_coverage": 0.02001953125
+  },
+  {
+    "completed_updates": 2890,
+    "short_reversal_cost": 0.010585373267531395,
+    "phase_coverage": 0.0836181640625
+  },
+  {
+    "completed_updates": 2900,
+    "short_reversal_cost": 0.010731711983680725,
+    "phase_coverage": 0.0858154296875
+  },
+  {
+    "completed_updates": 2910,
+    "short_reversal_cost": 0.0019899930339306593,
+    "phase_coverage": 0.0152587890625
+  },
+  {
+    "completed_updates": 2920,
+    "short_reversal_cost": 0.0035935076884925365,
+    "phase_coverage": 0.027587890625
+  },
+  {
+    "completed_updates": 2930,
+    "short_reversal_cost": 0.002898231614381075,
+    "phase_coverage": 0.0240478515625
+  },
+  {
+    "completed_updates": 2940,
+    "short_reversal_cost": 0.00933684129267931,
+    "phase_coverage": 0.0810546875
+  },
+  {
+    "completed_updates": 2950,
+    "short_reversal_cost": 0.0023034261539578438,
+    "phase_coverage": 0.0164794921875
+  },
+  {
+    "completed_updates": 2960,
+    "short_reversal_cost": 0.0025463365018367767,
+    "phase_coverage": 0.0201416015625
+  },
+  {
+    "completed_updates": 2970,
+    "short_reversal_cost": 0.004840545356273651,
+    "phase_coverage": 0.037841796875
+  },
+  {
+    "completed_updates": 2980,
+    "short_reversal_cost": 0.006285553332418203,
+    "phase_coverage": 0.0418701171875
+  },
+  {
+    "completed_updates": 2990,
+    "short_reversal_cost": 0.0017671547830104828,
+    "phase_coverage": 0.01611328125
+  },
+  {
+    "completed_updates": 3000,
+    "short_reversal_cost": 0.0026692496612668037,
+    "phase_coverage": 0.020751953125
+  },
+  {
+    "completed_updates": 3010,
+    "short_reversal_cost": 0.0038503743708133698,
+    "phase_coverage": 0.03076171875
+  },
+  {
+    "completed_updates": 3020,
+    "short_reversal_cost": 0.006959907710552216,
+    "phase_coverage": 0.052001953125
+  },
+  {
+    "completed_updates": 3030,
+    "short_reversal_cost": 0.007980192080140114,
+    "phase_coverage": 0.059814453125
+  },
+  {
+    "completed_updates": 3040,
+    "short_reversal_cost": 0.002251956844702363,
+    "phase_coverage": 0.0181884765625
+  },
+  {
+    "completed_updates": 3050,
+    "short_reversal_cost": 0.003012241329997778,
+    "phase_coverage": 0.023193359375
+  },
+  {
+    "completed_updates": 3060,
+    "short_reversal_cost": 0.005040065385401249,
+    "phase_coverage": 0.040771484375
+  },
+  {
+    "completed_updates": 3070,
+    "short_reversal_cost": 0.008714508265256882,
+    "phase_coverage": 0.0693359375
+  },
+  {
+    "completed_updates": 3080,
+    "short_reversal_cost": 0.008414797484874725,
+    "phase_coverage": 0.0689697265625
+  },
+  {
+    "completed_updates": 3090,
+    "short_reversal_cost": 0.0025773709639906883,
+    "phase_coverage": 0.0196533203125
+  },
+  {
+    "completed_updates": 3100,
+    "short_reversal_cost": 0.005182853899896145,
+    "phase_coverage": 0.03857421875
+  },
+  {
+    "completed_updates": 3110,
+    "short_reversal_cost": 0.0074082668870687485,
+    "phase_coverage": 0.057373046875
+  },
+  {
+    "completed_updates": 3120,
+    "short_reversal_cost": 0.01019214279949665,
+    "phase_coverage": 0.073974609375
+  },
+  {
+    "completed_updates": 3130,
+    "short_reversal_cost": 0.010022171773016453,
+    "phase_coverage": 0.0767822265625
+  },
+  {
+    "completed_updates": 3140,
+    "short_reversal_cost": 0.003910698927938938,
+    "phase_coverage": 0.03076171875
+  },
+  {
+    "completed_updates": 3150,
+    "short_reversal_cost": 0.00609421543776989,
+    "phase_coverage": 0.0504150390625
+  },
+  {
+    "completed_updates": 3160,
+    "short_reversal_cost": 0.0093875452876091,
+    "phase_coverage": 0.069091796875
+  },
+  {
+    "completed_updates": 3170,
+    "short_reversal_cost": 0.010509422048926353,
+    "phase_coverage": 0.08056640625
+  },
+  {
+    "completed_updates": 3180,
+    "short_reversal_cost": 0.009038073010742664,
+    "phase_coverage": 0.0740966796875
+  },
+  {
+    "completed_updates": 3190,
+    "short_reversal_cost": 0.005774754099547863,
+    "phase_coverage": 0.04541015625
+  },
+  {
+    "completed_updates": 3200,
+    "short_reversal_cost": 0.008156081661581993,
+    "phase_coverage": 0.06494140625
+  },
+  {
+    "completed_updates": 3210,
+    "short_reversal_cost": 0.009439514949917793,
+    "phase_coverage": 0.0767822265625
+  },
+  {
+    "completed_updates": 3220,
+    "short_reversal_cost": 0.009908918291330338,
+    "phase_coverage": 0.0830078125
+  }
+]

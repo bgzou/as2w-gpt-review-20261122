@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+unset LD_LIBRARY_PATH PYTHONHOME PYTHONPATH
+export PYTHONEXE="${AS2W_PYTHON:-/opt/isaaclab-venv/bin/python}"
+if [[ ${AS2W_RUNTIME:-standalone} == pip ]]; then
+    exec "$PYTHONEXE" "$@"
+fi
+exec "${ISAACSIM_ROOT:-/isaac-sim}/python.sh" --no-ros-env "$@"

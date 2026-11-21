@@ -1,0 +1,21 @@
+2026-11-19 验证器增益接线回归（合成夹具）
+脚本：同目录 p85d_validator_regression.py（夹具工作目录 %TEMP%\p85d_regr）
+目的：验证 validate_session.py 的 C2-gains 断言随 --mode 的增益合同正确切换
+（p55g/p55s=55/2；p85dg/p85ds=85/3.2），合成夹具分别用两组腿 PD 生成
+FixedStand 段 DEBUG_LOWCMD 行，跑五个组合。
+
+实测输出（rc=1 均为合成夹具缺 publisher.log 的 DEBUG_LOWCMD_RESULT 行，
+属预期基线 FAIL，不影响增益接线判定）：
+
+fixture=P55 55/2     mode=p55g  rc=1 | [INFO] C2-gains-seen: FixedStand/l:[(55.0, 2.0)]; FixedStand/w:[(0.0, 2.0)] | verdict: INVALID (1 FAIL, 1 WARN)
+fixture=P55 55/2     mode=p85dg rc=1 | [INFO] C2-gains-seen: FixedStand/l:[(55.0, 2.0)]; FixedStand/w:[(0.0, 2.0)] | verdict: INVALID (2 FAIL, 1 WARN)
+fixture=P85D 85/3.2  mode=p85dg rc=1 | [INFO] C2-gains-seen: FixedStand/l:[(85.0, 3.2)]; FixedStand/w:[(0.0, 2.0)] | verdict: INVALID (1 FAIL, 1 WARN)
+fixture=P85D 85/3.2  mode=p85ds rc=1 | [INFO] C2-gains-seen: FixedStand/l:[(85.0, 3.2)]; FixedStand/w:[(0.0, 2.0)] | verdict: INVALID (1 FAIL, 1 WARN)
+fixture=P85D 85/3.2  mode=p55g  rc=1 | [INFO] C2-gains-seen: FixedStand/l:[(85.0, 3.2)]; FixedStand/w:[(0.0, 2.0)] | verdict: INVALID (2 FAIL, 1 WARN)
+
+判读：
+- 增益匹配组合（55/2×p55g、85/3.2×p85dg、85/3.2×p85ds）＝1 FAIL 基线（缺
+  DEBUG_LOWCMD_RESULT 行，合成夹具无发布端日志，预期）；
+- 增益不匹配组合（55/2×p85dg、85/3.2×p55g）＝各多 1 FAIL（共 2 FAIL），
+  即 C2-gains 断言捕获了"增益与模式合同不符"。
+结论：C2-gains 断言按模式合同正确分叉，p85dg/p85ds 增益接线验证通过。

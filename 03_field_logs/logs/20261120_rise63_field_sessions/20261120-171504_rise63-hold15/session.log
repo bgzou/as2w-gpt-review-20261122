@@ -1,0 +1,41 @@
+[field-session] mode=rise63 monitor=180s dry_run=0 rise_exit=x dir=/root/field_sessions/20261120-171504_rise63-hold15
+[field-session] step1 binary: build-rise63/deploy/robots/as2w/rise63/as2w_rise63_publish_hold15
+09585677b8abd188e0dc4eaab7109d6c112d206183fc915c7fbfea7a39c2883e  deploy/robots/as2w/common/as2w_publish.cpp
+83ca1302d3456b41a47bc70ebde20fb99ea747b92ce83b398b56011331a0dfe2  deploy/robots/as2w/rise63/rise63_controller.cpp
+7c32fba4e672e947a024c95193bdae7b26d1aa22cc531ce573d87ec9a6ba2917  deploy/robots/as2w/rise63/rise63_controller.hpp
+fad509324e7df4bb5523592ba2ed1a347996235dffdfc70acd7c9a2f386c31b0  tools/run_rise63_hold15_trial.sh
+3a299c13396f4e4dee96431a1a767d35e3b2cb6cc6b8fa12a28a71f5064db227  models/rise63/deploy-hold15-candidate.yaml
+1f09372919d82d35b32aed032517571f03b48b67c99bfcc30760ea20db4c0031  models/rise63/policy.onnx
+a72f245addf2d16beaefb328d4152c40402344a197d99278dc64cfa131153be5  build-rise63/deploy/robots/as2w/rise63/as2w_rise63_publish_hold15
+[field-session] step1 audit: AUDIT PASS: synthetic HG frames and wake timing; command slew and field safety guards; offline fault injection (warn/hard/motorstate/remote-timeout/slew); firmware acceptance unknown
+[field-session] step2 probe: low packets=1030 tick=3444682 mode_pr=0 mode_machine=2 imu_wxyz=0.92487,0.00177074,0.00531384,0.380242, gyro=-0.00426106,0.00106526,0.00106526, m0=-0.581936,0 m1=1.05043,0 m2=-2.75176,0.00204531 m3=0.565602,-0.0122718 m4=1.04592,0 m5=-2.74726,0 m6=-0.579048,0.0122718 m7=1.14562,-0.00306796 m8=-2.75477,-0.00613592 m9=0.658305,0 m10=1.13803,0.00306796 m11=-2.76798,0.0102265 m12=-1.79677,0 m13=-8.5972,0.0122718 m14=2.7203,0 m15=1.69594,0.0122718 m16=0,0 m17=0,0 m18=0,0 m19=0,0 m20=0,0 m21=0,0 m22=0,0 m23=0,0 m24=0,0 m25=0,0 m26=0,0 m27=0,0 m28=0,0 m29=0,0 m30=0,0 m31=0,0 m32=0,0 m33=0,0 m34=0,0
+[field-session] step3 motion-mode: MotionSwitcher CheckMode rc=0 form=1 name=ai
+[field-session] step3 factory control (ai): ensure prone before releasing
+[field-session] step3 current fsm: fsm_name=ai_damping
+[field-session] step3 prone confirmed -> ReleaseMode
+[field-session] step3 release: MotionSwitcher ReleaseMode rc=0
+[field-session] step3 recheck: MotionSwitcher CheckMode rc=0 form=1 name=
+[field-session] step4 sample: LOW_SAMPLE,2001,2090,0,3448821,0,2,0.924878,0.0016485,0.00504238,0.380227,-0.00319579,-0.00532632,0.00213053,-0.581936,-
+[field-session] step4 packets=2090 16-axis modes={0}
+[field-session] step4 prone calf gate=yes
+[field-session] step5 starting 180s monitoring (low-capture 2ms + low-protection)
+[field-session] step6 launching: bash tools/run_rise63_hold15_trial.sh --rise-exit x
+[field-session]     >>> Passive ready expected in ~3-5s; then hand the remote to the operator.
+[field-session]     >>> A = 85/3.2 fixed stand at the delivery reset pose (crouched quadruped, wheels down).
+[field-session]     >>> B once = 0.5 s handoff then RISE onto the two rear wheels; zero command; the binary caps the hold at 15 s.
+[field-session]     >>> cycle end = EmergencyDamping (passive). Harnessed/slung test only: the sling must catch the body.
+[field-session]     >>> X = emergency passive in any state; Ctrl+C is not a motion e-stop.
+[field-session] publisher exited rc=0
+[field-session] debug diagnostics archived: debug_policy.csv (1 lines)
+[field-session] debug diagnostics archived: debug_lowcmd.csv (22247 lines)
+[field-session] monitoring done; artifacts:
+total 32282
+drwxr-xr-x.   2 root root     3440 Nov 20 17:15 .
+drwxr-xr-x. 154 root root    20480 Nov 20 17:15 ..
+-rw-r--r--.   1 root root 10061996 Nov 20 17:15 debug_lowcmd.csv
+-rw-r--r--.   1 root root      295 Nov 20 17:15 debug_policy.csv
+-rw-r--r--.   1 root root 20827713 Nov 20 17:16 low_capture_fast.log
+-rw-r--r--.   1 root root  2105344 Nov 20 17:16 low_protection.log
+-rw-r--r--.   1 root root     1654 Nov 20 17:15 publisher.log
+-rw-r--r--.   1 root root     3411 Nov 20 17:16 session.log
+[field-session] session complete (mode=rise63 rise_exit=x rc=0). Copy /root/field_sessions/20261120-171504_rise63-hold15 back to the workstation logs dir and append INDEX.

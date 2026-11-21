@@ -1,0 +1,9 @@
+{
+  "ckpt": "/root/gpufree-data/as2w-runs/him-dr10000-consolidate5000-n4Y47n/train/model_18200.pt",
+  "onnx": "/root/as2w/deploy/model_18200/policy.onnx",
+  "steps": 60,
+  "obs_dim": 360,
+  "max_abs_action_diff": 2.384185791015625e-06,
+  "mean_abs_action_diff": 1.1920928955078125e-06,
+  "parity_ok": true
+}

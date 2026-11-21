@@ -1,0 +1,562 @@
+{
+ "OG": {
+  "window_s": [
+   17,
+   120
+  ],
+  "n_frames": 51500,
+  "base_quat": [
+   0.99426,
+   -0.00719,
+   0.00649,
+   -0.10656
+  ],
+  "base_z_normalised": 0.4586,
+  "hip_q": [
+   -0.1285,
+   0.1213,
+   -0.1205,
+   0.1279
+  ],
+  "hip_q_std": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "thigh_q": [
+   0.5996,
+   0.5974,
+   0.5985,
+   0.5976
+  ],
+  "calf_q": [
+   -1.2241,
+   -1.2396,
+   -1.2312,
+   -1.2245
+  ],
+  "wheels": [
+   {
+    "wheel": "FL_foot",
+    "tilt_deg": 8.259,
+    "clearance_mm": 0.0,
+    "analytic_pt": [
+     0.2457,
+     0.1328,
+     0.0
+    ]
+   },
+   {
+    "wheel": "FR_foot",
+    "tilt_deg": 6.049,
+    "clearance_mm": 8.8,
+    "analytic_pt": [
+     0.1683,
+     -0.2407,
+     0.0088
+    ]
+   },
+   {
+    "wheel": "RL_foot",
+    "tilt_deg": 7.8,
+    "clearance_mm": 6.7,
+    "analytic_pt": [
+     -0.166,
+     0.226,
+     0.0067
+    ]
+   },
+   {
+    "wheel": "RR_foot",
+    "tilt_deg": 6.426,
+    "clearance_mm": 10.9,
+    "analytic_pt": [
+     -0.2478,
+     -0.1472,
+     0.0109
+    ]
+   }
+  ]
+ },
+ "P55G1": {
+  "window_s": [
+   10,
+   30
+  ],
+  "n_frames": 10001,
+  "base_quat": [
+   0.99918,
+   -0.00221,
+   -0.0391,
+   0.01004
+  ],
+  "base_z_normalised": 0.3065,
+  "hip_q": [
+   0.2057,
+   -0.2036,
+   0.2423,
+   -0.2363
+  ],
+  "hip_q_std": [
+   0.0004,
+   0.0001,
+   0.0007,
+   0.0002
+  ],
+  "thigh_q": [
+   0.7467,
+   0.7399,
+   0.721,
+   0.7201
+  ],
+  "calf_q": [
+   -1.7256,
+   -1.7315,
+   -1.8679,
+   -1.8586
+  ],
+  "wheels": [
+   {
+    "wheel": "FL_foot",
+    "tilt_deg": 11.453,
+    "clearance_mm": 0.0,
+    "analytic_pt": [
+     0.2563,
+     0.2682,
+     0.0
+    ]
+   },
+   {
+    "wheel": "FR_foot",
+    "tilt_deg": 11.928,
+    "clearance_mm": 3.8,
+    "analytic_pt": [
+     0.2693,
+     -0.26,
+     0.0038
+    ]
+   },
+   {
+    "wheel": "RL_foot",
+    "tilt_deg": 13.54,
+    "clearance_mm": 2.8,
+    "analytic_pt": [
+     -0.1477,
+     0.2653,
+     0.0028
+    ]
+   },
+   {
+    "wheel": "RR_foot",
+    "tilt_deg": 13.797,
+    "clearance_mm": 2.6,
+    "analytic_pt": [
+     -0.1373,
+     -0.2728,
+     0.0026
+    ]
+   }
+  ]
+ },
+ "P55G2": {
+  "window_s": [
+   8,
+   19
+  ],
+  "n_frames": 5501,
+  "base_quat": [
+   0.99853,
+   -0.0006,
+   -0.05352,
+   0.00805
+  ],
+  "base_z_normalised": 0.2982,
+  "hip_q": [
+   0.2142,
+   -0.2155,
+   0.2779,
+   -0.2755
+  ],
+  "hip_q_std": [
+   0.0002,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "thigh_q": [
+   0.7467,
+   0.7356,
+   0.7044,
+   0.7037
+  ],
+  "calf_q": [
+   -1.7154,
+   -1.7275,
+   -1.875,
+   -1.8743
+  ],
+  "wheels": [
+   {
+    "wheel": "FL_foot",
+    "tilt_deg": 12.083,
+    "clearance_mm": 0.0,
+    "analytic_pt": [
+     0.2622,
+     0.2713,
+     0.0
+    ]
+   },
+   {
+    "wheel": "FR_foot",
+    "tilt_deg": 12.391,
+    "clearance_mm": 4.3,
+    "analytic_pt": [
+     0.275,
+     -0.2638,
+     0.0043
+    ]
+   },
+   {
+    "wheel": "RL_foot",
+    "tilt_deg": 15.711,
+    "clearance_mm": 1.5,
+    "analytic_pt": [
+     -0.1371,
+     0.2765,
+     0.0015
+    ]
+   },
+   {
+    "wheel": "RR_foot",
+    "tilt_deg": 15.813,
+    "clearance_mm": 2.1,
+    "analytic_pt": [
+     -0.1279,
+     -0.2813,
+     0.0021
+    ]
+   }
+  ]
+ },
+ "P55G3": {
+  "window_s": [
+   7,
+   19
+  ],
+  "n_frames": 6001,
+  "base_quat": [
+   0.99881,
+   -0.00149,
+   -0.04826,
+   0.00642
+  ],
+  "base_z_normalised": 0.2996,
+  "hip_q": [
+   0.2208,
+   -0.2214,
+   0.2795,
+   -0.2753
+  ],
+  "hip_q_std": [
+   0.0001,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "thigh_q": [
+   0.753,
+   0.741,
+   0.7107,
+   0.7112
+  ],
+  "calf_q": [
+   -1.7196,
+   -1.7273,
+   -1.867,
+   -1.8629
+  ],
+  "wheels": [
+   {
+    "wheel": "FL_foot",
+    "tilt_deg": 12.383,
+    "clearance_mm": 0.0,
+    "analytic_pt": [
+     0.2595,
+     0.272,
+     0.0
+    ]
+   },
+   {
+    "wheel": "FR_foot",
+    "tilt_deg": 12.833,
+    "clearance_mm": 4.2,
+    "analytic_pt": [
+     0.2703,
+     -0.2672,
+     0.0042
+    ]
+   },
+   {
+    "wheel": "RL_foot",
+    "tilt_deg": 15.733,
+    "clearance_mm": 2.3,
+    "analytic_pt": [
+     -0.1404,
+     0.2775,
+     0.0023
+    ]
+   },
+   {
+    "wheel": "RR_foot",
+    "tilt_deg": 15.906,
+    "clearance_mm": 2.5,
+    "analytic_pt": [
+     -0.1336,
+     -0.2821,
+     0.0025
+    ]
+   }
+  ]
+ },
+ "P55S": {
+  "window_s": [
+   25,
+   90
+  ],
+  "n_frames": 32501,
+  "base_quat": [
+   0.98991,
+   -0.01578,
+   0.00019,
+   0.14081
+  ],
+  "base_z_normalised": 0.4031,
+  "hip_q": [
+   -0.0522,
+   0.0564,
+   -0.0527,
+   0.0575
+  ],
+  "hip_q_std": [
+   0.0047,
+   0.0013,
+   0.0049,
+   0.0027
+  ],
+  "thigh_q": [
+   0.7825,
+   0.784,
+   0.7804,
+   0.7849
+  ],
+  "calf_q": [
+   -1.5693,
+   -1.5796,
+   -1.5689,
+   -1.5806
+  ],
+  "wheels": [
+   {
+    "wheel": "FL_foot",
+    "tilt_deg": 4.78,
+    "clearance_mm": 0.0,
+    "analytic_pt": [
+     0.1432,
+     0.2635,
+     0.0
+    ]
+   },
+   {
+    "wheel": "FR_foot",
+    "tilt_deg": 1.445,
+    "clearance_mm": 14.9,
+    "analytic_pt": [
+     0.2696,
+     -0.1677,
+     0.0149
+    ]
+   },
+   {
+    "wheel": "RL_foot",
+    "tilt_deg": 4.807,
+    "clearance_mm": 1.9,
+    "analytic_pt": [
+     -0.2632,
+     0.1454,
+     0.0019
+    ]
+   },
+   {
+    "wheel": "RR_foot",
+    "tilt_deg": 1.505,
+    "clearance_mm": 16.9,
+    "analytic_pt": [
+     -0.1376,
+     -0.2855,
+     0.0169
+    ]
+   }
+  ]
+ },
+ "P85DS": {
+  "window_s": [
+   48,
+   100
+  ],
+  "n_frames": 26001,
+  "base_quat": [
+   0.9972,
+   0.00697,
+   0.00021,
+   0.07451
+  ],
+  "base_z_normalised": 0.3935,
+  "hip_q": [
+   -0.0361,
+   0.0361,
+   -0.0367,
+   0.0347
+  ],
+  "hip_q_std": [
+   0.0001,
+   0.0002,
+   0.0003,
+   0.0001
+  ],
+  "thigh_q": [
+   0.7875,
+   0.7929,
+   0.7881,
+   0.7917
+  ],
+  "calf_q": [
+   -1.578,
+   -1.589,
+   -1.576,
+   -1.5831
+  ],
+  "wheels": [
+   {
+    "wheel": "FL_foot",
+    "tilt_deg": 1.269,
+    "clearance_mm": 5.7,
+    "analytic_pt": [
+     0.1749,
+     0.2664,
+     0.0057
+    ]
+   },
+   {
+    "wheel": "FR_foot",
+    "tilt_deg": 2.864,
+    "clearance_mm": 0.9,
+    "analytic_pt": [
+     0.2439,
+     -0.1925,
+     0.0009
+    ]
+   },
+   {
+    "wheel": "RL_foot",
+    "tilt_deg": 1.307,
+    "clearance_mm": 5.1,
+    "analytic_pt": [
+     -0.2446,
+     0.2031,
+     0.0051
+    ]
+   },
+   {
+    "wheel": "RR_foot",
+    "tilt_deg": 2.786,
+    "clearance_mm": 0.0,
+    "analytic_pt": [
+     -0.1757,
+     -0.2561,
+     0.0
+    ]
+   }
+  ]
+ },
+ "OS": {
+  "window_s": [
+   0,
+   60
+  ],
+  "n_frames": 29992,
+  "base_quat": [
+   0.99817,
+   0.01013,
+   2e-05,
+   0.05959
+  ],
+  "base_z_normalised": 0.4646,
+  "hip_q": [
+   -0.1609,
+   0.1622,
+   -0.1601,
+   0.16
+  ],
+  "hip_q_std": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "thigh_q": [
+   0.5975,
+   0.5974,
+   0.5979,
+   0.5982
+  ],
+  "calf_q": [
+   -1.1962,
+   -1.1972,
+   -1.1902,
+   -1.1918
+  ],
+  "wheels": [
+   {
+    "wheel": "FL_foot",
+    "tilt_deg": 8.06,
+    "clearance_mm": 7.9,
+    "analytic_pt": [
+     0.1893,
+     0.207,
+     0.0079
+    ]
+   },
+   {
+    "wheel": "FR_foot",
+    "tilt_deg": 10.452,
+    "clearance_mm": 0.9,
+    "analytic_pt": [
+     0.2307,
+     -0.1373,
+     0.0009
+    ]
+   },
+   {
+    "wheel": "RL_foot",
+    "tilt_deg": 8.015,
+    "clearance_mm": 6.8,
+    "analytic_pt": [
+     -0.2327,
+     0.1566,
+     0.0068
+    ]
+   },
+   {
+    "wheel": "RR_foot",
+    "tilt_deg": 10.326,
+    "clearance_mm": 0.0,
+    "analytic_pt": [
+     -0.1912,
+     -0.1887,
+     0.0
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,9 @@
+case,wheel,active,bottom_height_mm,contact_x,contact_y,contact_normal,Fn_N,Fx_N,Fy_N,mu_static,condim,collision_geom,footnote
+fixedstand_cmd_level,FL_foot,1,-0.0,0.2119,0.1654,z+,65.91,-0.54,-9.98,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)
+fixedstand_cmd_level,FR_foot,1,-0.0,0.2119,-0.1654,z+,66.17,-0.58,10.01,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)
+fixedstand_cmd_level,RL_foot,1,-0.0,-0.2119,0.1654,z+,61.39,0.57,-8.68,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)
+fixedstand_cmd_level,RR_foot,1,-0.0,-0.2119,-0.1654,z+,61.59,0.55,8.66,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)
+fixedstand_meas_pitch-4.5,FL_foot,1,0.552,0.269,0.111,z+,49.65,4.61,-2.63,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)
+fixedstand_meas_pitch-4.5,FR_foot,1,2.162,0.2704,-0.1105,z+,49.74,4.54,2.71,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)
+fixedstand_meas_pitch-4.5,RL_foot,1,0.544,-0.1315,0.1056,z+,77.54,-4.46,-9.07,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)
+fixedstand_meas_pitch-4.5,RR_foot,1,0.0,-0.1313,-0.1059,z+,78.13,-4.69,8.99,1.0,4,MJCF cylinder r=0.086 half_w=0.026 axis Y,static min-norm lambda; MJCF nominal (C0)

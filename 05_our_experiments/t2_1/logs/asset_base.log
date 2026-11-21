@@ -1,0 +1,5 @@
+base_only      STAND  survived       tilt_max   2.55 z_min 0.378 yaw    -0.83 wz_mean -0.001
+base_only      YAWL   survived       tilt_max  18.27 z_min 0.337 yaw  -128.14 wz_mean +0.513
+base_only      YAWR   FELL@5.58s     tilt_max  64.16 z_min 0.322 yaw  -142.16 wz_mean -0.505
+base_only      MIX    survived       tilt_max  32.12 z_min 0.329 yaw  +148.27 wz_mean +0.326
+{"verdict": "COMPLETE", "issues": []}

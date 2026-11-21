@@ -1,0 +1,15 @@
+item,physx_training_asset,mujoco_C0_delivery,mujoco_C1m,real,note
+total_mass_kg,27.512,26.0 (10.08 base),27.512,26.0 (255.06 N model weight),"PhysX read-back; C1m matches load-v0, C1 is official"
+base_body_mass_kg,12.092,10.58 (10.08 + 0.5 JT128),12.092 (11.592 + 0.5 JT128),10.58 official,PhysX merges fixed JT128 into base_link
+base_com_xyz_m,0.02999 -0.00071 0.02008,0.035002 -0.0007562 0.017521,0.020002 -0.0007562 0.017521 (base) + JT128 separate,0.035002 -0.0007562 0.017521 official,PhysX read-back COM is the MERGED base+JT128 COM; whole-body COM equals C1m
+base_inertia_kgm2,from URDF load-v0,0.05069483 0.13822065 0.1505824 -0.0002906 -0.02480435 0.00027717,0.0582990545 0.1589537475 0.17316976 -0.00033419 -0.0285250025 0.0003187455,official 0.05069483 ...,load-v0 = official x1.15 mass scaling
+leg_body_masses_kg,hip .75 thigh 1.41 calf 1.1 wheel .595,same,same,same,identical across all variants
+wheel_collision,"STL mesh FL_foot.STL bbox y[0.0287,0.0805] z+-0.086",cylinder r0.086 h0.052 at body origin (C0),"cylinder r0.086 h0.052, pos y+-0.0546 (C1/C1m)",true wheel centre,PhysX already carries the H5-correct geometry
+effective_track_width_m,0.44 (body 0.33 + 2x0.0546),0.3308 (C0),0.4400 (C1),0.44 (wheel STL),PhysX = C1 geometry
+joint_axes,"hip (1,0,0); thigh/calf/wheel (0,1,0)",same,same,same,identical
+joint_limits_rad,"hip +-0.785; thigh FL/FR -2..3.492, RL/RR -1.3..4.19; calf -2.7677..-0.8133",same,same,same,identical
+effort_limits_Nm,hip/thigh 60 calf 90 wheel 15,same,same,same,identical
+joint_damping_armature_frictionloss,none in URDF (0/0/0),"0.1 / 0.01 / 0.05 (legs), 0.05 / 0.005 / 0.01 (wheel)",same as C0,n/a,MJCF adds damping/armature/frictionloss absent from URDF
+contact_model,convex mesh + default material,cylinder condim=4 friction 1.0 0.05 0.001,same as C0,real tyre,different contact primitive and friction model
+timestep_s,"0.005 (sim), decimation 4",0.002 implicitfast,0.002,n/a,different integrators
+PD_contract,implicit drive kp55/kd2 (T2) or kp200/kd4 (official),explicit qfrc_applied kp55/kd2 (T2) or kp200/kd4 (official),same,measured kp/kd,"same gains, different actuation path"

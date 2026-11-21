@@ -1,0 +1,1 @@
+locked_frames 3072 max_locked_error 0.0 max_step_delta_rad 0.002687320113182068 stress_bound_rad 0.06000000238418579

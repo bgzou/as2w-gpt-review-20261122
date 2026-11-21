@@ -1,0 +1,14 @@
+item,value,unit,evidence,notes
+sum_Fz,255.06,N,SIM_RUN_CONFIRMED,sum of per-wheel net normal-ish contact force z
+weight_model,255.06,N,MODEL_CALCULATION,26.0 kg (delivery model mass) * 9.81; NOT weighed
+sum_Fz_minus_weight,0.0,N,MODEL_CALCULATION,static vertical residual
+sum_Fx,0.0,N,SIM_RUN_CONFIRMED,horizontal residual x
+sum_Fy,-0.0,N,SIM_RUN_CONFIRMED,horizontal residual y
+Fn_per_wheel,53.19/52.71/74.25/75.43,N,SIM_RUN_CONFIRMED,FL/FR/RL/RR net contact force magnitude
+Fn_normal_per_wheel,52.97/52.42/74.25/75.43,N,SIM_RUN_CONFIRMED,net_normal_forces_w magnitude
+Fn_friction_per_wheel,4.82/5.57/0.59/0.28,N,SIM_RUN_CONFIRMED,net_friction_forces_w magnitude
+CoP_xy,0.0163/0.0009,m,SIM_RUN_CONFIRMED,Fz-weighted mean of average contact positions
+contact_pos_per_wheel,"[0.252,0.262,0.001]/[0.256,-0.257,0.001]/[-0.153,0.260,0.000]/[-0.148,-0.259,0.000]",m,SIM_RUN_CONFIRMED,ContactSensor contact_pos_w (average per body)
+moment_about_CoM,5.872,Nm,MODEL_CALCULATION,|sum (r_i-com) x F_i|; static should be ~0
+moment_about_origin,5.873,Nm,MODEL_CALCULATION,"|sum r_i x F_i + com x (0,0,-W)|"
+per_contact_point,UNKNOWN,,UNKNOWN,"PhysX ContactSensor exposes only net force + average contact_pos_w; no per-contact-point position/force arrays. Tried: net_forces_w, net_normal_forces_w, net_friction_forces_w, contact_pos_w, force_matrix_w (needs filter_prim_paths_expr), max_contact_data_count_per_prim. Individual points not exposed."

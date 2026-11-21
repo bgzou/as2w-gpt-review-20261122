@@ -1,0 +1,26 @@
+{
+  "name": "220051_prone_passive",
+  "source_session": "20261112-220051_training-contract",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 1697200,
+  "tick_end": 1702199,
+  "duration_s": 4.997,
+  "rate_hz": 500.0,
+  "n_cmd": 2482,
+  "n_state": 2499,
+  "test_tags": [
+    "passive",
+    "contact",
+    "static"
+  ],
+  "states": [
+    "Passive"
+  ],
+  "notes": "趴姿 Passive 5 s；kp=0/kd=3，q 跟随实测；用于接触/阻尼/静摩擦基线",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

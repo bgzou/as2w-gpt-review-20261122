@@ -1,0 +1,56 @@
+== SHA after sync (expect publisher 7aa1cb595a73d079 script e5d363bfe2ef9b20) ==
+7aa1cb595a73d079701a8a0b50faf4eb48db695e141a0de06ff31ac394573d33  deploy/robots/as2w/common/as2w_publish.cpp
+e5d363bfe2ef9b20671dce16cbf58562a006234a7d9907e298da2aed64b3b2d3  tools/run_hipdiag_field_session.sh
+== incremental build ==
+Consolidate compiler generated dependencies of target as2w_hipdiag
+Consolidate compiler generated dependencies of target as2w_hipdiag_p85d
+[ 11%] Built target as2w_policy
+[ 22%] Built target as2w_hipdiag
+[ 33%] Built target as2w_hipdiag_p85d
+[ 44%] Built target as2w_deploy
+[ 55%] Built target as2w_bench
+[ 66%] Built target as2w_hipdiag_plan_audit
+[ 77%] Built target as2w_controller_test
+Consolidate compiler generated dependencies of target as2w_hipdiag_publish
+Consolidate compiler generated dependencies of target as2w_hipdiag_publish_p85d
+[ 83%] Building CXX object deploy/robots/as2w/hipdiag/CMakeFiles/as2w_hipdiag_publish.dir/__/common/as2w_publish.cpp.o
+[ 88%] Building CXX object deploy/robots/as2w/hipdiag/CMakeFiles/as2w_hipdiag_publish_p85d.dir/__/common/as2w_publish.cpp.o
+[ 94%] Linking CXX executable as2w_hipdiag_publish_p85d
+[100%] Linking CXX executable as2w_hipdiag_publish
+[100%] Built target as2w_hipdiag_publish_p85d
+[100%] Built target as2w_hipdiag_publish
+BUILD_RC=0
+== ctest ==
+Internal ctest changing into directory: /root/as2w_deploy/build-hipdiag
+Test project /root/as2w_deploy/build-hipdiag
+    Start 1: recovery-r09
+1/9 Test #1: recovery-r09 .....................   Passed    0.01 sec
+    Start 2: recovery-r12
+2/9 Test #2: recovery-r12 .....................   Passed    0.01 sec
+    Start 3: recovery-r13
+3/9 Test #3: recovery-r13 .....................   Passed    0.01 sec
+    Start 4: stairs-r14
+4/9 Test #4: stairs-r14 .......................   Passed    0.01 sec
+    Start 5: stairs-r17-2000
+5/9 Test #5: stairs-r17-2000 ..................   Passed    0.01 sec
+    Start 6: stairs-r17-3000
+6/9 Test #6: stairs-r17-3000 ..................   Passed    0.01 sec
+    Start 7: controller
+7/9 Test #7: controller .......................   Passed    0.01 sec
+    Start 8: hipdiag-startup-audit
+8/9 Test #8: hipdiag-startup-audit ............   Passed    0.04 sec
+    Start 9: hipdiag-p85d-startup-audit
+9/9 Test #9: hipdiag-p85d-startup-audit .......   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 9
+
+Total Test time (real) =   0.18 sec
+CTEST_RC=0
+== hold-cap smoke: 45 accepted / 61 rejected (both binaries) ==
+HOLD45_P55_RC=0 LAST=AUDIT PASS: synthetic HG frames and wake timing; command slew and field safety guards; offline fault injection (warn/hard/motorstate/remote-timeout/slew); firmware acceptance unknown
+HOLD61_P55_RC=2 LAST=hipdiag sessions: --stand-trial (static P55 cell) OR --zero-b-trial --sweep-plan PLAN.csv (hip sweep cell) [--stand-hold-seconds 15, max 60 for the suspended ground->rack->ground transfer cell]
+HOLD45_P85D_RC=0 LAST=AUDIT PASS: synthetic HG frames and wake timing; command slew and field safety guards; offline fault injection (warn/hard/motorstate/remote-timeout/slew); firmware acceptance unknown
+HOLD61_P85D_RC=2 LAST=P85D build: --stand-trial ONLY (85/3.2 leg PD; the sweep contract stays 55/2)
+== cross-yaml rejection smoke (gain audit must fail) ==
+P55BIN_P85DYAML_RC=1 LAST=hipdiag gain contract mismatch (legs 55/2, wheels kp0/kd2)
+P85DBIN_P55YAML_RC=1 LAST=hipdiag gain contract mismatch (legs 85/3.2, wheels kp0/kd2)

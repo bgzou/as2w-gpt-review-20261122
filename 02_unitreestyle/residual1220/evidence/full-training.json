@@ -1,0 +1,15 @@
+{
+  "asset": "/root/as2w/calibration/candidates/load-v0/as2w-load-v0.urdf",
+  "asset_sha256": "7c9740a95042bad7b73cadfda90bdc7c1873ac766afbb7c0e7e492367d45afb0",
+  "num_envs": 8192,
+  "rollout_steps": 48,
+  "policy_dt_s": 0.02,
+  "seed": 42,
+  "resume": null,
+  "policy_kind": "as2w_residual_v1",
+  "offset": 1220,
+  "iterations": 100,
+  "std": 0.3,
+  "limit": 0.24,
+  "base_sha256": "d8402f10e85956bc9dd5fcdcaa91e5e14d63cdb4fc55d46b96a2e0186f571a50"
+}

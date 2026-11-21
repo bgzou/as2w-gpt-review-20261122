@@ -1,0 +1,49 @@
+{
+  "python": "3.12.14 (tags/v3.12.14-dirty:2abcf90, Sep  4 2026, 14:51:53) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-198-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.1",
+    "scipy": "1.17.0",
+    "PyYAML": "6.0.3",
+    "trimesh": "4.11.1",
+    "tensordict": "0.14.2",
+    "warp-lang": "1.17.0",
+    "isaaclab_experimental": "0.2.6",
+    "isaaclab_teleop": "0.10.3",
+    "torch": "2.11.0+cu130",
+    "isaaclab_newton": "9.1.4",
+    "omegaconf": "2.4.0",
+    "isaaclab_tasks": "25.2.0",
+    "isaaclab_assets": "2.0.1",
+    "onnx": "1.22.0",
+    "hydra-core": "1.4.0.dev10",
+    "rsl-rl-lib": "5.5.1",
+    "isaaclab_contrib": "3.2.0",
+    "isaaclab": "28.0.0",
+    "isaaclab_tasks_experimental": "1.0.1",
+    "isaaclab-visualizers": "2.1.0",
+    "isaaclab_physx": "8.0.0",
+    "isaaclab_rl": "1.5.1",
+    "isaaclab_ppisp": "0.3.1",
+    "isaaclab_ov": "5.1.5",
+    "isaaclab_mimic": "2.0.12",
+    "gymnasium": "1.3.0",
+    "onnxruntime": "1.32.0",
+    "matplotlib": "3.10.8",
+    "tensorboard": "2.21.0"
+  },
+  "repositories": {
+    "isaaclab": {
+      "source_path": "/workspace/isaaclab",
+      "commit": null
+    },
+    "unitree_rl_lab": {
+      "source_path": "/root/as2w/upstream/unitree_rl_lab",
+      "commit": "4960b84732b0c2ec593dccbfe963fda1bcd7b1e3",
+      "working_tree_changes": []
+    }
+  },
+  "simulator_version_files": {
+    "/isaac-sim/VERSION": "6.2.0-rc.14+release.52805.02189a84.gl"
+  }
+}

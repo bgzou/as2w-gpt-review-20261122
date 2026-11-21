@@ -1,0 +1,24 @@
+{
+  "ckpt": "/root/gpufree-data/as2w-runs/him-dr10000-consolidate5000-n4Y47n/train/model_18200.pt",
+  "iteration": 18200,
+  "obs_frame": 60,
+  "history": 6,
+  "hist_dim": 360,
+  "actor_in": 79,
+  "actions": 16,
+  "parity_max_abs_err": 7.62939453125e-06,
+  "files": {
+    "policy.onnx": {
+      "bytes": 1056450,
+      "sha256": "02352011169cbf1dc3acfe3b698de27b98a32b6ad56c6063118c3d6e999678bf"
+    },
+    "estimator.onnx": {
+      "bytes": 225087,
+      "sha256": "5d32959b38cda5d81d1bdd52334bd3f0a767eb646fa21e083e98297b1f11cb0d"
+    },
+    "actor.onnx": {
+      "bytes": 829904,
+      "sha256": "50de80a8cf0040a2034777029f6146ad231c1910f5079c386813a4865722cdb8"
+    }
+  }
+}

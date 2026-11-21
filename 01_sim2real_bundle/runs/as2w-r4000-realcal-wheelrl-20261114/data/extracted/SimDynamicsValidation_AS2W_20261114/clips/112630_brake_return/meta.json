@@ -1,0 +1,28 @@
+{
+  "name": "112630_brake_return",
+  "source_session": "20261113-112630_r4000",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 654865,
+  "tick_end": 657925,
+  "duration_s": 3.061,
+  "rate_hz": 500.0,
+  "n_cmd": 1528,
+  "n_state": 1532,
+  "test_tags": [
+    "brake",
+    "return",
+    "wheel"
+  ],
+  "states": [
+    "Brake",
+    "FixedStand",
+    "ReturnStand"
+  ],
+  "notes": "Brake 0.54 s + ReturnStand 2.5 s；用于轮速衰减与回站混合",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

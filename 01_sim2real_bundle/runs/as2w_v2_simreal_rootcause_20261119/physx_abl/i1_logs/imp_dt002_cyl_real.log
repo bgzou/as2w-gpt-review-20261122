@@ -1,0 +1,70 @@
+AppLauncher is deprecated; use isaaclab.app.launch_simulation.
+Loading user config located at: '/home/robot/z00945176/isaac_env/venv312/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-20T21:23:31Z [0ms] [Error] [carb] No space left on device for creating change watches. Sysctl value `fs.inotify.max_user_watches` may be insufficient. This message is logged once.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795209811.717568 1304326 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1795209811.717594 1304326 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+[ISAACLAB] KitLauncher initialization complete
+Warp 1.19.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/robot/.cache/warp/1.19.0
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory ContactSensor.
+[INFO]: Physics scene prim path: /physicsScene
+Module isaaclab_physx.assets.articulation.kernels c7efc33 load on device 'cuda:0' took 2.17 ms  (cached)
+Module isaaclab_physx.assets.kernels b9fc0d2 load on device 'cuda:0' took 2.69 ms  (cached)
+[INFO]: Simulation parameters for joints in /World/envs/env_[^/]+/Robot:
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                               Simulation Joint Information (Prim path: /World/envs/env_[^/]+/Robot)                                               |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+| Index | Name     | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction |   Position Limits   | Velocity Limits | Effort Limits |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+|   0   | FL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   1   | FR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   2   | RL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   3   | RR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   4   | FL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   5   | FR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   6   | RL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   7   | RR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   8   | FL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   9   | FR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   10  | RL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   11  | RR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   12  | FL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   13  | FR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   14  | RL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   15  | RR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+2026-11-20T21:23:31Z [254ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-11-20T21:23:31Z [256ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-11-20T21:23:33Z [2,222ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FL_hip, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,222ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FL_thigh, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,223ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FL_calf, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,223ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FL_foot, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,223ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FR_hip, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,224ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FR_thigh, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,224ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FR_calf, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,225ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/FR_foot, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,225ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RL_hip, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,226ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RL_thigh, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,226ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RL_calf, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,227ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RL_foot, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,227ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RR_hip, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,227ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RR_thigh, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,228ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RR_calf, actuator will be created without gain parameters
+2026-11-20T21:23:33Z [2,228ms] [Warning] [isaacsim.asset.importer.utils.impl.urdf_to_mjc_physx_conversion_utils] Stiffness and damping not available joint /AS2W/Physics/RR_foot, actuator will be created without gain parameters
+2026-11-20T21:23:35Z [4,044ms] [Warning] [usdrt.population.plugin] Last global time was not created. Did you call setEnableUsdNoticeHandling?
+2026-11-20T21:23:35Z [4,175ms] [Warning] [isaacsim.asset.transformer.rules.utils] omni.kit.material.library is not available; using hardcoded built-in MDL list (15 basename(s)).
+TOTAL_MASS 26.0
+INIT_Q [0.2142, -0.2155, 0.2779, -0.2755, 0.7467, 0.7356, 0.7044, 0.7037, -1.7154, -1.7275, -1.875, -1.8743]
+START_Z 0.335 pitch0 0.0 gap_mm 2.0
+Module isaaclab.actuators.actuator_kernels e2e3873 load on device 'cuda:0' took 0.56 ms  (cached)
+Module isaaclab.sensors.kernels b9f2ec7 load on device 'cuda:0' took 0.47 ms  (cached)
+Module isaaclab_physx.sensors.contact_sensor.kernels b03f115 load on device 'cuda:0' took 0.78 ms  (cached)
+RESULT {"engine": "physx", "scenario": "G", "init_condition": "real", "wheel_primitive": "cyl", "mode": "implicit", "dt": 0.002, "nstep": 20000, "kp": 55.0, "kd": 2.0, "pitch_init_deg": 0.0, "hip_offset_rad": 0.0, "gap_mm": 2.0, "friction": 1.0, "hip_tau_Nm": [-10.51, 10.58, -10.44, 10.47], "hip_q": [0.1912, -0.1923, 0.1898, -0.1904], "pitch_deg": 1.317, "Fn": [57.73, 57.6, 70.35, 71.0], "n_contacts_per_wheel": [-1, -1, -1, -1], "settle_ok": true, "settle_time_s": 29.59, "dqmax_last": 0.0053, "dqmax_p99": 0.0785, "dqmax_settled_mean": 0.0055, "dq_leg_settled_max": [0.006, 0.004, 0.007, 0.005, 0.009, 0.003, 0.006, 0.005, 0.01, 0.01, 0.007, 0.009], "quat_xyzw": [0.00053, -0.01149, 0.00045, 0.99995], "thigh_q": [0.7623, 0.7585, 0.745, 0.745], "calf_q": [-1.729, -1.7302, -1.7816, -1.7839], "thigh_tau": [2.08, 2.29, 3.02, 3.02], "calf_tau": [7.09, 7.16, 9.99, 10.12], "Fn_vec": [[-0.13, 9.36, 56.96], [0.53, -9.65, 56.78], [-0.11, 1.55, 70.33], [-0.3, -1.27, 70.99]], "total_mass_kg": 26.0, "notes": "PhysX n_contacts=UNKNOWN (ContactSensor net force only); mode=implicit; base mass=delivery 10.08kg; friction=1.0; cylinder collider"}

@@ -1,0 +1,55 @@
+{
+  "confirmed_mismatch": "Reward eligibility omits wheels for pure side/yaw commands while frozen evaluation requires repeated lifts on all four wheels.",
+  "reward_eligibility": {
+    "left": {
+      "FL": true,
+      "FR": true,
+      "RL": true,
+      "RR": false
+    },
+    "right": {
+      "FL": true,
+      "FR": true,
+      "RL": false,
+      "RR": true
+    },
+    "yaw_left": {
+      "FL": false,
+      "FR": false,
+      "RL": false,
+      "RR": true
+    },
+    "yaw_right": {
+      "FL": false,
+      "FR": true,
+      "RL": true,
+      "RR": false
+    }
+  },
+  "gate_requirement": "For each pure vy/wz direction, >=3/6 trials must survive and each of four wheels must have >=2 qualifying lifts.",
+  "evidence": {
+    "reward_code": "source/stages/swing_reward.py: eligible=(params[eligible]>0)&active; rewards and overdue only apply to eligible wheels",
+    "gate_code": "source/stages/score.py: sum(survived and min(lifts)>=2)>=3",
+    "source_hashes": {
+      "base": "a1c37ad9a5e3b009f874524737199ad333f1c651cde460d1ebb049964236c69f",
+      "dr1": "a1c37ad9a5e3b009f874524737199ad333f1c651cde460d1ebb049964236c69f",
+      "dr2": "a1c37ad9a5e3b009f874524737199ad333f1c651cde460d1ebb049964236c69f",
+      "dr3": "a1c37ad9a5e3b009f874524737199ad333f1c651cde460d1ebb049964236c69f"
+    }
+  },
+  "interpretation": [
+    "Omitted wheels receive neither swing-event credit nor the per-wheel overdue penalty.",
+    "This is a missing training incentive, not a proof that all-four stepping is physically impossible.",
+    "Existing survival, tracking, joint regularization and contact terms may still move these wheels indirectly.",
+    "Saturation and this mismatch are independently observed. Their relative causal contribution is not yet isolated."
+  ],
+  "required_followup": [
+    "Do not loosen the all-four-wheel acceptance test to match defective baseline events.",
+    "Build a separately versioned reward calibration giving every wheel an active contact-event criterion in pure vy/wz modes.",
+    "Use mirrored left/right parameter sets; do not copy an anchored wheel as desired behavior.",
+    "Keep vx-only rolling and zero-command standing outside stepping-event and overdue rewards.",
+    "Freeze all other changes for an eligibility-only ablation, then compare paired joint angles, supports, tracking and high-frequency behavior.",
+    "Handle inherited actor saturation in a separate controlled ablation; reduced exploration std alone has not fixed it."
+  ],
+  "current_run_policy": "Keep base 10000 and the planned 3x600 stages unchanged for the authorized comparison; preserve failures and mark unqualified models research_only."
+}

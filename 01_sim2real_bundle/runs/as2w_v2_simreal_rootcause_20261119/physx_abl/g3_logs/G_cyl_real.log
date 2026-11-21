@@ -1,0 +1,73 @@
+AppLauncher is deprecated; use isaaclab.app.launch_simulation.
+Loading user config located at: '/home/robot/z00945176/isaac_env/venv312/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-20T19:54:03Z [0ms] [Error] [carb] No space left on device for creating change watches. Sysctl value `fs.inotify.max_user_watches` may be insufficient. This message is logged once.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795204443.319456 1164256 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1795204443.319486 1164256 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+[ISAACLAB] KitLauncher initialization complete
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:144: DeprecationWarning: CollisionPropertiesCfg is deprecated. Use [UsdPhysicsCollisionCfg(...), PhysxCollisionCfg(...)] (and move mesh_collision_property to the spawner's mesh_collision_props slot) instead; CollisionPropertiesCfg will be removed in 3.2.
+  collision_props=sim_utils.CollisionPropertiesCfg(
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:146: DeprecationWarning: RigidBodyPropertiesCfg is deprecated. Use [UsdPhysicsRigidBodyCfg(...), PhysxRigidBodyCfg(...)] instead; RigidBodyPropertiesCfg will be removed in 3.2.
+  rigid_props=sim_utils.RigidBodyPropertiesCfg(
+Warp 1.19.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/robot/.cache/warp/1.19.0
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory ContactSensor.
+[INFO]: Physics scene prim path: /physicsScene
+Module isaaclab_physx.assets.articulation.kernels c7efc33 load on device 'cuda:0' took 2.49 ms  (cached)
+Module isaaclab_physx.assets.kernels b9fc0d2 load on device 'cuda:0' took 2.91 ms  (cached)
+[INFO]: Simulation parameters for joints in /World/envs/env_[^/]+/Robot:
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                               Simulation Joint Information (Prim path: /World/envs/env_[^/]+/Robot)                                               |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+| Index | Name     | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction |   Position Limits   | Velocity Limits | Effort Limits |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+|   0   | FL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   1   | FR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   2   | RL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   3   | RR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   4   | FL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   5   | FR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   6   | RL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   7   | RR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   8   | FL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   9   | FR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   10  | RL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   11  | RR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   12  | FL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   13  | FR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   14  | RL_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   15  | RR_foot  |   0.000   |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:160: DeprecationWarning: The `root_physx_view` property will be deprecated in a future release. Please use `root_view` instead.
+  masses = np.asarray(robot.root_physx_view.get_masses()).reshape(-1)
+TOTAL_MASS 26.0
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:175: DeprecationWarning: Implicit use of ProxyArray as a torch.Tensor is deprecated. Use the explicit .torch property instead (e.g., array.torch).
+  robot.data.joint_pos[0, leg_ids].cpu().numpy()], flush=True)
+INIT_Q [0.2142, -0.2155, 0.2779, -0.2755, 0.7467, 0.7356, 0.7044, 0.7037, -1.7154, -1.7275, -1.875, -1.8743]
+START_Z 0.3349 lowest_before 0.2161
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:193: DeprecationWarning: The function 'write_joint_stiffness_to_sim' will be deprecated in a future release. Please use 'write_joint_stiffness_to_sim_index' instead.
+  robot.write_joint_stiffness_to_sim(KP, joint_ids=leg_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:194: DeprecationWarning: The function 'write_joint_damping_to_sim' will be deprecated in a future release. Please use 'write_joint_damping_to_sim_index' instead.
+  robot.write_joint_damping_to_sim(KD, joint_ids=leg_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:195: DeprecationWarning: The function 'write_joint_stiffness_to_sim' will be deprecated in a future release. Please use 'write_joint_stiffness_to_sim_index' instead.
+  robot.write_joint_stiffness_to_sim(0.0, joint_ids=wheel_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:196: DeprecationWarning: The function 'write_joint_damping_to_sim' will be deprecated in a future release. Please use 'write_joint_damping_to_sim_index' instead.
+  robot.write_joint_damping_to_sim(2.0, joint_ids=wheel_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:198: DeprecationWarning: Articulation.set_joint_position_target is deprecated. Use articulation.actuators.target_command.set_position_index instead.
+  robot.set_joint_position_target(tgt_leg, joint_ids=leg_ids)
+/home/robot/z00945176/Rob2Nav/runs/as2w_v2_simreal_rootcause_20261119/scripts/g3_physx_matrix.py:199: DeprecationWarning: Articulation.set_joint_velocity_target is deprecated. Use articulation.actuators.target_command.set_velocity_index instead.
+  robot.set_joint_velocity_target(torch.zeros(1, len(WHEELS), device=dev),
+Module isaaclab.actuators.actuator_kernels e2e3873 load on device 'cuda:0' took 0.58 ms  (cached)
+Module isaaclab.sensors.kernels b9f2ec7 load on device 'cuda:0' took 0.43 ms  (cached)
+Module isaaclab_physx.sensors.contact_sensor.kernels b03f115 load on device 'cuda:0' took 0.78 ms  (cached)
+RESULT {"engine": "physx", "scenario": "G", "init_condition": "real", "wheel_primitive": "cyl", "hip_tau_Nm": [-7.49, 7.79, -11.08, 10.9], "hip_q": [0.136, -0.142, 0.201, -0.198], "pitch_deg": 4.01, "Fn": [53.3, 52.6, 74.0, 75.7], "n_contacts_per_wheel": [-1, -1, -1, -1], "settle_ok": true, "settle_time_s": 28.17, "quat_xyzw": [0.00123, -0.03501, 0.00541, 0.99937], "contact_pos_world": {"FL_foot": null, "FR_foot": null, "RL_foot": null, "RR_foot": null}, "thigh_q": [0.757, 0.752, 0.717, 0.714], "calf_q": [-1.725, -1.724, -1.806, -1.813], "thigh_tau": [2.37, 2.62, 4.55, 4.72], "calf_tau": [6.89, 6.83, 11.31, 11.74], "Fn_vec": [[-0.7, 4.58, 53.09], [0.37, -5.87, 52.29], [0.24, 0.77, 74.01], [0.09, 0.53, 75.66]], "total_mass_kg": 26.0, "notes": "PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)"}
+2026-11-20T19:54:03Z [267ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-11-20T19:54:03Z [269ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-11-20T19:54:05Z [2,454ms] [Warning] [usdrt.population.plugin] Last global time was not created. Did you call setEnableUsdNoticeHandling?

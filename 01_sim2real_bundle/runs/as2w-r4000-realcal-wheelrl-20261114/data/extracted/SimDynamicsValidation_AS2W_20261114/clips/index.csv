@@ -1,0 +1,21 @@
+name,session,tick_start,tick_end,duration_s,n_cmd,max_abs_cmd_wheel_dq,max_abs_gyro_z,test_tags,notes
+220051_prone_passive,20261112-220051_training-contract,1697200,1702200,5.0,2482,0.0,0.018,"passive,contact,static",趴姿 Passive 5 s；kp=0/kd=3，q 跟随实测；用于接触/阻尼/静摩擦基线
+220051_fixstand_rise,20261112-220051_training-contract,1712258,1715259,3.001,1492,0.0,0.068,"step,actuator,fixstand",FixStand 两段起立（kp 20/3 → 55/2）纯状态段；用于 PD/执行器阶跃响应
+220051_fixedstand_hold,20261112-220051_training-contract,1715259,1718919,3.66,1821,0.0,0.044,"static,gravity,fixedstand",T2 FixedStand 保持 3.66 s 纯状态段；用于重力/CoM/静态 PD 误差校验
+220051_handoff_zero,20261112-220051_training-contract,1718919,1724920,6.001,2974,0.409,0.113,"handoff,zero,policy",PolicyHandoff 2 s + 零速 PolicyWalk 8 s；用于接管瞬态与零速闭环
+220051_brake_return,20261112-220051_training-contract,1742000,1742697,0.697,350,0.006,0.013,"brake,wheel",Brake + ReturnStand 约 0.7 s；轮速目标归零，用于轮-地摩擦/制动
+220051_fixsquat,20261112-220051_training-contract,1742697,1749699,7.002,3470,0.005,0.267,"squat,contact,large_motion",FixSquat 7 s；大幅腿运动+落地接触，用于接触模型/关节摩擦
+112630_fixstand_rise,20261113-112630_r4000,617466,620468,3.002,1487,0.0,0.072,"step,actuator,fixstand",R4000 会话的 FixStand 起立纯状态段，用于跨会话重复性
+112630_fixedstand_hold,20261113-112630_r4000,620468,622847,2.379,1183,0.0,0.04,"static,gravity,fixedstand",R4000 会话的 T2 保持 2.38 s 纯状态段
+112630_policy_walk_30s,20261113-112630_r4000,624845,654865,30.02,14870,2.886,0.18,"walk,contact,policy",R4000 30 s 行走（命令 ±0.2 m/s 内）；用于行走/接触/轮速闭环
+112630_brake_return,20261113-112630_r4000,654865,657925,3.06,1528,2.025,0.022,"brake,return,wheel",Brake 0.54 s + ReturnStand 2.5 s；用于轮速衰减与回站混合
+112630_fixsquat,20261113-112630_r4000,663445,670444,6.999,3482,0.0,0.311,"squat,contact,large_motion",FixSquat 7 s
+114335_fixstand_rise,20261113-114335_r4000,1647632,1650632,3.0,1491,0.0,0.075,"step,actuator,fixstand",R4000 长会话的 FixStand 起立纯状态段
+114335_fixedstand_hold,20261113-114335_r4000,1650632,1652851,2.219,1105,0.0,0.054,"static,gravity,fixedstand",R4000 长会话的 T2 保持 2.22 s 纯状态段
+114335_walk_00_30,20261113-114335_r4000,1654852,1684852,30.0,14864,4.895,0.239,"walk,contact,policy",120 s 行走的第 1 个 30 s；命令可达 ±0.4 m/s、wz ±0.1
+114335_walk_30_60,20261113-114335_r4000,1684852,1714852,30.0,14850,3.234,0.182,"walk,contact,policy",120 s 行走的第 2 个 30 s
+114335_walk_60_90,20261113-114335_r4000,1714852,1744852,30.0,14829,4.248,0.195,"walk,contact,policy",120 s 行走的第 3 个 30 s
+114335_walk_90_120,20261113-114335_r4000,1744852,1774869,30.017,14872,5.198,0.055,"walk,contact,policy",120 s 行走的第 4 个 30 s（含尾段）
+114335_brake_return,20261113-114335_r4000,1774869,1777708,2.839,1410,0.722,0.092,"brake,return,wheel",Brake 0.32 s + ReturnStand 2.5 s
+114335_fixsquat,20261113-114335_r4000,1779629,1786628,6.999,3477,0.0,0.289,"squat,contact,large_motion",FixSquat 7 s
+factory_stand,20261109-185025_factory,345620,351920,6.3,0,,0.033,"factory,reference,static",无 LowCmd；仅姿态/力矩参考

@@ -1,0 +1,37 @@
+engine,scenario,init_condition,wheel_primitive,hip_tau_Nm,hip_q,pitch_deg,Fn,n_contacts_per_wheel,settle_ok,notes
+mujoco,S,real,cyl,2.88/-2.88/2.90/-2.90,-0.052/0.052/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,0.00/0.00/0.00/0.00,True,
+mujoco,S,nearflat,cyl,2.88/-2.88/2.90/-2.90,-0.052/0.052/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,0.00/0.00/0.00/0.00,True,
+mujoco,S,crouch,cyl,2.88/-2.88/2.90/-2.90,-0.052/0.052/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,0.00/0.00/0.00/0.00,True,
+mujoco,S,real,mesh,2.88/-2.88/2.90/-2.90,-0.052/0.052/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,0.00/0.00/0.00/0.00,True,
+mujoco,S,nearflat,mesh,2.88/-2.88/2.90/-2.90,-0.052/0.052/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,0.00/0.00/0.00/0.00,True,
+mujoco,S,crouch,mesh,2.88/-2.88/2.90/-2.90,-0.052/0.052/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,0.00/0.00/0.00/0.00,True,
+mujoco,G,real,cyl,-4.61/4.64/-11.57/11.60,0.084/-0.084/0.210/-0.211,-6.37,49.4/49.6/77.9/78.1,1.00/1.00/1.00/1.00,True,
+mujoco,G,nearflat,cyl,-4.59/4.62/-11.56/11.59,0.084/-0.084/0.210/-0.211,-6.38,49.4/49.6/77.9/78.1,1.00/1.00/1.00/1.00,True,
+mujoco,G,crouch,cyl,-4.54/4.57/-11.62/11.64,0.083/-0.083/0.211/-0.212,-6.48,49.2/49.5/78.1/78.3,1.00/1.00/1.00/1.00,True,
+mujoco,G,real,mesh,-5.59/5.62/-12.39/12.41,0.102/-0.102/0.225/-0.226,-6.63,49.2/49.4/78.1/78.3,1.00/1.00/1.00/1.00,True,
+mujoco,G,nearflat,mesh,-5.57/5.60/-12.41/12.43,0.101/-0.102/0.226/-0.226,-6.67,49.2/49.3/78.2/78.4,1.00/1.00/1.00/1.00,True,
+mujoco,G,crouch,mesh,-5.53/5.56/-12.44/12.46,0.101/-0.101/0.226/-0.227,-6.74,49.0/49.2/78.3/78.5,1.00/1.00/1.00/1.00,True,
+mujoco,GO,real,cyl,-6.25/6.28/-5.80/5.83,-0.119/0.119/-0.121/0.121,0.08,65.1/65.3/62.2/62.4,1.00/1.00/1.00/1.00,True,
+mujoco,GO,nearflat,cyl,-6.25/6.28/-5.80/5.83,-0.119/0.119/-0.121/0.121,0.08,65.1/65.3/62.2/62.4,1.00/1.00/1.00/1.00,True,
+mujoco,GO,crouch,cyl,6.29/-7.09/6.44/-3.56,-0.181/0.185/-0.182/0.168,0.71,0.0/23.2/0.0/19.1,0.00/1.00/0.00/1.00,False,
+mujoco,GO,real,mesh,-5.10/5.13/-4.73/4.75,-0.124/0.124/-0.126/0.126,0.07,65.1/65.3/62.2/62.4,1.00/1.00/1.00/1.00,True,
+mujoco,GO,nearflat,mesh,-5.10/5.13/-4.73/4.76,-0.124/0.124/-0.126/0.126,0.07,65.1/65.3/62.2/62.4,1.00/1.00/1.00/1.00,True,
+mujoco,GO,crouch,mesh,6.20/-6.28/6.36/-3.60,-0.181/0.181/-0.182/0.168,0.68,0.0/13.7/0.0/14.0,0.00/1.00/0.00/1.00,False,
+physx,S,real,mesh,2.88/-2.90/2.90/-2.92,-0.052/0.053/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,S,nearflat,mesh,2.88/-2.90/2.90/-2.92,-0.052/0.053/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,S,crouch,mesh,2.88/-2.90/2.90/-2.92,-0.052/0.053/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,S,real,cyl,2.88/-2.90/2.90/-2.92,-0.052/0.053/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,S,nearflat,cyl,2.88/-2.90/2.90/-2.92,-0.052/0.053/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,S,crouch,cyl,2.88/-2.90/2.90/-2.92,-0.052/0.053/-0.053/0.053,0.0,0.0/0.0/0.0/0.0,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,G,real,mesh,-9.84/10.29/-10.63/10.36,0.179/-0.187/0.193/-0.188,1.91,60.3/52.5/67.3/76.9,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,G,nearflat,mesh,2.12/0.79/-1.13/-2.00,-0.038/-0.014/0.021/0.036,2.07,61.5/53.5/69.8/84.4,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,G,crouch,mesh,1.88/-2.26/-0.44/0.98,-0.034/0.041/0.008/-0.018,3.42,58.2/54.2/77.6/79.7,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,G,real,cyl,-7.49/7.79/-11.08/10.90,0.136/-0.142/0.201/-0.198,4.01,53.3/52.6/74.0/75.7,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,G,nearflat,cyl,0.91/-0.86/0.50/-0.48,-0.016/0.016/-0.009/0.009,1.81,59.8/59.8/77.7/78.1,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,G,crouch,cyl,3.40/-3.62/0.00/0.29,-0.062/0.066/0.000/-0.005,4.6,56.3/57.2/79.2/78.4,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,GO,real,mesh,-5.23/5.94/5.19/-6.18,-0.124/0.120/-0.176/0.181,-0.77,50.9/83.0/77.6/51.3,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,GO,nearflat,mesh,-15.21/16.34/-16.29/15.14,-0.074/0.068/-0.069/0.074,0.09,67.5/69.9/65.1/68.5,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,GO,crouch,mesh,1.94/-3.78/3.27/-1.41,-0.160/0.169/-0.166/0.157,0.27,49.8/87.3/82.2/46.4,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; STL mesh collider
+physx,GO,real,cyl,-4.08/4.06/11.77/-11.73,-0.130/0.130/-0.209/0.209,-1.33,67.9/67.2/68.1/69.3,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,GO,nearflat,cyl,-21.08/21.21/-21.60/21.92,-0.045/0.044/-0.042/0.040,0.03,71.3/71.6/70.2/70.2,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)
+physx,GO,crouch,cyl,4.42/-4.19/-1.33/1.18,-0.172/0.171/-0.143/0.144,0.42,67.6/67.5/63.4/64.0,-1.00/-1.00/-1.00/-1.00,True,PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)

@@ -1,0 +1,93 @@
+{
+ "engine": "physx",
+ "scenario": "S",
+ "init_condition": "real",
+ "wheel_primitive": "cyl",
+ "hip_tau_Nm": [
+  2.88,
+  -2.9,
+  2.9,
+  -2.92
+ ],
+ "hip_q": [
+  -0.052,
+  0.053,
+  -0.053,
+  0.053
+ ],
+ "pitch_deg": 0.0,
+ "Fn": [
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "n_contacts_per_wheel": [
+  -1,
+  -1,
+  -1,
+  -1
+ ],
+ "settle_ok": true,
+ "settle_time_s": 0.68,
+ "quat_xyzw": [
+  -0.0,
+  -0.0,
+  -0.0,
+  1.0
+ ],
+ "contact_pos_world": {
+  "FL_foot": null,
+  "FR_foot": null,
+  "RL_foot": null,
+  "RR_foot": null
+ },
+ "thigh_q": [
+  0.786,
+  0.786,
+  0.788,
+  0.788
+ ],
+ "calf_q": [
+  -1.561,
+  -1.561,
+  -1.559,
+  -1.559
+ ],
+ "thigh_tau": [
+  0.75,
+  0.76,
+  0.68,
+  0.67
+ ],
+ "calf_tau": [
+  -2.15,
+  -2.15,
+  -2.26,
+  -2.26
+ ],
+ "Fn_vec": [
+  [
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "total_mass_kg": 26.0,
+ "notes": "PhysX n_contacts=UNKNOWN (ContactSensor net force only); base mass=delivery 10.08kg; friction 1.0; cylinder collider (importer approximation UNKNOWN)"
+}

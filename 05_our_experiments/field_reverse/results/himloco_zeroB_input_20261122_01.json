@@ -1,0 +1,357 @@
+{
+  "task": "T3-2 HIMLoco model_18200 zero-B input package",
+  "generator": "build_zerob_input_package_20261122_01.py",
+  "generator_sha256": "2bbb45e46b43c9187ecb649a5f78abe64b6aee05feb4b0529adebf7bef377c55",
+  "sources": {
+    "field\\20261120-180312_low-state_32209.log": "d50b3046c40222d524ebc1357b56a82a4ccb28455bc2e93194e497a97c26723f",
+    "analysis\\field-sink-per-axis.csv": "b1b92544dd2d7ecac2803848b56606178dbeb78aaf9b660db28c5a787f040106",
+    "field\\run-log-summary.md": "67ca14c1365af1aa5d53245601de2a2f054678fabf91b2f2931ecd47eef51e36",
+    "data\\deploy.yaml": "bd1a4b39b19a90ac372b90139784c9f85e0d9f3379131656c3b8035d534b240e"
+  },
+  "initial_state": {
+    "q16_policy_order": [
+      0.585166,
+      1.04761,
+      -2.76119,
+      -0.57852,
+      1.05099,
+      -2.76707,
+      0.584507,
+      1.07291,
+      -2.75213,
+      -0.579395,
+      1.08813,
+      -2.74614,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "dq16_policy_order": [
+      -0.009204,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.010226,
+      0.003068,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      0.999151,
+      -0.00108447,
+      0.000999154,
+      0.0411609
+    ],
+    "gyro_body": [
+      -0.00106526,
+      -0.00319579,
+      0.00106526
+    ],
+    "gravity_body": [
+      -0.001907,
+      -0.002249,
+      -0.999996
+    ],
+    "lowstate_samples": 5,
+    "lowstate_to_policy_leg_map": [
+      3,
+      4,
+      5,
+      0,
+      1,
+      2,
+      9,
+      10,
+      11,
+      6,
+      7,
+      8
+    ]
+  },
+  "contract": {
+    "step_dt": 0.02,
+    "observation_size": 360.0,
+    "action_size": 16.0,
+    "leg_target_cutoff_hz": 10.0,
+    "wheel_target_cutoff_hz": 5.0,
+    "leg_action_scale_rad": 0.25,
+    "leg_gain_hip": 0.6,
+    "leg_gain_thigh": 0.6,
+    "leg_gain_calf": 0.6,
+    "wheel_policy_gain": 2.0,
+    "wheel_rate_clamp": 12.0,
+    "wheel_radius": 0.086,
+    "wheel_side_offset": 0.1654,
+    "obs_height": 0.37,
+    "handoff_steps": 100.0,
+    "vx_limit": 0.1,
+    "vy_limit": 0.0,
+    "wz_limit": 0.0,
+    "default_joint_pos": [
+      0.0,
+      0.8,
+      -1.6,
+      0.0,
+      0.8,
+      -1.6,
+      0.0,
+      0.8,
+      -1.6,
+      0.0,
+      0.8,
+      -1.6,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "stiffness": [
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "damping": [
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ]
+  },
+  "required_fields_present": {
+    "q16_initial": [
+      0.585166,
+      1.04761,
+      -2.76119,
+      -0.57852,
+      1.05099,
+      -2.76707,
+      0.584507,
+      1.07291,
+      -2.75213,
+      -0.579395,
+      1.08813,
+      -2.74614,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "dq16_initial": [
+      -0.00920388,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.0102265,
+      0.00306796,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      0.999151,
+      -0.00108447,
+      0.000999154,
+      0.0411609
+    ],
+    "gyro_body": [
+      -0.00106526,
+      -0.00319579,
+      0.00106526
+    ],
+    "command": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "leg_kp_kd": [
+      [
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0,
+        55.0
+      ],
+      [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ]
+    ],
+    "wheel_kp_kd": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ]
+    ],
+    "alpha_leg": 0.7153904566639707,
+    "alpha_wheel": 0.4665119089088967,
+    "handoff_steps": 100.0,
+    "obs_height": 0.37
+  },
+  "missing_fields": [],
+  "not_archived_fields": [
+    {
+      "field": "per-frame LowCmd / applied_leg / applied_wheel during zero-B",
+      "why": "publish-side log stayed in CPRO /tmp and was lost when CPRO went offline",
+      "impact": "cannot replay the exact action stream; only the cumulative POLICY_TRACK deltas remain"
+    },
+    {
+      "field": "base height z",
+      "why": "AS2-W LowState has no height channel",
+      "impact": "sink depth must be inferred from joint angles (thigh+calf ~0.57 rad -> 3-4 cm)"
+    },
+    {
+      "field": "wheel normal force Fn",
+      "why": "no contact sensor in the archived field logs",
+      "impact": "sim-vs-real Fn comparison impossible; sim Fn is engine output only"
+    },
+    {
+      "field": "ground friction / tyre compliance",
+      "why": "not measured",
+      "impact": "plant ledger item"
+    },
+    {
+      "field": "IMU-specific sample rate alignment with control loop",
+      "why": "LowState ~1060 Hz but control 50 Hz; no timestamped pairing archived",
+      "impact": "gyro used only as a static sample"
+    },
+    {
+      "field": "row-by-row zero-B verdict per trial",
+      "why": "only 4 summary rows exist",
+      "impact": "trial-level statistics not possible"
+    }
+  ],
+  "field_axes_observed": {
+    "FL_hip": {
+      "no_offset_mean_rad": 0.209,
+      "no_offset_max_rad": 0.3,
+      "with_offset_last_rad": 0.176
+    },
+    "FL_thigh": {
+      "no_offset_mean_rad": -0.159,
+      "no_offset_max_rad": -0.037,
+      "with_offset_last_rad": -0.112
+    },
+    "FL_calf": {
+      "no_offset_mean_rad": 0.006,
+      "no_offset_max_rad": 0.078,
+      "with_offset_last_rad": 0.142
+    },
+    "FR_hip": {
+      "no_offset_mean_rad": -0.193,
+      "no_offset_max_rad": -0.079,
+      "with_offset_last_rad": -0.128
+    },
+    "FR_thigh": {
+      "no_offset_mean_rad": -0.004,
+      "no_offset_max_rad": 0.023,
+      "with_offset_last_rad": -0.305
+    },
+    "FR_calf": {
+      "no_offset_mean_rad": 0.053,
+      "no_offset_max_rad": 0.106,
+      "with_offset_last_rad": -0.053
+    },
+    "RL_hip": {
+      "no_offset_mean_rad": 0.144,
+      "no_offset_max_rad": 0.156,
+      "with_offset_last_rad": 0.021
+    },
+    "RL_thigh": {
+      "no_offset_mean_rad": 0.237,
+      "no_offset_max_rad": 0.278,
+      "with_offset_last_rad": 0.02
+    },
+    "RL_calf": {
+      "no_offset_mean_rad": 0.336,
+      "no_offset_max_rad": 0.35,
+      "with_offset_last_rad": 0.105
+    },
+    "RR_hip": {
+      "no_offset_mean_rad": -0.145,
+      "no_offset_max_rad": -0.11,
+      "with_offset_last_rad": -0.076
+    },
+    "RR_thigh": {
+      "no_offset_mean_rad": 0.239,
+      "no_offset_max_rad": 0.279,
+      "with_offset_last_rad": 0.117
+    },
+    "RR_calf": {
+      "no_offset_mean_rad": 0.331,
+      "no_offset_max_rad": 0.376,
+      "with_offset_last_rad": 0.199
+    }
+  },
+  "usable_for_sim": true,
+  "caveats": [
+    "initial q is the factory-ai standing pose, not necessarily the pose at B press",
+    "handoff ramp is applied to targets, and only the ramp semantics are documented",
+    "the sim must use the C++/deploy.yaml wrapper (tanh + leg_gain 0.6 + wheel feed-forward), not deploy_ref_controller.py (see himloco_wrapper_drift_20261122_01.json)"
+  ]
+}

@@ -1,0 +1,10 @@
+Fri Nov 20 00:38:32 CST 2026
+    PID STAT
+2079591 Sl
+2090200 Ss
+[1m                          Learning iteration 1106/2000                          [0m 
+T2_MATERIAL {"collider": "/World/envs/env_0/Robot/Geometry/base_link/FL_hip/FL_thigh/FL_calf/FL_foot/FL_foot_1/FL_foot", "material": null, "attributes": {}}
+T2_MATERIAL {"collider": "/World/envs/env_0/Robot/Geometry/base_link/FR_hip/FR_thigh/FR_calf/FR_foot/FR_foot_1/FR_foot", "material": null, "attributes": {}}
+T2_MATERIAL {"collider": "/World/envs/env_0/Robot/Geometry/base_link/RL_hip/RL_thigh/RL_calf/RL_foot/RL_foot_1/RL_foot", "material": null, "attributes": {}}
+T2_MATERIAL {"collider": "/World/envs/env_0/Robot/Geometry/base_link/RR_hip/RR_thigh/RR_calf/RR_foot/RR_foot_1/RR_foot", "material": null, "attributes": {}}
+T2_MATERIAL {"collider": "/World/ground/terrain/mesh", "material": "/World/ground/terrain/physicsMaterial", "attributes": {"physics:dynamicFriction": "0.3499999940395355", "physics:staticFriction": "0.3499999940395355"}}

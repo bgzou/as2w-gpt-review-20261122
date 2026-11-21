@@ -1,0 +1,46 @@
+AppLauncher is deprecated; use isaaclab.app.launch_simulation.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795210363.478560 1320903 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1795210363.478599 1320903 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+[ISAACLAB] KitLauncher initialization complete
+Warp 1.19.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/robot/.cache/warp/1.19.0
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Physics scene prim path: /physicsScene
+Module isaaclab_physx.assets.articulation.kernels c7efc33 load on device 'cuda:0' took 2.30 ms  (cached)
+Module isaaclab_physx.assets.kernels b9fc0d2 load on device 'cuda:0' took 2.76 ms  (cached)
+[INFO]: Simulation parameters for joints in /World/envs/env_[^/]+/Robot:
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                               Simulation Joint Information (Prim path: /World/envs/env_[^/]+/Robot)                                               |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+| Index | Name     | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction |   Position Limits   | Velocity Limits | Effort Limits |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+|   0   | FL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   1   | FR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   2   | RL_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   3   | RR_hip   |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-0.785, 0.785]   |      25.000     |     60.000    |
+|   4   | FL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   5   | FR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.000, 3.492]   |      25.000     |     60.000    |
+|   6   | RL_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   7   | RR_thigh |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-1.300, 4.190]   |      25.000     |     60.000    |
+|   8   | FL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   9   | FR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   10  | RL_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   11  | RR_calf  |   55.000  |  2.000  |  0.000   |      0.000      |      0.000       |      0.000       |   [-2.768, -0.813]  |      16.670     |     90.000    |
+|   12  | FL_foot  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   13  | FR_foot  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   14  | RL_foot  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
+|   15  | RR_foot  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.4e+38, 3.4e+38] |      98.470     |     15.000    |
++-------+----------+-----------+---------+----------+-----------------+------------------+------------------+---------------------+-----------------+---------------+
+CHECK {"materials": [{"path": "/World/envs/env_0/Robot/material", "friction_attrs": {"physics:dynamicFriction": 0.800000011920929, "physics:staticFriction": 0.800000011920929}}], "wheel_colliders": [{"path": "/World/envs/env_0/Robot/Geometry/base_link/FL_hip/FL_thigh/FL_calf/FL_foot/cylinder", "bound_material_physics": "/World/envs/env_0/Robot/material", "bound_material_anypurpose": null, "bound_material": "/World/envs/env_0/Robot/material", "friction": {"static": 0.800000011920929, "dynamic": 0.800000011920929}}, {"path": "/World/envs/env_0/Robot/Geometry/base_link/FR_hip/FR_thigh/FR_calf/FR_foot/cylinder", "bound_material_physics": "/World/envs/env_0/Robot/material", "bound_material_anypurpose": null, "bound_material": "/World/envs/env_0/Robot/material", "friction": {"static": 0.800000011920929, "dynamic": 0.800000011920929}}, {"path": "/World/envs/env_0/Robot/Geometry/base_link/RL_hip/RL_thigh/RL_calf/RL_foot/cylinder", "bound_material_physics": "/World/envs/env_0/Robot/material", "bound_material_anypurpose": null, "bound_material": "/World/envs/env_0/Robot/material", "friction": {"static": 0.800000011920929, "dynamic": 0.800000011920929}}, {"path": "/World/envs/env_0/Robot/Geometry/base_link/RR_hip/RR_thigh/RR_calf/RR_foot/cylinder", "bound_material_physics": "/World/envs/env_0/Robot/material", "bound_material_anypurpose": null, "bound_material": "/World/envs/env_0/Robot/material", "friction": {"static": 0.800000011920929, "dynamic": 0.800000011920929}}], "n_colliders": 4, "requested_friction": 0.8, "stage": "after_reset_runtime"}
+Loading user config located at: '/home/robot/z00945176/isaac_env/venv312/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-20T21:32:43Z [0ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-11-20T21:32:43Z [1ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-11-20T21:32:45Z [2,167ms] [Warning] [usdrt.population.plugin] Last global time was not created. Did you call setEnableUsdNoticeHandling?
+2026-11-20T21:32:45Z [2,279ms] [Warning] [isaaclab.actuators.actuator_collection] Actuator groups cover 12 joints; expected 16 after accounting for fixed tendons.

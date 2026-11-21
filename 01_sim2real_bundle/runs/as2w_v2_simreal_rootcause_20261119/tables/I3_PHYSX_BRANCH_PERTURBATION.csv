@@ -1,0 +1,8 @@
+condition,perturbation,n_runs,pitch_deg,hip_q,Fn,settle_time_s,repeat_dpitch,repeat_dhipq,settle_ok,notes
+base,{},2,4.038,0.1362/-0.1397/0.2003/-0.1994,53.20/52.71/74.25/75.43,28.75,0.0,0.0,True,implicit PD dt0.005; cyl; real init baseline
+pitch_p2,"{""pitch_deg"": 2.0}",2,2.973,0.1360/-0.1408/0.1733/-0.1709,54.66/53.94/72.69/74.22,36.95,0.0,0.0,True,implicit PD dt0.005; cyl; real init baseline
+pitch_m2,"{""pitch_deg"": -2.0}",2,3.618,0.1668/-0.1678/0.2206/-0.2227,54.03/54.20/74.07/74.19,21.61,0.0,0.0,True,implicit PD dt0.005; cyl; real init baseline
+hip_p002,"{""hip_offset"": 0.02}",2,4.733,0.1351/-0.1401/0.2187/-0.2161,52.35/51.81/75.05/76.52,33.13,0.0,0.0,True,implicit PD dt0.005; cyl; real init baseline
+hip_m002,"{""hip_offset"": -0.02}",2,3.812,0.1392/-0.1389/0.1914/-0.1947,52.91/53.26/74.87/74.55,32.3,0.0,0.0,True,implicit PD dt0.005; cyl; real init baseline
+gap0,"{""gap_mm"": 0.0}",2,3.979,0.1358/-0.1401/0.2010/-0.1992,53.30/52.88/74.11/75.27,30.78,0.0,0.0,True,implicit PD dt0.005; cyl; real init baseline
+gap4,"{""gap_mm"": 4.0}",2,4.03,0.1357/-0.1404/0.2002/-0.1979,53.22/52.56/74.12/75.69,23.09,0.0,0.0,True,implicit PD dt0.005; cyl; real init baseline

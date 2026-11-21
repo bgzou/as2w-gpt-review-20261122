@@ -1,0 +1,31 @@
+case,variant,mechanism,d_tau_hip_Nm,d_tau_thigh_Nm,d_tau_calf_Nm,note,group_mean_tau_Nm,baseline_group_mean_tau_Nm,base_resid,Fn_front_N,Fn_rear_N,group_mean_tau,baseline_group_mean_tau
+fixedstand_cmd_level,nullspace_lateral_FL_foot_Fy+25N,C4/lateral internal force (hypothetical),-9.535,0.0,0.0,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_cmd_level,nullspace_lateral_FR_foot_Fy+25N,C4/lateral internal force (hypothetical),-9.535,0.0,0.0,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_cmd_level,nullspace_lateral_RL_foot_Fy+25N,C4/lateral internal force (hypothetical),-9.535,0.0,0.0,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_cmd_level,nullspace_lateral_RR_foot_Fy+25N,C4/lateral internal force (hypothetical),-9.535,0.0,0.0,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_cmd_level,C2_contact_y_offset_inner_edge,contact geometry: lateral contact point offset,,,,contact point shifted -26 mm in y (cyl half-width),0.614,0.012,0.0,,,,
+fixedstand_cmd_level,C2_contact_y_offset_inner_edge,contact geometry: lateral contact point offset,,,,contact point shifted -26 mm in y (cyl half-width),0.751,0.704,0.0,,,,
+fixedstand_cmd_level,C2_contact_y_offset_inner_edge,contact geometry: lateral contact point offset,,,,contact point shifted -26 mm in y (cyl half-width),7.431,7.431,0.0,,,,
+fixedstand_cmd_level,C2_contact_y_offset_outer_edge,contact geometry: lateral contact point offset,,,,contact point shifted +26 mm in y (cyl half-width),0.589,0.012,0.0,,,,
+fixedstand_cmd_level,C2_contact_y_offset_outer_edge,contact geometry: lateral contact point offset,,,,contact point shifted +26 mm in y (cyl half-width),0.759,0.704,0.0,,,,
+fixedstand_cmd_level,C2_contact_y_offset_outer_edge,contact geometry: lateral contact point offset,,,,contact point shifted +26 mm in y (cyl half-width),7.431,7.431,0.0,,,,
+fixedstand_cmd_level,C5_front_step_2mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,132.07,122.99,"{'hip': 0.012, 'thigh': 0.704, 'calf': 7.432}","{'hip': 0.012, 'thigh': 0.704, 'calf': 7.431}"
+fixedstand_cmd_level,C5_front_step_5mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,132.07,122.99,"{'hip': 0.012, 'thigh': 0.705, 'calf': 7.432}","{'hip': 0.012, 'thigh': 0.704, 'calf': 7.431}"
+fixedstand_cmd_level,C5_front_step_10mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,132.06,123.0,"{'hip': 0.012, 'thigh': 0.706, 'calf': 7.433}","{'hip': 0.012, 'thigh': 0.704, 'calf': 7.431}"
+fixedstand_cmd_level,C5_front_step_14mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,132.06,123.0,"{'hip': 0.012, 'thigh': 0.706, 'calf': 7.433}","{'hip': 0.012, 'thigh': 0.704, 'calf': 7.431}"
+fixedstand_meas_pitch-4.5,nullspace_lateral_FL_foot_Fy+25N,C4/lateral internal force (hypothetical),-9.371,0.136,0.818,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_meas_pitch-4.5,nullspace_lateral_FR_foot_Fy+25N,C4/lateral internal force (hypothetical),-9.374,-0.145,-0.836,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_meas_pitch-4.5,nullspace_lateral_RL_foot_Fy+25N,C4/lateral internal force (hypothetical),-8.585,0.315,1.132,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_meas_pitch-4.5,nullspace_lateral_RR_foot_Fy+25N,C4/lateral internal force (hypothetical),-8.586,-0.313,-1.122,pure +y lateral force at wheel contact point,,,,,,,
+fixedstand_meas_pitch-4.5,C2_contact_y_offset_inner_edge,contact geometry: lateral contact point offset,,,,contact point shifted -26 mm in y (cyl half-width),1.515,1.158,0.0,,,,
+fixedstand_meas_pitch-4.5,C2_contact_y_offset_inner_edge,contact geometry: lateral contact point offset,,,,contact point shifted -26 mm in y (cyl half-width),3.991,4.013,0.0,,,,
+fixedstand_meas_pitch-4.5,C2_contact_y_offset_inner_edge,contact geometry: lateral contact point offset,,,,contact point shifted -26 mm in y (cyl half-width),9.25,9.237,0.0,,,,
+fixedstand_meas_pitch-4.5,C2_contact_y_offset_outer_edge,contact geometry: lateral contact point offset,,,,contact point shifted +26 mm in y (cyl half-width),1.536,1.158,0.0,,,,
+fixedstand_meas_pitch-4.5,C2_contact_y_offset_outer_edge,contact geometry: lateral contact point offset,,,,contact point shifted +26 mm in y (cyl half-width),4.005,4.013,0.0,,,,
+fixedstand_meas_pitch-4.5,C2_contact_y_offset_outer_edge,contact geometry: lateral contact point offset,,,,contact point shifted +26 mm in y (cyl half-width),9.26,9.237,0.0,,,,
+fixedstand_meas_pitch-4.5,C5_front_step_2mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,99.43,155.63,"{'hip': 1.16, 'thigh': 4.01, 'calf': 9.234}","{'hip': 1.158, 'thigh': 4.013, 'calf': 9.237}"
+fixedstand_meas_pitch-4.5,C5_front_step_5mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,99.51,155.55,"{'hip': 1.162, 'thigh': 4.006, 'calf': 9.23}","{'hip': 1.158, 'thigh': 4.013, 'calf': 9.237}"
+fixedstand_meas_pitch-4.5,C5_front_step_10mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,99.64,155.42,"{'hip': 1.165, 'thigh': 3.997, 'calf': 9.221}","{'hip': 1.158, 'thigh': 4.013, 'calf': 9.237}"
+fixedstand_meas_pitch-4.5,C5_front_step_14mm,front/rear support height difference,,,,front contact points raised; rear loads increase,,,0.0,99.76,155.3,"{'hip': 1.167, 'thigh': 3.988, 'calf': 9.212}","{'hip': 1.158, 'thigh': 4.013, 'calf': 9.237}"
+fixedstand_cmd_level,C3_friction_0.8-1.2,static/dynamic friction,0.0,0.0,0.0,static min-norm |Ft|<=10 N << mu*Fn~65 N: friction inactive in statics; friction only affects closed-loop dynamics (H4 layer B),,,,,,,
+fixedstand_meas_pitch-4.5,C3_friction_0.8-1.2,static/dynamic friction,0.0,0.0,0.0,static min-norm |Ft|<=10 N << mu*Fn~65 N: friction inactive in statics; friction only affects closed-loop dynamics (H4 layer B),,,,,,,

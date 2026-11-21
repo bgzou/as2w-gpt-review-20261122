@@ -1,0 +1,27 @@
+{
+  "name": "220051_brake_return",
+  "source_session": "20261112-220051_training-contract",
+  "source_files": [
+    "debug_lowcmd.csv",
+    "low_capture_fast.log"
+  ],
+  "tick_start": 1742000,
+  "tick_end": 1742697,
+  "duration_s": 0.698,
+  "rate_hz": 500.0,
+  "n_cmd": 350,
+  "n_state": 349,
+  "test_tags": [
+    "brake",
+    "wheel"
+  ],
+  "states": [
+    "Brake",
+    "FixSquat",
+    "ReturnStand"
+  ],
+  "notes": "Brake + ReturnStand 约 0.7 s；轮速目标归零，用于轮-地摩擦/制动",
+  "sign_convention": "cmd_*/st_* are model sign (sign*raw); cmd_*_raw/st_*_raw are DDS sign",
+  "st_alignment": "nearest LowState tick; st_offset_ms = st_tick - cmd_tick; 1 tick = 1 ms",
+  "state_only": false
+}

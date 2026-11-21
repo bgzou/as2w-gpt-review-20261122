@@ -1,0 +1,188 @@
+{
+ "base@DR0": {
+  "snapshot": "v2-stephard-eval-600",
+  "gate_qualified": false,
+  "gate_failures": [
+   "forward: four-wheel rolling support below 90%",
+   "reverse: four-wheel rolling support below 90%",
+   "right: survival or tracking",
+   "right: fewer than two events on a wheel in a trial"
+  ],
+  "tape": {
+   "leg_target_p2p_rad": 0.3477,
+   "step_delta_rad": 0.038,
+   "signflip_fraction": 0.0968,
+   "leg_tracking_error_rad": 0.124,
+   "dominant_freq_hz": 5.0
+  },
+  "modes": {
+   "left": {
+    "tracking": 1.196,
+    "wheels_2plus": 4,
+    "tilt_p95": 2.86,
+    "support_min": 0.08,
+    "falls": 0
+   },
+   "right": {
+    "tracking": 0.233,
+    "wheels_2plus": 3,
+    "tilt_p95": 5.33,
+    "support_min": 0.124,
+    "falls": 0
+   },
+   "yaw_left": {
+    "tracking": 1.209,
+    "wheels_2plus": 4,
+    "tilt_p95": 2.13,
+    "support_min": 0.096,
+    "falls": 0
+   },
+   "yaw_right": {
+    "tracking": 1.075,
+    "wheels_2plus": 4,
+    "tilt_p95": 3.73,
+    "support_min": 0.244,
+    "falls": 0
+   }
+  }
+ },
+ "base@DR2": {
+  "snapshot": "cmp2-base-dr2",
+  "gate_qualified": false,
+  "gate_failures": [
+   "forward: four-wheel rolling support below 90%",
+   "reverse: four-wheel rolling support below 90%",
+   "left: fewer than two events on a wheel in a trial",
+   "right: survival or tracking",
+   "right: fewer than two events on a wheel in a trial"
+  ],
+  "tape": {
+   "leg_target_p2p_rad": 0.3616,
+   "step_delta_rad": 0.0413,
+   "signflip_fraction": 0.1035,
+   "leg_tracking_error_rad": 0.1302,
+   "dominant_freq_hz": 0.17
+  },
+  "modes": {
+   "left": {
+    "tracking": 0.984,
+    "wheels_2plus": 3,
+    "tilt_p95": 3.92,
+    "support_min": 0.072,
+    "falls": 0
+   },
+   "right": {
+    "tracking": 0.199,
+    "wheels_2plus": 3,
+    "tilt_p95": 5.46,
+    "support_min": 0.116,
+    "falls": 0
+   },
+   "yaw_left": {
+    "tracking": 1.117,
+    "wheels_2plus": 4,
+    "tilt_p95": 2.75,
+    "support_min": 0.068,
+    "falls": 0
+   },
+   "yaw_right": {
+    "tracking": 0.974,
+    "wheels_2plus": 4,
+    "tilt_p95": 4.12,
+    "support_min": 0.22,
+    "falls": 0
+   }
+  }
+ },
+ "jit@DR0": {
+  "snapshot": "cmp-jit-dr0",
+  "gate_qualified": false,
+  "gate_failures": [
+   "right: survival or tracking",
+   "right: fewer than two events on a wheel in a trial"
+  ],
+  "tape": {
+   "leg_target_p2p_rad": 0.3426,
+   "step_delta_rad": 0.0363,
+   "signflip_fraction": 0.0866,
+   "leg_tracking_error_rad": 0.1274,
+   "dominant_freq_hz": 4.83
+  },
+  "modes": {
+   "left": {
+    "tracking": 1.191,
+    "wheels_2plus": 4,
+    "tilt_p95": 3.29,
+    "support_min": 0.08,
+    "falls": 0
+   },
+   "right": {
+    "tracking": 0.274,
+    "wheels_2plus": 3,
+    "tilt_p95": 4.87,
+    "support_min": 0.164,
+    "falls": 0
+   },
+   "yaw_left": {
+    "tracking": 1.207,
+    "wheels_2plus": 4,
+    "tilt_p95": 2.71,
+    "support_min": 0.072,
+    "falls": 0
+   },
+   "yaw_right": {
+    "tracking": 0.967,
+    "wheels_2plus": 4,
+    "tilt_p95": 3.95,
+    "support_min": 0.2,
+    "falls": 0
+   }
+  }
+ },
+ "jit@DR2": {
+  "snapshot": "cmp2-jit-dr2",
+  "gate_qualified": false,
+  "gate_failures": [
+   "forward: four-wheel rolling support below 90%",
+   "right: survival or tracking",
+   "right: fewer than two events on a wheel in a trial"
+  ],
+  "tape": {
+   "leg_target_p2p_rad": 0.3403,
+   "step_delta_rad": 0.0395,
+   "signflip_fraction": 0.0987,
+   "leg_tracking_error_rad": 0.1288,
+   "dominant_freq_hz": 0.17
+  },
+  "modes": {
+   "left": {
+    "tracking": 1.08,
+    "wheels_2plus": 4,
+    "tilt_p95": 3.9,
+    "support_min": 0.088,
+    "falls": 0
+   },
+   "right": {
+    "tracking": 0.207,
+    "wheels_2plus": 3,
+    "tilt_p95": 4.62,
+    "support_min": 0.14,
+    "falls": 0
+   },
+   "yaw_left": {
+    "tracking": 1.104,
+    "wheels_2plus": 4,
+    "tilt_p95": 3.19,
+    "support_min": 0.036,
+    "falls": 0
+   },
+   "yaw_right": {
+    "tracking": 0.832,
+    "wheels_2plus": 4,
+    "tilt_p95": 4.29,
+    "support_min": 0.208,
+    "falls": 0
+   }
+  }
+ }
+}

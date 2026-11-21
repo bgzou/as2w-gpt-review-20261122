@@ -1,0 +1,55 @@
+{
+ "config": "M_cylwheel G explicit PD kp55/kd2 real init",
+ "total_mass_kg": 26.0,
+ "gravity_N": 255.06,
+ "force_residual_N": {
+  "mean": 0.0,
+  "max": 0.0,
+  "p95": 0.0
+ },
+ "torque_residual_Nm": {
+  "mean": 0.0,
+  "max": 0.0,
+  "p95": 0.0
+ },
+ "per_wheel": {
+  "FL_foot": {
+   "n_points_mean": 1.0,
+   "Fn_mean": 49.18,
+   "Ft_mean": 0.094,
+   "mu_used": 0.002,
+   "contact_spread_m": 0.00021,
+   "dist_mean": 0.0,
+   "torsion_mean": 0.00015
+  },
+  "FR_foot": {
+   "n_points_mean": 1.0,
+   "Fn_mean": 49.41,
+   "Ft_mean": 0.094,
+   "mu_used": 0.002,
+   "contact_spread_m": 0.00021,
+   "dist_mean": 0.0,
+   "torsion_mean": -0.00015
+  },
+  "RL_foot": {
+   "n_points_mean": 1.0,
+   "Fn_mean": 78.13,
+   "Ft_mean": 0.103,
+   "mu_used": 0.001,
+   "contact_spread_m": 0.00012,
+   "dist_mean": 0.0,
+   "torsion_mean": -8e-05
+  },
+  "RR_foot": {
+   "n_points_mean": 1.0,
+   "Fn_mean": 78.34,
+   "Ft_mean": 0.103,
+   "mu_used": 0.001,
+   "contact_spread_m": 0.00012,
+   "dist_mean": 0.0,
+   "torsion_mean": 8e-05
+  }
+ },
+ "n_contact_points_total": 800,
+ "notes": "MuJoCo gives per-point manifold; PhysX side may only expose net force (UNKNOWN)."
+}

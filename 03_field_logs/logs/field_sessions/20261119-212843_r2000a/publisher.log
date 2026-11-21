@@ -1,0 +1,38 @@
+WARNING: publishes LowCmd. ReleaseMode must already be done. X selects EmergencyDamping; SIGINT/SIGTERM stop the publisher.
+R2000A JOYSTICK TRIAL (training-contract obs, unfiltered command, 10 Hz leg / 5 Hz wheel wrapper): B accepts LY vx and LX vy within the deploy.yaml speed envelope (vx<=0.30, vy<=0.20) for max 30s; RX yaw contract-locked off; center sticks to stop, A brakes, Y squats, X emergency.
+Type 'GO' and press Enter to start (nothing else proceeds).
+FIELD_SAFETY_PROFILE command_accel=0.2,0.1,0.2 command_decel=0.4,0.2,0.4 remote_timeout_ms=200 leg_dq=5/8 wheel_dq=8/12 leg_tau=35/50 wheel_tau=8/12 leg_pd=35/50 wheel_pd=8/15 leg_step=0.2/0.35 wheel_step=15/30 warn_frames=5 hard_frames=3 (units: dq rad/s, tau/pd Nm, step per 20 ms)
+DEBUG_CAPTURE enabled: 50Hz policy inputs/targets + 500Hz final LowCmd; independent LowState monitor required
+POLICY_LOWPASS tau_ms=0 wheels=0 (0=OFF; enabled only for isolated candidate builds)
+Observing released LowState on eth0 for 500 ms (no LowCmd)...
+Released feedback stable. mode_machine=2 tick=5134609 packets=636
+FSM started in Passive startup. A/Y enabled; B once (forced zero speed, auto return+squat). X=emergency.
+STARTUP: 16-axis FOC feedback stable; begin passive kd 0->3 ramp
+STARTUP: Passive ready after 746 frames
+[Passive] → FixStand (A)
+[FixStand] → FixedStand (PD hold; B required for R214)
+[FixedStand] → PolicyHandoff (B accepted: pose_error=0.264961 wheel_dq=0.0122718 upright=0.996195 quiet_dq=0.0306796)
+FIELD_SAFETY_WARN state=PolicyHandoff count=1 leg_dq=0.413152 wheel_dq=0.760854 leg_tau=17.5875 wheel_tau=1.10312 leg_pd=17.7461 wheel_pd=1.52171 leg_step=0.204232 wheel_step=0 motorstate_or=0x0 invalid=0
+[PolicyHandoff] → PolicyWalk (zero-speed handoff complete)
+WALK_CMD vx=0 vy=0 wz=0 requested=0,0,0 ly=0 lx=0 rx=0
+POLICY_TRACK,0.199445,0.0202083,-0.0393363,0.146007,-0.0159959,-0.103554,0.135129,-0.00082998,0.136335,0.36551,-0.00021264,0.124021,0.315208
+WALK_CMD vx=0 vy=0 wz=0 requested=0,0,0 ly=0 lx=0 rx=0
+POLICY_TRACK,0.398812,0.0264162,-0.0400014,0.146003,-0.0228868,-0.102343,0.135185,-0.000865936,0.115997,0.331175,-0.000158727,0.0940363,0.282991
+WALK_CMD vx=0 vy=0 wz=0 requested=0,0,0 ly=0 lx=0 rx=0
+POLICY_TRACK,0.599537,0.0297478,-0.0411878,0.146019,-0.0291366,-0.10157,0.135213,-0.00242388,0.0954264,0.29684,0.000410527,0.0701697,0.253385
+WALK_CMD vx=0 vy=0 wz=0 requested=0,0,0 ly=0 lx=0 rx=0
+POLICY_TRACK,0.799532,0.0315694,-0.0408822,0.146027,-0.0294242,-0.0937147,0.135333,-0.00208233,0.0789122,0.27725,0.00353242,0.0519896,0.236388
+WALK_CMD vx=0 vy=0 wz=0 requested=0,0,0 ly=0 lx=0 rx=0
+POLICY_TRACK,0.999563,0.0326719,-0.0367537,0.146067,-0.0297058,-0.0813349,0.135457,-0.00156701,0.0631949,0.26799,0.00352043,0.0382078,0.227915
+WALK_CMD vx=0 vy=0 wz=0 requested=0,0,0 ly=0 lx=0 rx=0
+POLICY_TRACK,1.1994,0.0332232,-0.0224325,0.146103,-0.0308264,-0.0606622,0.135593,-0.00137526,0.0525948,0.263173,0.00351444,0.0305079,0.226856
+WALK_CMD vx=0 vy=0 wz=0 requested=0,0,0 ly=0 lx=0 rx=0
+POLICY_TRACK,1.39955,0.0326839,-0.00773984,0.146167,-0.0347871,-0.0436686,0.135652,-0.00132732,0.0464948,0.256286,-0.164351,0.0241562,0.226741
+FIELD_SAFETY_HARD state=PolicyWalk count=3 leg_dq=2.82457 wheel_dq=1.19037 leg_tau=17.5375 wheel_tau=2.64062 leg_pd=17.261 wheel_pd=2.38074 leg_step=0.351796 wheel_step=0 motorstate_or=0x0 invalid=0
+[PolicyWalk] → EmergencyDamping (field hard limit)
+ZERO-B TRIAL: emergency passive hold complete, stop
+Operator exit; stop.
+DEBUG_LOWCMD_RESULT rows=8333 dropped=0 file_ok=1
+DEBUG_POLICY_RESULT rows=175 file_ok=1
+Publisher stopped, exit=0
+R2000A_REMOTE_RC=0

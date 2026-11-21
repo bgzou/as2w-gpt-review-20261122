@@ -1,0 +1,194 @@
+<!-- AS2-W MuJoCo 烟测场景: freebase + 地面 + 机器人 (手动定义, 因 URDF loader 不加 freejoint) -->
+<mujoco model="as2w_recovery">
+  <compiler angle="radian" meshdir="meshes" autolimits="true"/>
+  <option timestep="0.002" integrator="implicitfast" gravity="0 0 -9.81"/>
+
+  <default>
+    <joint damping="0.1" armature="0.01" frictionloss="0.05"/>
+    <default class="wheel">
+      <joint damping="0.05" armature="0.005" frictionloss="0.01"/>
+    </default>
+    <geom condim="4" friction="1.0 0.05 0.001"/>
+  </default>
+
+  <asset>
+    <mesh file="base_link.STL"/>
+    <mesh file="FL_hip.STL"/><mesh file="FR_hip.STL"/>
+    <mesh file="RL_hip.STL"/><mesh file="RR_hip.STL"/>
+    <mesh file="FL_thigh.STL"/><mesh file="FR_thigh.STL"/>
+    <mesh file="RL_thigh.STL"/><mesh file="RR_thigh.STL"/>
+    <mesh file="FL_calf.STL"/><mesh file="FR_calf.STL"/>
+    <mesh file="RL_calf.STL"/><mesh file="RR_calf.STL"/>
+    <mesh file="FL_foot.STL"/><mesh file="FR_foot.STL"/>
+    <mesh file="RL_foot.STL"/><mesh file="RR_foot.STL"/>
+    <mesh file="JT128.STL"/>
+  </asset>
+
+  <contact>
+    <!-- 排除 calf mesh 与 base 的自碰撞 (初始姿态穿入) -->
+    <exclude body1="base_link" body2="FL_calf"/>
+    <exclude body1="base_link" body2="FR_calf"/>
+    <exclude body1="base_link" body2="RL_calf"/>
+    <exclude body1="base_link" body2="RR_calf"/>
+    <!-- 排除 thigh 与 base -->
+    <exclude body1="base_link" body2="FL_thigh"/>
+    <exclude body1="base_link" body2="FR_thigh"/>
+    <exclude body1="base_link" body2="RL_thigh"/>
+    <exclude body1="base_link" body2="RR_thigh"/>
+    <!-- 排除 hip 与 base -->
+    <exclude body1="base_link" body2="FL_hip"/>
+    <exclude body1="base_link" body2="FR_hip"/>
+    <exclude body1="base_link" body2="RL_hip"/>
+    <exclude body1="base_link" body2="RR_hip"/>
+    <!-- 排除左右腿互碰 -->
+    <exclude body1="FL_thigh" body2="FR_thigh"/>
+    <exclude body1="RL_thigh" body2="RR_thigh"/>
+  </contact>
+
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" diffuse="0.8 0.8 0.8"/>
+    <geom name="floor" type="plane" size="5 5 0.1" friction="1.0 0.05 0.001"/>
+
+    <body name="base_link" pos="0 0 0.5">
+      <freejoint name="root"/>
+      <inertial pos="0.035002 -0.0007562 0.017521" mass="10.08"
+                fullinertia="0.05069483 0.13822065 0.1505824 -0.0002906 -0.02480435 0.00027717"/>
+      <geom name="base" mesh="base_link" rgba="0.79 0.82 0.93 1"/>
+      <geom name="base_box" type="box" size="0.18 0.07 0.05" rgba="0.5 0.5 0.5 0.3"/>
+
+      <!-- JT128 传感器 -->
+      <body name="JT128" pos="0.27666 0 0.078863" quat="0 -0.67236 0 -0.74028">
+        <inertial pos="0.0011355 0.00042838 -0.015107" mass="0.5"
+                  diaginertia="0.00053309 0.00054088 0.00053064"/>
+        <geom mesh="JT128" rgba="0.2 0.2 0.2 1"/>
+      </body>
+
+      <!-- FL 腿 -->
+      <body name="FL_hip" pos="0.2119 0.06 0">
+        <inertial pos="-0.0046547 -0.0088505 3.4235e-05" mass="0.75"
+                  diaginertia="0.00049181 0.0006194 0.00059384"/>
+        <joint name="FL_hip" type="hinge" axis="1 0 0" range="-0.785 0.785" actuatorfrcrange="-60 60"/>
+        <geom mesh="FL_hip" rgba="0.79 0.82 0.93 1"/>
+        <body name="FL_thigh" pos="0 0.1054 0">
+          <inertial pos="-0.0060187 -0.02408 -0.037399" mass="1.41"
+                    fullinertia="0.00681859 0.00613083 0.00178083 0.00023526 -0.00071654 0.00120069"/>
+          <joint name="FL_thigh" type="hinge" axis="0 1 0" range="-2 3.492" actuatorfrcrange="-60 60"/>
+          <geom mesh="FL_thigh" rgba="0.79 0.82 0.93 1"/>
+          <body name="FL_calf" pos="0 0 -0.212">
+            <inertial pos="0.0015109 0.0022187 -0.16915" mass="1.1"
+                      diaginertia="0.0067061 0.0067667 0.00061164"/>
+            <joint name="FL_calf" type="hinge" axis="0 1 0" range="-2.7677 -0.8133" actuatorfrcrange="-90 90"/>
+            <geom mesh="FL_calf" rgba="0.79 0.82 0.93 1"/>
+            <body name="FL_foot" pos="0 0 -0.212">
+              <inertial pos="0 0.053412 0" mass="0.595"
+                        diaginertia="0.0014579 0.0025769 0.0014579"/>
+              <joint name="FL_foot" class="wheel" type="hinge" axis="0 1 0" actuatorfrcrange="-15 15"/>
+              <geom mesh="FL_foot" rgba="0.2 0.8 0.2 1"/>
+              <geom name="FL_wheel_coll" type="cylinder" size="0.086 0.026" euler="1.5708 0 0" rgba="0 1 0 0.3"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <!-- FR 腿 -->
+      <body name="FR_hip" pos="0.2119 -0.06 0">
+        <inertial pos="-0.0046547 0.0088505 3.4234e-05" mass="0.75"
+                  diaginertia="0.00049181 0.0006194 0.00059384"/>
+        <joint name="FR_hip" type="hinge" axis="1 0 0" range="-0.785 0.785" actuatorfrcrange="-60 60"/>
+        <geom mesh="FR_hip" rgba="0.79 0.82 0.93 1"/>
+        <body name="FR_thigh" pos="0 -0.1054 0">
+          <inertial pos="-0.0060187 0.02408 -0.037399" mass="1.41"
+                    fullinertia="0.00681875 0.00613099 0.00178083 -0.00023526 -0.00071655 -0.00120071"/>
+          <joint name="FR_thigh" type="hinge" axis="0 1 0" range="-2 3.492" actuatorfrcrange="-60 60"/>
+          <geom mesh="FR_thigh" rgba="0.79 0.82 0.93 1"/>
+          <body name="FR_calf" pos="0 0 -0.212">
+            <inertial pos="0.0015111 -0.0022187 -0.16915" mass="1.1"
+                      diaginertia="0.0067059 0.0067665 0.00061165"/>
+            <joint name="FR_calf" type="hinge" axis="0 1 0" range="-2.7677 -0.8133" actuatorfrcrange="-90 90"/>
+            <geom mesh="FR_calf" rgba="0.79 0.82 0.93 1"/>
+            <body name="FR_foot" pos="0 0 -0.212">
+              <inertial pos="0 -0.053412 0" mass="0.595"
+                        diaginertia="0.0014579 0.0025769 0.0014579"/>
+              <joint name="FR_foot" class="wheel" type="hinge" axis="0 1 0" actuatorfrcrange="-15 15"/>
+              <geom mesh="FR_foot" rgba="0.2 0.8 0.2 1"/>
+              <geom name="FR_wheel_coll" type="cylinder" size="0.086 0.026" euler="1.5708 0 0" rgba="0 1 0 0.3"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <!-- RL 腿 -->
+      <body name="RL_hip" pos="-0.2119 0.06 0">
+        <inertial pos="0.0046637 -0.0088505 -3.8901e-05" mass="0.75"
+                  diaginertia="0.0004918 0.00061933 0.00059378"/>
+        <joint name="RL_hip" type="hinge" axis="1 0 0" range="-0.785 0.785" actuatorfrcrange="-60 60"/>
+        <geom mesh="RL_hip" rgba="0.79 0.82 0.93 1"/>
+        <body name="RL_thigh" pos="0 0.1054 0">
+          <inertial pos="-0.0068767 -0.022228 -0.039019" mass="1.41"
+                    fullinertia="0.0069198 0.0062719 0.0017134 0.00019339 -0.00070171 0.001158"/>
+          <joint name="RL_thigh" type="hinge" axis="0 1 0" range="-1.3 4.19" actuatorfrcrange="-60 60"/>
+          <geom mesh="RL_thigh" rgba="0.79 0.82 0.93 1"/>
+          <body name="RL_calf" pos="0 0 -0.212">
+            <inertial pos="0.0010538 0.0023186 -0.18449" mass="1.1"
+                      diaginertia="0.0049046 0.0050599 0.00054577"/>
+            <joint name="RL_calf" type="hinge" axis="0 1 0" range="-2.7677 -0.8133" actuatorfrcrange="-90 90"/>
+            <geom mesh="RL_calf" rgba="0.79 0.82 0.93 1"/>
+            <body name="RL_foot" pos="0 0 -0.212">
+              <inertial pos="0 0.053412 0" mass="0.595"
+                        diaginertia="0.0014579 0.0025769 0.0014579"/>
+              <joint name="RL_foot" class="wheel" type="hinge" axis="0 1 0" actuatorfrcrange="-15 15"/>
+              <geom mesh="RL_foot" rgba="0.2 0.8 0.2 1"/>
+              <geom name="RL_wheel_coll" type="cylinder" size="0.086 0.026" euler="1.5708 0 0" rgba="0 1 0 0.3"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <!-- RR 腿 -->
+      <body name="RR_hip" pos="-0.2119 -0.06 0">
+        <inertial pos="0.0046637 0.0088505 -3.89e-05" mass="0.75"
+                  diaginertia="0.00049181 0.00061933 0.00059378"/>
+        <joint name="RR_hip" type="hinge" axis="1 0 0" range="-0.785 0.785" actuatorfrcrange="-60 60"/>
+        <geom mesh="RR_hip" rgba="0.79 0.82 0.93 1"/>
+        <body name="RR_thigh" pos="0 -0.1054 0">
+          <inertial pos="-0.0068763 0.022228 -0.039019" mass="1.41"
+                    fullinertia="0.00691991 0.00627201 0.00171336 -0.00019339 -0.00070172 -0.001158"/>
+          <joint name="RR_thigh" type="hinge" axis="0 1 0" range="-1.3 4.19" actuatorfrcrange="-60 60"/>
+          <geom mesh="RR_thigh" rgba="0.79 0.82 0.93 1"/>
+          <body name="RR_calf" pos="0 0 -0.212">
+            <inertial pos="0.001054 -0.0023186 -0.18449" mass="1.1"
+                      diaginertia="0.0049045 0.0050598 0.00054577"/>
+            <joint name="RR_calf" type="hinge" axis="0 1 0" range="-2.7677 -0.8133" actuatorfrcrange="-90 90"/>
+            <geom mesh="RR_calf" rgba="0.79 0.82 0.93 1"/>
+            <body name="RR_foot" pos="0 0 -0.212">
+              <inertial pos="0 -0.053412 0" mass="0.595"
+                        diaginertia="0.0014579 0.0025769 0.0014579"/>
+              <joint name="RR_foot" class="wheel" type="hinge" axis="0 1 0" actuatorfrcrange="-15 15"/>
+              <geom mesh="RR_foot" rgba="0.2 0.8 0.2 1"/>
+              <geom name="RR_wheel_coll" type="cylinder" size="0.086 0.026" euler="1.5708 0 0" rgba="0 1 0 0.3"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position name="FL_hip_act" joint="FL_hip" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="FL_thigh_act" joint="FL_thigh" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="FL_calf_act" joint="FL_calf" kp="90" kv="3" forcerange="-90 90"/>
+    <position name="FR_hip_act" joint="FR_hip" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="FR_thigh_act" joint="FR_thigh" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="FR_calf_act" joint="FR_calf" kp="90" kv="3" forcerange="-90 90"/>
+    <position name="RL_hip_act" joint="RL_hip" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="RL_thigh_act" joint="RL_thigh" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="RL_calf_act" joint="RL_calf" kp="90" kv="3" forcerange="-90 90"/>
+    <position name="RR_hip_act" joint="RR_hip" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="RR_thigh_act" joint="RR_thigh" kp="60" kv="2" forcerange="-60 60"/>
+    <position name="RR_calf_act" joint="RR_calf" kp="90" kv="3" forcerange="-90 90"/>
+    <velocity name="FL_foot_act" joint="FL_foot" kv="8" forcerange="-15 15"/>
+    <velocity name="FR_foot_act" joint="FR_foot" kv="8" forcerange="-15 15"/>
+    <velocity name="RL_foot_act" joint="RL_foot" kv="8" forcerange="-15 15"/>
+    <velocity name="RR_foot_act" joint="RR_foot" kv="8" forcerange="-15 15"/>
+  </actuator>
+</mujoco>

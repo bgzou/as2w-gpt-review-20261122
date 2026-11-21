@@ -1,0 +1,19 @@
+{
+ "log": "debug_policy.csv",
+ "walk_frames": 501,
+ "duration_s": 10.0,
+ "sample_dt_s": 0.02,
+ "command_abs_max": 0.0,
+ "leg_target_p2p_rad_mean": 0.3597,
+ "leg_target_p2p_rad_max": 0.4541,
+ "step_delta_rad_mean": 0.0333,
+ "signflip_fraction": 0.0817,
+ "leg_tracking_error_rad_mean": 0.1012,
+ "dominant_freq_hz": 1.2,
+ "pitch_deg_mean": -0.51,
+ "pitch_deg_min": -3.41,
+ "pitch_deg_max": 0.74,
+ "roll_deg_mean": -2.49,
+ "roll_deg_min": -4.4,
+ "roll_deg_max": -0.03
+}

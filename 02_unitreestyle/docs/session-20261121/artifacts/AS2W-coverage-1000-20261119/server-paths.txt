@@ -1,0 +1,2 @@
+/root/gpufree-data/as2w-runs/unitree-coverage-20261119-102850
+/root/as2w/coverage_reward_20261119-102850

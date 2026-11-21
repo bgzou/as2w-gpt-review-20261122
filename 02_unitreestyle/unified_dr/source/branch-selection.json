@@ -1,0 +1,128 @@
+{
+  "selected": "model-1000",
+  "qualified": false,
+  "selected_sha256": "8e9f2e0fae9701853ca6b21c03b8e325c2a24733642f08d27969e08144e7dbce",
+  "selection_key": [
+    "gate_failures",
+    "replay_loss",
+    "candidate_order"
+  ],
+  "candidates": [
+    {
+      "label": "model-1200",
+      "origin": {
+        "checkpoint": "/root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/train/model_1200.pt",
+        "runner_index": 1200
+      },
+      "gate_failure_count": 24,
+      "loss": 1.536672,
+      "failures": {
+        "flat-dr0": [
+          "forward: rolling support",
+          "left: missing repeated stepping on all four wheels",
+          "left: smaller joint excursion",
+          "right: missing repeated stepping on all four wheels",
+          "yaw_left: missing repeated stepping on all four wheels",
+          "yaw_right: missing repeated stepping on all four wheels",
+          "yaw_right: smaller joint excursion",
+          "mixed/FL: fewer lifts",
+          "mixed/FR: fewer lifts",
+          "mixed/RR: fewer lifts",
+          "mixed: smaller joint excursion"
+        ],
+        "slope-dr0": [
+          "left: missing repeated stepping on all four wheels",
+          "left/FR: fewer lifts",
+          "left: smaller joint excursion",
+          "right: missing repeated stepping on all four wheels",
+          "right/FR: fewer lifts",
+          "right: smaller joint excursion",
+          "yaw_left: missing repeated stepping on all four wheels",
+          "yaw_left: smaller joint excursion",
+          "yaw_right: missing repeated stepping on all four wheels",
+          "yaw_right: smaller joint excursion",
+          "mixed/FL: fewer lifts",
+          "mixed/FR: fewer lifts",
+          "mixed: smaller joint excursion"
+        ]
+      }
+    },
+    {
+      "label": "model-1150",
+      "origin": {
+        "checkpoint": "/root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/train/model_1150.pt",
+        "runner_index": 1150
+      },
+      "gate_failure_count": 24,
+      "loss": 1.551791,
+      "failures": {
+        "flat-dr0": [
+          "forward: rolling support",
+          "left: missing repeated stepping on all four wheels",
+          "left: smaller joint excursion",
+          "right: missing repeated stepping on all four wheels",
+          "yaw_left: missing repeated stepping on all four wheels",
+          "yaw_left: smaller joint excursion",
+          "yaw_right: missing repeated stepping on all four wheels",
+          "yaw_right: smaller joint excursion",
+          "mixed/FL: fewer lifts",
+          "mixed/FR: fewer lifts",
+          "mixed/RR: fewer lifts",
+          "mixed: smaller joint excursion"
+        ],
+        "slope-dr0": [
+          "left: missing repeated stepping on all four wheels",
+          "left/FR: fewer lifts",
+          "left/RR: fewer lifts",
+          "right: missing repeated stepping on all four wheels",
+          "right/FR: fewer lifts",
+          "right: smaller joint excursion",
+          "yaw_left: missing repeated stepping on all four wheels",
+          "yaw_left: smaller joint excursion",
+          "yaw_right: missing repeated stepping on all four wheels",
+          "yaw_right: smaller joint excursion",
+          "mixed/FR: fewer lifts",
+          "mixed: smaller joint excursion"
+        ]
+      }
+    },
+    {
+      "label": "model-1000",
+      "origin": {
+        "checkpoint": "/root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/train/model_1000.pt",
+        "runner_index": 1000
+      },
+      "gate_failure_count": 23,
+      "loss": 1.552391,
+      "failures": {
+        "flat-dr0": [
+          "forward: rolling support",
+          "reverse: rolling support",
+          "left: smaller joint excursion",
+          "right: missing repeated stepping on all four wheels",
+          "right: smaller joint excursion",
+          "yaw_left: missing repeated stepping on all four wheels",
+          "yaw_left: smaller joint excursion",
+          "yaw_right: missing repeated stepping on all four wheels",
+          "yaw_right: smaller joint excursion",
+          "mixed/FL: fewer lifts",
+          "mixed/FR: fewer lifts",
+          "mixed/RR: fewer lifts"
+        ],
+        "slope-dr0": [
+          "left: missing repeated stepping on all four wheels",
+          "left/FR: fewer lifts",
+          "left/RR: fewer lifts",
+          "right: missing repeated stepping on all four wheels",
+          "right: smaller joint excursion",
+          "yaw_left: missing repeated stepping on all four wheels",
+          "yaw_left: smaller joint excursion",
+          "yaw_right: missing repeated stepping on all four wheels",
+          "yaw_right: smaller joint excursion",
+          "mixed/FL: fewer lifts",
+          "mixed/FR: fewer lifts"
+        ]
+      }
+    }
+  ]
+}

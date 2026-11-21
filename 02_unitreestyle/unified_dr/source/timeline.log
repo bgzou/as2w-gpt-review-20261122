@@ -1,0 +1,38 @@
+2026-11-19T01:42:44+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/reference-1220/flat-dr0 seed=319
+2026-11-19T01:43:36+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/reference-1220/slope-dr0 seed=319
+2026-11-19T01:44:23+08:00 WAIT_BASE_1200 train_log=/root/gpufree-data/as2w-runs/unitree-unified-reward-20261119-010208/train.log
+2026-11-19T01:59:30+08:00 SLOPE_REFERENCE_REPLAY_VERIFIED ref=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/reference-1220/slope-dr0
+2026-11-19T03:07:58+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1200/flat-dr0 seed=319
+2026-11-19T03:08:53+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1200/slope-dr0 seed=319
+2026-11-19T03:09:41+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1150/flat-dr0 seed=319
+2026-11-19T03:10:36+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1150/slope-dr0 seed=319
+2026-11-19T03:11:24+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1000/flat-dr0 seed=319
+2026-11-19T03:12:19+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1000/slope-dr0 seed=319
+2026-11-19T03:13:08+08:00 BRANCHED selected=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1000 details=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/selection.json
+2026-11-19T03:13:08+08:00 TRAIN level=1 updates=600 parent=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/branch-selection/model-1000
+2026-11-19T04:27:13+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/endpoint/flat-dr0 seed=319
+2026-11-19T04:27:55+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/endpoint/flat-dr1 seed=719
+2026-11-19T04:28:37+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/update-500/flat-dr0 seed=319
+2026-11-19T04:29:19+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/update-500/flat-dr1 seed=719
+2026-11-19T04:30:03+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/endpoint/slope-dr0 seed=319
+2026-11-19T04:30:43+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/endpoint/slope-dr1 seed=719
+2026-11-19T04:31:22+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/update-500/slope-dr0 seed=319
+2026-11-19T04:32:01+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/update-500/slope-dr1 seed=719
+2026-11-19T04:32:41+08:00 SELECTED level=1 selected=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/incoming details=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/selection.json
+2026-11-19T04:32:41+08:00 TRAIN level=2 updates=600 parent=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-1/selection/incoming
+2026-11-19T05:31:44+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/endpoint/flat-dr0 seed=319
+2026-11-19T05:32:26+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/endpoint/flat-dr2 seed=719
+2026-11-19T05:33:07+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/update-500/flat-dr0 seed=319
+2026-11-19T05:33:49+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/update-500/flat-dr2 seed=719
+2026-11-19T05:34:32+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/endpoint/slope-dr0 seed=319
+2026-11-19T05:35:12+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/endpoint/slope-dr2 seed=719
+2026-11-19T05:35:51+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/update-500/slope-dr0 seed=319
+2026-11-19T05:36:30+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/update-500/slope-dr2 seed=719
+2026-11-19T05:37:08+08:00 SELECTED level=2 selected=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/incoming details=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/selection.json
+2026-11-19T05:37:09+08:00 TRAIN level=3 updates=600 parent=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-2/selection/incoming
+2026-11-19T06:38:09+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/endpoint/flat-dr0 seed=319
+2026-11-19T06:38:50+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/endpoint/flat-dr3 seed=719
+2026-11-19T06:39:33+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/endpoint/slope-dr0 seed=319
+2026-11-19T06:40:13+08:00 REPLAY /root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/endpoint/slope-dr3 seed=719
+2026-11-19T06:40:54+08:00 SELECTED level=3 selected=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/incoming details=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/stage-3/selection/selection.json
+2026-11-19T06:40:54+08:00 DR_FINISHED selection=/root/gpufree-data/as2w-runs/unified-dr-20261119-013647/final-selection.json

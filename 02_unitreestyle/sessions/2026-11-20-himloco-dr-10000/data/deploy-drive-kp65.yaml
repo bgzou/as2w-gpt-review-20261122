@@ -1,0 +1,56 @@
+﻿# AS2-W HIMLoco 平地 10k DR policy (model_18200) — 6 x 60 history, 16 actions.
+#
+# Extracted 2026-11-20 from
+#   /root/gpufree-data/as2w-runs/him-dr10000-consolidate5000-n4Y47n/train/model_18200.pt
+#   him_arc/{quality_environment,arc_environment}.py + common/environment.py
+#   upstream/HIMLoco/rsl_rl/.../him_{actor_critic,estimator}.py
+#
+# Differences from models/himloco/deploy.yaml (the stairs line):
+#   * flat/arc leg gain [0.6, 0.6, 0.6] -> every leg joint +-0.15 rad
+#   * phase clock ENABLED: obs[58:60] = sin/cos(phase*2pi) * step_strength
+#     (stairs returned strength 0, so those dims were constant zero)
+#   * trained command space is wider: |vx|<=0.8, |vy|<=0.45, |wz|<=0.8
+#     (first flight still uses a deliberately small envelope below)
+model_version: himloco-360
+policy_file: policy.onnx
+step_dt: 0.02
+observation_size: 360
+action_size: 16
+
+joint_names: [FL_hip, FL_thigh, FL_calf, FR_hip, FR_thigh, FR_calf, RL_hip, RL_thigh, RL_calf, RR_hip, RR_thigh, RR_calf, FL_foot, FR_foot, RL_foot, RR_foot]
+default_joint_pos: [0.0, 0.8, -1.6, 0.0, 0.8, -1.6, 0.0, 0.8, -1.6, 0.0, 0.8, -1.6, 0.0, 0.0, 0.0, 0.0]
+stiffness: [65.0, 65.0, 65.0, 65.0, 65.0, 65.0, 65.0, 65.0, 65.0, 65.0, 65.0, 65.0, 0.0, 0.0, 0.0, 0.0]
+damping: [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
+
+# Field drive envelope (joystick build). Training range is much wider
+# inside the envelope below and widen only after the field gates pass.
+# (vx_limit must stay <= 0.30 by the controller's own validation.)
+vx_limit: 0.80
+vy_limit: 0.0
+wz_limit: 0.80
+leg_target_cutoff_hz: 10.0
+wheel_target_cutoff_hz: 5.0
+
+# bounded = tanh(policy_out); leg_phys = leg_gain * bounded;
+# target_leg <- lerp(target_leg, 0.25 * leg_phys, alpha_leg)
+leg_action_scale_rad: 0.25
+leg_gain_hip: 0.6
+leg_gain_thigh: 0.6
+leg_gain_calf: 0.6
+# wheel_phys = clamp((vx - wz*side)/R + 2*tanh(out[12:]), +-12)
+wheel_policy_gain: 2.0
+wheel_rate_clamp: 12.0
+wheel_radius: 0.086
+wheel_side_offset: 0.1654
+
+obs_height: 0.37
+# Flat/arc line: the two trailing dims are a live gait-phase clock.
+phase_clock: true
+# Zero-command handoff ramp (dr_environment.py): the first 100 control cycles
+# after B force command=0 and scale the applied target by (k+1)/100.
+handoff_steps: 100
+# Gravity-compensation offset (policy order: FL,FR,RL,RR x hip,thigh,calf).
+# Measured 2026-11-20 18:33 from POLICY_TRACK cmd-actual during a real
+# PolicyWalk: rear calf/thigh sag ~0.33/0.24 rad because kp=55 cannot hold the
+# real gravity load. Added to the motor command (not to the policy action).
+leg_offset_rad: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]   # reverted 18:42: static offset pitched the body forward

@@ -1,0 +1,37 @@
+[field-session] mode=r2000a monitor=180s dry_run=0 vx_limit=0.30 vy_limit=0.0 dir=/root/field_sessions/20261119-212843_r2000a
+[field-session] step1 binary: build-r2000a-joystick/deploy/robots/as2w/r2000a/as2w_r2000a_joystick_publish
+e647dffa9d225072103c2895349be3ecff18a4727bc10becc411c56747e41570  deploy/robots/as2w/common/as2w_publish.cpp
+b204c06761a5fbd1b77fb23e3b9a27197781cfe55bc58308d848d8a806db172a  deploy/robots/as2w/r2000a/r2000a_controller.cpp
+4a0c439ac49d3b7cc95f007df2b82222d637f03e8d3387f953884d1c42a75420  deploy/robots/as2w/r2000a/r2000a_controller.hpp
+11a61a501dbb447975c213f843427523c35445cd9a7ed641529e2cd9c5bcb2c3  tools/run_r2000a_trial.sh
+e7bdc55e8acf8449cf914fdffbad75638574267f48d28c51a34a5dd8bfb091a8  models/r2000a/deploy.yaml
+e6e21faa2ab63d24eaa9b5f9efefea308d01aecb91b165b1845d5274834dd2e2  models/r2000a/policy.onnx
+b205038c114ef1848afeddc95289d36cdd42e919a5cca1d92bab4e15267cbe80  build-r2000a-joystick/deploy/robots/as2w/r2000a/as2w_r2000a_joystick_publish
+[field-session] step1 audit: AUDIT PASS: synthetic HG frames and wake timing; command slew and field safety guards; offline fault injection (warn/hard/motorstate/remote-timeout/slew); firmware acceptance unknown
+[field-session] step2 probe: low packets=1050 tick=5131127 mode_pr=0 mode_machine=2 imu_wxyz=0.999131,0.000467641,0.00190276,-0.0416339, gyro=-0.00213053,0.00426106,0.00958738, m0=-0.582008,-0.0153398 m1=0.988729,-0.00306796 m2=-2.7408,0.00613592 m3=0.58918,0 m4=0.960614,-0.0153398 m5=-2.71891,0 m6=-0.596958,0 m7=0.98146,0 m8=-2.71471,0 m9=0.592716,0 m10=0.957552,0 m11=-2.70904,0.00613592 m12=1.79883,0 m13=0.35737,0 m14=1.57945,0 m15=0.624786,0 m16=0,0 m17=0,0 m18=0,0 m19=0,0 m20=0,0 m21=0,0 m22=0,0 m23=0,0 m24=0,0 m25=0,0 m26=0,0 m27=0,0 m28=0,0 m29=0,0 m30=0,0 m31=0,0 m32=0,0 m33=0,0 m34=0,0
+[field-session] step3 motion-mode: MotionSwitcher CheckMode rc=0 form=1 name=
+[field-session] step3 already released (name empty) -> continue
+[field-session] step4 sample: LOW_SAMPLE,2001,2087,1,5133493,0,2,0.999132,0.00092888,0.0019645,-0.0416091,-0.0117179,-0.00106526,0.00639159,-0.582002,
+[field-session] step4 packets=2087 16-axis modes={0}
+[field-session] step4 prone calf gate=yes
+[field-session] step5 starting 180s monitoring (low-capture 2ms + low-protection)
+[field-session] step6 launching: bash tools/run_r2000a_trial.sh --vx-limit 0.30 --vy-limit 0.0
+[field-session]     >>> Passive ready expected in ~3-5s; then hand the remote to the operator.
+[field-session]     >>> R2000A FWD/REV TIER (lateral LOCKED): A=fixed stand, B=2s zero handoff then LY vx +/-0.30m/s for max 30s.
+[field-session]     >>> RX is ignored (yaw contract-locked off); center sticks to stop, A brakes early, Y squats, X=emergency.
+[field-session] publisher exited rc=0
+[field-session] policy diagnostics archived: policy_diag.log (165 lines)
+[field-session] debug diagnostics archived: debug_policy.csv (176 lines)
+[field-session] debug diagnostics archived: debug_lowcmd.csv (8334 lines)
+[field-session] monitoring done; artifacts:
+total 13943
+drwxr-xr-x.   2 root root    3440 Nov 19 21:29 .
+drwxr-xr-x. 147 root root   20480 Nov 19 21:28 ..
+-rw-r--r--.   1 root root 3473760 Nov 19 21:29 debug_lowcmd.csv
+-rw-r--r--.   1 root root  292091 Nov 19 21:29 debug_policy.csv
+-rw-r--r--.   1 root root 9495790 Nov 19 21:29 low_capture_fast.log
+-rw-r--r--.   1 root root  933888 Nov 19 21:29 low_protection.log
+-rw-r--r--.   1 root root   32786 Nov 19 21:29 policy_diag.log
+-rw-r--r--.   1 root root    3595 Nov 19 21:29 publisher.log
+-rw-r--r--.   1 root root    3021 Nov 19 21:29 session.log
+[field-session] session complete (mode=r2000a rc=0). Copy /root/field_sessions/20261119-212843_r2000a back to the workstation logs dir and append INDEX.
