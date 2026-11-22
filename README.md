@@ -96,3 +96,15 @@
 3. **Hip 分解**：只取该腿自身轮 + 关节轴 + 锚点，与 `A[hip_dof]·f` 逐位一致（diff=0）；`r_yF_z` 仍主项。
 
 数值：`t*` 由旧 1.985/1.123 Nm 变为 **2.157 Nm（26 kg）/ 1.384 Nm（27.5 kg）**，且对 CoP 敏感（±0.7 Nm）——**不是物理结构下限**。**后轮 Fy 在两种资产、全 μ、CoP ±26 mm 下都跨零 → UNKNOWN**（旧 26 kg 不跨零的结论撤回）。PhysX 长时轨迹显示滚动与失载：`dt=0.010` 基座前移 1.35–1.41 m、`dt=0.00125` 60 s 时 RR `Fn=0`。Gate 不变：G1-K OPEN，G4 FORBIDDEN。
+## Phase P（2026-11-22 深夜）执行回传
+
+- `07_gpt_qa/ANSWERS_ROUND_4.md`：P0–P4 回答。
+- `04_our_analysis/RPT-021_PhaseP_Contact_Feasibility_20261122.md`：汇总报告。
+- `01_sim2real_bundle/docs/as2w_v2_simreal_rootcause_20261119/20_/21_/22_/23_*.md`：S1 几何与支撑、20 Hz 滚动时间线、跨会话留出、Gate。
+- `09_phase_p/`：脚本与原始 JSON（7.4 MB 的 20 Hz 时序留在服务器，SHA 见报告）。
+
+四条要点：
+1. **旧 S1 越界**：每轮 5 点中 2 点超 `|t|≤26 mm`（8/20）；旧 ±0.7 Nm 敏感度降级为 `SENSITIVITY_ONLY_INVALID_AS_PHYSICAL_COP`。合法向内扫描只降 `t*` 0.14–0.21 Nm，后轮 Fy 仍跨零。
+2. **平面/支撑**：水平面峰峰 4.266 mm；最佳斜面 0.253°、残差 1.94 mm；3 轮只有 2/4 子集几何可能且 `t*` 跳到 15.7 Nm；柔顺 k=2e4 N/m 才四轮载（103/18/73/61 N）。
+3. **20 Hz 实测：两个"终态"都不静止**。末 60 s 轮速 P99 0.046（hip）/0.123（pitch）rad/s；`pitch_p2` 在 180–240 s 基座 +62.4 mm、轮转 0.6–1.0 rad、pitch −1.564°，并在 211.95/212.3 s 出现 RL 失载 → **迁移是滚动+失载**，不是两个静态平衡。
+4. **跨会话**：P55G1/G2/G3 的 `t*` 2.00/2.16/2.02（26 kg）、前轮都不跨零；**OG 0.54 Nm、z 跨度 10.9 mm、四轮全跨零** → 姿态依赖。算子单测全过（Jacobian FD 0.0，随机力 Hip 叉乘 vs Jacobian 0.0）。
