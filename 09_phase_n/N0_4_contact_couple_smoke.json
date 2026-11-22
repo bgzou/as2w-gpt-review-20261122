@@ -1,0 +1,1632 @@
+{
+ "schema": "n0_4_contact_couple_smoke_v2",
+ "mujoco_version": "4.0.1",
+ "geom_info": {
+  "3": {
+   "geom_condim": 3,
+   "friction": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "friction_shape": [
+    2,
+    3
+   ],
+   "condim_shape": [
+    2
+   ]
+  },
+  "4": {
+   "geom_condim": 4,
+   "friction": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "friction_shape": [
+    2,
+    3
+   ],
+   "condim_shape": [
+    2
+   ]
+  },
+  "6": {
+   "geom_condim": 6,
+   "friction": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "friction_shape": [
+    2,
+    3
+   ],
+   "condim_shape": [
+    2
+   ]
+  }
+ },
+ "rows": [
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "rate": 0.0,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "rate": 0.01,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "rate": 0.1,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "rate": 1.0,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "rate": 0.0,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "roll"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "rate": 0.01,
+   "ncon": 2,
+   "dims": [
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 2.6797,
+   "tangential": [
+    0.69873,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0268,
+   "expected_roll_limit": 0.0134,
+   "case": "roll"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "rate": 0.1,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 11.8944,
+   "tangential": [
+    0.21539,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.11894,
+   "expected_roll_limit": 0.05947,
+   "case": "roll"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "rate": 1.0,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim_rest": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 30.4251,
+   "tangential": [
+    6.89431,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.30425,
+   "expected_roll_limit": 0.15213,
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "rate": 0.0,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "rate": 0.01,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": -3.4e-05,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "rate": 0.1,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": -0.000338,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "rate": 1.0,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": -0.003379,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "rate": 0.0,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "rate": 0.01,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.9587,
+   "tangential": [
+    0.02781,
+    0.0
+   ],
+   "torsional_moment": -0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.09959,
+   "expected_roll_limit": 0.04979,
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "rate": 0.1,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 11.939,
+   "tangential": [
+    0.21209,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.11939,
+   "expected_roll_limit": 0.0597,
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "rate": 1.0,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "dim_rest": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 30.4887,
+   "tangential": [
+    7.17104,
+    0.0
+   ],
+   "torsional_moment": -0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.30489,
+   "expected_roll_limit": 0.15244,
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "rate": 0.0,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": -0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "rate": 0.01,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": -3.4e-05,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "rate": 0.1,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": -0.000338,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "rate": 1.0,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.8092,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": -0.003784,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.09809,
+   "expected_roll_limit": 0.04905,
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "rate": 0.0,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": -0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.0981,
+   "expected_roll_limit": 0.04905,
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "rate": 0.01,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.9774,
+   "tangential": [
+    0.02547,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    -0.00251
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.09977,
+   "expected_roll_limit": 0.04989,
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "rate": 0.1,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 11.9007,
+   "tangential": [
+    0.19962,
+    0.0
+   ],
+   "torsional_moment": -0.0,
+   "rolling_moment": [
+    0.0,
+    -0.020199
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.11901,
+   "expected_roll_limit": 0.0595,
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "rate": 1.0,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "dim_rest": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 30.0904,
+   "tangential": [
+    5.14712,
+    0.0
+   ],
+   "torsional_moment": -0.0,
+   "rolling_moment": [
+    0.0,
+    -0.042955
+   ],
+   "rest_normal": 9.81,
+   "friction_slide_torsion_roll": [
+    1.0,
+    0.01,
+    0.005
+   ],
+   "expected_torsion_limit": 0.3009,
+   "expected_roll_limit": 0.15045,
+   "case": "roll"
+  }
+ ],
+ "static_rows": [
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "delta_rad": 0.002,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "delta_rad": 0.01,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "delta_rad": 0.05,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "delta_rad": 0.2,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "yaw",
+   "delta_rad": 1.0,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "delta_rad": 0.002,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "delta_rad": 0.01,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "delta_rad": 0.05,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "delta_rad": 0.2,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 3,
+   "axis": "roll",
+   "delta_rad": 1.0,
+   "ncon": 4,
+   "dims": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "delta_rad": 0.002,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "delta_rad": 0.01,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "delta_rad": 0.05,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "delta_rad": 0.2,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "yaw",
+   "delta_rad": 1.0,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "delta_rad": 0.002,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "delta_rad": 0.01,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "delta_rad": 0.05,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "delta_rad": 0.2,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 4,
+   "axis": "roll",
+   "delta_rad": 1.0,
+   "ncon": 4,
+   "dims": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    -0.0,
+    -0.0
+   ],
+   "torsional_moment": -0.0,
+   "rolling_moment": [
+    0.0,
+    0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "delta_rad": 0.002,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "delta_rad": 0.01,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "delta_rad": 0.05,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "delta_rad": 0.2,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "yaw",
+   "delta_rad": 1.0,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    0.0,
+    -0.0
+   ],
+   "case": "yaw"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "delta_rad": 0.002,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "delta_rad": 0.01,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "delta_rad": 0.05,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "delta_rad": 0.2,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "roll"
+  },
+  {
+   "condim": 6,
+   "axis": "roll",
+   "delta_rad": 1.0,
+   "ncon": 4,
+   "dims": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "normal_force": 9.81,
+   "tangential": [
+    0.0,
+    -0.0
+   ],
+   "torsional_moment": 0.0,
+   "rolling_moment": [
+    -0.0,
+    -0.0
+   ],
+   "case": "roll"
+  }
+ ],
+ "note": "geom/friction has three numbers: sliding coefficient, torsional friction length (m), rolling friction length (m). condim=4 adds the torsional (about-normal) moment; condim=6 adds the rolling (tangent-plane) moment.  The prescribed-rate rows show a rate-dependent (impedance) moment; the static rows hold a fixed offset and show the quasi-static moment."
+}
