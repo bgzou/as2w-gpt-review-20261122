@@ -108,3 +108,11 @@
 2. **平面/支撑**：水平面峰峰 4.266 mm；最佳斜面 0.253°、残差 1.94 mm；3 轮只有 2/4 子集几何可能且 `t*` 跳到 15.7 Nm；柔顺 k=2e4 N/m 才四轮载（103/18/73/61 N）。
 3. **20 Hz 实测：两个"终态"都不静止**。末 60 s 轮速 P99 0.046（hip）/0.123（pitch）rad/s；`pitch_p2` 在 180–240 s 基座 +62.4 mm、轮转 0.6–1.0 rad、pitch −1.564°，并在 211.95/212.3 s 出现 RL 失载 → **迁移是滚动+失载**，不是两个静态平衡。
 4. **跨会话**：P55G1/G2/G3 的 `t*` 2.00/2.16/2.02（26 kg）、前轮都不跨零；**OG 0.54 Nm、z 跨度 10.9 mm、四轮全跨零** → 姿态依赖。算子单测全过（Jacobian FD 0.0，随机力 Hip 叉乘 vs Jacobian 0.0）。
+## Phase Q（2026-11-22 收口）
+
+- `07_gpt_qa/ANSWERS_ROUND_5.md`：五个收口问题的回答。
+- `04_our_analysis/RPT-022_PhaseQ_Stop_20261122.md`：汇总。
+- `01_sim2real_bundle/docs/as2w_v2_simreal_rootcause_20261119/24_/25_*.md`：约束消融与 STOP、测量/策略轨道。
+- `09_phase_q/`：锁基座/锁轮消融脚本与 JSON。
+
+结论：末 60 s 是 **往复微动**（`Σ|Δq|/|net|` = 8.45/19.5，滑移代理 P95 ≤9.4 mm/s），不是持续滚动；**锁基座 xy 与锁轮 q 都抑制 180–240 s 的迁移**（基线 pitch 3.02→1.45°、+62 mm、47 个失载采样；B 稳定 −2.94°、C 稳定 −0.35°）→ 滚动/约束耦合，不能判接触根因。OG 记为 `OG_CONTACT_MODE_UNIDENTIFIED`（不共面 10.88 mm）。**正式状态：`STOP_OFFLINE_DIAGNOSIS_PENDING_REAL_MEASUREMENT`**；下一次有信息量的测量是 M2 四轮同步 Fn。Phase P 的 `compliance()` 过度解释已在 ANSWERS_ROUND_5 勘误。
